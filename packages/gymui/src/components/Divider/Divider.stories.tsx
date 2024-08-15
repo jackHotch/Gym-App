@@ -1,8 +1,7 @@
 import { ComponentProps } from 'react'
-import Divider from './Divider'
-import { Meta, StoryObj } from '@storybook/react/*'
+import { Divider } from './Divider'
+import { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import React from 'react'
 
 type StoryProps = ComponentProps<typeof Divider>
 
