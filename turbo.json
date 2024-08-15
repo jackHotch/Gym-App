@@ -18,6 +18,7 @@
       "interactive": true,
       "cache": false,
       "persistent": true
-    }
+    },
+    "test": {}
   }
 }

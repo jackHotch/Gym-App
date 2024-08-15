@@ -1,81 +1,140 @@
-# Turborepo starter
+# Gym App
 
-This is an official starter Turborepo.
+Created by Jack Hotchkiss
 
-## Using this example
+Started: April 12th, 2024  
+Ended: Present
 
-Run the following command:
+![Screenshot](/assets/screenshot.png)
+
+## About the Project
+
+### Description
+
+This project is a web app to help users track their progress on their fitness journey. It has features such as...
+
+- Workout Tracking
+- Weight Tracking
+- Exercise Tracking
+- Split Creator
+
+### Tech Stack
+
+- <a href="https://nextjs.org/"><img src="assets/nextjslogo.svg"></a>
+- <a href="https://react.dev/"><img src="assets/reactlogo.svg"></a>
+- <a href="https://typescriptlang.org/"><img height="28px" src="assets/typescript.png"></a>
+- <a href="https://expressjs.com/"><img height="28px" src="assets/express.png"></a>
+- <a href="https://nodejs.org/en"><img height="28px" src="assets/node.png"></a>
+
+### Project Structure
+
+This repository is a monorepo using the turborepo build system.
 
 ```sh
-npx create-turbo@latest
+gymapp
+|-- apps
+|   |-- gym
+|   |-- api
+|-- packages
+|   |-- eslint-config
+|   |-- typescript-config
+|   |-- gymui
+|
+...
 ```
 
-## What's inside?
+`/gym` - frontend of web app
 
-This Turborepo includes the following packages/apps:
+`/api` - backend of web app
 
-### Apps and Packages
+`/gymui` - custom component library
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## Getting Started
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+_Follow the following steps to intall the app on your local machine_
 
-### Utilities
+### Prerequisites
 
-This Turborepo has some additional tools already setup for you:
+- [NodeJS](https://nodejs.org/en/download/prebuilt-installer)
+- [MySQL](https://dev.mysql.com/downloads/installer/)
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+### Installation
 
-### Build
+1. Clone the repo
 
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```sh
+git clone https://github.com/jackHotch/Gym-App.git
 ```
 
-### Develop
+## Usage
 
-To develop all apps and packages, run the following command:
+_Follow the following steps to run the application on your machine_
 
-```
-cd my-turborepo
-pnpm dev
-```
+### Before the First Time
 
-### Remote Caching
+1. Go into each `/Databse/* Parser/index.js` file and change the update the connection to your local database
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```js
+let con = mysql.createConnection({
+  host: YOUR INFORMATION,
+  user: YOUR INFORMATION,
+  password: YOUR INFORMATION,
+  database: YOUR INFORMATION,
+});
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+2. Run each parsing file to populate the database
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
+```sh
+node index.js
 ```
 
-## Useful Links
+3. In the root of the project
 
-Learn more about the power of Turborepo:
+```sh
+npm install
+```
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+### Run the Application
+
+1. Start your MySQL database
+2. Open your terminal
+3. In the root of the project run the following command to start all dev servers
+
+```sh
+npm run dev
+```
+
+5. Go to `http://localhost:3000` in your web browser
+
+## GymUI
+
+This is a custom component library made specifically for this app.
+
+![Screenshot](/assets/gymui.png)
+
+### Storybook
+
+To run the component library in storybook
+
+```sh
+npm run storybook
+```
+
+## Other Information
+
+### Build the Project
+
+```sh
+npm run build
+```
+
+This command will build the entire project.
+
+### Test the Project
+
+```sh
+npm run test
+```
+
+This command will test the entire project
