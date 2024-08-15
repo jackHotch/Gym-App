@@ -17,7 +17,7 @@
     "@chromatic-com/storybook": "^1.6.1",
     "@gymapp/eslint-config": "*",
     "@gymapp/typescript-config": "*",
-    "@gymapp/jest-config": "*",
+    "@gymapp/jest-config": "workspace:*",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
