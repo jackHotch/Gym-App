@@ -4,7 +4,7 @@ import styles from './Finished.module.css'
 import Link from 'next/link'
 import { useWorkoutNumber } from '@/hooks'
 
-const finished = () => {
+const Finished = () => {
   const { data: workoutNumber } = useWorkoutNumber()
 
   return (
@@ -17,4 +17,4 @@ const finished = () => {
   )
 }
 
-export default finished
+export default Finished

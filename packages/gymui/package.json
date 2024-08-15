@@ -1,11 +1,10 @@
 {
-  "name": "@repo/ui",
+  "name": "@gymapp/gymui",
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./button": "./src/button.tsx",
-    "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
+    "./Button": "./src/components/Button/Button.tsx",
+    "./Divider": "./src/components/Divider/Divider.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

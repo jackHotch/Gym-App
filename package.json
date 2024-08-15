@@ -1,5 +1,5 @@
 {
-  "name": "turbo-test",
+  "name": "gymapp",
   "private": true,
   "scripts": {
     "build": "turbo build",
