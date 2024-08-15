@@ -1,0 +1,116 @@
+.modal_background {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(211, 211, 211, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_container {
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.header {
+    border: none;
+    display: flex;
+    align-items: center;
+    height: 31px;
+    flex-flow: column wrap;
+    align-content: space-between;
+    margin: 10px 15px;
+}
+
+.header > button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.textbox {
+    display: flex;
+    justify-content: center;
+    flex: 70%;
+}
+
+.textbox input {
+    height: fit-content;
+}
+
+.footer_btns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.footer_btns button {
+    height: 40px;
+    width: 100px;
+    padding: 5px;
+    margin: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background-color: rgb(211, 211, 211);
+    font-family: inherit;
+    cursor: pointer;
+}
+
+#add_btn:hover {
+    background-color: rgb(189, 189, 189);
+}
+
+.footer_btns button:nth-child(-n + 1) {
+    background-color: crimson;
+    color: white;
+}
+
+#top_clear_btn {
+    cursor: pointer;
+}
+
+.future_exercise_list {
+    margin: 15px 25px;
+    flex: 55%;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.future_exercise_list::-webkit-scrollbar {
+    display: none;
+}
+
+.future_exercise {
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 3px 8px;
+    margin: 10px 10px;
+    width: max-content;
+    height: max-content;
+}
+
+.exercises_clear_btn {
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+    color: crimson;
+}
+
+.create_exercise {
+    color: var(--blue);
+    font-family: inherit;
+}

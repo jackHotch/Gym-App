@@ -1,0 +1,56 @@
+.modal_background {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(211, 211, 211, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_container {
+    width: 360px;
+    height: 260px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.modal_container h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.buttons button {
+    height: 40px;
+    width: 70%;
+    padding: 5px;
+    margin: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background-color: rgb(211, 211, 211);
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.buttons button:nth-child(-n + 1):hover {
+    background-color: rgb(189, 189, 189);
+}
+
+.buttons button:last-child {
+    background-color: crimson;
+    color: white;
+}
