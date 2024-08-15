@@ -6,7 +6,10 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "test": "turbo test"
+    "test": "turbo test",
+    "remove:node_modules": "npm exec --workspaces -- npx rimraf node_modules && npx rimraf node_modules",
+    "remove:package-lock": "npm exec --workspaces -- npx rimraf package-lock.json && npx rimraf package-lock.json",
+    "clean": "npm run remove:node_modules && npm run remove:package-lock"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.8",
@@ -23,9 +26,9 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "npm@10.2.3",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "packageManager": "npm@10.2.3"
 }
