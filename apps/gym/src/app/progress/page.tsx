@@ -8,7 +8,7 @@ const Progress = () => {
     <>
       <p>hello</p>
       <Button variant='primary'>ui</Button>
-      <Divider variant='primary'>htshfja</Divider>
+      <Divider variant='primary'>htshsafddsfja</Divider>
     </>
   )
 }
