@@ -3,11 +3,11 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 jobs:
-  main:
+  master:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
