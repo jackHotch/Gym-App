@@ -22,4 +22,4 @@ jobs:
         run: npm ci
 
       - name: Build and test project
-        run: npm run build test
+        run: npm run dev build test
