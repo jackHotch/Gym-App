@@ -8,7 +8,7 @@ export const jestConfig = {
     "\\\\node_modules\\\\"
   ],
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest"  // That one tells Jest to use ts-jest when dealing with TypeScript files
+    "^.+\\.(ts|tsx)$": "ts-jest"
   },
   roots: [
     "src"
