@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -8,12 +8,21 @@ on:
 
 jobs:
   Master:
+    timeout-minutes: 15
     runs-on: ubuntu-latest
+
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      TURBO_REMOTE_ONLY: true
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out code
+        uses: actions/checkout@v4
 
       # Cache node_modules
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
@@ -22,4 +31,4 @@ jobs:
         run: npm ci
 
       - name: Build and test project
-        run: npm run dev build test
+        run: npm run build test
