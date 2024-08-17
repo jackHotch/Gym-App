@@ -7,6 +7,7 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo test",
+    "storybook": "turbo storybook",
     "remove:node_modules": "npm exec --workspaces -- npx rimraf node_modules && npx rimraf node_modules",
     "remove:package-lock": "npm exec --workspaces -- npx rimraf package-lock.json && npx rimraf package-lock.json",
     "clean": "npm run remove:node_modules && npm run remove:package-lock"
