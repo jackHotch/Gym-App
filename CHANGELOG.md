@@ -5,6 +5,8 @@ _This is the changelog for the entire project_
 ## 8/16/2024
 
 - Added changelog to monorepo
+- Added the setup for jest in api
+- Enabled remote caching for CI test
 
 ## 8/15/2024
 
