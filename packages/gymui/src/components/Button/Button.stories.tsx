@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
 import { Button } from './Button'
 import { ComponentProps } from 'react'
 
@@ -8,39 +7,22 @@ type StoryProps = ComponentProps<typeof Button>
 const meta: Meta<StoryProps> = {
   component: Button,
   tags: ['autodocs'],
-  argTypes: {
-    variant: {
-      control: {
-        type: 'select',
-      },
-      options: ['primary', 'danger'],
-    },
-  },
-  args: {
-    onClick: fn(),
-  },
+  argTypes: {},
+  args: {},
 }
 
 export default meta
 
 type Story = StoryObj<StoryProps>
 
-export const Primary: Story = {
-  args: {
-    variant: 'primary',
-    children: 'hello',
-  },
-  render: (args) => {
-    return <Button {...args} />
+export const Body: Story = {
+  render: () => {
+    return <Button.Body>body</Button.Body>
   },
 }
 
-export const Danger: Story = {
-  args: {
-    variant: 'danger',
-    children: 'test',
-  },
-  render: (args) => {
-    return <Button {...args} />
+export const Header: Story = {
+  render: () => {
+    return <Button.Header>head</Button.Header>
   },
 }

@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 8/18/2024 - v0.1.0
+
+- Started working on button component
+
 ## 8/16/2024
 
 - Added changelog
