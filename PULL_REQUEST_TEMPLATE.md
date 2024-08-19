@@ -4,3 +4,4 @@ Pull Request Checklist
 - [ ] Storybook runs - `npm run storybook`
 - [ ] CI test passes
 - [ ] Updated CHANGELOG
+- [ ] Added tests

@@ -1,14 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 import { ComponentProps } from 'react'
+import { fn } from '@storybook/test'
 
 type StoryProps = ComponentProps<typeof Button>
 
 const meta: Meta<StoryProps> = {
   component: Button,
   tags: ['autodocs'],
-  argTypes: {},
-  args: {},
+  args: {
+    onClick: fn(),
+  },
 }
 
 export default meta
@@ -22,7 +24,10 @@ export const Body: Story = {
 }
 
 export const Header: Story = {
-  render: () => {
-    return <Button.Header>head</Button.Header>
+  args: {
+    children: 'test',
+  },
+  render: (args: any) => {
+    return <Button.Header {...args} />
   },
 }
