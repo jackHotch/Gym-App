@@ -17,17 +17,29 @@ export default meta
 
 type Story = StoryObj<StoryProps>
 
-export const Body: Story = {
-  render: () => {
-    return <Button.Body>body</Button.Body>
+export const Primary: Story = {
+  args: {
+    children: 'Primary',
+  },
+  render: (args) => {
+    return <Button.Primary {...args} />
   },
 }
 
-export const Header: Story = {
+export const Secondary: Story = {
   args: {
-    children: 'test',
+    children: 'Secondary',
   },
-  render: (args: any) => {
-    return <Button.Header {...args} />
+  render: (args) => {
+    return <Button.Secondary {...args} />
+  },
+}
+
+export const Danger: Story = {
+  args: {
+    children: 'Danger',
+  },
+  render: (args) => {
+    return <Button.Danger {...args} />
   },
 }
