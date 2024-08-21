@@ -13,7 +13,7 @@ a {
     src: url("../../public/fonts/LeagueSpartan-VariableFont_wght.ttf");
   }
 
-body {
+* {
     font-family: 'League-Spartan';
     padding: 0;
     margin: 0;
