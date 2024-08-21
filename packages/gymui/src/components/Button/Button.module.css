@@ -1,24 +1,20 @@
 .primary, .secondary, .danger {
-  padding: 10px 25px;
+  color: white;
+  padding: 12px 32px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 450;
   border: none;
 }
 
 .primary {
   background-color: var(--blue);
-  color: white;
 }
 
 .secondary {
   background-color: white;
+  color: black;
   border: 2px solid var(--blue);
-}
-
-.secondary:hover {
-  background-color: var(--blue);
-  color: white;
 }
 
 .danger {

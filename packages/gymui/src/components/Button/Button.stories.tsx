@@ -19,6 +19,7 @@ type Story = StoryObj<StoryProps>
 
 export const Primary: Story = {
   args: {
+    sx: {},
     children: 'Primary',
   },
   render: (args) => {
@@ -28,6 +29,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
+    sx: {},
     children: 'Secondary',
   },
   render: (args) => {
@@ -37,6 +39,7 @@ export const Secondary: Story = {
 
 export const Danger: Story = {
   args: {
+    sx: {},
     children: 'Danger',
   },
   render: (args) => {
