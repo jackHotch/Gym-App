@@ -46,3 +46,13 @@ export const Danger: Story = {
     return <Button.Danger {...args} />
   },
 }
+
+export const Disabled: Story = {
+  args: {
+    sx: {},
+    children: 'Disabled',
+  },
+  render: (args) => {
+    return <Button.Disabled {...args} />
+  },
+}
