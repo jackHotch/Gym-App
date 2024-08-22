@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export const Primary = ({
   children = 'Primary',
-  size = 'medium',
+  size = 'small',
   sx,
   my,
   mx,
