@@ -11,6 +11,7 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { useAddWeight } from '@/hooks'
+import { Button } from '@gymapp/gymui/Button'
 
 export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
   const [calendar, setCalendar] = useState(false)
@@ -110,9 +111,9 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
               </div>
             </div>
 
-            <button type='submit' className={styles.add_btn}>
+            <Button.Primary type='submit' mx='auto'>
               Add
-            </button>
+            </Button.Primary>
           </div>
         </form>
       </div>

@@ -3,7 +3,7 @@ import styles from './Button.module.css'
 import { motion } from 'framer-motion'
 
 export const Disabled = ({
-  children = 'Danger',
+  children = 'Disabled',
   size = 'small',
   sx,
   my,
