@@ -1,4 +1,4 @@
-.primary, .secondary, .danger {
+.primary, .secondary, .danger, .disabled {
   color: white;
   padding: 12px 32px;
   border-radius: 8px;
@@ -19,4 +19,8 @@
 
 .danger {
  background-color: var(--red);
+}
+
+.disabled {
+  background-color: lightgray;
 }

@@ -1,6 +1,6 @@
 {
   "name": "@gymapp/gymui",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "exports": {
     "./Button": "./src/components/Button/Button.tsx",

@@ -54,3 +54,10 @@ const Danger = ({ sx, children = 'Danger', ...props }: ButtonProps) => (
   </motion.button>
 )
 Button.Danger = Danger
+
+const Disabled = ({ sx, children = 'Danger', ...props }: ButtonProps) => (
+  <motion.button {...props} disabled style={sx} className={styles.disabled}>
+    {children}
+  </motion.button>
+)
+Button.Disabled = Disabled
