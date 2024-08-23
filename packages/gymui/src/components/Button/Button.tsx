@@ -5,9 +5,12 @@ import { Secondary } from './Secondary'
 import { Danger } from './Danger'
 import { Disabled } from './Disabled'
 
+type size = 'small' | 'medium' | 'large'
+
 export interface ButtonProps extends HTMLMotionProps<'button'> {
-  sx?: CSSProperties
   children?: string
+  size?: size
+  sx?: CSSProperties
   mx?: string
   my?: string
   px?: string

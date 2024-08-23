@@ -1,10 +1,6 @@
 .primary, .secondary, .danger, .disabled {
   color: white;
   display: inline-block;
-  padding: 12px 32px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 450;
   border: none;
 }
 
@@ -24,4 +20,25 @@
 
 .disabled {
   background-color: lightgray;
+}
+
+.small {
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 450;
+}
+
+.medium {
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 450;
+}
+
+.large {
+  padding: 24px 64px;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: 450;
 }

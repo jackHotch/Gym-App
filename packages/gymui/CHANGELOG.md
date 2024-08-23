@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 8/31/2024 - v1.0.1
+
+- Added different size to button component
+
 ## 8/22/2024 - v1.0.0
 
 - Finshed button component
