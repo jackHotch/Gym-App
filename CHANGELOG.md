@@ -4,7 +4,7 @@ _This is the changelog for the entire project_
 
 ## 8/23/2024
 
-- Updated CI to not run on draft pull requests
+- Updated CI test to not run on draft pull requests
 
 ## 8/22/2024
 
