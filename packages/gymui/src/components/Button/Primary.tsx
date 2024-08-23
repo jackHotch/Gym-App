@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 export const Primary = ({
   children = 'Primary',
+  size = 'medium',
   sx,
   my,
   mx,
@@ -28,10 +29,9 @@ export const Primary = ({
       width: width,
       height: height,
     }}
-    className={styles.primary}
+    className={`${styles.primary} ${styles[size]}`}
     whileHover={{
       scale: SCALEHOVER,
-      boxShadow: 'rgba(150, 150, 150, 0.5) 0px 2px 8px 2px',
     }}
     transition={{ duration: DURATION }}
     whileTap={{ scale: SCALETAP }}

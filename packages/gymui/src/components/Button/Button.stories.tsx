@@ -8,8 +8,17 @@ type StoryProps = ComponentProps<typeof Button>
 const meta: Meta<StoryProps> = {
   component: Button,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      control: {
+        type: 'select',
+      },
+      options: ['small', 'medium', 'large'],
+    },
+  },
   args: {
     sx: {},
+    size: 'medium',
     onClick: fn(),
   },
 }

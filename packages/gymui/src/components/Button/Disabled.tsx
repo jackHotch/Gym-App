@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 export const Disabled = ({
   children = 'Danger',
+  size = 'small',
   sx,
   my,
   mx,
@@ -29,7 +30,7 @@ export const Disabled = ({
       width: width,
       height: height,
     }}
-    className={styles.disabled}
+    className={`${styles.disabled} ${styles[size]}`}
   >
     {children}
   </motion.button>
