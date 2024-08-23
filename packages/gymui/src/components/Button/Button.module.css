@@ -1,5 +1,6 @@
 .primary, .secondary, .danger, .disabled {
   color: white;
+  display: inline-block;
   padding: 12px 32px;
   border-radius: 8px;
   font-size: 18px;
