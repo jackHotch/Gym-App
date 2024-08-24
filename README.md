@@ -38,6 +38,7 @@ gymapp
 |-- packages
 |   |-- eslint-config
 |   |-- typescript-config
+|   |-- jest-config
 |   |-- gymui
 |
 ...
