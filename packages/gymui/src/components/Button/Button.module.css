@@ -1,9 +1,9 @@
 .primary, .secondary, .danger, .disabled {
   color: white;
-  padding: 12px 32px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 450;
+  padding: var(--padding-medium) var(--padding-xxl);
+  border-radius: var(--border-radius-small);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
   border: none;
 }
 

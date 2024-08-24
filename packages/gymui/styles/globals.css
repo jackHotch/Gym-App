@@ -7,4 +7,37 @@
 :root {
   --blue: #3a8fea;
   --red: #dd3e32;
+  --lightgrey: #d3d3d3;
+  --lightgrey-hover: #bdbdbd;
+  --box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+
+  --font-size-small: 18px;
+  --font-size-medium: 24px;
+  --font-size-large: 32px;
+
+  --font-weight-medium: 450;
+  --font-weight-large: 500;
+
+  --padding-xs: 4px;
+  --padding-small: 8px;
+  --padding-medium: 12px;
+  --padding-large: 16px;
+  --padding-xl: 24px;
+  --padding-xxl: 32px;
+  --padding-xxxl: 64px;
+
+  --margin-xs: 4px;
+  --margin-small: 8px;
+  --margin-medium: 12px;
+  --margin-large: 16px;
+  --margin-xl: 24px;
+  --margin-xxl: 32px;
+  --margin-xxxl: 64px;
+
+  --border-radius-xs: 4px;
+  --border-radius-small: 8px;
+  --border-radius-medium: 12px;
+  --border-radius-large: 16px;
+  --border-radius-xl: 24px;
+  --border-radius-xxl: 32px;
 }
