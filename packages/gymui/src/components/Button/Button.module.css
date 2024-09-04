@@ -16,7 +16,7 @@
 }
 
 .danger {
- background-color: var(--red);
+  background-color: var(--red);
 }
 
 .disabled {

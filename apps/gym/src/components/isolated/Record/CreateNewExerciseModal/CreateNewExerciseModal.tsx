@@ -7,6 +7,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import { motion } from 'framer-motion'
 import { DivEvent, FormEvent, TextInputChangeEvent } from '@/app/globals'
 import { useCreateExercise } from '@/hooks'
+import { Button } from '@gymapp/gymui/Button'
 
 export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalProps) => {
   const [name, setName] = useState('')
@@ -72,9 +73,8 @@ export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalPro
               value={name}
               onChange={(e) => handleChange(e)}
             />
-            <button type='submit' className={styles.create_exercise_btn}>
-              Create
-            </button>
+
+            <Button.Primary type='submit'>Create</Button.Primary>
           </div>
         </motion.div>
       </form>
