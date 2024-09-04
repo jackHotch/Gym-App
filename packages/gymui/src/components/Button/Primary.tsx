@@ -6,28 +6,12 @@ export const Primary = ({
   children = 'Primary',
   size = 'small',
   sx,
-  my,
-  mx,
-  py,
-  px,
-  width,
-  height,
   ...props
 }: ButtonProps) => (
   <motion.button
     {...props}
     style={{
       ...sx,
-      marginTop: my,
-      marginBottom: my,
-      marginLeft: mx,
-      marginRight: mx,
-      paddingTop: py,
-      paddingBottom: py,
-      paddingLeft: px,
-      paddingRight: px,
-      width: width,
-      height: height,
     }}
     className={`${styles.primary} ${styles[size]}`}
     whileHover={{

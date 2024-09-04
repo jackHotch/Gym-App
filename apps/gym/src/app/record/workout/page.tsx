@@ -13,6 +13,7 @@ import { TextInputChangeEvent, TextAreaChangeEvent, ButtonEvent } from '@/app/gl
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useToggle, useArrayToggle, useWorkoutNumber, useCreateWorkout } from '@/hooks'
+import { Button } from '@gymapp/gymui/Button'
 
 const Workout = () => {
   const [showAddExerciseModal, __, openAddExerciseModal, closeAddExerciseModal] =
@@ -204,17 +205,23 @@ const Workout = () => {
               })}
             </AnimatePresence>
           </div>
-          <div className={styles.add_exercise}>
-            <button type='button' onClick={openAddExerciseModal}>
-              Add Exercise
-            </button>
-          </div>
 
-          <div className={styles.finish_workout}>
-            <button type='button' onClick={openConfirmationModal}>
-              Finish Workout
-            </button>
-          </div>
+          <Button.Secondary
+            type='button'
+            onClick={openAddExerciseModal}
+            sx={{ margin: '16px auto 8px auto' }}
+          >
+            Add Exercise
+          </Button.Secondary>
+
+          <Button.Primary
+            type='button'
+            onClick={openConfirmationModal}
+            size='medium'
+            sx={{ margin: '8px auto 16px auto' }}
+          >
+            Finish Workout
+          </Button.Primary>
         </div>
       </form>
 

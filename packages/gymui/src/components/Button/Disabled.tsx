@@ -6,12 +6,6 @@ export const Disabled = ({
   children = 'Disabled',
   size = 'small',
   sx,
-  my,
-  mx,
-  py,
-  px,
-  width,
-  height,
   ...props
 }: ButtonProps) => (
   <motion.button
@@ -19,16 +13,6 @@ export const Disabled = ({
     disabled
     style={{
       ...sx,
-      marginTop: my,
-      marginBottom: my,
-      marginLeft: mx,
-      marginRight: mx,
-      paddingTop: py,
-      paddingBottom: py,
-      paddingLeft: px,
-      paddingRight: px,
-      width: width,
-      height: height,
     }}
     className={`${styles.disabled} ${styles[size]}`}
   >
