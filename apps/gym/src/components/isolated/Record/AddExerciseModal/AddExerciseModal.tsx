@@ -9,8 +9,13 @@ import CloseIcon from '@mui/icons-material/Close'
 import { CreateNewExerciseModal } from '../CreateNewExerciseModal'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useToggle, useExercises } from '@/hooks'
+import { Button } from '@gymapp/gymui/Button'
 
-export const AddExerciseModal = ({ closeModal, workout, setWorkout }: AddExerciseModalProps) => {
+export const AddExerciseModal = ({
+  closeModal,
+  workout,
+  setWorkout,
+}: AddExerciseModalProps) => {
   const [newExercises, setNewExercises] = useState<IWorkout[]>([])
   const [showCreateExerciseModal, _, openCreateExerciseModal, closeCreateExerciseModal] =
     useToggle()
@@ -81,18 +86,25 @@ export const AddExerciseModal = ({ closeModal, workout, setWorkout }: AddExercis
             return (
               <div key={key} className={styles.future_exercise}>
                 {value.name}
-                <span className={styles.exercises_clear_btn} onClick={() => removeExercise(key)}>
+                <span
+                  className={styles.exercises_clear_btn}
+                  onClick={() => removeExercise(key)}
+                >
                   X
                 </span>
               </div>
             )
           })}
         </div>
+
         <div className={styles.footer_btns}>
-          <button onClick={closeModal}>Cancel</button>
-          <button id={styles.add_btn} onClick={addExercises}>
+          <Button.Danger onClick={closeModal} sx={{ margin: '10px 25px' }}>
+            Cancel
+          </Button.Danger>
+
+          <Button.Primary onClick={addExercises} sx={{ margin: '10px 25px' }}>
             Add
-          </button>
+          </Button.Primary>
         </div>
       </motion.div>
 
