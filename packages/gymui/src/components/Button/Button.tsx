@@ -11,12 +11,6 @@ export interface ButtonProps extends HTMLMotionProps<'button'> {
   children?: string
   size?: size
   sx?: CSSProperties
-  mx?: string
-  my?: string
-  px?: string
-  py?: string
-  width?: string
-  height?: string
 }
 
 export const SCALEHOVER = 1.05

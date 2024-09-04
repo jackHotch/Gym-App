@@ -111,7 +111,7 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
               </div>
             </div>
 
-            <Button.Primary type='submit' mx='auto'>
+            <Button.Primary type='submit' sx={{ margin: '0 auto' }}>
               Add
             </Button.Primary>
           </div>

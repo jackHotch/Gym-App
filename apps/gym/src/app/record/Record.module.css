@@ -1,21 +1,17 @@
 .split_name {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 2rem;
-}
-
-.log_workout {
-    margin: 40px 0;
-    display: flex;
-    justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2rem;
 }
 
 .button {
-    border: none;
-    background-color: var(--blue);
-    text-decoration: none;
-    color: black;
-    padding: 25px;
-    font-size: 160%;
-    border-radius: 40px;
+  display: block;
+  width: max-content;
+  margin: 40px auto;
+  background-color: var(--blue);
+  color: white;
+  padding: 24px 64px;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 450;
 }
