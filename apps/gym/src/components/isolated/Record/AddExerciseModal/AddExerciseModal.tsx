@@ -65,9 +65,8 @@ export const AddExerciseModal = ({
         exit='exit'
       >
         <div className={styles.header}>
-          <button className={styles.create_exercise} onClick={openCreateExerciseModal}>
-            Create New Exercise
-          </button>
+          <Button.Text onClick={openCreateExerciseModal}>Create New Exercise</Button.Text>
+
           <button onClick={closeModal}>
             {' '}
             <CloseIcon id={styles.top_clear_btn} />{' '}

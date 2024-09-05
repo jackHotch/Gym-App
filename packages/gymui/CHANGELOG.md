@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 9/5/2024 - v1.0.2
+
+- Added new Text subcomponent to button
+
 ## 8/31/2024 - v1.0.1
 
 - Added different size to button component

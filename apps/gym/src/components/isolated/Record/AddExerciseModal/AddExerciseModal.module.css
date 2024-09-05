@@ -87,8 +87,3 @@
     font-weight: bold;
     color: crimson;
 }
-
-.create_exercise {
-    color: var(--blue);
-    font-family: inherit;
-}
