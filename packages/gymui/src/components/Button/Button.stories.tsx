@@ -18,7 +18,7 @@ const meta: Meta<StoryProps> = {
   },
   args: {
     sx: {},
-    size: 'medium',
+    size: 'small',
     onClick: fn(),
   },
 }
@@ -60,5 +60,14 @@ export const Disabled: Story = {
   },
   render: (args) => {
     return <Button.Disabled {...args} />
+  },
+}
+
+export const Text: Story = {
+  args: {
+    children: 'Text',
+  },
+  render: (args) => {
+    return <Button.Text {...args} />
   },
 }
