@@ -4,6 +4,7 @@ import { Primary } from './Primary'
 import { Secondary } from './Secondary'
 import { Danger } from './Danger'
 import { Disabled } from './Disabled'
+import { Text } from './Text'
 
 type size = 'small' | 'medium' | 'large'
 
@@ -23,3 +24,4 @@ Button.Primary = Primary
 Button.Secondary = Secondary
 Button.Danger = Danger
 Button.Disabled = Disabled
+Button.Text = Text

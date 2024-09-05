@@ -1,4 +1,4 @@
-.primary, .secondary, .danger, .disabled {
+.primary, .secondary, .danger, .disabled, .text {
   color: white;
   display: inline-block;
   border: none;
@@ -21,6 +21,14 @@
 
 .disabled {
   background-color: lightgray;
+}
+
+.text {
+  background-color: white;
+  color: var(--blue);
+  padding: 0px;
+  font-size: 18px;
+  
 }
 
 .small {
