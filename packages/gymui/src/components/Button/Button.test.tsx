@@ -45,4 +45,15 @@ describe('Button', () => {
     expect(baseElement).toBeTruthy()
     expect(buttonClick).not.toHaveBeenCalled()
   })
+
+  it('Button.Text should render successfully', () => {
+    const buttonClick = jest.fn()
+    const { baseElement, getByText } = render(
+      <Button.Text onClick={buttonClick}>Text</Button.Text>
+    )
+    fireEvent.click(getByText('Text'))
+
+    expect(baseElement).toBeTruthy()
+    expect(buttonClick).toHaveBeenCalled()
+  })
 })
