@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 9/7/2024 - v3.0.1
+
+- Finished the CloseIcon component
+
 ## 9/6/2024 - v2.0.1
 
 - Finished Modal component

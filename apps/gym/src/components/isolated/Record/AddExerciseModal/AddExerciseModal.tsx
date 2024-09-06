@@ -41,8 +41,7 @@ export const AddExerciseModal = ({
         <Button.Text onClick={openCreateExerciseModal}>Create New Exercise</Button.Text>
 
         <button onClick={closeModal}>
-          {' '}
-          <CloseIcon id={styles.top_clear_btn} />{' '}
+          <CloseIcon id={styles.top_clear_btn} />
         </button>
       </div>
       <div className={styles.textbox}>
