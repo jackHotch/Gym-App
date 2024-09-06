@@ -11,7 +11,7 @@ export const FullPage = ({
   ...props
 }: ModalProps) => {
   return (
-    <div className={styles.background} onClick={onOutsideClick}>
+    <div data-testid='background' className={styles.background} onClick={onOutsideClick}>
       <motion.div
         {...props}
         style={{ ...sx, width: width, height: height }}
