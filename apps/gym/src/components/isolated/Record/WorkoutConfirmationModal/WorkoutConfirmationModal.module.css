@@ -1,10 +1,10 @@
 .buttons {
     display: flex;
     align-items: center;
-    flex-flow: column wrap;
+    justify-content: center;
 }
 
-.buttons button {
+/* .buttons button {
     height: 40px;
     width: 70%;
     padding: 5px;
@@ -24,4 +24,4 @@
 .buttons button:last-child {
     background-color: crimson;
     color: white;
-}
+} */
