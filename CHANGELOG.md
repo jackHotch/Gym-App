@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 9/7/2024
+
+- Added CloseIcon to GymUI
+
 ## 9/6/2024
 
 - Added Modal to GymUI
