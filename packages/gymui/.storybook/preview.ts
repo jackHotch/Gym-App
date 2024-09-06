@@ -1,5 +1,6 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react'
 import '../styles/globals.css'
+import { lazy } from 'react'
 
 const preview: Preview = {
   parameters: {
@@ -9,7 +10,8 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    layout: 'fullscreen',
   },
-};
+}
 
-export default preview;
+export default preview

@@ -1,0 +1,18 @@
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(211, 211, 211, .8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+}
+
+.container {
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+}

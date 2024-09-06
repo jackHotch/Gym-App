@@ -10,9 +10,7 @@ export const Primary = ({
 }: ButtonProps) => (
   <motion.button
     {...props}
-    style={{
-      ...sx,
-    }}
+    style={sx}
     className={`${styles.primary} ${styles[size]}`}
     whileHover={{
       scale: SCALEHOVER,

@@ -15,7 +15,12 @@ export default meta
 type Story = StoryObj<StoryProps>
 
 export const FullPage: Story = {
-  render: (args) => {
-    return <Modal {...args} />
+  render: () => {
+    return (
+      <div>
+        this text is behind the modal
+        <Modal.FullPage></Modal.FullPage>
+      </div>
+    )
   },
 }
