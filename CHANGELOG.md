@@ -2,6 +2,11 @@
 
 _This is the changelog for the entire project_
 
+## 9/6/2024
+
+- Added Modal to GymUI
+- Refactored project to use Modal component
+
 ## 8/31/2024
 
 - Updated Button in GymUI to have sizes

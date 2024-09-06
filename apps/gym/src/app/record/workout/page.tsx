@@ -235,7 +235,7 @@ const Workout = () => {
         )}
         {showConfirmationModal && (
           <WorkoutConfirmationModal
-            closeConfirmationModal={closeConfirmationModal}
+            closeModal={closeConfirmationModal}
             handleSubmit={handleSubmit}
           />
         )}

@@ -4,34 +4,14 @@ import { useState } from 'react'
 import { CreateNewExerciseModalProps } from '@/app/record/record'
 import styles from './CreateNewExerciseModal.module.css'
 import CloseIcon from '@mui/icons-material/Close'
-import { motion } from 'framer-motion'
 import { DivEvent, FormEvent, TextInputChangeEvent } from '@/app/globals'
 import { useCreateExercise } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
+import { Modal } from '@gymapp/gymui/Modal'
 
 export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalProps) => {
   const [name, setName] = useState('')
   const { mutate: createExercise } = useCreateExercise()
-
-  const modalVariants = {
-    hidden: {
-      scale: 0,
-    },
-    visible: {
-      scale: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 16,
-      },
-    },
-    exit: {
-      scale: 0,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  }
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -49,16 +29,14 @@ export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalPro
   }
 
   return (
-    <div className={styles.modal_background} onClick={backgroundClick}>
+    <Modal.FullPage
+      width='280px'
+      height='280px'
+      onOutsideClick={closeModal}
+      sx={{ padding: '10px' }}
+    >
       <form onSubmit={(e) => handleSubmit(e)}>
-        <motion.div
-          className={styles.new_exercise_modal}
-          onClick={(e) => e.stopPropagation()}
-          variants={modalVariants}
-          initial='hidden'
-          animate='visible'
-          exit='exit'
-        >
+        <div className={styles.new_exercise_modal}>
           <div className={styles.xbtn}>
             <button onClick={closeModal}>
               <CloseIcon />
@@ -76,8 +54,8 @@ export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalPro
 
             <Button.Primary type='submit'>Create</Button.Primary>
           </div>
-        </motion.div>
+        </div>
       </form>
-    </div>
+    </Modal.FullPage>
   )
 }
