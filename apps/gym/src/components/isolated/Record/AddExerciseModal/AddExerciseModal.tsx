@@ -70,11 +70,14 @@ export const AddExerciseModal = ({
       </div>
 
       <div className={styles.footer_btns}>
-        <Button.Danger onClick={closeModal} sx={{ margin: '10px 25px' }}>
+        <Button.Danger onClick={closeModal} sx={{ margin: '10px 25px', width: '100px' }}>
           Cancel
         </Button.Danger>
 
-        <Button.Primary onClick={addExercises} sx={{ margin: '10px 25px' }}>
+        <Button.Primary
+          onClick={addExercises}
+          sx={{ margin: '10px 25px', width: '100px' }}
+        >
           Add
         </Button.Primary>
       </div>

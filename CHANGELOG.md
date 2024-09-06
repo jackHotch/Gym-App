@@ -6,6 +6,7 @@ _This is the changelog for the entire project_
 
 - Added Modal to GymUI
 - Refactored project to use Modal component
+- Refactored `WorkoutConfirmationModal.tsx` to use Button component
 
 ## 8/31/2024
 
