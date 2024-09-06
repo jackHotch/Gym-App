@@ -1,24 +1,8 @@
-.modal_background {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(211, 211, 211, .8);
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .new_exercise_modal {
   width: 280px;
   height: 280px;
-  background-color: white;
-  box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
   display: flex;
-  border-radius: 15px;
   flex-direction: column;
-  padding: 10px;
 }
 
 .xbtn {

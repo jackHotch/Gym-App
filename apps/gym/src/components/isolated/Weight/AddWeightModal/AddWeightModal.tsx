@@ -12,6 +12,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { useAddWeight } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
+import { Modal } from '@gymapp/gymui/Modal'
 
 export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
   const [calendar, setCalendar] = useState(false)
@@ -65,14 +66,19 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <div className={styles.modal_background} onClick={closeModal}>
+      <Modal.FullPage
+        width='360px'
+        height='260px'
+        onOutsideClick={closeModal}
+        sx={{ padding: '20px' }}
+      >
         <form onSubmit={handleSubmit}>
-          <div className={styles.modal_container} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.add_weight_modal}>
             <div className={styles.header}>
               <div className={styles.close_btn}>
                 <CloseIcon onClick={closeModal} />
               </div>
-              <h4>New Entry</h4>
+              <h4 className={styles.title}>New Entry</h4>
             </div>
 
             <div className={styles.entry}>
@@ -116,7 +122,7 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
             </Button.Primary>
           </div>
         </form>
-      </div>
+      </Modal.FullPage>
     </LocalizationProvider>
   )
 }

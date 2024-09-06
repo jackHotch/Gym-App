@@ -6,6 +6,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { AddWeightModal } from '../AddWeightModal'
 import { EntryModal } from '../EntryModal'
 import { useToggle, useArrayToggle } from '@/hooks'
+import { AnimatePresence } from 'framer-motion'
 
 export const WeightList = ({ weight }: WeightListProps) => {
   const [isAWMVisible, _, openAWM, closeAWM] = useToggle()
@@ -53,7 +54,9 @@ export const WeightList = ({ weight }: WeightListProps) => {
         </div>
       </div>
 
-      {isAWMVisible && <AddWeightModal closeModal={closeAWM} />}
+      <AnimatePresence>
+        {isAWMVisible && <AddWeightModal closeModal={closeAWM} />}
+      </AnimatePresence>
     </div>
   )
 }

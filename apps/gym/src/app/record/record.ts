@@ -45,6 +45,6 @@ export interface ExerciseModalProps {
 }
 
 export interface WorkoutConfirmationModalProps {
-  closeConfirmationModal: () => void
+  closeModal: () => void
   handleSubmit: (e: ButtonEvent) => void
 }
