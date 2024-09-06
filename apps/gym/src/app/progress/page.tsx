@@ -1,14 +1,7 @@
 'use client'
 
-import { Divider } from '@gymapp/gymui/Divider'
-
 const Progress = () => {
-  return (
-    <>
-      <p>hello</p>
-      <Divider variant='primary'>htshsafddsfja</Divider>
-    </>
-  )
+  return <>Progress</>
 }
 
 export default Progress

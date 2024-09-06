@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 9/6/2024 - v2.0.1
+
+- Finished Modal component
+
 ## 9/5/2024 - v1.0.2
 
 - Added new Text subcomponent to button
