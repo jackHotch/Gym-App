@@ -11,9 +11,7 @@ export const Disabled = ({
   <motion.button
     {...props}
     disabled
-    style={{
-      ...sx,
-    }}
+    style={sx}
     className={`${styles.disabled} ${styles[size]}`}
   >
     {children}

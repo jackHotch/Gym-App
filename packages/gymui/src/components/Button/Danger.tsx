@@ -10,9 +10,7 @@ export const Danger = ({
 }: ButtonProps) => (
   <motion.button
     {...props}
-    style={{
-      ...sx,
-    }}
+    style={sx}
     className={`${styles.danger} ${styles[size]}`}
     whileHover={{
       scale: SCALEHOVER,
