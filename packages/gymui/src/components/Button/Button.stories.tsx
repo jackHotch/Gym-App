@@ -17,8 +17,10 @@ const meta: Meta<StoryProps> = {
     },
   },
   args: {
-    sx: {},
     size: 'small',
+    sx: {
+      margin: '16px',
+    },
     onClick: fn(),
   },
 }

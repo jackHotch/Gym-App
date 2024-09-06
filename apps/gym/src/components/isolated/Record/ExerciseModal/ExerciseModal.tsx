@@ -6,7 +6,6 @@ import styles from './ExerciseModal.module.css'
 import { motion } from 'framer-motion'
 
 export const ExerciseModal = ({
-  showExerciseModal,
   toggleExerciseModal,
   ind,
   showNote,
