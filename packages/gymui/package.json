@@ -4,7 +4,8 @@
   "private": true,
   "exports": {
     "./Button": "./src/components/Button/Button.tsx",
-    "./Modal": "./src/components/Modal/Modal.tsx"
+    "./Modal": "./src/components/Modal/Modal.tsx",
+    "./CloseIcon": "./src/components/CloseIcon/CloseIcon.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

@@ -5,7 +5,6 @@ import styles from './AddWeightModal.module.css'
 import { AddWeightModalProps } from '@/app/weight/Weight'
 import { FormEvent, TextInputChangeEvent } from '@/app/globals'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
-import CloseIcon from '@mui/icons-material/Close'
 import dayjs, { Dayjs } from 'dayjs'
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
 import { LocalizationProvider } from '@mui/x-date-pickers'
@@ -13,6 +12,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { useAddWeight } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import { Modal } from '@gymapp/gymui/Modal'
+import { CloseIcon } from '@gymapp/gymui/CloseIcon'
 
 export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
   const [calendar, setCalendar] = useState(false)

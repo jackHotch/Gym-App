@@ -9,7 +9,6 @@ interface CloseIconProps {
 
 export const CloseIcon = ({ sx, onClick }: CloseIconProps) => {
   const CloseButton = motion(CloseIconMUI)
-
   return (
     <CloseButton
       data-testid='closeIcon'
