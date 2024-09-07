@@ -5,12 +5,12 @@ import { AddExerciseModalProps } from '@/app/record/record'
 import { IWorkout } from '@/app/globals'
 import styles from './AddExerciseModal.module.css'
 import { Searchbar } from '@/components/reusable/Searchbar/Searchbar'
-import CloseIcon from '@mui/icons-material/Close'
 import { CreateNewExerciseModal } from '../CreateNewExerciseModal'
 import { AnimatePresence } from 'framer-motion'
 import { useToggle, useExercises } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import { Modal } from '@gymapp/gymui/Modal'
+import { CloseIcon } from '@gymapp/gymui/CloseIcon'
 
 export const AddExerciseModal = ({
   closeModal,
@@ -40,9 +40,7 @@ export const AddExerciseModal = ({
       <div className={styles.header}>
         <Button.Text onClick={openCreateExerciseModal}>Create New Exercise</Button.Text>
 
-        <button onClick={closeModal}>
-          <CloseIcon id={styles.top_clear_btn} />
-        </button>
+        <CloseIcon onClick={closeModal} />
       </div>
       <div className={styles.textbox}>
         <Searchbar

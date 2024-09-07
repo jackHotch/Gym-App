@@ -31,10 +31,6 @@
     margin-bottom: 15px;
 }
 
-#top_clear_btn {
-    cursor: pointer;
-}
-
 .future_exercise_list {
     margin: 15px 25px;
     flex: 55%;

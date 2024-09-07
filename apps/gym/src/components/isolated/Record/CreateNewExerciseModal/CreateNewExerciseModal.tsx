@@ -3,11 +3,11 @@
 import { useState } from 'react'
 import { CreateNewExerciseModalProps } from '@/app/record/record'
 import styles from './CreateNewExerciseModal.module.css'
-import CloseIcon from '@mui/icons-material/Close'
 import { DivEvent, FormEvent, TextInputChangeEvent } from '@/app/globals'
 import { useCreateExercise } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import { Modal } from '@gymapp/gymui/Modal'
+import { CloseIcon } from '@gymapp/gymui/CloseIcon'
 
 export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalProps) => {
   const [name, setName] = useState('')
@@ -38,9 +38,7 @@ export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalPro
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className={styles.new_exercise_modal}>
           <div className={styles.xbtn}>
-            <button onClick={closeModal}>
-              <CloseIcon />
-            </button>
+            <CloseIcon onClick={closeModal} />
           </div>
           <div className={styles.new_exercise_form}>
             <h3 className={styles.title}>Create New Exercise</h3>

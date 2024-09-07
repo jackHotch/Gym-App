@@ -5,7 +5,7 @@ import { SearchbarProps, TextInputChangeEvent } from '@/app/globals'
 import { IExercises } from '@/app/globals'
 import styles from './Searchbar.module.css'
 import SearchIcon from '@mui/icons-material/Search'
-import CloseIcon from '@mui/icons-material/Close'
+import { CloseIcon } from '@gymapp/gymui/CloseIcon'
 
 export const Searchbar = ({
   placeholder,
@@ -62,11 +62,7 @@ export const Searchbar = ({
           onChange={handleFilter}
         />
         <div className={styles.search_icon}>
-          {!wordEntered ? (
-            <SearchIcon />
-          ) : (
-            <CloseIcon id={styles.clear_btn} onClick={clearInput} />
-          )}
+          {!wordEntered ? <SearchIcon /> : <CloseIcon onClick={clearInput} />}
         </div>
       </div>
       {filteredData?.length != 0 && (

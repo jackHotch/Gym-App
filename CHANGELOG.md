@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 9/8/2024
+
+- Refactored the project to use the CloseIcon component
+
 ## 9/7/2024
 
 - Added CloseIcon to GymUI
