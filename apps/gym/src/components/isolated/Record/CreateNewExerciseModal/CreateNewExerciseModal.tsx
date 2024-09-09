@@ -3,11 +3,12 @@
 import { useState } from 'react'
 import { CreateNewExerciseModalProps } from '@/app/record/record'
 import styles from './CreateNewExerciseModal.module.css'
-import { DivEvent, FormEvent, TextInputChangeEvent } from '@/app/globals'
+import { FormEvent, TextInputChangeEvent } from '@/app/globals'
 import { useCreateExercise } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import { Modal } from '@gymapp/gymui/Modal'
 import { CloseIcon } from '@gymapp/gymui/CloseIcon'
+import { Form } from '@gymapp/gymui/Form'
 
 export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalProps) => {
   const [name, setName] = useState('')
@@ -21,11 +22,6 @@ export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalPro
 
   function handleChange(e: TextInputChangeEvent) {
     setName(e.target.value)
-  }
-
-  function backgroundClick(e: DivEvent) {
-    e.stopPropagation()
-    closeModal()
   }
 
   return (
@@ -43,8 +39,7 @@ export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalPro
           <div className={styles.new_exercise_form}>
             <h3 className={styles.title}>Create New Exercise</h3>
 
-            <input
-              type='text'
+            <Form.Text.Outline
               placeholder='Exercise Name'
               value={name}
               onChange={(e) => handleChange(e)}

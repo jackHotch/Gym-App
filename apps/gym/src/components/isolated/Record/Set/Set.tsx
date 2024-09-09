@@ -3,6 +3,7 @@
 import { SetProps } from '@/app/record/record'
 import styles from './Set.module.css'
 import { motion } from 'framer-motion'
+import { Form } from '@gymapp/gymui/Form'
 
 export const Set = ({
   value,
@@ -41,7 +42,7 @@ export const Set = ({
       }}
     >
       <label>Set {setNumber + 1}</label>
-      <input
+      {/* <input
         autoComplete='off'
         type='text'
         placeholder='lbs'
@@ -61,7 +62,29 @@ export const Set = ({
         placeholder='RPE'
         value={value.rpe}
         onChange={(e) => handleChange(e, exerciseNumber, setNumber, 'rpe')}
+      /> */}
+
+      <Form.Text.Filled
+        autoComplete='off'
+        placeholder='lbs'
+        value={value.weight}
+        onChange={(e) => handleChange(e, exerciseNumber, setNumber, 'weight')}
       />
+
+      <Form.Text.Filled
+        autoComplete='off'
+        placeholder='Reps'
+        value={value.reps}
+        onChange={(e) => handleChange(e, exerciseNumber, setNumber, 'reps')}
+      />
+
+      <Form.Text.Filled
+        autoComplete='off'
+        placeholder='RPE'
+        value={value.rpe}
+        onChange={(e) => handleChange(e, exerciseNumber, setNumber, 'rpe')}
+      />
+
       <span className={styles.delete_set_btn} onClick={deleteSet}>
         X
       </span>
