@@ -5,6 +5,7 @@ _This is the changelog for the entire project_
 ## 9/9/2024
 
 - Added Form.Text to GymUI
+- Refactored Add Set buttons
 
 ## 9/8/2024
 

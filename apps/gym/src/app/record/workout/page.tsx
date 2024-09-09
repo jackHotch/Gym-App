@@ -193,13 +193,25 @@ const Workout = () => {
                       )}
                     </AnimatePresence>
 
-                    <button
+                    {/* <button
                       className={styles.add_set}
                       type='button'
                       onClick={() => addSet(key)}
                     >
                       Add Set
-                    </button>
+                    </button> */}
+                    <Button.Primary
+                      type='button'
+                      sx={{
+                        display: 'block',
+                        margin: '10px auto',
+                        width: '175px',
+                        padding: '4px 24px',
+                      }}
+                      onClick={() => addSet(key)}
+                    >
+                      Add Set
+                    </Button.Primary>
                   </motion.div>
                 )
               })}
@@ -209,7 +221,8 @@ const Workout = () => {
           <Button.Secondary
             type='button'
             onClick={openAddExerciseModal}
-            sx={{ margin: '16px auto 8px auto' }}
+            size='medium'
+            sx={{ margin: '16px auto 8px auto', width: '175px' }}
           >
             Add Exercise
           </Button.Secondary>
@@ -218,7 +231,7 @@ const Workout = () => {
             type='button'
             onClick={openConfirmationModal}
             size='medium'
-            sx={{ margin: '8px auto 16px auto' }}
+            sx={{ margin: '8px auto 16px auto', width: '175px' }}
           >
             Finish Workout
           </Button.Primary>
