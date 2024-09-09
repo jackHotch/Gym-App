@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 9/9/2024
+
+- Added Form.Text to GymUI
+
 ## 9/8/2024
 
 - Refactored the project to use the CloseIcon component

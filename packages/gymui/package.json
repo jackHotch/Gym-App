@@ -1,11 +1,12 @@
 {
   "name": "@gymapp/gymui",
-  "version": "2.0.1",
+  "version": "4.0.1",
   "private": true,
   "exports": {
     "./Button": "./src/components/Button/Button.tsx",
     "./Modal": "./src/components/Modal/Modal.tsx",
-    "./CloseIcon": "./src/components/CloseIcon/CloseIcon.tsx"
+    "./CloseIcon": "./src/components/CloseIcon/CloseIcon.tsx",
+    "./Form": "./src/components/Form/Form.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
