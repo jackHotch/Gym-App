@@ -12,15 +12,10 @@
 }
 
 .set input {
-  width: 55px;
-  height: 30px;
+  width: 45px;
+  height: 20px;
   margin: 5px 15px;
-  border: none;
-  background-color: lightgray;
-  border-radius: 4px;
   text-align: center;
-  font-size: 105%;
-  font-family: inherit;
 }
 
 .delete_set_btn {

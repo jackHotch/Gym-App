@@ -193,13 +193,6 @@ const Workout = () => {
                       )}
                     </AnimatePresence>
 
-                    {/* <button
-                      className={styles.add_set}
-                      type='button'
-                      onClick={() => addSet(key)}
-                    >
-                      Add Set
-                    </button> */}
                     <Button.Primary
                       type='button'
                       sx={{

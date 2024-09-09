@@ -13,6 +13,7 @@ import { useAddWeight } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import { Modal } from '@gymapp/gymui/Modal'
 import { CloseIcon } from '@gymapp/gymui/CloseIcon'
+import { Form } from '@gymapp/gymui/Form'
 
 export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
   const [calendar, setCalendar] = useState(false)
@@ -72,7 +73,7 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
         onOutsideClick={closeModal}
         sx={{ padding: '20px' }}
       >
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <div className={styles.add_weight_modal}>
             <div className={styles.header}>
               <div className={styles.close_btn}>
@@ -84,14 +85,12 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
             <div className={styles.entry}>
               <div className={styles.weight}>
                 <label>Weight: </label>
-                <div className={styles.weight_input}>
-                  <input
-                    type='text'
-                    placeholder='lbs'
-                    value={weight}
-                    onChange={updateWeight}
-                  />
-                </div>
+                <Form.Text.Outline
+                  placeholder='lbs'
+                  value={weight}
+                  onChange={updateWeight}
+                  sx={{ width: '210px', margin: '10px 0 0 10px' }}
+                />
               </div>
 
               <div className={styles.date}>
@@ -121,7 +120,7 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
               Add
             </Button.Primary>
           </div>
-        </form>
+        </Form>
       </Modal.FullPage>
     </LocalizationProvider>
   )
