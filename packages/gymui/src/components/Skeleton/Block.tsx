@@ -16,6 +16,7 @@ export const Block = ({ sx, count = 1, width, height = '24px' }: BlockProps) => 
         <motion.div
           key={key}
           className={styles.line}
+          data-testid='block'
           style={{ width: width, height: height, ...sx }}
           animate={{ backgroundColor: 'var(--darkgrey)' }}
           transition={{

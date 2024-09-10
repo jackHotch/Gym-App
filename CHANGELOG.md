@@ -7,6 +7,7 @@ _This is the changelog for the entire project_
 - Added Form.Text to GymUI
 - Refactored Add Set buttons
 - Refactored the project to use the Form.Text component
+- Added Skeleton to GymUI
 
 ## 9/8/2024
 
