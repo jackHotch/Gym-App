@@ -5,6 +5,7 @@ _This is the changelog for GymUI_
 ## 9/9/2024 - 4.0.1
 
 - Finished the Form.Text component
+- Finished the Skeleton component
 
 ## 9/7/2024 - v3.0.1
 
