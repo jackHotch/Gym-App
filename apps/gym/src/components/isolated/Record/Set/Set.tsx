@@ -42,27 +42,6 @@ export const Set = ({
       }}
     >
       <label>Set {setNumber + 1}</label>
-      {/* <input
-        autoComplete='off'
-        type='text'
-        placeholder='lbs'
-        value={value.weight}
-        onChange={(e) => handleChange(e, exerciseNumber, setNumber, 'weight')}
-      />
-      <input
-        autoComplete='off'
-        type='text'
-        placeholder='Reps'
-        value={value.reps}
-        onChange={(e) => handleChange(e, exerciseNumber, setNumber, 'reps')}
-      />
-      <input
-        autoComplete='off'
-        type='text'
-        placeholder='RPE'
-        value={value.rpe}
-        onChange={(e) => handleChange(e, exerciseNumber, setNumber, 'rpe')}
-      /> */}
 
       <Form.Text.Filled
         autoComplete='off'

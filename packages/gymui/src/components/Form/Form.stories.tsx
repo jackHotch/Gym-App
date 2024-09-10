@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Form } from './Form'
 import { ComponentProps } from 'react'
-import { fn } from '@storybook/test'
 
 type StoryProps = ComponentProps<typeof Form>
 
