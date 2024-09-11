@@ -1,5 +1,5 @@
 const Home = () => {
-  return <div>This is a test for login</div>
+  return <div>This is a test for for the terminal</div>
 }
 
 export default Home
