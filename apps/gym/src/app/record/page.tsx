@@ -9,7 +9,6 @@ import { duration } from '@mui/material'
 const Record = () => {
   const { data: currentSplit } = useCurrentSplit()
   const MotionLink = motion(Link)
-
   return (
     <>
       <div>
