@@ -14,7 +14,15 @@ import {
 } from 'chart.js'
 import { lineChartData } from './FAKEDATA'
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend, Filler)
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend,
+  Filler
+)
 
 ChartJS.defaults.maintainAspectRatio = false
 
@@ -51,7 +59,7 @@ export const Chart = ({ weight }: ChartProps) => {
     <div className={styles.container}>
       <DateRangePicker />
       <div className={styles.chart_container}>
-        <Line options={options} data={lineChartData} />
+        <Line options={options} data={chartData} />
       </div>
     </div>
   )
