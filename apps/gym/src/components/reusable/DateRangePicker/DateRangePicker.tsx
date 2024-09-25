@@ -2,8 +2,8 @@ import styles from './DateRangePicker.module.css'
 
 export const DateRangePicker = () => {
   return (
-    <div className={styles.container}>
-      <h1>DateRangePicker</h1>
+    <div>
+      <h1 className={styles.heading}>To Be Added - DateRangePicker</h1>
     </div>
   )
 }
