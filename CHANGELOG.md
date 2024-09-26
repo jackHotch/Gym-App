@@ -2,6 +2,11 @@
 
 _This is the changelog for the entire project_
 
+## 9/25/2024
+
+- Created Resume branch for the resume version of the project
+- Deployed Resume version of app
+
 ## 9/9/2024
 
 - Added Form.Text to GymUI

@@ -1,18 +1,24 @@
 'use client'
 
 import styles from './Finished.module.css'
-import Link from 'next/link'
 import { useWorkoutNumber } from '@/hooks'
+import { Button } from '@gymapp/gymui/Button'
+import { useRouter } from 'next/navigation'
 
 const Finished = () => {
   const { data: workoutNumber } = useWorkoutNumber()
+  const router = useRouter()
 
   return (
     <div className={styles.created}>
       <p>Workout #{workoutNumber} Recorded!</p>
-      <Link className={styles.home_link} href={'/record'}>
+      <Button.Primary
+        size='large'
+        sx={{ marginTop: '20px' }}
+        onClick={() => router.push('/record')}
+      >
         Done
-      </Link>
+      </Button.Primary>
     </div>
   )
 }

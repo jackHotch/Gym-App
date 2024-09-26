@@ -85,14 +85,14 @@
   border: 2px solid lightgray;
   border-radius: 4px;
   padding: 6px 4px;
-  height: 14px;
+  height: 18px;
   outline: none;
   width: 100%;
   resize: none;
-  max-width: 400px;
+  max-width: 370px;
   font-size: 1.15rem;
   font-family: inherit;
-
+  line-height: normal;
 }
 
 .notes textarea:is(:focus) {
