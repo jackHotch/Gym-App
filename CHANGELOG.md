@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 9/27/2024
+
+- Refactored api to use postgres
+
 ## 9/25/2024
 
 - Created Resume branch for the resume version of the project

@@ -1,23 +1,25 @@
-import mysql from 'mysql2'
+import pg from 'pg'
+const { Pool } = pg
 import dotenv from 'dotenv'
 import { IExercises } from '../globals'
 
 dotenv.config()
 
-const pool = mysql
-  .createPool({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE,
-  })
-  .promise()
+const pool = new Pool({
+  host: process.env.POSTGRES_HOST,
+  user: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DATABASE,
+  port: parseInt(process.env.POSTGRES_PORT),
+})
+
+pool.connect()
 
 export async function getLastWorkoutNumber() {
-  const [number] = await pool.query(
-    'SELECT `Workout Number` FROM `workouts` ORDER BY id DESC LIMIT 1'
+  const { rows } = await pool.query(
+    'SELECT "Workout_Number" FROM workouts ORDER BY id DESC LIMIT 1'
   )
-  return number[0]['Workout Number']
+  return rows[0]['Workout_Number']
 }
 
 export async function createWorkout(workout: IExercises[]) {
@@ -47,7 +49,7 @@ export async function createWorkout(workout: IExercises[]) {
 
   for (let i = 0; i < rows.length; i++) {
     await pool.query(
-      'insert into `workouts` (`Date`, `Start Time`, `Workout Number`, `Exercise Name`, `Set Order`, `Weight`, `Reps`, `Notes`, `RPE`) values (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      `insert into workouts ("Date", "Start_Time", "Workout_Number", "Exercise_Name", "Set_Order", "Weight", "Reps", "Notes", "RPE") values ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
       rows[i]
     )
   }
