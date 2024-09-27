@@ -1,16 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Skeleton } from './Skeleton'
+import { Loading } from './Loading'
 import { ComponentProps } from 'react'
 
-type StoryProps = ComponentProps<typeof Skeleton>
+type StoryProps = ComponentProps<typeof Loading>
 
 const meta: Meta<StoryProps> = {
-  component: Skeleton,
+  component: Loading,
   tags: ['autodocs'],
   args: {
-    width: '600px',
-    height: '24px',
-    count: 0,
+    children: '',
     sx: {},
   },
 }
@@ -19,11 +17,11 @@ export default meta
 
 type Story = StoryObj<StoryProps>
 
-export const Block: Story = {
+export const Text: Story = {
   args: {
-    count: 10,
+    children: 'This is text',
   },
   render: (args) => {
-    return <Skeleton.Block {...args} />
+    return <Loading.Text {...args} />
   },
 }
