@@ -1,21 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  padding: 10px;
   width: 45%;
   min-width: 400px;
   max-height: 100%;
   position: relative;
-}
-
-.container h2 {
-  width: 60%;
-  height: 55px;
-  margin: 5px auto 20px auto;
-  text-align: center;
-  padding-bottom: 10px;
-  font-size: 2rem;
 }
 
 .add_btn_div {
@@ -27,7 +16,7 @@
   padding: 0 10px;
   align-items: center;
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 10px;
 }
 
@@ -40,12 +29,12 @@
   display: flex;
   width: 50%;
   flex-direction: column;
-  max-height: calc(100% - 60px);
   box-shadow: rgba(99, 99, 99, 0.6) 0px 2px 8px 0px;
-  margin: auto;
-  padding: 10px 20px 0 20px;
   border-radius: 20px;
   min-width: 350px;
+  height: calc(100% - 20px);
+  margin: auto;
+  padding: 10px 20px;
 }
 
 .list_sub_headings {
@@ -58,7 +47,6 @@
 }
 
 .list_entries {
-  width: 50%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -71,48 +59,14 @@
   display: none;
 }
 
-.entry {
-  margin: 10px 0;
-  width: 100%;
-  border-bottom: 1px solid black;
-  padding: 5px;
-  font-size: 1.1rem;
-  max-width: 100%;
-  border-radius: 5px 5px 0 0;
-}
-
-.entry:first-child {
-  padding-top: 10px;
-}
-
-.entry:hover {
-  background-color: lightgray;
-}
-
-#number_head,
-.number {
+#number_head {
   display: inline-block;
   margin-right: 20px;
   width: 33px;
 }
 
-#weight_head,
-.weight {
+#weight_head {
   display: inline-block;
   margin-right: 70px;
   width: 65px;
-}
-
-.date {
-  display: inline-block;
-  width: 100px;
-  margin-right: 20px;
-}
-
-#three_dots {
-  cursor: pointer;
-}
-
-.entry_modal {
-  position: relative;
 }
