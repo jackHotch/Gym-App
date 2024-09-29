@@ -4,7 +4,7 @@ import styles from './Record.module.css'
 import Link from 'next/link'
 import { useCurrentSplit } from '@/hooks'
 import { motion } from 'framer-motion'
-import { duration } from '@mui/material'
+import { Loading } from '@gymapp/gymui/Loading'
 
 const Record = () => {
   const { data: currentSplit } = useCurrentSplit()
@@ -12,8 +12,18 @@ const Record = () => {
 
   return (
     <>
-      <div>
-        <h2 className={styles.split_name}>{currentSplit?.name}</h2>
+      <div className={styles.split_name_container}>
+        {currentSplit ? (
+          <h2 className={styles.split_name}>{currentSplit?.name}</h2>
+        ) : (
+          <Loading.Text
+            fontSize='3rem'
+            pulseSize={12}
+            sx={{ gap: '20px', height: '57.5px' }}
+          >
+            Getting your Current Split
+          </Loading.Text>
+        )}
       </div>
 
       <MotionLink

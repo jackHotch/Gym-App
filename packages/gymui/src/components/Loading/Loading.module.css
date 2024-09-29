@@ -1,7 +1,6 @@
 .text {
   display: flex;
+  flex-direction: row;
   gap: 4px;
-  font-size: 18px;
   align-items: center;
-  line-height: min;
 }

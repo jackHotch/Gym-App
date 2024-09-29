@@ -6,7 +6,8 @@
     "./Button": "./src/components/Button/Button.tsx",
     "./Modal": "./src/components/Modal/Modal.tsx",
     "./CloseIcon": "./src/components/CloseIcon/CloseIcon.tsx",
-    "./Form": "./src/components/Form/Form.tsx"
+    "./Form": "./src/components/Form/Form.tsx",
+    "./Loading": "./src/components/Loading/Loading.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
