@@ -1,0 +1,43 @@
+.entry {
+  margin: 10px 0;
+  width: calc(100% - 10px);
+  border-bottom: 1px solid black;
+  padding: 5px;
+  font-size: 1.1rem;
+  max-width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.entry:first-child {
+  padding-top: 10px;
+}
+
+.entry:hover {
+  background-color: lightgray;
+}
+
+.number {
+  display: inline-block;
+  margin-right: 20px;
+  width: 33px;
+}
+
+.weight {
+  display: inline-block;
+  margin-right: 70px;
+  width: 65px;
+}
+
+.date {
+  display: inline-block;
+  width: 100px;
+  margin-right: 20px;
+}
+
+#three_dots {
+  cursor: pointer;
+}
+
+.entry_modal {
+  position: relative;
+}
