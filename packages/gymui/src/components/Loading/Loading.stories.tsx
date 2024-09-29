@@ -9,7 +9,11 @@ const meta: Meta<StoryProps> = {
   tags: ['autodocs'],
   args: {
     children: '',
-    sx: {},
+    pulseSize: 7,
+    fontSize: '18px',
+    sx: {
+      padding: '20px',
+    },
   },
 }
 
@@ -19,7 +23,7 @@ type Story = StoryObj<StoryProps>
 
 export const Text: Story = {
   args: {
-    children: 'This is text',
+    children: 'Loading',
   },
   render: (args) => {
     return <Loading.Text {...args} />
