@@ -10,7 +10,7 @@ export interface TextProps extends LoadingProps {
 export const Text = ({ pulseSize = 7, fontSize = '18px', children, sx }: TextProps) => {
   return (
     <div className={styles.text} style={{ fontSize: fontSize, ...sx }}>
-      <span>{children}</span>
+      {children}
       <PulseLoader size={pulseSize} />
     </div>
   )

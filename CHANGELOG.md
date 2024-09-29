@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 9/28/2024
+
+- Refactored app to use Loading.Text and Clip Loader
+
 ## 9/27/2024
 
 - Refactored api to use postgres

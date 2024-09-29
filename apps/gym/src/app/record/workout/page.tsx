@@ -14,6 +14,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useToggle, useArrayToggle, useWorkoutNumber, useCreateWorkout } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
+import ClipLoader from 'react-spinners/ClipLoader'
 
 const Workout = () => {
   const [showAddExerciseModal, __, openAddExerciseModal, closeAddExerciseModal] =
@@ -83,7 +84,9 @@ const Workout = () => {
     <div className={styles.background}>
       <form>
         <div className={styles.container}>
-          <h1 className={styles.title}>Workout #{workoutNumber}</h1>
+          <h1 className={styles.title}>
+            Workout #{workoutNumber ? workoutNumber : <ClipLoader size={20} />}
+          </h1>
           <div className={styles.exercises}>
             <AnimatePresence>
               {workout.map((value, key) => {
