@@ -11,7 +11,7 @@ export interface BlockProps {
 
 export const Block = ({ sx, count = 1, width, height = '24px' }: BlockProps) => {
   return (
-    <>
+    <div>
       {[...Array(count)].map((_, key) => (
         <motion.div
           key={key}
@@ -27,6 +27,6 @@ export const Block = ({ sx, count = 1, width, height = '24px' }: BlockProps) => 
           }}
         />
       ))}
-    </>
+    </div>
   )
 }

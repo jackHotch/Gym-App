@@ -7,6 +7,7 @@
     "./Modal": "./src/components/Modal/Modal.tsx",
     "./CloseIcon": "./src/components/CloseIcon/CloseIcon.tsx",
     "./Form": "./src/components/Form/Form.tsx",
+    "./Skeleton": "./src/components/Skeleton/Skeleton.tsx",
     "./Loading": "./src/components/Loading/Loading.tsx"
   },
   "scripts": {

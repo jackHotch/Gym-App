@@ -6,10 +6,10 @@ import { AddWeightModal } from '../AddWeightModal'
 import { WeightListEntry } from './WeightListEntry/WeightListEntry'
 import { useToggle } from '@/hooks'
 import { AnimatePresence } from 'framer-motion'
+import { Loading } from '@gymapp/gymui/Loading'
 
-export const WeightList = ({ weight }: WeightListProps) => {
+export const WeightList = ({ weight, isLoading }: WeightListProps) => {
   const [isAWMVisible, _, openAWM, closeAWM] = useToggle()
-  const arr: boolean[] = new Array(weight?.length).fill(false)
   let reversedArray: number[] = []
   weight?.map((_, index) => {
     return reversedArray.push(index)
@@ -32,9 +32,21 @@ export const WeightList = ({ weight }: WeightListProps) => {
           <span id={styles.date_head}>Date</span>
         </div>
         <div className={styles.list_entries}>
-          {reversedWeight?.map((value, key) => {
-            return <WeightListEntry key={key} value={value} id={reversedArray[key] + 1} />
-          })}
+          {isLoading ? (
+            <Loading.Text
+              fontSize='26px'
+              pulseSize={10}
+              sx={{ justifyContent: 'center', fontWeight: '500' }}
+            >
+              Gathering Data
+            </Loading.Text>
+          ) : (
+            reversedWeight?.map((value, key) => {
+              return (
+                <WeightListEntry key={key} value={value} id={reversedArray[key] + 1} />
+              )
+            })
+          )}
         </div>
       </div>
 
