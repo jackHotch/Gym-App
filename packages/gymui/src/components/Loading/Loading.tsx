@@ -1,8 +1,8 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 import { Text } from './Text'
 
 export interface LoadingProps {
-  children?: string
+  children?: string | ReactNode
   sx?: CSSProperties
 }
 

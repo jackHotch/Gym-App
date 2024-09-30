@@ -26,9 +26,7 @@
 }
 
 .list {
-  display: flex;
   width: 50%;
-  flex-direction: column;
   box-shadow: rgba(99, 99, 99, 0.6) 0px 2px 8px 0px;
   border-radius: 20px;
   min-width: 350px;
@@ -50,7 +48,6 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   overflow: scroll;
   min-width: 350px;
 }

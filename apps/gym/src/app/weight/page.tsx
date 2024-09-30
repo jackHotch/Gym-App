@@ -6,12 +6,12 @@ import { Chart } from '@/components/reusable/Chart/Chart'
 import { useWeight } from '@/hooks'
 
 const Weight = () => {
-  const { data } = useWeight()
+  const { data, isLoading } = useWeight()
 
   return (
     <div className={styles.container}>
       <div className={styles.body}>
-        <WeightList weight={data} />
+        <WeightList weight={data} isLoading={isLoading} />
 
         <Chart weight={data} />
       </div>
