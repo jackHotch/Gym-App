@@ -15,6 +15,7 @@ export interface IWeightData {
 
 export interface ChartProps {
   weight: IWeightData[] | undefined
+  isLoading: boolean
 }
 
 export interface SearchbarProps {
