@@ -5,6 +5,7 @@ _This is the changelog for the entire project_
 ## 10/10/2024
 
 - Refactored WeightList and Chart to have loading messages
+- Updated README
 
 ## 9/28/2024
 

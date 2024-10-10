@@ -57,7 +57,7 @@ _Follow the following steps to intall the app on your local machine_
 ### Prerequisites
 
 - [NodeJS](https://nodejs.org/en/download/prebuilt-installer)
-- [MySQL](https://dev.mysql.com/downloads/installer/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ### Installation
 
@@ -76,17 +76,19 @@ _Follow the following steps to run the application on your machine_
 1. Go into each `/Databse/* Parser/index.js` file and change the update the connection to your local database
 
 ```js
-let con = mysql.createConnection({
-  host: YOUR INFORMATION,
-  user: YOUR INFORMATION,
-  password: YOUR INFORMATION,
-  database: YOUR INFORMATION,
-});
+const pool = new Pool({
+  host: YOUR_INFORMATION,
+  port: YOUR_INFORMATION,
+  database: YOUR_INFORMATION,
+  user: YOUR_INFORMATION,
+  password: YOUR_INFORMATION,
+})
 ```
 
 2. Run each parsing file to populate the database
 
 ```sh
+npm install
 node index.js
 ```
 
@@ -98,7 +100,7 @@ npm install
 
 ### Run the Application
 
-1. Start your MySQL database
+1. Start your PostgreSQL database
 2. Open your terminal
 3. In the root of the project run the following command to start all dev servers
 
