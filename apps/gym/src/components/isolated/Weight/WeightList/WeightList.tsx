@@ -36,7 +36,12 @@ export const WeightList = ({ weight, isLoading }: WeightListProps) => {
             <Loading.Text
               fontSize='26px'
               pulseSize={10}
-              sx={{ justifyContent: 'center', fontWeight: '500' }}
+              sx={{
+                justifyContent: 'center',
+                fontWeight: '500',
+                position: 'absolute',
+                inset: '0',
+              }}
             >
               Gathering Data
             </Loading.Text>
