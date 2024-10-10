@@ -33,6 +33,9 @@
   height: calc(100% - 20px);
   margin: auto;
   padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .list_sub_headings {
@@ -50,6 +53,7 @@
   flex-direction: column;
   overflow: scroll;
   min-width: 350px;
+  height: 100%;
 }
 
 .list_entries::-webkit-scrollbar {
