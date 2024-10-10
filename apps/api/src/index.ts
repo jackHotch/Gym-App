@@ -7,7 +7,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.json({message: "Hello!"})
+  res.json({ message: 'gymapp/api' })
 })
 
 import exerciseRouter from './routes/Exercises'
@@ -25,3 +25,5 @@ app.use('/api/workout', workoutRouter)
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })
+
+export default app
