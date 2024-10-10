@@ -15,4 +15,6 @@
   padding: 20px;
   border-radius: 20px;
   margin: 0 20px;
+  position: relative;
+  z-index: -1;
 }

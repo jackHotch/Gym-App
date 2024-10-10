@@ -2,6 +2,7 @@ import styles from './TestChart.module.css'
 import { ChartProps } from '@/app/globals'
 import { Line } from 'react-chartjs-2'
 import { DateRangePicker } from '../DateRangePicker'
+import { Loading } from '@gymapp/gymui/Loading'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -26,7 +27,7 @@ ChartJS.register(
 
 ChartJS.defaults.maintainAspectRatio = false
 
-export const Chart = ({ weight }: ChartProps) => {
+export const Chart = ({ weight, isLoading }: ChartProps) => {
   let labels: string[] = []
   let data: number[] = []
 
@@ -59,7 +60,22 @@ export const Chart = ({ weight }: ChartProps) => {
     <div className={styles.container}>
       <DateRangePicker />
       <div className={styles.chart_container}>
-        <Line options={options} data={chartData} />
+        {isLoading ? (
+          <Loading.Text
+            fontSize='26px'
+            pulseSize={10}
+            sx={{
+              justifyContent: 'center',
+              fontWeight: '500',
+              position: 'absolute',
+              inset: '0',
+            }}
+          >
+            Creating Graph
+          </Loading.Text>
+        ) : (
+          <Line options={options} data={chartData} />
+        )}
       </div>
     </div>
   )
