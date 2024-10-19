@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 10/18/2024
+
+- Added an endpoint for the cronjob
+
 ## 10/10/2024
 
 - Refactored WeightList and Chart to have loading messages

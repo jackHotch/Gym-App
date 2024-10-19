@@ -7,7 +7,11 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.json({message: "Hello!"})
+  res.json({ message: 'Hello!' })
+})
+
+app.get('/cronjob', (req, res) => {
+  res.json({ message: 'This is for the cronjob' })
 })
 
 import exerciseRouter from './routes/Exercises'
