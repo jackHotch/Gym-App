@@ -3,7 +3,7 @@
 Created by Jack Hotchkiss
 
 Started: April 12th, 2024  
-Ended: Present
+Ended: _In Progress_
 
 ![Screenshot](/assets/screenshot.png)
 
@@ -11,7 +11,7 @@ Ended: Present
 
 ### Description
 
-This project is a web app to help users track their progress on their fitness journey. It has features such as...
+This project is a web app to help users track their progress on their fitness journey. It will have features such as...
 
 - Workout Tracking
 - Weight Tracking
@@ -49,6 +49,20 @@ gymapp
 `/api` - backend of web app
 
 `/gymui` - custom component library
+
+## GymUI
+
+This is a custom component library made specifically for this app.
+
+![Screenshot](/assets/gymui.png)
+
+### Storybook
+
+To run the component library in storybook
+
+```sh
+npm run storybook
+```
 
 ## Getting Started
 
@@ -110,20 +124,6 @@ npm run dev
 
 5. Go to `http://localhost:3000` in your web browser
 
-## GymUI
-
-This is a custom component library made specifically for this app.
-
-![Screenshot](/assets/gymui.png)
-
-### Storybook
-
-To run the component library in storybook
-
-```sh
-npm run storybook
-```
-
 ## Other Information
 
 ### Build the Project
@@ -140,4 +140,4 @@ This command will build the entire project.
 npm run test
 ```
 
-This command will test the entire project
+This command will run the tests for the entire project
