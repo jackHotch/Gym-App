@@ -2,6 +2,8 @@ const pg = require('pg')
 const { Pool } = pg
 const fs = require('fs')
 const { parse } = require('csv-parse')
+const dotenv = require('dotenv')
+dotenv.config()
 
 const rows = new Set()
 
@@ -20,11 +22,11 @@ fs.createReadStream('strong.csv')
 
 async function insertIntoMySql(rows) {
   const pool = new Pool({
-    host: '127.0.0.1',
-    port: 5432,
-    database: 'gymapp',
-    user: 'postgres',
-    password: '12345',
+    host: process.env.HOST,
+    port: process.env.PORT,
+    database: process.env.DATABASE,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
   })
 
   pool.connect()
