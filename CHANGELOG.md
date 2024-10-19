@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 10/19/2024
+
+- Added env files to database parsers
+
 ## 10/18/2024
 
 - Added an endpoint for the cronjob
