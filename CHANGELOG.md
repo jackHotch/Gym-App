@@ -2,6 +2,11 @@
 
 _This is the changelog for the entire project_
 
+## 10/20/2024
+
+- Finished DatePicker component
+- Refactored the project to use DatePicker
+
 ## 10/19/2024
 
 - Added env files to database parsers

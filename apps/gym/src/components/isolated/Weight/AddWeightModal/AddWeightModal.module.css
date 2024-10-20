@@ -18,7 +18,7 @@
   justify-content: flex-end;
 }
 
-.close_btn>* {
+.close_btn > * {
   cursor: pointer;
 }
 
@@ -47,48 +47,4 @@
   width: 60px;
   text-align: end;
   margin: 10px 0 0 10px;
-}
-
-.date_input {
-  align-items: center;
-  justify-content: space-between;
-}
-
-.date_input {
-  display: flex;
-  border: 1px solid black;
-  padding: 1px 2px;
-  border-radius: 4px;
-  width: 220px;
-  margin: 10px 0 0 10px;
-}
-
-.date_input input {
-  border: none;
-  width: 100%;
-  padding: 7px;
-  font-family: 'League-Spartan';
-  font-size: 1.1rem;
-}
-
-.date_input input:focus {
-  outline: none;
-}
-
-.date_input input {
-  width: 120px;
-}
-
-#calendar_icon {
-  cursor: pointer;
-}
-
-.calendar_background {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 10px;
-  width: max-content;
-  position: absolute;
-  bottom: -340px;
-  right: 25px;
 }
