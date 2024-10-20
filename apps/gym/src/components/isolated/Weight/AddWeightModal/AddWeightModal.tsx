@@ -1,12 +1,10 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import styles from './AddWeightModal.module.css'
 import { AddWeightModalProps } from '@/app/weight/Weight'
 import { FormEvent, TextInputChangeEvent } from '@/app/globals'
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
-import dayjs, { Dayjs } from 'dayjs'
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
+import dayjs from 'dayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { useAddWeight } from '@/hooks'
@@ -15,10 +13,9 @@ import { Modal } from '@gymapp/gymui/Modal'
 import { CloseIcon } from '@gymapp/gymui/CloseIcon'
 import { Form } from '@gymapp/gymui/Form'
 import { convertDate } from '@/utils/utils'
+import { DatePicker } from '@/components/reusable'
 
 export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
-  const [calendar, setCalendar] = useState(false)
-  const calendarRef = useRef<any>()
   const [weight, setWeight] = useState('')
   const d = convertDate(new Date())
   const [date, setDate] = useState<any>(dayjs(d))
@@ -27,25 +24,6 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
   const updateWeight = (e: TextInputChangeEvent) => {
     setWeight(e.target.value)
   }
-
-  const toggleCalendar = () => {
-    setCalendar(!calendar)
-  }
-
-  // useEffect(() => {
-  //   let handler = (e: any) => {
-  //     if (!calendarRef.current.contains(e.target)) {
-  //       if (e.target.className !== 'date_input') {
-  //         setCalendar(false)
-  //       }
-  //     }
-  //   }
-  //   document.addEventListener('mousedown', handler)
-
-  //   return () => {
-  //     document.removeEventListener('mousedown', handler)
-  //   }
-  // })
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -85,24 +63,11 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
 
               <div className={styles.date}>
                 <label>Date: </label>
-                <div className={styles.date_input} onClick={toggleCalendar}>
-                  <input type='text' value={convertDate(date)} readOnly={true} />
-                  <CalendarMonthIcon id={styles.calendar_icon} />
-                </div>
-              </div>
-
-              <div ref={calendarRef}>
-                {calendar && (
-                  <div
-                    className={styles.calendar_background}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <DateCalendar
-                      value={date}
-                      onChange={(newDate: Dayjs) => setDate(newDate)}
-                    />
-                  </div>
-                )}
+                <DatePicker
+                  value={date}
+                  setDate={setDate}
+                  sxCalendar={{ bottom: '-366px' }}
+                />
               </div>
             </div>
 
