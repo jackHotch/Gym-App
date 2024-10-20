@@ -5,6 +5,7 @@ _This is the changelog for the entire project_
 ## 10/19/2024
 
 - Added env files to database parsers
+- Added Calendar to GymUI
 
 ## 10/18/2024
 
