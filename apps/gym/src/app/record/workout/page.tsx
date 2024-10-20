@@ -23,7 +23,8 @@ const Workout = () => {
     useToggle()
   const [workout, setWorkout] = useState<IWorkout[]>([])
   let arr = new Array(workout.length).fill(false)
-  const [showExerciseModal, toggleExerciseModal] = useArrayToggle(arr)
+  const [showExerciseModal, toggleExerciseModal, ___, closeExerciseModal] =
+    useArrayToggle(arr)
   const [showNotes, toggleNotes] = useArrayToggle(arr)
   const { data, isLoading } = useWorkoutNumber()
   const workoutNumber = isLoading ? null : data ? data + 1 : 0
@@ -133,6 +134,7 @@ const Workout = () => {
                             toggleNote={toggleNotes}
                             exercises={workout}
                             setExercises={setWorkout}
+                            closeExerciseModal={closeExerciseModal}
                           />
                         )}
                       </AnimatePresence>
