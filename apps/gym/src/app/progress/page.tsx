@@ -1,7 +1,5 @@
-'use client'
-
 const Progress = () => {
-  return <>Progress</>
+  return <div>progress</div>
 }
 
 export default Progress

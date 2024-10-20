@@ -8,7 +8,8 @@
     "./CloseIcon": "./src/components/CloseIcon/CloseIcon.tsx",
     "./Form": "./src/components/Form/Form.tsx",
     "./Skeleton": "./src/components/Skeleton/Skeleton.tsx",
-    "./Loading": "./src/components/Loading/Loading.tsx"
+    "./Loading": "./src/components/Loading/Loading.tsx",
+    "./Calendar": "./src/components/Calendar/Calendar.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -44,6 +45,7 @@
     "eslint-plugin-storybook": "^0.8.0",
     "react": "^18.2.0",
     "storybook": "^8.2.9",
+    "storybook-addon-state": "^1.0.3",
     "typescript": "^5.3.3"
   },
   "dependencies": {

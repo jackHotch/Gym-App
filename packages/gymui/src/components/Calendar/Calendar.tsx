@@ -5,8 +5,8 @@ import { CSSProperties } from 'react'
 
 interface CalendarProps extends HTMLMotionProps<'div'> {
   sx?: CSSProperties
-  value?: never
-  onChange?: () => void
+  value?: any
+  onChange?: (a: any) => void
 }
 
 export const Calendar = ({ value, onChange, sx }: CalendarProps) => {
