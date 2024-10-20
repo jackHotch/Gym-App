@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { ExerciseModalProps } from '@/app/record/record'
 import styles from './ExerciseModal.module.css'
 import { motion } from 'framer-motion'
+import { useOutsideClick } from '@/hooks'
 
 export const ExerciseModal = ({
   toggleExerciseModal,
@@ -12,8 +13,15 @@ export const ExerciseModal = ({
   toggleNote,
   exercises,
   setExercises,
+  closeExerciseModal,
 }: ExerciseModalProps) => {
-  const hamRef = useRef<any>()
+  const exerrciseModalRef = useRef<any>()
+
+  const closeModal = () => {
+    closeExerciseModal(ind)
+  }
+
+  useOutsideClick(exerrciseModalRef, closeModal)
 
   const modalVariants = {
     hidden: {
@@ -38,22 +46,6 @@ export const ExerciseModal = ({
     toggleExerciseModal(ind)
   }
 
-  useEffect(() => {
-    let handler = (e: any) => {
-      // if (!hamRef.current.contains(e.target)) {
-      if (e.target.className === 'three_dots') {
-        toggleExerciseModal(ind)
-        return
-      }
-      // }
-    }
-    document.addEventListener('mousedown', handler)
-
-    return () => {
-      document.removeEventListener('mousedown', handler)
-    }
-  })
-
   function removeExercise() {
     const temp = [...exercises]
     const newList = temp.filter((value, id) => {
@@ -65,7 +57,7 @@ export const ExerciseModal = ({
 
   return (
     <motion.div
-      ref={hamRef}
+      ref={exerrciseModalRef}
       className={styles.container}
       variants={modalVariants}
       initial='hidden'

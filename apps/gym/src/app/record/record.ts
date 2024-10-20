@@ -42,6 +42,7 @@ export interface ExerciseModalProps {
   toggleNote: (i: number) => void
   exercises: IWorkout[]
   setExercises: Dispatch<SetStateAction<IWorkout[]>>
+  closeExerciseModal: (i: number) => void
 }
 
 export interface WorkoutConfirmationModalProps {
