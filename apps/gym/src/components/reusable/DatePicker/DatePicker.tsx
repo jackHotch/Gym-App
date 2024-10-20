@@ -12,8 +12,8 @@ import { useToggle } from '@/hooks'
 interface DatePickerProps {
   sx?: CSSProperties
   sxCalendar?: CSSProperties
-  value?: any
-  setDate?: (a: any) => void
+  value: any
+  setDate: (a: any) => void
 }
 
 export const DatePicker = ({ value, setDate, sx, sxCalendar }: DatePickerProps) => {
