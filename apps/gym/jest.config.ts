@@ -6,6 +6,10 @@ const config: Config = {
   transform: {
     '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
   },
+  moduleNameMapper: {
+    '\\.css$': 'identity-obj-proxy',
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
 }
 
 export default config
