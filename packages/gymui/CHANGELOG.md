@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 10/19/2024 - v6.0.1
+
+- Finished the Calendar Component
+
 ## 9/28/2024 - v5.0.1
 
 - Finished the Loading.Text component
