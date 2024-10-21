@@ -65,10 +65,10 @@ export const ExerciseModal = ({
       exit='exit'
     >
       <div className={styles.option} id={styles.add_note} onClick={changeNote}>
-        <span>{showNote ? 'Remove Note' : 'Add Note'}</span>
+        {showNote ? 'Remove Note' : 'Add Note'}
       </div>
       <div className={styles.option} id={styles.remove_exercise} onClick={removeExercise}>
-        <span>Remove Exercise</span>
+        Remove Exercise
       </div>
     </motion.div>
   )

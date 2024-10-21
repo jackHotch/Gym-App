@@ -3,25 +3,24 @@
 import styles from './EntryModal.module.css'
 import { EntryModalProps } from '@/app/weight/Weight.ts'
 import { motion } from 'framer-motion'
-import { useDeleteWeight } from '@/hooks'
+import { useOutsideClick } from '@/hooks'
+import { useRef } from 'react'
 
-export const EntryModal = ({ id, closeModal }: EntryModalProps) => {
-  const { mutate: deleteWeight } = useDeleteWeight()
-
-  const deleteEntry = () => {
-    deleteWeight(id)
-    closeModal(id)
-  }
+export const EntryModal = ({ closeModal, deleteEntry }: EntryModalProps) => {
+  const entryModalRef = useRef()
+  useOutsideClick(entryModalRef, closeModal)
 
   return (
     <motion.div
+      ref={entryModalRef}
       className={styles.modal_container}
-      onClick={deleteEntry}
       whileHover={{
         scale: 1.03,
       }}
     >
-      <div className={styles.delete_entry}>Delete Entry</div>
+      <div className={styles.delete_entry} onClick={deleteEntry}>
+        Delete Entry
+      </div>
     </motion.div>
   )
 }

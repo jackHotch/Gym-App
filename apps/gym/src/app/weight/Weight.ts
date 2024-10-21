@@ -7,8 +7,8 @@ export interface WeightListProps {
 }
 
 export interface EntryModalProps {
-  id: number
-  closeModal: (id: number) => void
+  closeModal: () => void
+  deleteEntry: () => void
 }
 
 export interface AddWeightModalProps {
