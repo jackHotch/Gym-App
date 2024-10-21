@@ -35,14 +35,13 @@ export interface SetProps {
 }
 
 export interface ExerciseModalProps {
-  showExerciseModal: boolean
-  toggleExerciseModal: (i: number) => void
+  toggleExerciseModal: () => void
   ind: number
   showNote: boolean
-  toggleNote: (i: number) => void
-  exercises: IWorkout[]
-  setExercises: Dispatch<SetStateAction<IWorkout[]>>
-  closeExerciseModal: (i: number) => void
+  toggleNote: () => void
+  workout: IWorkout[]
+  setWorkout: Dispatch<SetStateAction<IWorkout[]>>
+  closeExerciseModal: () => void
 }
 
 export interface WorkoutConfirmationModalProps {
