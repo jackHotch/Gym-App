@@ -11,17 +11,13 @@ export const ExerciseModal = ({
   ind,
   showNote,
   toggleNote,
-  exercises,
-  setExercises,
+  workout,
+  setWorkout,
   closeExerciseModal,
 }: ExerciseModalProps) => {
-  const exerrciseModalRef = useRef<any>()
+  const exerciseModalRef = useRef<any>()
 
-  const closeModal = () => {
-    closeExerciseModal(ind)
-  }
-
-  useOutsideClick(exerrciseModalRef, closeModal)
+  useOutsideClick(exerciseModalRef, closeExerciseModal)
 
   const modalVariants = {
     hidden: {
@@ -42,22 +38,22 @@ export const ExerciseModal = ({
   }
 
   const changeNote = () => {
-    toggleNote(ind)
-    toggleExerciseModal(ind)
+    toggleNote()
+    toggleExerciseModal()
   }
 
   function removeExercise() {
-    const temp = [...exercises]
+    const temp = [...workout]
     const newList = temp.filter((value, id) => {
       if (id !== ind) return value
     })
-    setExercises(newList)
-    toggleExerciseModal(ind)
+    setWorkout(newList)
+    toggleExerciseModal()
   }
 
   return (
     <motion.div
-      ref={exerrciseModalRef}
+      ref={exerciseModalRef}
       className={styles.container}
       variants={modalVariants}
       initial='hidden'
