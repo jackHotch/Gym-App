@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 10/21/2024
+
+- Refactored the project to use useOutsideClick hook
+
 ## 10/20/2024
 
 - Finished DatePicker component
