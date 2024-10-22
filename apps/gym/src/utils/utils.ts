@@ -1,12 +1,10 @@
-import { Dayjs } from 'dayjs'
+import { IWeightData } from '@/app/globals'
+import dayjs from 'dayjs'
 
-export const convertDate = (date: Date | Dayjs) => {
-  const newDate = date.toISOString().substring(0, 10)
-  const formattedDate =
-    newDate.substring(5, 7) +
-    '/' +
-    newDate.substring(8, 10) +
-    '/' +
-    newDate.substring(0, 4)
-  return formattedDate
+export const convertDate = (data: IWeightData[]) => {
+  const formatedDate = data
+  for (let i = 0; i < data?.length; i++) {
+    formatedDate[i].date = dayjs(data[i].date).format('MM/DD/YYYY')
+  }
+  return formatedDate
 }
