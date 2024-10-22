@@ -8,8 +8,7 @@ import dayjs from 'dayjs'
 
 describe('DatePicker', () => {
   it('DatePicker should render successfully', () => {
-    const d = convertDate(new Date())
-    let date = dayjs(d)
+    let date = dayjs()
     const setDate = (n: any) => (date = n)
     const { baseElement } = render(
       <LocalizationProvider dateAdapter={AdapterDayjs}>
