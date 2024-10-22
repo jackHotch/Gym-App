@@ -6,8 +6,8 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { CSSProperties, useEffect, useRef } from 'react'
-import { convertDate } from '@/utils/utils'
 import { useToggle } from '@/hooks'
+import { Dayjs } from 'dayjs'
 
 interface DatePickerProps {
   sx?: CSSProperties
@@ -36,6 +36,10 @@ export const DatePicker = ({ value, setDate, sx, sxCalendar }: DatePickerProps) 
       document.removeEventListener('click', handleClick)
     }
   })
+
+  const convertDate = (date: Dayjs) => {
+    return date.format('MM/DD/YYYY')
+  }
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
