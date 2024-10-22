@@ -2,9 +2,14 @@
 
 _This is the changelog for the entire project_
 
+## 10/22/2024
+
+- Refactored weight table in database to use DATE, refactored code to fit
+
 ## 10/21/2024
 
 - Refactored the project to use useOutsideClick hook
+- Refactored /workout, created Exercise component
 
 ## 10/20/2024
 

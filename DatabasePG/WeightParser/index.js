@@ -13,7 +13,7 @@ fs.createReadStream('weight.csv')
     let newRow = []
 
     newRow.push(row[1])
-    newRow.push(row[2])
+    newRow.push(convertDate(row[2]))
     rows.push(newRow)
   })
   .on('error', function (error) {
@@ -41,4 +41,11 @@ async function insertIntoMySql(rows) {
     )
   }
   console.log('All done')
+}
+
+function convertDate(date) {
+  const year = date.substring(6)
+  const month = date.substring(0, 2)
+  const day = date.substring(3, 5)
+  return `${year}-${month}-${day}`
 }

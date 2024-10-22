@@ -12,13 +12,11 @@ import { Button } from '@gymapp/gymui/Button'
 import { Modal } from '@gymapp/gymui/Modal'
 import { CloseIcon } from '@gymapp/gymui/CloseIcon'
 import { Form } from '@gymapp/gymui/Form'
-import { convertDate } from '@/utils/utils'
 import { DatePicker } from '@/components/reusable'
 
 export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
   const [weight, setWeight] = useState('')
-  const d = convertDate(new Date())
-  const [date, setDate] = useState<any>(dayjs(d))
+  const [date, setDate] = useState<any>(dayjs())
   const { mutate: addWeight } = useAddWeight()
 
   const updateWeight = (e: TextInputChangeEvent) => {
@@ -27,9 +25,7 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    const d = convertDate(date)
-    const data = { weight: weight, date: d }
-    addWeight(data)
+    addWeight({ weight: weight, date: date.format('YYYY-MM-DD') })
     closeModal()
   }
 
