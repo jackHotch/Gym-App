@@ -47,7 +47,6 @@ export const WeightList = ({ weight, isLoading }: WeightListProps) => {
             </Loading.Text>
           ) : (
             reversedWeight?.map((value, key) => {
-              console.log(key)
               return (
                 <WeightListEntry key={key} value={value} id={reversedArray[key] + 1} />
               )
