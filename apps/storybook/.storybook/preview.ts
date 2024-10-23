@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react'
-import '../styles/globals.css'
-import { lazy } from 'react'
+import '../../gym/src/app/globals.css'
 
 const preview: Preview = {
   parameters: {
@@ -10,7 +9,6 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    layout: 'fullscreen',
   },
 }
 

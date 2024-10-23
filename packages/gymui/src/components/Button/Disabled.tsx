@@ -1,4 +1,4 @@
-import { ButtonProps, SCALEHOVER, SCALETAP, DURATION } from './Button'
+import { ButtonProps } from './Button'
 import styles from './Button.module.css'
 import { motion } from 'framer-motion'
 
