@@ -14,8 +14,6 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "test": "jest",
     "test:watch": "jest --watch"
   },
