@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 10/24/2024
+
+- Created a standalone storybook app to show all components
+
 ## 10/22/2024
 
 - Refactored weight table in database to use DATE, refactored code to fit

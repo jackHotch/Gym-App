@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { DatePicker } from './DatePicker'
 import { ComponentProps } from 'react'
-import { fn } from '@storybook/test'
 import dayjs from 'dayjs'
 
 type StoryProps = ComponentProps<typeof DatePicker>
@@ -16,15 +15,20 @@ export default meta
 
 type Story = StoryObj<StoryProps>
 
-let d = dayjs()
-const setDate = (n: any) => (d = n)
+let date = dayjs()
+const setDate = (n: any) => (date = n)
 
 export const Primary: Story = {
   args: {
-    value: d,
+    openCalendar: true,
+    value: date,
     setDate: setDate,
   },
   render: (args) => {
-    return <DatePicker {...args} />
+    return (
+      <div style={{ width: 'max-content', marginLeft: '100px' }}>
+        <DatePicker {...args} />
+      </div>
+    )
   },
 }
