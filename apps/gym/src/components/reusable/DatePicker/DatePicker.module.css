@@ -1,3 +1,7 @@
+.container {
+  width: max-content;
+}
+
 .date_input {
   display: flex;
   align-items: center;

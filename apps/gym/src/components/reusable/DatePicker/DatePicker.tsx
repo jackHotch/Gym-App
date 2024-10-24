@@ -14,10 +14,17 @@ interface DatePickerProps {
   sxCalendar?: CSSProperties
   value: any
   setDate: (a: any) => void
+  openCalendar?: boolean
 }
 
-export const DatePicker = ({ value, setDate, sx, sxCalendar }: DatePickerProps) => {
-  const [showCalendar, toggle, _, close] = useToggle()
+export const DatePicker = ({
+  value,
+  setDate,
+  openCalendar = false,
+  sx,
+  sxCalendar,
+}: DatePickerProps) => {
+  const [showCalendar, toggle, _, close] = useToggle(openCalendar)
   const calendarRef = useRef<any>()
 
   useEffect(() => {
@@ -41,22 +48,29 @@ export const DatePicker = ({ value, setDate, sx, sxCalendar }: DatePickerProps) 
     return date.format('MM/DD/YYYY')
   }
 
+  const handleChange = (date: any) => {
+    setDate(date)
+    close()
+  }
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <div id='date_input' className={styles.date_input} style={sx} onClick={toggle}>
-        <input type='text' value={convertDate(value)} readOnly={true} />
-        <CalendarMonthIcon id={styles.calendar_icon} />
-      </div>
-
-      {showCalendar && (
-        <div ref={calendarRef} className={styles.calendar_container}>
-          <Calendar
-            value={value}
-            onChange={(newDate: any) => setDate(newDate)}
-            sx={{ position: 'absolute', bottom: '-340px', right: '0', ...sxCalendar }}
-          />
+      <div className={styles.container}>
+        <div id='date_input' className={styles.date_input} style={sx} onClick={toggle}>
+          <input type='text' value={convertDate(value)} readOnly={true} />
+          <CalendarMonthIcon id={styles.calendar_icon} />
         </div>
-      )}
+
+        {showCalendar && (
+          <div ref={calendarRef} className={styles.calendar_container}>
+            <Calendar
+              value={value}
+              onChange={(newDate: any) => handleChange(newDate)}
+              sx={{ position: 'absolute', bottom: '-340px', right: '0', ...sxCalendar }}
+            />
+          </div>
+        )}
+      </div>
     </LocalizationProvider>
   )
 }

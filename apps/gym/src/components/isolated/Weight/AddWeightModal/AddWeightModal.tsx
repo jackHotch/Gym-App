@@ -59,11 +59,7 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
 
               <div className={styles.date}>
                 <label>Date: </label>
-                <DatePicker
-                  value={date}
-                  setDate={setDate}
-                  sxCalendar={{ bottom: '-366px' }}
-                />
+                <DatePicker value={date} setDate={setDate} />
               </div>
             </div>
 
