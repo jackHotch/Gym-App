@@ -3,8 +3,8 @@
 import { useRef } from 'react'
 import { ExerciseModalProps } from '@/app/record/record'
 import styles from './ExerciseModal.module.css'
-import { motion } from 'framer-motion'
 import { useOutsideClick } from '@/hooks'
+import { Modal } from '@gymapp/gymui/Modal'
 
 export const ExerciseModal = ({
   toggleExerciseModal,
@@ -16,33 +16,14 @@ export const ExerciseModal = ({
   closeExerciseModal,
 }: ExerciseModalProps) => {
   const exerciseModalRef = useRef<any>()
-
   useOutsideClick(exerciseModalRef, closeExerciseModal)
-
-  const modalVariants = {
-    hidden: {
-      scale: 0,
-      x: '40%',
-      y: '-50%',
-    },
-    visible: {
-      scale: 1,
-      x: 0,
-      y: 0,
-    },
-    exit: {
-      scale: 0,
-      x: '40%',
-      y: '-50%',
-    },
-  }
 
   const changeNote = () => {
     toggleNote()
     toggleExerciseModal()
   }
 
-  function removeExercise() {
+  const removeExercise = () => {
     const temp = [...workout]
     const newList = temp.filter((value, id) => {
       if (id !== ind) return value
@@ -52,20 +33,17 @@ export const ExerciseModal = ({
   }
 
   return (
-    <motion.div
+    <Modal.Popover
       ref={exerciseModalRef}
       className={styles.container}
-      variants={modalVariants}
-      initial='hidden'
-      animate='visible'
-      exit='exit'
+      sx={{ position: 'absolute', top: '-25px', right: '0', zIndex: '10' }}
     >
-      <div className={styles.option} id={styles.add_note} onClick={changeNote}>
+      <Modal.Item onClick={changeNote}>
         {showNote ? 'Remove Note' : 'Add Note'}
-      </div>
-      <div className={styles.option} id={styles.remove_exercise} onClick={removeExercise}>
+      </Modal.Item>
+      <Modal.Item onClick={removeExercise} sx={{ color: 'var(--red)' }}>
         Remove Exercise
-      </div>
-    </motion.div>
+      </Modal.Item>
+    </Modal.Popover>
   )
 }
