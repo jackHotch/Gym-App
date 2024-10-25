@@ -1,0 +1,10 @@
+.container {
+  width: max-content;
+  height: max-content;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

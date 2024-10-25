@@ -36,7 +36,7 @@ const motionVariants = {
   },
 }
 
-export const Calendar = ({ value, onChange, sx }: CalendarProps) => {
+export const Calendar = ({ value, onChange, sx, ...props }: CalendarProps) => {
   return (
     <motion.div
       className={styles.container}
@@ -46,6 +46,7 @@ export const Calendar = ({ value, onChange, sx }: CalendarProps) => {
       initial='hidden'
       animate='visible'
       exit='exit'
+      {...props}
     >
       <DateCalendar value={value} onChange={onChange} />
     </motion.div>
