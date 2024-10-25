@@ -27,7 +27,7 @@
 
 .list {
   width: 50%;
-  box-shadow: rgba(99, 99, 99, 0.6) 0px 2px 8px 0px;
+  box-shadow: var(--box-shadow);
   border-radius: 20px;
   min-width: 350px;
   height: calc(100% - 20px);

@@ -1,6 +1,26 @@
-import { ModalProps, modalVariants } from './Modal'
-import styles from './Modal.module.css'
+import { ModalProps } from './Modal'
+import styles from './FullPage.module.css'
 import { motion } from 'framer-motion'
+
+const modalVariants = {
+  hidden: {
+    scale: 0,
+  },
+  visible: {
+    scale: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      damping: 16,
+    },
+  },
+  exit: {
+    scale: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+}
 
 export const FullPage = ({
   children,

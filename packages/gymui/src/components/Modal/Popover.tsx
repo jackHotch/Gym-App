@@ -1,0 +1,41 @@
+import styles from './Popover.module.css'
+import { ModalProps } from './Modal'
+import { ReactElement } from 'react'
+import { motion } from 'framer-motion'
+
+export interface PopoverProps extends ModalProps {
+  children: ReactElement[]
+}
+
+const modalVariants = {
+  hidden: {
+    scale: 0,
+    x: '40%',
+    y: '-50%',
+  },
+  visible: {
+    scale: 1,
+    x: 0,
+    y: 0,
+  },
+  exit: {
+    scale: 0,
+    x: '40%',
+    y: '-50%',
+  },
+}
+
+export const Popover = ({ sx, children }: PopoverProps) => {
+  return (
+    <motion.div
+      style={sx}
+      className={styles.container}
+      variants={modalVariants}
+      initial='hidden'
+      animate='visible'
+      exit='exit'
+    >
+      {children}
+    </motion.div>
+  )
+}

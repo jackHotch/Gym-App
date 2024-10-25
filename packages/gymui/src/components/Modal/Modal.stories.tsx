@@ -23,10 +23,7 @@ const meta: Meta<StoryProps> = {
   },
   args: {
     visible: true,
-    width: '400px',
-    height: '400px',
     sx: {},
-    onOutsideClick: fn(),
   },
 }
 
@@ -35,7 +32,11 @@ export default meta
 type Story = StoryObj<StoryProps>
 
 export const FullPage: Story = {
-  args: {},
+  args: {
+    width: '400px',
+    height: '400px',
+    onOutsideClick: fn(),
+  },
   render: (args: any) => {
     return (
       <div style={{ textAlign: 'center' }}>
@@ -49,6 +50,30 @@ export const FullPage: Story = {
           )}
         </AnimatePresence>
       </div>
+    )
+  },
+}
+
+export const Popover: Story = {
+  args: {
+    onClick: fn(),
+  },
+  render: (args: any) => {
+    return (
+      <>
+        <AnimatePresence>
+          {args.visible && (
+            <Modal.Popover {...args}>
+              <Modal.Item onClick={args.onClick}>First line</Modal.Item>
+              <Modal.Item onClick={args.onClick}>Next line</Modal.Item>
+              <Modal.Item onClick={args.onClick}>One Option</Modal.Item>
+              <Modal.Item onClick={args.onClick} sx={{ color: 'crimson' }}>
+                Danger
+              </Modal.Item>
+            </Modal.Popover>
+          )}
+        </AnimatePresence>
+      </>
     )
   },
 }
