@@ -13,6 +13,7 @@ import { Modal } from '@gymapp/gymui/Modal'
 import { CloseIcon } from '@gymapp/gymui/CloseIcon'
 import { Form } from '@gymapp/gymui/Form'
 import { DatePicker } from '@/components/reusable'
+import { AnimatePresence } from 'framer-motion'
 
 export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
   const [weight, setWeight] = useState('')

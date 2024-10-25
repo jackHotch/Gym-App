@@ -2,6 +2,7 @@ import styles from './Calendar.module.css'
 import { HTMLMotionProps } from 'framer-motion'
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
 import { CSSProperties } from 'react'
+import { motion } from 'framer-motion'
 
 interface CalendarProps extends HTMLMotionProps<'div'> {
   sx?: CSSProperties
@@ -9,10 +10,44 @@ interface CalendarProps extends HTMLMotionProps<'div'> {
   onChange?: (a: any) => void
 }
 
+const motionVariants = {
+  hidden: {
+    scale: 0,
+    x: '40%',
+    y: '-50%',
+  },
+  visible: {
+    scale: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 150,
+      damping: 18,
+    },
+  },
+  exit: {
+    scale: 0,
+    x: '40%',
+    y: '-50%',
+    transition: {
+      duration: 0.2,
+    },
+  },
+}
+
 export const Calendar = ({ value, onChange, sx }: CalendarProps) => {
   return (
-    <div className={styles.container} style={sx} onClick={(e) => e.stopPropagation()}>
+    <motion.div
+      className={styles.container}
+      style={sx}
+      onClick={(e) => e.stopPropagation()}
+      variants={motionVariants}
+      initial='hidden'
+      animate='visible'
+      exit='exit'
+    >
       <DateCalendar value={value} onChange={onChange} />
-    </div>
+    </motion.div>
   )
 }

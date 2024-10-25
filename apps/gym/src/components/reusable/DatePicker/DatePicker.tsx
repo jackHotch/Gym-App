@@ -8,6 +8,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { CSSProperties, useEffect, useRef } from 'react'
 import { useToggle } from '@/hooks'
 import { Dayjs } from 'dayjs'
+import { AnimatePresence } from 'framer-motion'
 
 interface DatePickerProps {
   sx?: CSSProperties
@@ -61,15 +62,17 @@ export const DatePicker = ({
           <CalendarMonthIcon id={styles.calendar_icon} />
         </div>
 
-        {showCalendar && (
-          <div ref={calendarRef} className={styles.calendar_container}>
-            <Calendar
-              value={value}
-              onChange={(newDate: any) => handleChange(newDate)}
-              sx={{ position: 'absolute', bottom: '-340px', right: '0', ...sxCalendar }}
-            />
-          </div>
-        )}
+        <AnimatePresence>
+          {showCalendar && (
+            <div ref={calendarRef}>
+              <Calendar
+                value={value}
+                onChange={(newDate: any) => handleChange(newDate)}
+                sx={{ position: 'absolute', bottom: '-340px', right: '0', ...sxCalendar }}
+              />
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     </LocalizationProvider>
   )
