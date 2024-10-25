@@ -4,7 +4,7 @@ import { CSSProperties, ForwardedRef, ReactElement, forwardRef } from 'react'
 import { HTMLMotionProps, motion } from 'framer-motion'
 
 export interface PopoverProps extends HTMLMotionProps<'div'> {
-  children: ReactElement[]
+  children: ReactElement | ReactElement[]
   sx?: CSSProperties
   ref: any
 }

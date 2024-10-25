@@ -12,10 +12,6 @@
   padding-top: 10px;
 }
 
-.entry:hover {
-  background-color: lightgray;
-}
-
 .number {
   display: inline-block;
   margin-right: 20px;

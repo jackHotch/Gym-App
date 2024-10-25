@@ -35,7 +35,6 @@ export const ExerciseModal = ({
   return (
     <Modal.Popover
       ref={exerciseModalRef}
-      className={styles.container}
       sx={{ position: 'absolute', top: '-25px', right: '0', zIndex: '10' }}
     >
       <Modal.Item onClick={changeNote}>
