@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 10/25/2024
+
+- Added Popover and Item component to GymUI
+
 ## 10/24/2024
 
 - Created a standalone storybook app to show all components

@@ -2,25 +2,22 @@
 
 import styles from './EntryModal.module.css'
 import { EntryModalProps } from '@/app/weight/Weight.ts'
-import { motion } from 'framer-motion'
 import { useOutsideClick } from '@/hooks'
 import { useRef } from 'react'
+import { Modal } from '@gymapp/gymui/Modal'
 
 export const EntryModal = ({ closeModal, deleteEntry }: EntryModalProps) => {
   const entryModalRef = useRef()
   useOutsideClick(entryModalRef, closeModal)
 
   return (
-    <motion.div
+    <Modal.Popover
       ref={entryModalRef}
-      className={styles.modal_container}
-      whileHover={{
-        scale: 1.03,
-      }}
+      sx={{ position: 'absolute', top: '-10px', right: '20px', zIndex: '10' }}
     >
-      <div className={styles.delete_entry} onClick={deleteEntry}>
+      <Modal.Item onClick={deleteEntry} sx={{ color: 'var(--red)' }}>
         Delete Entry
-      </div>
-    </motion.div>
+      </Modal.Item>
+    </Modal.Popover>
   )
 }

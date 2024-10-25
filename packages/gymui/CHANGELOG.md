@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 10/25/2024 - v7.0.1
+
+- Finished the Modal.Popover and Modal.Item components
+
 ## 10/19/2024 - v6.0.1
 
 - Finished the Calendar Component
