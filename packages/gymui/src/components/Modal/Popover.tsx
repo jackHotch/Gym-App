@@ -1,11 +1,15 @@
 import styles from './Popover.module.css'
 import { ModalProps } from './Modal'
-import { ReactElement } from 'react'
-import { motion } from 'framer-motion'
+import { CSSProperties, ForwardedRef, ReactElement, forwardRef } from 'react'
+import { HTMLMotionProps, motion } from 'framer-motion'
 
-export interface PopoverProps extends ModalProps {
+export interface PopoverProps extends HTMLMotionProps<'div'> {
   children: ReactElement[]
+  sx?: CSSProperties
+  ref: any
 }
+
+type reactRef = ForwardedRef<HTMLDivElement>
 
 const modalVariants = {
   hidden: {
@@ -25,9 +29,10 @@ const modalVariants = {
   },
 }
 
-export const Popover = ({ sx, children }: PopoverProps) => {
+export const Popover = forwardRef(({ sx, children }: PopoverProps, ref: reactRef) => {
   return (
     <motion.div
+      ref={ref}
       style={sx}
       className={styles.container}
       variants={modalVariants}
@@ -38,4 +43,4 @@ export const Popover = ({ sx, children }: PopoverProps) => {
       {children}
     </motion.div>
   )
-}
+})
