@@ -1,4 +1,4 @@
-import { CSSProperties, ReactElement, ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 import { HTMLMotionProps } from 'framer-motion'
 import { FullPage } from './FullPage'
 

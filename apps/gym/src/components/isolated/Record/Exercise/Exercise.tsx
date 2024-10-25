@@ -45,13 +45,7 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
     name: string
   ) => {
     const temp = [...workout]
-    if (name === 'weight') {
-      temp[exerciseIndex].sets[setIndex].weight = e.target.value
-    } else if (name === 'reps') {
-      temp[exerciseIndex].sets[setIndex].reps = e.target.value
-    } else if (name === 'rpe') {
-      temp[exerciseIndex].sets[setIndex].rpe = e.target.value
-    }
+    temp[exerciseIndex].sets[setIndex][name] = e.target.value
     setWorkout(temp)
   }
 
