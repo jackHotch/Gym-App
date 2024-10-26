@@ -1,5 +1,4 @@
 import styles from './Popover.module.css'
-import { ModalProps } from './Modal'
 import { CSSProperties, ForwardedRef, ReactElement, forwardRef } from 'react'
 import { HTMLMotionProps, motion } from 'framer-motion'
 
