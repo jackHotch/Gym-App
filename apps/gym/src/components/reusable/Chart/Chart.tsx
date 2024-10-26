@@ -1,5 +1,7 @@
+'use client'
+
 import styles from './TestChart.module.css'
-import { ChartProps } from '@/app/globals'
+import { ChartProps, IWeightData } from '@/app/globals'
 import { Line } from 'react-chartjs-2'
 import { DateRangePicker } from '../DateRangePicker'
 import { Loading } from '@gymapp/gymui/Loading'
@@ -14,6 +16,9 @@ import {
   Filler,
 } from 'chart.js'
 import { lineChartData } from './FAKEDATA'
+import { useState } from 'react'
+import { useWeight } from '@/hooks'
+import { convertDate } from '@/utils/utils'
 
 ChartJS.register(
   CategoryScale,
@@ -27,13 +32,17 @@ ChartJS.register(
 
 ChartJS.defaults.maintainAspectRatio = false
 
-export const Chart = ({ weight, isLoading }: ChartProps) => {
+export const Chart = () => {
+  const { data: d, isLoading } = useWeight()
+  const weight = convertDate(d)
   let labels: string[] = []
   let data: number[] = []
 
-  weight?.map((value) => {
-    labels.push(value.date)
-    data.push(value.weight)
+  weight?.map((value, id) => {
+    if (id > 200) {
+      labels.push(value.date)
+      data.push(value.weight)
+    }
   })
 
   const options: any = {
