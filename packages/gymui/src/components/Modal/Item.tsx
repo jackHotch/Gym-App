@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react'
 import styles from './Item.module.css'
-import { HTMLMotionProps } from 'framer-motion'
 
 export interface ItemProps extends React.HTMLAttributes<HTMLDivElement> {
   sx?: CSSProperties
