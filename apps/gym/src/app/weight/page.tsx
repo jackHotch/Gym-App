@@ -14,7 +14,7 @@ const Weight = () => {
     <div className={styles.container}>
       <div className={styles.body}>
         <WeightList weight={weightData} isLoading={isLoading} />
-        <Chart weight={weightData} isLoading={isLoading} />
+        <Chart />
       </div>
     </div>
   )

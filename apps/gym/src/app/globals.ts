@@ -14,7 +14,7 @@ export interface IWeightData {
 }
 
 export interface ChartProps {
-  weight: IWeightData[] | undefined
+  data: IWeightData[] | undefined
   isLoading: boolean
 }
 
