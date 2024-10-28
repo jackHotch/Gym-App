@@ -1,9 +1,8 @@
 'use client'
 
 import styles from './TestChart.module.css'
-import { ChartProps, IWeightData } from '@/app/globals'
+import { ChartProps } from '@/app/globals'
 import { Line } from 'react-chartjs-2'
-import { DateRangePicker } from '../DateRangePicker'
 import { Loading } from '@gymapp/gymui/Loading'
 import {
   Chart as ChartJS,
@@ -16,9 +15,6 @@ import {
   Filler,
 } from 'chart.js'
 import { lineChartData } from './FAKEDATA'
-import { useState } from 'react'
-import { useWeight } from '@/hooks'
-import { convertDate } from '@/utils/utils'
 
 ChartJS.register(
   CategoryScale,
@@ -32,19 +28,7 @@ ChartJS.register(
 
 ChartJS.defaults.maintainAspectRatio = false
 
-export const Chart = () => {
-  const { data: d, isLoading } = useWeight()
-  const weight = convertDate(d)
-  let labels: string[] = []
-  let data: number[] = []
-
-  weight?.map((value, id) => {
-    if (id > 200) {
-      labels.push(value.date)
-      data.push(value.weight)
-    }
-  })
-
+export const Chart = ({ labels, data, isLoading }: ChartProps) => {
   const options: any = {
     responsive: true,
     plugins: {
@@ -66,26 +50,23 @@ export const Chart = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <DateRangePicker />
-      <div className={styles.chart_container}>
-        {isLoading ? (
-          <Loading.Text
-            fontSize='26px'
-            pulseSize={10}
-            sx={{
-              justifyContent: 'center',
-              fontWeight: '500',
-              position: 'absolute',
-              inset: '0',
-            }}
-          >
-            Creating Graph
-          </Loading.Text>
-        ) : (
-          <Line options={options} data={chartData} />
-        )}
-      </div>
-    </div>
+    <>
+      {isLoading ? (
+        <Loading.Text
+          fontSize='26px'
+          pulseSize={10}
+          sx={{
+            justifyContent: 'center',
+            fontWeight: '500',
+            position: 'absolute',
+            inset: '0',
+          }}
+        >
+          Creating Graph
+        </Loading.Text>
+      ) : (
+        <Line options={options} data={chartData} />
+      )}
+    </>
   )
 }

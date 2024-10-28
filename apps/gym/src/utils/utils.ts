@@ -8,3 +8,16 @@ export const convertDate = (data: IWeightData[]) => {
   }
   return formatedDate
 }
+
+export const getChartData = (list: IWeightData[]) => {
+  console.log(list)
+  console.log('inside chart')
+  let l = []
+  let d = []
+  const data = convertDate(list)
+  data?.map((value) => {
+    l.push(value.date)
+    d.push(value.weight)
+  })
+  return [l, d]
+}
