@@ -1,14 +1,16 @@
 'use client'
 
 import styles from './WeightList.module.css'
-import { WeightListProps } from '@/app/weight/Weight'
 import { AddWeightModal } from '../AddWeightModal'
 import { WeightListEntry } from './WeightListEntry/WeightListEntry'
-import { useToggle } from '@/hooks'
+import { useToggle, useWeight } from '@/hooks'
 import { AnimatePresence } from 'framer-motion'
 import { Loading } from '@gymapp/gymui/Loading'
+import { convertDate } from '@/utils/utils'
 
-export const WeightList = ({ weight, isLoading }: WeightListProps) => {
+export const WeightList = () => {
+  const { data, isLoading } = useWeight()
+  const weight = convertDate(data)
   const [isAWMVisible, _, openAWM, closeAWM] = useToggle()
   let reversedArray: number[] = []
   weight?.map((_, index) => {
