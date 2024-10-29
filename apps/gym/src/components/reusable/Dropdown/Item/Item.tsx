@@ -1,19 +1,20 @@
 import styles from './Item.module.css'
-import { DropdownProps } from '../Dropdown'
 import { motion } from 'framer-motion'
-import { CSSProperties, ReactNode } from 'react'
+import { CSSProperties } from 'react'
 
-export interface ItemProps extends DropdownProps {
+export interface ItemProps {
+  sx?: CSSProperties
   children: string
-  handleClick: (a: string) => void
+  handleClick: (a: number) => void
+  id: number
 }
 
-export const Item = ({ handleClick, sx, children, ...props }: ItemProps) => {
+export const Item = ({ id, handleClick, sx, children }: ItemProps) => {
   return (
     <motion.div
       className={styles.container}
       style={sx}
-      onClick={() => handleClick(children)}
+      onClick={() => handleClick(id)}
       whileHover={{ backgroundColor: 'var(--lightgray)', color: 'var(--blue)' }}
     >
       {children}

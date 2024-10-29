@@ -4,26 +4,74 @@ import { Dropdown } from '@/components/reusable'
 import { useToggle } from '@/hooks'
 import { useRef, useState } from 'react'
 import { useOutsideClick } from '@/hooks'
+import dayjs, { Dayjs } from 'dayjs'
 
-export const RangeSelector = () => {
-  const [selectedValue, setSelectedValue] = useState('initial value')
+interface RangeSelectorProps {
+  updateChart: (startDate?: Dayjs, endDate?: Dayjs) => void
+  openDatePickers: () => void
+  closeDatePickers: () => void
+}
+
+export const RangeSelector = ({
+  updateChart,
+  openDatePickers,
+  closeDatePickers,
+}: RangeSelectorProps) => {
+  const options = [
+    { name: '1 Week', startDate: dayjs().subtract(1, 'w'), endDate: dayjs() },
+    { name: '1 Month', startDate: dayjs().subtract(1, 'M'), endDate: dayjs() },
+    { name: '2 Months', startDate: dayjs().subtract(2, 'M'), endDate: dayjs() },
+    { name: '3 Months', startDate: dayjs().subtract(3, 'M'), endDate: dayjs() },
+    { name: '6 Months', startDate: dayjs().subtract(6, 'M'), endDate: dayjs() },
+    { name: '1 Year', startDate: dayjs().subtract(1, 'y'), endDate: dayjs() },
+    { name: 'Since Starting Date' },
+    { name: 'Custom' },
+  ]
+
+  const [selectedValue, setSelectedValue] = useState('Since Starting Date')
   const [open, toggle, , close] = useToggle()
   const contentRef = useRef()
   useOutsideClick(contentRef, close)
 
-  const handleClick = (value: string) => {
-    setSelectedValue(value)
+  const handleClick = (id: number) => {
+    setSelectedValue(options[id].name)
+    closeDatePickers()
+
+    if (options[id].name === 'Custom') {
+      handleCustomClick()
+      return
+    } else if (options[id].name === 'Since Starting Date') {
+      handleStartingClick()
+      return
+    }
+
+    updateChart(options[id].startDate, options[id].endDate)
     close()
   }
+
+  const handleCustomClick = () => {
+    openDatePickers()
+    close()
+  }
+
+  const handleStartingClick = () => {
+    updateChart()
+    closeDatePickers()
+    close()
+  }
+
   return (
     <Dropdown>
       <Dropdown.Button onClick={toggle}>{selectedValue}</Dropdown.Button>
       {open && (
         <Dropdown.Content ref={contentRef}>
-          <Dropdown.Item handleClick={handleClick}>Item 1</Dropdown.Item>
-          <Dropdown.Item handleClick={handleClick}>Item 2</Dropdown.Item>
-          <Dropdown.Item handleClick={handleClick}>Item 3</Dropdown.Item>
-          <Dropdown.Item handleClick={handleClick}>Item 4</Dropdown.Item>
+          {options.map((option, key) => {
+            return (
+              <Dropdown.Item key={key} id={key} handleClick={handleClick}>
+                {option.name}
+              </Dropdown.Item>
+            )
+          })}
         </Dropdown.Content>
       )}
     </Dropdown>
