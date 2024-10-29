@@ -2,10 +2,9 @@ import styles from './WeightChart.module.css'
 import { DateRangePicker } from '@/components/reusable/DateRangePicker'
 import { Chart } from '@/components/reusable'
 import { useWeight } from '@/hooks'
-import { convertDate, getChartData } from '@/utils/utils'
+import { getChartData } from '@/utils/utils'
 import dayjs, { Dayjs } from 'dayjs'
 import { useEffect, useState } from 'react'
-import { IWeightData } from '@/app/globals'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
@@ -21,8 +20,8 @@ export const WeightChart = () => {
   }, [data])
 
   const filterByRange = (startDate?: Dayjs, endDate?: Dayjs) => {
-    startDate = startDate ? startDate : dayjs().subtract(3, 'M')
-    endDate = endDate ? endDate : dayjs()
+    startDate = startDate ? dayjs().subtract(3, 'M') : dayjs(data[0].date)
+    endDate = endDate ? dayjs() : dayjs(data[data.length - 1].date)
     const filteredData = data?.filter((value) => {
       const d = dayjs(value.date)
       return d.isAfter(startDate) && d.isBefore(endDate)
@@ -35,7 +34,7 @@ export const WeightChart = () => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className={styles.container}>
-        <DateRangePicker />
+        <DateRangePicker updateChart={filterByRange} />
         <div className={styles.chart_container}>
           <Chart labels={labels} data={weightData} isLoading={isLoading} />
         </div>

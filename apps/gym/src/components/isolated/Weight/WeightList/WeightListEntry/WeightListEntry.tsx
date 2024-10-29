@@ -3,6 +3,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { EntryModal } from '../../EntryModal'
 import { useToggle } from '@/hooks'
 import { useDeleteWeight } from '@/hooks'
+import { AnimatePresence } from 'framer-motion'
 
 export const WeightListEntry = ({ value, id }) => {
   const [isVisible, toggle, _, close] = useToggle()
@@ -22,7 +23,9 @@ export const WeightListEntry = ({ value, id }) => {
         <MoreVertIcon id={styles.three_dots} onClick={toggle} />
       </span>
       <div className={styles.entry_modal}>
-        {isVisible && <EntryModal closeModal={close} deleteEntry={deleteEntry} />}
+        <AnimatePresence>
+          {isVisible && <EntryModal closeModal={close} deleteEntry={deleteEntry} />}
+        </AnimatePresence>
       </div>
     </div>
   )

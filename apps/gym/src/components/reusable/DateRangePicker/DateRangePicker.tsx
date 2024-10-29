@@ -1,25 +1,34 @@
 'use client'
 
-import dayjs from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 import styles from './DateRangePicker.module.css'
 import { DatePicker } from '../DatePicker'
 import { RangeSelector } from '@/components/isolated/Weight'
 import { useState } from 'react'
-import { LocalizationProvider } from '@mui/x-date-pickers'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { useToggle } from '@/hooks'
 
-export const DateRangePicker = () => {
-  const [startDate, setStartDate] = useState<any>(dayjs())
-  const [endDate, setEndDate] = useState<any>(dayjs())
+interface DateRangePickerProps {
+  updateChart: (startDate?: Dayjs, endDate?: Dayjs) => void
+}
 
-  // const handleClick = () => {
-  //   click(dayjs('1/1/2022'), dayjs('8/1/2022'))
-  // }
+export const DateRangePicker = ({ updateChart }: DateRangePickerProps) => {
+  const [startDate, setStartDate] = useState(dayjs())
+  const [endDate, setEndDate] = useState(dayjs())
+  const [isCustom, , openDatePickers, closeDatePickers] = useToggle()
+
   return (
     <div className={styles.container}>
-      <RangeSelector />
-      <DatePicker value={startDate} setDate={setStartDate} />
-      <DatePicker value={endDate} setDate={setEndDate} />
+      <RangeSelector
+        updateChart={updateChart}
+        openDatePickers={openDatePickers}
+        closeDatePickers={closeDatePickers}
+      />
+      {isCustom && (
+        <div className={styles.date_picker_container}>
+          <DatePicker value={startDate} setDate={setStartDate} />
+          <DatePicker value={endDate} setDate={setEndDate} />
+        </div>
+      )}
     </div>
   )
 }
