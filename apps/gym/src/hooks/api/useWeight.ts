@@ -4,6 +4,6 @@ import { useQuery } from '@tanstack/react-query'
 export const useWeight = () => {
   return useQuery({
     queryKey: ['weight'],
-    queryFn: async () => await getWeight(),
+    queryFn: () => getWeight(),
   })
 }

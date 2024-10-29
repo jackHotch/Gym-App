@@ -10,8 +10,6 @@ export const convertDate = (data: IWeightData[]) => {
 }
 
 export const getChartData = (list: IWeightData[]) => {
-  console.log(list)
-  console.log('inside chart')
   let l = []
   let d = []
   const data = convertDate(list)

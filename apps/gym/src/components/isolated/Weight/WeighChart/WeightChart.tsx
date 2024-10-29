@@ -2,20 +2,23 @@ import styles from './WeightChart.module.css'
 import { DateRangePicker } from '@/components/reusable/DateRangePicker'
 import { Chart } from '@/components/reusable'
 import { useWeight } from '@/hooks'
-import { getChartData } from '@/utils/utils'
+import { convertDate, getChartData } from '@/utils/utils'
 import dayjs, { Dayjs } from 'dayjs'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { IWeightData } from '@/app/globals'
 
 export const WeightChart = () => {
   const { data, isLoading } = useWeight()
-  const [l, d] = getChartData(data)
-  console.log(l)
-  const [labels, setLabels] = useState(l)
-  console.log(d)
-  const [weightData, setWeightData] = useState(d)
+  const [labels, setLabels] = useState([])
+  const [weightData, setWeightData] = useState([])
+
+  useEffect(() => {
+    const [l, d] = getChartData(data)
+    setLabels(l)
+    setWeightData(d)
+  }, [data])
 
   const filterByRange = (startDate?: Dayjs, endDate?: Dayjs) => {
-    console.log('inside filter')
     startDate = startDate ? startDate : dayjs().subtract(3, 'M')
     endDate = endDate ? endDate : dayjs()
     const filteredData = data?.filter((value) => {

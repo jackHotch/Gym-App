@@ -15,7 +15,7 @@ export interface IWeightData {
 
 export interface ChartProps {
   labels: string[]
-  data: any
+  data: any[]
   isLoading: boolean
 }
 
