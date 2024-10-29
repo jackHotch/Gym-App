@@ -1,6 +1,6 @@
 .container {
   cursor: pointer;
-  padding: 2px 8px;
+  padding: 4px 8px;
   width: calc(100% - 16px);
   text-align: left;
 }
