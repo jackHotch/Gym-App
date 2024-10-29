@@ -3,7 +3,7 @@ import { DropdownProps } from '../Dropdown'
 import { motion } from 'framer-motion'
 import { CSSProperties, ReactNode } from 'react'
 
-interface ItemProps extends DropdownProps {
+export interface ItemProps extends DropdownProps {
   children: string
   handleClick: (a: string) => void
 }

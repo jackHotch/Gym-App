@@ -5,10 +5,12 @@ import styles from './DateRangePicker.module.css'
 import { DatePicker } from '../DatePicker'
 import { RangeSelector } from '@/components/isolated/Weight'
 import { useState } from 'react'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 export const DateRangePicker = () => {
-  const [startDate, setStartDate] = useState(dayjs())
-  const [endDate, setEndDate] = useState(dayjs())
+  const [startDate, setStartDate] = useState<any>(dayjs())
+  const [endDate, setEndDate] = useState<any>(dayjs())
 
   // const handleClick = () => {
   //   click(dayjs('1/1/2022'), dayjs('8/1/2022'))

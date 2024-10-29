@@ -6,6 +6,8 @@ import { convertDate, getChartData } from '@/utils/utils'
 import dayjs, { Dayjs } from 'dayjs'
 import { useEffect, useState } from 'react'
 import { IWeightData } from '@/app/globals'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 export const WeightChart = () => {
   const { data, isLoading } = useWeight()
@@ -31,11 +33,13 @@ export const WeightChart = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <DateRangePicker click={filterByRange} />
-      <div className={styles.chart_container}>
-        <Chart labels={labels} data={weightData} isLoading={isLoading} />
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <div className={styles.container}>
+        <DateRangePicker />
+        <div className={styles.chart_container}>
+          <Chart labels={labels} data={weightData} isLoading={isLoading} />
+        </div>
       </div>
-    </div>
+    </LocalizationProvider>
   )
 }
