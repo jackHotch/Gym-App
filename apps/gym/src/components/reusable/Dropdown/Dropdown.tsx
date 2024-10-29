@@ -4,7 +4,7 @@ import styles from './Dropdown.module.css'
 import { Button } from './Button/Button'
 import { Content } from './Content/Content'
 import { Item } from './Item/Item'
-import { CSSProperties, HTMLAttributes, ReactNode, useState } from 'react'
+import { CSSProperties, HTMLAttributes, ReactNode } from 'react'
 
 export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   sx?: CSSProperties
