@@ -5,6 +5,7 @@ import { useToggle } from '@/hooks'
 import { useRef, useState } from 'react'
 import { useOutsideClick } from '@/hooks'
 import dayjs, { Dayjs } from 'dayjs'
+import { AnimatePresence } from 'framer-motion'
 
 interface RangeSelectorProps {
   updateChart: (startDate?: Dayjs, endDate?: Dayjs) => void
@@ -63,17 +64,19 @@ export const RangeSelector = ({
   return (
     <Dropdown>
       <Dropdown.Button onClick={toggle}>{selectedValue}</Dropdown.Button>
-      {open && (
-        <Dropdown.Content ref={contentRef}>
-          {options.map((option, key) => {
-            return (
-              <Dropdown.Item key={key} id={key} handleClick={handleClick}>
-                {option.name}
-              </Dropdown.Item>
-            )
-          })}
-        </Dropdown.Content>
-      )}
+      <AnimatePresence>
+        {open && (
+          <Dropdown.Content ref={contentRef}>
+            {options.map((option, key) => {
+              return (
+                <Dropdown.Item key={key} id={key} handleClick={handleClick}>
+                  {option.name}
+                </Dropdown.Item>
+              )
+            })}
+          </Dropdown.Content>
+        )}
+      </AnimatePresence>
     </Dropdown>
   )
 }
