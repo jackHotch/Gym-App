@@ -10,3 +10,8 @@
   background-color: white;
   font-size: 1.1rem;
 }
+
+.arrow {
+  width: min-content;
+  height: min-content;
+}
