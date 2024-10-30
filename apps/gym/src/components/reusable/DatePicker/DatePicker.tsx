@@ -15,12 +15,16 @@ interface DatePickerProps {
   sxCalendar?: CSSProperties
   value: any
   setDate: (a: any) => void
+  onChange?: (a: boolean, b: Dayjs) => void
   openCalendar?: boolean
+  start?: boolean
 }
 
 export const DatePicker = ({
   value,
   setDate,
+  onChange = null,
+  start = false,
   openCalendar = false,
   sx,
   sxCalendar,
@@ -50,7 +54,8 @@ export const DatePicker = ({
   }
 
   const handleChange = (date: any) => {
-    setDate(date)
+    // setDate(date)
+    onChange ? onChange(start, date) : null
     close()
   }
 
@@ -67,7 +72,7 @@ export const DatePicker = ({
             <div ref={calendarRef}>
               <Calendar
                 value={value}
-                onChange={(newDate: any) => handleChange(newDate)}
+                onChange={(event) => handleChange(event)}
                 sx={{ position: 'absolute', bottom: '-340px', right: '0', ...sxCalendar }}
               />
             </div>

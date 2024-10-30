@@ -17,6 +17,20 @@ export const DateRangePicker = ({ updateChart }: DateRangePickerProps) => {
   const [endDate, setEndDate] = useState(dayjs())
   const [isCustom, , openDatePickers, closeDatePickers] = useToggle()
 
+  const handleChange = (start: boolean, date: Dayjs) => {
+    start ? setStartDate(date) : setEndDate(date)
+    // https://react.dev/reference/react/useState#ive-updated-the-state-but-logging-gives-me-the-old-value
+    console.log(date)
+    // console.log(startDate)
+    // console.log(endDate)
+    if (startDate.isSame(endDate) || startDate.isAfter(endDate)) {
+      console.log('DISPLAY ERROR MESSAGE')
+      return
+    }
+
+    updateChart(startDate, endDate)
+  }
+
   return (
     <LayoutGroup>
       <motion.div className={styles.container}>
@@ -32,8 +46,17 @@ export const DateRangePicker = ({ updateChart }: DateRangePickerProps) => {
           <AnimatePresence>
             {isCustom && (
               <div key={2} className={styles.date_picker_container}>
-                <DatePicker value={startDate} setDate={setStartDate} />
-                <DatePicker value={endDate} setDate={setEndDate} />
+                <DatePicker
+                  value={startDate}
+                  setDate={setStartDate}
+                  onChange={handleChange}
+                  start={true}
+                />
+                <DatePicker
+                  value={endDate}
+                  setDate={setEndDate}
+                  onChange={handleChange}
+                />
               </div>
             )}
           </AnimatePresence>
