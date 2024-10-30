@@ -20,8 +20,8 @@ export const WeightChart = () => {
   }, [data])
 
   const filterByRange = (startDate?: Dayjs, endDate?: Dayjs) => {
-    startDate = startDate ? dayjs().subtract(3, 'M') : dayjs(data[0].date)
-    endDate = endDate ? dayjs() : dayjs(data[data.length - 1].date)
+    startDate = startDate ? startDate : dayjs(data[0].date)
+    endDate = endDate ? endDate : dayjs(data[data.length - 1].date)
     const filteredData = data?.filter((value) => {
       const d = dayjs(value.date)
       return d.isAfter(startDate) && d.isBefore(endDate)

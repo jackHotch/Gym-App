@@ -5,7 +5,7 @@ import { useToggle } from '@/hooks'
 import { useRef, useState } from 'react'
 import { useOutsideClick } from '@/hooks'
 import dayjs, { Dayjs } from 'dayjs'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, useAnimate } from 'framer-motion'
 
 interface RangeSelectorProps {
   updateChart: (startDate?: Dayjs, endDate?: Dayjs) => void
@@ -32,10 +32,12 @@ export const RangeSelector = ({
   const [selectedValue, setSelectedValue] = useState('Since Starting Date')
   const [open, toggle, , close] = useToggle()
   const contentRef = useRef()
+  const [scope, animate] = useAnimate()
   useOutsideClick(contentRef, close)
 
   const handleClick = (id: number) => {
     setSelectedValue(options[id].name)
+    animate(scope.current, { rotate: 0 })
     closeDatePickers()
 
     if (options[id].name === 'Custom') {
@@ -61,9 +63,16 @@ export const RangeSelector = ({
     close()
   }
 
+  const handleButtonClick = () => {
+    toggle()
+    animate(scope.current, { rotate: open ? 0 : 180 })
+  }
+
   return (
     <Dropdown>
-      <Dropdown.Button onClick={toggle}>{selectedValue}</Dropdown.Button>
+      <Dropdown.Button ref={scope} onClick={handleButtonClick}>
+        {selectedValue}
+      </Dropdown.Button>
       <AnimatePresence>
         {open && (
           <Dropdown.Content ref={contentRef}>

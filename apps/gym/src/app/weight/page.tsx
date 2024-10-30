@@ -9,8 +9,8 @@ const Weight = () => {
   return (
     <div className={styles.container}>
       <div className={styles.body}>
-        <WeightList />
         <WeightChart />
+        <WeightList />
       </div>
     </div>
   )

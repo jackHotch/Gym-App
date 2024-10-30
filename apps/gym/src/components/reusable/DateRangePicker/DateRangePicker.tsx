@@ -12,27 +12,6 @@ interface DateRangePickerProps {
   updateChart: (startDate?: Dayjs, endDate?: Dayjs) => void
 }
 
-const motionVariants = {
-  hidden: {
-    x: '20%',
-    opacity: 0,
-  },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 60,
-      damping: 10,
-      duration: 1,
-    },
-  },
-  exit: {
-    x: '20%',
-    opacity: 0,
-  },
-}
-
 export const DateRangePicker = ({ updateChart }: DateRangePickerProps) => {
   const [startDate, setStartDate] = useState(dayjs())
   const [endDate, setEndDate] = useState(dayjs())
@@ -49,7 +28,7 @@ export const DateRangePicker = ({ updateChart }: DateRangePickerProps) => {
           />
         </motion.div>
 
-        <motion.div style={{ height: '100%' }} layout='position'>
+        <motion.div layout='position'>
           <AnimatePresence>
             {isCustom && (
               <div key={2} className={styles.date_picker_container}>
