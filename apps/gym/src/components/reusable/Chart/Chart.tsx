@@ -14,7 +14,6 @@ import {
   Legend,
   Filler,
 } from 'chart.js'
-import { lineChartData } from './FAKEDATA'
 
 ChartJS.register(
   CategoryScale,

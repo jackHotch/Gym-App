@@ -4,31 +4,54 @@ import styles from './DateRangePicker.module.css'
 import dayjs, { Dayjs } from 'dayjs'
 import { DatePicker } from '../DatePicker'
 import { RangeSelector } from '@/components/isolated/Weight'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useToggle } from '@/hooks'
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
+import { IWeightData } from '@/app/globals'
 
 interface DateRangePickerProps {
-  updateChart: (startDate?: Dayjs, endDate?: Dayjs) => void
+  filter: (startDate?: Dayjs, endDate?: Dayjs) => void
+  data: IWeightData[]
 }
 
-export const DateRangePicker = ({ updateChart }: DateRangePickerProps) => {
+const motionVariants = {
+  visible: {
+    x: [0, 5, 0],
+    transition: {
+      duration: 0.2,
+      repeat: 4,
+    },
+  },
+}
+
+export const DateRangePicker = ({ filter, data }: DateRangePickerProps) => {
   const [startDate, setStartDate] = useState(dayjs())
   const [endDate, setEndDate] = useState(dayjs())
   const [isCustom, , openDatePickers, closeDatePickers] = useToggle()
+  const [error, , showError, closeError] = useToggle()
 
-  const handleChange = (start: boolean, date: Dayjs) => {
-    start ? setStartDate(date) : setEndDate(date)
-    // https://react.dev/reference/react/useState#ive-updated-the-state-but-logging-gives-me-the-old-value
-    console.log(date)
-    // console.log(startDate)
-    // console.log(endDate)
-    if (startDate.isSame(endDate) || startDate.isAfter(endDate)) {
-      console.log('DISPLAY ERROR MESSAGE')
-      return
+  useEffect(() => {
+    closeDatePickers()
+  }, [data])
+
+  const handleChange = (date: Dayjs, start?: boolean) => {
+    if (start) {
+      if (date.isSame(endDate) || date.isAfter(endDate)) {
+        showError()
+        return
+      }
+      closeError()
+      filter(date, endDate)
+      setStartDate(date)
+    } else {
+      if (startDate.isSame(date) || startDate.isAfter(date)) {
+        showError()
+        return
+      }
+      closeError()
+      filter(startDate, date)
+      setEndDate(date)
     }
-
-    updateChart(startDate, endDate)
   }
 
   return (
@@ -36,9 +59,10 @@ export const DateRangePicker = ({ updateChart }: DateRangePickerProps) => {
       <motion.div className={styles.container}>
         <motion.div key={1} layout='position'>
           <RangeSelector
-            updateChart={updateChart}
+            filter={filter}
             openDatePickers={openDatePickers}
             closeDatePickers={closeDatePickers}
+            data={data}
           />
         </motion.div>
 
@@ -46,21 +70,23 @@ export const DateRangePicker = ({ updateChart }: DateRangePickerProps) => {
           <AnimatePresence>
             {isCustom && (
               <div key={2} className={styles.date_picker_container}>
-                <DatePicker
-                  value={startDate}
-                  setDate={setStartDate}
-                  onChange={handleChange}
-                  start={true}
-                />
-                <DatePicker
-                  value={endDate}
-                  setDate={setEndDate}
-                  onChange={handleChange}
-                />
+                <DatePicker value={startDate} onChange={handleChange} start={true} />
+                <DatePicker value={endDate} onChange={handleChange} />
               </div>
             )}
           </AnimatePresence>
         </motion.div>
+        <AnimatePresence>
+          {error && (
+            <motion.p
+              className={styles.error_message}
+              variants={motionVariants}
+              animate='visible'
+            >
+              Invalid Range!
+            </motion.p>
+          )}
+        </AnimatePresence>
       </motion.div>
     </LayoutGroup>
   )

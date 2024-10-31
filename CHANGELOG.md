@@ -2,6 +2,12 @@
 
 _This is the changelog for the entire project_
 
+## 10/31/2024
+
+- Created Dropdown component
+- Created RangeSelector Component
+- Created DateRangePicker
+
 ## 10/25/2024
 
 - Added Popover and Item component to GymUI

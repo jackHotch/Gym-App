@@ -14,15 +14,13 @@ interface DatePickerProps {
   sx?: CSSProperties
   sxCalendar?: CSSProperties
   value: any
-  setDate: (a: any) => void
-  onChange?: (a: boolean, b: Dayjs) => void
+  onChange?: (a: Dayjs, b?: boolean) => void
   openCalendar?: boolean
   start?: boolean
 }
 
 export const DatePicker = ({
   value,
-  setDate,
   onChange = null,
   start = false,
   openCalendar = false,
@@ -54,8 +52,7 @@ export const DatePicker = ({
   }
 
   const handleChange = (date: any) => {
-    // setDate(date)
-    onChange ? onChange(start, date) : null
+    onChange(date, start)
     close()
   }
 

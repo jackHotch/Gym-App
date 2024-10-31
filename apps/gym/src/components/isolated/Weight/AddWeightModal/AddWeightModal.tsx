@@ -13,7 +13,6 @@ import { Modal } from '@gymapp/gymui/Modal'
 import { CloseIcon } from '@gymapp/gymui/CloseIcon'
 import { Form } from '@gymapp/gymui/Form'
 import { DatePicker } from '@/components/reusable'
-import { AnimatePresence } from 'framer-motion'
 
 export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
   const [weight, setWeight] = useState('')
@@ -28,6 +27,10 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
     e.preventDefault()
     addWeight({ weight: weight, date: date.format('YYYY-MM-DD') })
     closeModal()
+  }
+
+  const handleChange = (d: any) => {
+    setDate(d)
   }
 
   return (
@@ -62,7 +65,7 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
                 <label>Date: </label>
                 <DatePicker
                   value={date}
-                  setDate={setDate}
+                  onChange={handleChange}
                   sx={{ margin: '10px 0 0 10px' }}
                 />
               </div>
