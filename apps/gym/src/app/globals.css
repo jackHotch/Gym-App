@@ -1,5 +1,6 @@
 :root {
     --red: #dd3e32;
+    --bright-red: rgb(255, 0, 0);
     --blue: #3a8fea;
     --lightgray: #d3d3d3;
     --darkgray: #959595;

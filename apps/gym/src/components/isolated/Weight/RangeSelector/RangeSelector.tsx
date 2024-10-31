@@ -2,21 +2,24 @@
 
 import { Dropdown } from '@/components/reusable'
 import { useToggle } from '@/hooks'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useOutsideClick } from '@/hooks'
 import dayjs, { Dayjs } from 'dayjs'
 import { AnimatePresence, useAnimate } from 'framer-motion'
+import { IWeightData } from '@/app/globals'
 
 interface RangeSelectorProps {
-  updateChart: (startDate?: Dayjs, endDate?: Dayjs) => void
+  filter: (startDate?: Dayjs, endDate?: Dayjs) => void
   openDatePickers: () => void
   closeDatePickers: () => void
+  data: IWeightData[]
 }
 
 export const RangeSelector = ({
-  updateChart,
+  filter,
   openDatePickers,
   closeDatePickers,
+  data,
 }: RangeSelectorProps) => {
   const options = [
     { name: '1 Week', startDate: dayjs().subtract(1, 'w'), endDate: dayjs() },
@@ -35,6 +38,10 @@ export const RangeSelector = ({
   const [scope, animate] = useAnimate()
   useOutsideClick(contentRef, close)
 
+  useEffect(() => {
+    setSelectedValue('Since Starting Date')
+  }, [data])
+
   const handleClick = (id: number) => {
     setSelectedValue(options[id].name)
     animate(scope.current, { rotate: 0 })
@@ -48,7 +55,7 @@ export const RangeSelector = ({
       return
     }
 
-    updateChart(options[id].startDate, options[id].endDate)
+    filter(options[id].startDate, options[id].endDate)
     close()
   }
 
@@ -58,7 +65,7 @@ export const RangeSelector = ({
   }
 
   const handleStartingClick = () => {
-    updateChart()
+    filter()
     closeDatePickers()
     close()
   }
