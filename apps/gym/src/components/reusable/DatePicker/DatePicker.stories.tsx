@@ -22,7 +22,7 @@ export const Primary: Story = {
   args: {
     openCalendar: true,
     value: date,
-    setDate: setDate,
+    onChange: setDate,
   },
   render: (args) => {
     return (

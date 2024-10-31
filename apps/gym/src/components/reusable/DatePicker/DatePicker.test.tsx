@@ -10,7 +10,7 @@ describe('DatePicker', () => {
     const setDate = (n: any) => (date = n)
     const { baseElement } = render(
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker value={date} setDate={setDate} />
+        <DatePicker value={date} onChange={setDate} />
       </LocalizationProvider>
     )
 
