@@ -7,6 +7,7 @@ _This is the changelog for the entire project_
 - Created Dropdown component
 - Created RangeSelector Component
 - Created DateRangePicker
+- Added ChartHeader to chart
 
 ## 10/25/2024
 

@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, ReactElement, ReactNode } from 'react'
 import { HTMLMotionProps } from 'framer-motion'
 import { Primary } from './Primary'
 import { Secondary } from './Secondary'
@@ -9,7 +9,7 @@ import { Text } from './Text'
 type size = 'small' | 'medium' | 'large'
 
 export interface ButtonProps extends HTMLMotionProps<'button'> {
-  children?: string
+  children?: ReactNode
   size?: size
   sx?: CSSProperties
 }

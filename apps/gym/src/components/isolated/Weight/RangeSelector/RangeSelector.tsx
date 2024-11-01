@@ -36,11 +36,16 @@ export const RangeSelector = ({
   const [open, toggle, , close] = useToggle()
   const contentRef = useRef()
   const [scope, animate] = useAnimate()
-  useOutsideClick(contentRef, close)
+  useOutsideClick(contentRef, outsideClick)
 
   useEffect(() => {
     setSelectedValue('Since Starting Date')
   }, [data])
+
+  function outsideClick() {
+    animate(scope.current, { rotate: 0 })
+    close()
+  }
 
   const handleClick = (id: number) => {
     setSelectedValue(options[id].name)

@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import isBetween from 'dayjs/plugin/isBetween'
+import { ChartHeader } from '../ChartHeader'
 dayjs.extend(isBetween)
 
 export const WeightChart = () => {
@@ -25,8 +26,7 @@ export const WeightChart = () => {
     startDate = startDate ? startDate : dayjs(data[0].date)
     endDate = endDate ? endDate : dayjs(data[data.length - 1].date)
     const filteredData = data?.filter((value) => {
-      const d = dayjs(value.date)
-      return d.isBetween(startDate, endDate, 'day', '[]')
+      return dayjs(value.date).isBetween(startDate, endDate, 'day', '[]')
     })
     const [l, d] = getChartData(filteredData)
     setLabels(l)
@@ -36,6 +36,10 @@ export const WeightChart = () => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className={styles.container}>
+        <ChartHeader
+          startingWeight={weightData[0]}
+          endingWeight={weightData[weightData.length - 1]}
+        />
         <DateRangePicker filter={filterByRange} data={data} />
         <div className={styles.chart_container}>
           <Chart labels={labels} data={weightData} isLoading={isLoading} />

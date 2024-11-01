@@ -9,7 +9,7 @@
 
 .date_picker_container {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   gap: 5px
 }
 
