@@ -4,12 +4,22 @@
   height: calc(100vh - 64px);
   min-height: 100%;
   max-height: 100vh;
+  position: relative;
 }
 
 .body {
   display: flex;
   flex-flow: row;
+  justify-content: space-evenly;
   flex-grow: 1;
   max-height: calc(100vh - 104px);
   padding: 20px 0;
+}
+
+.add_btn_div {
+  width: 100%;
+  height: min-content;
+  position: absolute;
+  top: 20px;
+  left: 10px;
 }

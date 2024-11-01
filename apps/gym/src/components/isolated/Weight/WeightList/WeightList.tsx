@@ -1,17 +1,15 @@
 'use client'
 
 import styles from './WeightList.module.css'
-import { AddWeightModal } from '../AddWeightModal'
 import { WeightListEntry } from './WeightListEntry/WeightListEntry'
-import { useToggle, useWeight } from '@/hooks'
-import { AnimatePresence } from 'framer-motion'
+import { useWeight } from '@/hooks'
 import { Loading } from '@gymapp/gymui/Loading'
 import { convertDate } from '@/utils/utils'
 
 export const WeightList = () => {
   const { data, isLoading } = useWeight()
   const weight = convertDate(data)
-  const [isAWMVisible, _, openAWM, closeAWM] = useToggle()
+
   let reversedArray: number[] = []
   weight?.map((_, index) => {
     return reversedArray.push(index)
@@ -21,12 +19,6 @@ export const WeightList = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.add_btn_div}>
-        <span className={styles.add_btn} onClick={openAWM}>
-          +
-        </span>
-      </div>
-
       <div className={styles.list}>
         <div className={styles.list_sub_headings}>
           <span id={styles.number_head}>#</span>
@@ -56,10 +48,6 @@ export const WeightList = () => {
           )}
         </div>
       </div>
-
-      <AnimatePresence>
-        {isAWMVisible && <AddWeightModal closeModal={closeAWM} />}
-      </AnimatePresence>
     </div>
   )
 }
