@@ -14,15 +14,7 @@ interface DateRangePickerProps {
   data: IWeightData[]
 }
 
-const motionVariants = {
-  visible: {
-    x: [0, 5, 0],
-    transition: {
-      duration: 0.2,
-      repeat: 4,
-    },
-  },
-}
+
 
 export const DateRangePicker = ({ filter, data }: DateRangePickerProps) => {
   const [startDate, setStartDate] = useState(dayjs())
@@ -78,13 +70,7 @@ export const DateRangePicker = ({ filter, data }: DateRangePickerProps) => {
         </motion.div>
         <AnimatePresence>
           {error && (
-            <motion.p
-              className={styles.error_message}
-              variants={motionVariants}
-              animate='visible'
-            >
-              Invalid Range!
-            </motion.p>
+            
           )}
         </AnimatePresence>
       </motion.div>
