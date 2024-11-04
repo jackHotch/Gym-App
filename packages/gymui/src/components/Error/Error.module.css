@@ -1,0 +1,6 @@
+.container {
+  color: var(--bright-red);
+  font-size: 20px;
+  height: min-content;
+  margin: auto 5px;
+}
