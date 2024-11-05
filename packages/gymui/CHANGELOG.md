@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 11/05/2024 - v8.0.1
+
+- Finshed the Error component
+
 ## 10/25/2024 - v7.0.1
 
 - Finished the Modal.Popover and Modal.Item components

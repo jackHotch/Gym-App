@@ -3,9 +3,10 @@ import styles from './Error.module.css'
 import { CSSProperties } from 'react'
 import { motion } from 'framer-motion'
 
-export interface ErrorProps extends HTMLMotionProps<'div'> {
+export interface ErrorProps extends HTMLMotionProps<'p'> {
   sx?: CSSProperties
   children: string
+  visible?: boolean
 }
 
 const motionVariants = {
@@ -20,14 +21,15 @@ const motionVariants = {
 
 export const Error = ({ sx, children, ...props }: ErrorProps) => {
   return (
-    <motion.div
+    <motion.p
       {...props}
       className={styles.container}
       style={sx}
       variants={motionVariants}
       animate='visible'
+      whileTap='visible'
     >
       {children}
-    </motion.div>
+    </motion.p>
   )
 }

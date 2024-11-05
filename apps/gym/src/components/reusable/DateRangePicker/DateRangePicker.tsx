@@ -8,13 +8,12 @@ import { useEffect, useState } from 'react'
 import { useToggle } from '@/hooks'
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 import { IWeightData } from '@/app/globals'
+import { Error } from '@gymapp/gymui/Error'
 
 interface DateRangePickerProps {
   filter: (startDate?: Dayjs, endDate?: Dayjs) => void
   data: IWeightData[]
 }
-
-
 
 export const DateRangePicker = ({ filter, data }: DateRangePickerProps) => {
   const [startDate, setStartDate] = useState(dayjs())
@@ -68,11 +67,7 @@ export const DateRangePicker = ({ filter, data }: DateRangePickerProps) => {
             )}
           </AnimatePresence>
         </motion.div>
-        <AnimatePresence>
-          {error && (
-            
-          )}
-        </AnimatePresence>
+        <AnimatePresence>{error && <Error>Invalid Range</Error>}</AnimatePresence>
       </motion.div>
     </LayoutGroup>
   )
