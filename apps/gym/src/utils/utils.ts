@@ -19,3 +19,7 @@ export const getChartData = (list: IWeightData[]) => {
   })
   return [l, d]
 }
+
+export const cssvar = (name: string) => {
+  return getComputedStyle(document.documentElement).getPropertyValue(name)
+}

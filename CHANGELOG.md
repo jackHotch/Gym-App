@@ -5,6 +5,7 @@ _This is the changelog for the entire project_
 ## 11/05/2024
 
 - Added Error component to GymUI
+- Fixed tooltip and changed labels on x axis of chart
 
 ## 10/31/2024
 
