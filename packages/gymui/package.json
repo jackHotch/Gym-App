@@ -9,7 +9,8 @@
     "./Form": "./src/components/Form/Form.tsx",
     "./Skeleton": "./src/components/Skeleton/Skeleton.tsx",
     "./Loading": "./src/components/Loading/Loading.tsx",
-    "./Calendar": "./src/components/Calendar/Calendar.tsx"
+    "./Calendar": "./src/components/Calendar/Calendar.tsx",
+    "./Error": "./src/components/Error/Error.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
