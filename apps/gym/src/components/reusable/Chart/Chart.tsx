@@ -1,9 +1,10 @@
 'use client'
 
-import styles from './TestChart.module.css'
+import styles from './Chart.module.css'
 import { ChartProps } from '@/app/globals'
 import { Line } from 'react-chartjs-2'
 import { Loading } from '@gymapp/gymui/Loading'
+import { cssvar } from '@/utils/utils'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,6 +14,7 @@ import {
   Tooltip,
   Legend,
   Filler,
+  scales,
 } from 'chart.js'
 
 ChartJS.register(
@@ -22,7 +24,8 @@ ChartJS.register(
   LineElement,
   Tooltip,
   Legend,
-  Filler
+  Filler,
+  scales
 )
 
 ChartJS.defaults.maintainAspectRatio = false
@@ -34,6 +37,30 @@ export const Chart = ({ labels, data, isLoading }: ChartProps) => {
       legend: {
         display: false,
       },
+      tooltip: {
+        displayColors: false,
+        backgroundColor: 'white',
+        borderColor: 'black',
+        borderWidth: 1,
+        bodyColor: 'black',
+        titleColor: 'black',
+        bodyAlign: 'center',
+        titleFont: {
+          size: 13,
+        },
+        bodyFont: {
+          size: 13,
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          callback: (_, i) => {
+            return labels.length > 30 ? (i % 2 === 0 ? labels[i] : undefined) : labels[i]
+          },
+        },
+      },
     },
   }
 
@@ -43,7 +70,9 @@ export const Chart = ({ labels, data, isLoading }: ChartProps) => {
       {
         label: 'lbs',
         data: data,
-        borderColor: 'rgb(58, 143, 234)',
+        backgroundColor: cssvar('--transparent-blue'),
+        borderColor: cssvar('--blue'),
+        fill: 'start',
       },
     ],
   }
