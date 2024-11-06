@@ -16,6 +16,7 @@ import {
   Filler,
   scales,
 } from 'chart.js'
+import { useEffect, useState } from 'react'
 
 ChartJS.register(
   CategoryScale,
@@ -31,6 +32,9 @@ ChartJS.register(
 ChartJS.defaults.maintainAspectRatio = false
 
 export const Chart = ({ labels, data, isLoading }: ChartProps) => {
+  const [blue, setBlue] = useState('')
+  const [transparentBlue, setTransparentBlue] = useState('')
+
   const options: any = {
     responsive: true,
     plugins: {
@@ -64,14 +68,19 @@ export const Chart = ({ labels, data, isLoading }: ChartProps) => {
     },
   }
 
+  useEffect(() => {
+    setBlue(cssvar('--blue'))
+    setTransparentBlue(cssvar('--transparent-blue'))
+  })
+
   const chartData = {
     labels: labels,
     datasets: [
       {
         label: 'lbs',
         data: data,
-        backgroundColor: cssvar('--transparent-blue'),
-        borderColor: cssvar('--blue'),
+        backgroundColor: transparentBlue,
+        borderColor: blue,
         fill: 'start',
       },
     ],
