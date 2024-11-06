@@ -50,10 +50,12 @@ export const Chart = ({ labels, data, isLoading }: ChartProps) => {
         titleColor: 'black',
         bodyAlign: 'center',
         titleFont: {
-          size: 13,
+          size: 14,
+          family: 'League-Spartan',
         },
         bodyFont: {
-          size: 13,
+          size: 15,
+          family: 'League-Spartan',
         },
       },
     },

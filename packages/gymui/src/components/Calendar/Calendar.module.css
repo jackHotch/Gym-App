@@ -3,4 +3,6 @@
   border: 1px solid black;
   border-radius: 10px;
   width: max-content;
+  position: relative;
+  z-index: 1;
 }

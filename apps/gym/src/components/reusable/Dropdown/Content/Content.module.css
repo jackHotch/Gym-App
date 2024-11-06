@@ -9,4 +9,5 @@
   position: absolute;
   bottom: calc(0 - 100%);
   left: 0;
+  z-index: 1;
 }
