@@ -21,5 +21,5 @@ export const getChartData = (list: IWeightData[]) => {
 }
 
 export const cssvar = (name: string) => {
-  return getComputedStyle(document.documentElement).getPropertyValue(name)
+  return window.getComputedStyle(document.documentElement).getPropertyValue(name)
 }
