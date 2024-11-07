@@ -51,11 +51,11 @@ export const Chart = ({ labels, data, isLoading }: ChartProps) => {
         bodyAlign: 'center',
         titleFont: {
           size: 14,
-          family: 'League-Spartan',
+          family: 'Inter',
         },
         bodyFont: {
           size: 15,
-          family: 'League-Spartan',
+          family: 'Inter',
         },
       },
     },

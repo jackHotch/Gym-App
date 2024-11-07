@@ -15,13 +15,24 @@ a {
     text-decoration: none;
 }
 
-@font-face {
+/* @font-face {
     font-family: "League-Spartan";
     src: url("../../public/fonts/LeagueSpartan-VariableFont_wght.ttf");
-  }
+  } */
+
+/* @font-face {
+    font-family: "Poppins";
+    src: url("../../public/fonts/Poppins-Regular.ttf");
+} */
+
+@font-face {
+    font-family: "Inter";
+    src: url("../../public/fonts/Inter-VariableFont_opsz\,wght.ttf");
+}
 
 * {
-    font-family: 'League-Spartan';
+    font-family: 'Inter';
+    font-weight: 500;
     padding: 0;
     margin: 0;
     line-height: 24px;
