@@ -5,8 +5,8 @@
     --transparent-blue: #3a8fea59;
     --red: #dd3e32;
     --bright-red: rgb(255, 0, 0);
-    --lightgray: #d3d3d3;
-    --darkgray: #959595;
+    --light-gray: #d3d3d3;
+    --dark-gray: #959595;
     --box-shadow: rgba(99, 99, 99, 0.8) 0px 2px 8px 0px;
 }
 
@@ -27,12 +27,18 @@ a {
 
 @font-face {
     font-family: "Inter";
-    src: url("../../public/fonts/Inter-VariableFont_opsz\,wght.ttf");
+    src: url("/fonts/Inter-VariableFont_opsz\,wght.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Noto-Sans";
+    src: url("/fonts/NotoSans-VariableFont_wdth\,wght.ttf");
+    font-weight: 500;
 }
 
 * {
-    font-family: 'Inter';
-    font-weight: 500;
+    font-family: 'Noto-Sans';
     padding: 0;
     margin: 0;
     line-height: 24px;
@@ -43,6 +49,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter';
     line-height: 1.2;
-    font-weight: 500;
 }

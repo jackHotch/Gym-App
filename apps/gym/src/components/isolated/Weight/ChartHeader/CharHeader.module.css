@@ -17,7 +17,7 @@
 
 .label {
   font-size: 18px;
-  color: var(--darkgray);
+  color: var(--dark-gray);
 }
 
 .data {
@@ -32,6 +32,6 @@
 }
 
 .plus {
-  font-size: 28px;
+  font-size: 24px;
   margin-left: 6px;
 }

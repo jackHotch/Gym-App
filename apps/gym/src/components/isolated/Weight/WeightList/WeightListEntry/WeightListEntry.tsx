@@ -16,12 +16,10 @@ export const WeightListEntry = ({ value, id }) => {
 
   return (
     <div className={styles.entry}>
-      <span className={styles.number}>#{id}</span>
+      <span className={styles.id}>#{id}</span>
       <span className={styles.weight}>{value.weight} lbs</span>
       <span className={styles.date}>{value.date}</span>
-      <span>
-        <MoreVertIcon id={styles.three_dots} onClick={toggle} />
-      </span>
+      <MoreVertIcon id={styles.three_dots} onClick={toggle} />
       <div className={styles.entry_modal}>
         <AnimatePresence>
           {isVisible && <EntryModal closeModal={close} deleteEntry={deleteEntry} />}

@@ -1,27 +1,29 @@
 .entry {
-  margin: 10px 0;
+  margin: 15px 0;
   width: calc(100% - 10px);
   border-bottom: 1px solid black;
   padding: 5px;
   font-size: 1.1rem;
   max-width: 100%;
   border-radius: 5px 5px 0 0;
+  display: flex;
 }
 
 .entry:first-child {
   padding-top: 10px;
 }
 
-.number {
+.id {
   display: inline-block;
-  margin-right: 20px;
-  width: 33px;
+  margin-right: 12px;
+  width: 43px;
+  color: var(--dark-gray)
 }
 
 .weight {
   display: inline-block;
-  margin-right: 70px;
-  width: 65px;
+  margin-right: 60px;
+  width: 75px;
 }
 
 .date {
@@ -32,6 +34,7 @@
 
 #three_dots {
   cursor: pointer;
+  height: min-content;
 }
 
 .entry_modal {
