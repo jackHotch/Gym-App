@@ -27,7 +27,8 @@
 }
 
 .arrow {
-  top: -2px;
+  position: relative;
+  top: 2px;
 }
 
 .plus {
