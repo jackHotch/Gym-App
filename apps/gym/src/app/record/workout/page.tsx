@@ -55,7 +55,7 @@ const Workout = () => {
             type='button'
             onClick={openAddExerciseModal}
             size='medium'
-            sx={{ margin: '16px auto 8px auto', width: '175px' }}
+            sx={{ margin: '16px auto 8px auto', width: '200px' }}
           >
             Add Exercise
           </Button.Secondary>
@@ -64,7 +64,7 @@ const Workout = () => {
             type='button'
             onClick={openConfirmationModal}
             size='medium'
-            sx={{ margin: '8px auto 16px auto', width: '175px' }}
+            sx={{ margin: '8px auto 16px auto', width: '200px' }}
           >
             Finish Workout
           </Button.Primary>

@@ -11,7 +11,7 @@ export const WorkoutConfirmationModal = ({
 }: WorkoutConfirmationModalProps) => {
   return (
     <Modal.FullPage
-      width='380px'
+      width='420px'
       height='180px'
       onOutsideClick={closeModal}
       sx={{ padding: '20px', justifyContent: 'space-between', textAlign: 'center' }}
@@ -21,14 +21,14 @@ export const WorkoutConfirmationModal = ({
         <Button.Danger
           size='medium'
           onClick={closeModal}
-          sx={{ marginRight: '15px', width: '175px' }}
+          sx={{ marginRight: '15px', width: '220px' }}
         >
           Cancel
         </Button.Danger>
         <Button.Primary
           size='medium'
           onClick={(e) => handleSubmit(e)}
-          sx={{ marginLeft: '15px', width: '175px' }}
+          sx={{ marginLeft: '15px', width: '220px' }}
         >
           Finish Workout
         </Button.Primary>

@@ -6,7 +6,9 @@
 .split_name {
   text-align: center;
   margin-top: 50px;
-  font-size: 3rem;
+  font-weight: 600;
+  font-size: 4.5rem;
+  letter-spacing: -1px;
 }
 
 .button {

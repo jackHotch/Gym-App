@@ -14,7 +14,7 @@ const Record = () => {
     <>
       <div className={styles.split_name_container}>
         {currentSplit ? (
-          <h2 className={styles.split_name}>{currentSplit?.name}</h2>
+          <h1 className={styles.split_name}>{currentSplit?.name}</h1>
         ) : (
           <Loading.Text
             fontSize='3rem'

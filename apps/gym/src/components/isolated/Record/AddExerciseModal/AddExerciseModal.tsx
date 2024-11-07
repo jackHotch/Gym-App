@@ -38,7 +38,9 @@ export const AddExerciseModal = ({
   return (
     <Modal.FullPage width='500px' height='600px' onOutsideClick={closeModal}>
       <div className={styles.header}>
-        <Button.Text onClick={openCreateExerciseModal}>Create New Exercise</Button.Text>
+        <Button.Text onClick={openCreateExerciseModal} sx={{ fontSize: '18px' }}>
+          Create New Exercise
+        </Button.Text>
 
         <CloseIcon onClick={closeModal} />
       </div>
