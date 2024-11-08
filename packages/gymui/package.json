@@ -10,7 +10,8 @@
     "./Skeleton": "./src/components/Skeleton/Skeleton.tsx",
     "./Loading": "./src/components/Loading/Loading.tsx",
     "./Calendar": "./src/components/Calendar/Calendar.tsx",
-    "./Error": "./src/components/Error/Error.tsx"
+    "./Error": "./src/components/Error/Error.tsx",
+    "./TabList": "./src/components/TabList/TabList.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

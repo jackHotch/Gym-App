@@ -1,65 +1,7 @@
 .navbar {
-    background-color: var(--blue);
-    padding: 15px;
-    display: flex;
-    flex-flow: row wrap;
-    max-height: 60px;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 10000;
-}
-
-.logo {
-    width: max-content;
-    height: max-content;
-    margin: 0 0 0 30px;
-    text-align: center;
-    font-size: 1.4rem;
-    border-radius: 8px;
-}
-
-.logo img {
-    height: 25px;
-}
-
-.logo div {
-    margin-left: 10px;
-}
-
-.logo_link {
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.links {
-    display: flex;
-    flex-flow: row wrap;
-    align-content: center;
-    margin-right: 10px;
-    max-height: 60px;
-}
-
-.link_item_div {
-    padding: 0 15px;
-    margin: 0 15px;
-    font-size: 1.3rem;
-}
-
-.link_item {
-    color: white;
-    line-height: 2rem;
-}
-
-.link_container {
-    display: flex;
-    flex-direction: column;
-}
-
-.underline {
-    background-color: white;
-    height: 2px;
-    margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--light-gray);
 }
