@@ -17,9 +17,9 @@ pool.connect()
 
 export async function getLastWorkoutNumber() {
   const { rows } = await pool.query(
-    'SELECT "Workout_Number" FROM workouts ORDER BY id DESC LIMIT 1'
+    'SELECT "workout_number" FROM workouts ORDER BY id DESC LIMIT 1'
   )
-  return rows[0]['Workout_Number']
+  return rows[0]['workout_number']
 }
 
 export async function createWorkout(workout: IExercises[]) {
@@ -49,7 +49,7 @@ export async function createWorkout(workout: IExercises[]) {
 
   for (let i = 0; i < rows.length; i++) {
     await pool.query(
-      `insert into workouts ("Date", "Start_Time", "Workout_Number", "Exercise_Name", "Set_Order", "Weight", "Reps", "Notes", "RPE") values ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
+      `insert into workouts ("date", "start_time", "workout_number", "exercise_name", "set_order", "weight", "reps", "notes", "rpe") values ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
       rows[i]
     )
   }
