@@ -1,5 +1,4 @@
 import './globals.css'
-import { Navbar } from '../components/reusable'
 import ReactQueryProvider from '@/providers/ReactQueryProvider'
 
 export const metadata = {
@@ -12,8 +11,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ReactQueryProvider>
           <main>
-            <Navbar />
-            {children}
+            <div style={{ display: 'flex' }}>
+              <div style={{ backgroundColor: 'red' }}>{children}</div>
+            </div>
           </main>
         </ReactQueryProvider>
       </body>
