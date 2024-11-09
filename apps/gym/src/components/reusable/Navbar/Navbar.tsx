@@ -16,10 +16,12 @@ export const Navbar = () => {
   ]
 
   return (
-    <nav className={styles.navbar}>
-      <Logo />
-      <TabList options={options} />
-      <ProfileIcon />
-    </nav>
+    <div className={styles.container}>
+      <nav className={styles.navbar}>
+        <Logo />
+        <TabList options={options} />
+        <ProfileIcon />
+      </nav>
+    </div>
   )
 }

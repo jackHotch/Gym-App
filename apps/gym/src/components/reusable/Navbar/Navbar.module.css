@@ -1,7 +1,13 @@
+.container {
+  border-bottom: 1px solid var(--light-gray);
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid var(--light-gray);
+  align-items: center;
+  max-width: 70%;
+  margin: auto;
+  padding: 6px 20px;
 }
