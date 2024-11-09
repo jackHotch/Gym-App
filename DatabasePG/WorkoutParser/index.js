@@ -53,7 +53,7 @@ async function insertIntoMySql(rows) {
 
   for (let i = 0; i < rows.length; i++) {
     await pool.query(
-      `insert into workouts ("Date", "Start_Time", "Workout_Number", "Duration", "Exercise_Name", "Set_Order", "Weight", "Reps", "Distance", "Seconds", "Notes", "Workout_Notes", "RPE") values ('${rows[i][0]}', '${rows[i][1]}', '${rows[i][2]}', '${rows[i][3]}', '${rows[i][4]}', '${rows[i][5]}', '${rows[i][6]}', '${rows[i][7]}', '${rows[i][8]}', '${rows[i][9]}', '${rows[i][10]}', '${rows[i][11]}', '${rows[i][12]}')`
+      `insert into workouts ("date", "start_time", "workout_number", "duration", "exercise_name", "set_order", "weight", "reps", "distance", "seconds", "notes", "workout_notes", "rpe") values ('${rows[i][0]}', '${rows[i][1]}', '${rows[i][2]}', '${rows[i][3]}', '${rows[i][4]}', '${rows[i][5]}', '${rows[i][6]}', '${rows[i][7]}', '${rows[i][8]}', '${rows[i][9]}', '${rows[i][10]}', '${rows[i][11]}', '${rows[i][12]}')`
     )
   }
   console.log('all done')
