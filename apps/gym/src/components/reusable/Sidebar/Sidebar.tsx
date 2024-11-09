@@ -1,12 +1,9 @@
 'use client'
 
-import styles from './Navbar.module.css'
-import { Logo } from './Logo/Logo'
-import { TabList } from '@gymapp/gymui/TabList'
-import { ProfileIcon } from './ProfileIcon/ProfileIcon'
+import styles from './Sidebar.module.css'
 import { useRouter } from 'next/navigation'
 
-export const Navbar = () => {
+export const Sidebar = () => {
   const router = useRouter()
   const options = [
     { name: 'Splits', href: () => router.push('/splits') },
@@ -17,11 +14,7 @@ export const Navbar = () => {
 
   return (
     <div className={styles.container}>
-      <nav className={styles.navbar}>
-        <Logo />
-        <TabList options={options} />
-        <ProfileIcon />
-      </nav>
+      <nav className={styles.sidebar}>sidebar</nav>
     </div>
   )
 }

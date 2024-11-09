@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Navbar } from './Navbar'
+import { Sidebar } from './Sidebar'
 import { ComponentProps } from 'react'
 import { fn } from '@storybook/test'
 
-type StoryProps = ComponentProps<typeof Navbar>
+type StoryProps = ComponentProps<typeof Sidebar>
 
 const meta: Meta<StoryProps> = {
-  title: 'Components/Navbar',
-  component: Navbar,
+  title: 'Components/Sidebar',
+  component: Sidebar,
   tags: ['autodocs'],
 }
 
@@ -18,6 +18,6 @@ type Story = StoryObj<StoryProps>
 export const Primary: Story = {
   args: {},
   render: (args) => {
-    return <Navbar {...args} />
+    return <Sidebar {...args} />
   },
 }

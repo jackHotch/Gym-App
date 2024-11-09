@@ -1,5 +1,5 @@
 export * from './Chart'
-export * from './Navbar'
+export * from './Sidebar'
 export * from './Searchbar'
 export * from './DatePicker'
 export * from './Dropdown'
