@@ -1,6 +1,6 @@
 'use server'
 
-import { IWorkout } from '@/app/globals'
+import { IWorkout } from '@/types'
 import axios from 'axios'
 
 const URL = process.env.URL

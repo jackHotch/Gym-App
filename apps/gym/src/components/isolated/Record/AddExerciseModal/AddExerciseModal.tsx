@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { AddExerciseModalProps } from '@/app/record/record'
-import { IWorkout } from '@/app/globals'
+import { IWorkout } from '@/types'
 import styles from './AddExerciseModal.module.css'
 import { Searchbar } from '@/components/reusable/Searchbar/Searchbar'
 import { CreateNewExerciseModal } from '../CreateNewExerciseModal'

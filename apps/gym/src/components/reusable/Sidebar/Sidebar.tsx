@@ -2,6 +2,8 @@
 
 import styles from './Sidebar.module.css'
 import { useRouter } from 'next/navigation'
+import { SidebarDesktop } from './SidebarDesktop/SidebarDesktop'
+import { SidebarMobile } from './SidebarMobile/SidebarMobile'
 
 export const Sidebar = () => {
   const router = useRouter()
@@ -14,7 +16,8 @@ export const Sidebar = () => {
 
   return (
     <div className={styles.container}>
-      <nav className={styles.sidebar}>sidebar</nav>
+      <SidebarDesktop />
+      <SidebarMobile />
     </div>
   )
 }

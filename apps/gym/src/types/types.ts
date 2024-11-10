@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
-import { ISet } from './record/record'
+import { ISet } from '../app/record/record'
 
 export type FormEvent = React.FormEvent<HTMLFormElement>
 export type ButtonEvent = React.MouseEvent<HTMLButtonElement>
@@ -43,3 +43,11 @@ export interface IWorkout {
   notes: string
   sets: ISet[]
 }
+
+export interface SidebarMobileProps {}
+
+export interface SidebarDesktopProps {}
+
+export interface HeaderMobileProps {}
+
+export interface HeaderDesktopProps {}

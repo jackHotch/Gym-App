@@ -1,0 +1,9 @@
+.container {
+  
+}
+
+@media (width > 720px) {
+  .container {
+    display: none;
+  }
+}

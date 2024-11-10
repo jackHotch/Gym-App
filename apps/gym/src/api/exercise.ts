@@ -1,7 +1,7 @@
 'use server'
 
 import axios from 'axios'
-import { IExercises } from '@/app/globals'
+import { IExercises } from '@/types'
 
 const URL = process.env.URL
 

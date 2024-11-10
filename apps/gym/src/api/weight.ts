@@ -1,7 +1,7 @@
 'use server'
 
-import { IWeightData } from '@/app/globals'
-import { IWeightEntry } from '@/app/globals'
+import { IWeightData } from '@/types'
+import { IWeightEntry } from '@/types'
 import axios from 'axios'
 
 const URL = process.env.URL

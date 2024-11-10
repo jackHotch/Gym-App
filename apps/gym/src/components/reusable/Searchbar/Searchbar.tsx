@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { SearchbarProps, TextInputChangeEvent } from '@/app/globals'
-import { IExercises } from '@/app/globals'
+import { SearchbarProps, TextInputChangeEvent } from '@/types'
+import { IExercises } from '@/types'
 import styles from './Searchbar.module.css'
 import SearchIcon from '@mui/icons-material/Search'
 import { CloseIcon } from '@gymapp/gymui/CloseIcon'

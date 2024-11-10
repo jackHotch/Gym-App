@@ -7,7 +7,7 @@ import { RangeSelector } from '@/components/isolated/Weight'
 import { useEffect, useState } from 'react'
 import { useToggle } from '@/hooks'
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
-import { IWeightData } from '@/app/globals'
+import { IWeightData } from '@/types'
 import { Error } from '@gymapp/gymui/Error'
 
 interface DateRangePickerProps {

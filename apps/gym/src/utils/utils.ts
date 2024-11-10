@@ -1,4 +1,4 @@
-import { IWeightData } from '@/app/globals'
+import { IWeightData } from '@/types'
 import dayjs from 'dayjs'
 
 export const convertDate = (data: IWeightData[]) => {

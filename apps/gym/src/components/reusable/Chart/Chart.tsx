@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './Chart.module.css'
-import { ChartProps } from '@/app/globals'
+import { ChartProps } from '@/types'
 import { Line } from 'react-chartjs-2'
 import { Loading } from '@gymapp/gymui/Loading'
 import { cssvar } from '@/utils/utils'
