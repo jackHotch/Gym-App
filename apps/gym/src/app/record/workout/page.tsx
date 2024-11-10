@@ -7,8 +7,8 @@ import {
   WorkoutConfirmationModal,
   Exercise,
 } from '@/components/isolated/Record'
-import { IWorkout } from '@/app/globals'
-import { ButtonEvent } from '@/app/globals'
+import { IWorkout } from '@/types'
+import { ButtonEvent } from '@/types'
 import { AnimatePresence } from 'framer-motion'
 import { useToggle, useWorkoutNumber, useCreateWorkout } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'

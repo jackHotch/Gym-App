@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useOutsideClick } from '@/hooks'
 import dayjs, { Dayjs } from 'dayjs'
 import { AnimatePresence, useAnimate } from 'framer-motion'
-import { IWeightData } from '@/app/globals'
+import { IWeightData } from '@/types'
 
 interface RangeSelectorProps {
   filter: (startDate?: Dayjs, endDate?: Dayjs) => void
