@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  cursor: pointer;
+  width: 112px;
+  font-size: 18px;
+  gap: 8px;
+  padding: 8px;
+}

@@ -1,3 +1,25 @@
 .container {
+  width: 190px;
+  height: 100vh;
+  border-right: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px
+}
 
+.link {
+  padding: 8px;
+  width: calc(100% - 16px);
+  height: min-content;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  gap: 8px;
+}
+
+@media (width < 720px) {
+  .container {
+    display: none;
+  }
 }

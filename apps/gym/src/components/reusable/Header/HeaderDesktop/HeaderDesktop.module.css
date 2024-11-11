@@ -1,5 +1,9 @@
 .container {
-  
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-bottom: 1px solid var(--light-gray);
+  padding: 10px;
 }
 
 @media (width < 720px) {

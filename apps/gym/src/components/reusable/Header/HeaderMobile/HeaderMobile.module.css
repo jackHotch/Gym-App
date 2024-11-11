@@ -1,5 +1,5 @@
 .container {
-  
+  display: flex;
 }
 
 @media (width > 720px) {

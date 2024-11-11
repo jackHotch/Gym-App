@@ -1,5 +1,4 @@
 import styles from './Content.module.css'
-import { DropdownProps } from '../Dropdown'
 import { CSSProperties, ForwardedRef, forwardRef, ReactNode } from 'react'
 import { HTMLMotionProps, motion } from 'framer-motion'
 
