@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, ReactNode, SetStateAction } from 'react'
 import { ISet } from '../app/record/record'
 
 export type FormEvent = React.FormEvent<HTMLFormElement>
@@ -6,6 +6,10 @@ export type ButtonEvent = React.MouseEvent<HTMLButtonElement>
 export type DivEvent = React.MouseEvent<HTMLDivElement>
 export type TextInputChangeEvent = React.ChangeEvent<HTMLInputElement>
 export type TextAreaChangeEvent = React.ChangeEvent<HTMLTextAreaElement>
+
+export interface PageWrapperProps {
+  children: ReactNode | ReactNode[]
+}
 
 export interface IWeightData {
   id: number
@@ -44,9 +48,7 @@ export interface IWorkout {
   sets: ISet[]
 }
 
-export interface SidebarMobileProps {}
-
-export interface SidebarDesktopProps {}
+export interface SidebarProps {}
 
 export interface HeaderMobileProps {}
 

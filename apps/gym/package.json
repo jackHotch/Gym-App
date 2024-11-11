@@ -30,6 +30,7 @@
     "@gymapp/eslint-config": "*",
     "@gymapp/jest-config": "*",
     "@gymapp/typescript-config": "*",
+    "@iconify/react": "^5.0.2",
     "@storybook/nextjs": "^8.3.6",
     "@storybook/test": "^8.3.6",
     "@types/node": "^20",

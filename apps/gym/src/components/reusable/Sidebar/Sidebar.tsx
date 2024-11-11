@@ -1,23 +1,35 @@
 'use client'
 
 import styles from './Sidebar.module.css'
-import { useRouter } from 'next/navigation'
-import { SidebarDesktop } from './SidebarDesktop/SidebarDesktop'
-import { SidebarMobile } from './SidebarMobile/SidebarMobile'
+import { SidebarProps } from '@/types'
+import { navOptions } from '@/constants'
+import Link from 'next/link'
+import { Logo } from '../Logo/Logo'
+import { motion } from 'framer-motion'
 
-export const Sidebar = () => {
-  const router = useRouter()
-  const options = [
-    { name: 'Splits', href: () => router.push('/splits') },
-    { name: 'Record', href: () => router.push('/record') },
-    { name: 'Weight', href: () => router.push('/weight') },
-    { name: 'Progress', href: () => router.push('/progress') },
-  ]
-
+export const Sidebar = ({}: SidebarProps) => {
+  const MotionLink = motion(Link)
   return (
     <div className={styles.container}>
-      <SidebarDesktop />
-      <SidebarMobile />
+      {navOptions.map((option, key) => {
+        if (option.name === 'Home') return <Logo key={key} />
+        return (
+          <MotionLink
+            key={key}
+            href={option.path}
+            className={styles.link}
+            whileHover={{
+              backgroundColor: 'var(--light-gray)',
+              transition: {
+                duration: 1,
+              },
+            }}
+          >
+            {option.icon}
+            {option.name}
+          </MotionLink>
+        )
+      })}
     </div>
   )
 }

@@ -15,7 +15,13 @@ export const Item = ({ id, handleClick, sx, children }: ItemProps) => {
       className={styles.container}
       style={sx}
       onClick={() => handleClick(id)}
-      whileHover={{ backgroundColor: 'var(--lightgray)', color: 'var(--blue)' }}
+      whileHover={{
+        backgroundColor: 'var(--light-gray)',
+        color: 'var(--blue)',
+        transition: {
+          duration: 1,
+        },
+      }}
     >
       {children}
     </motion.div>
