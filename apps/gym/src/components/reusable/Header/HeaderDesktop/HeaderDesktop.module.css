@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   border-bottom: 1px solid var(--light-gray);
   padding: 10px;

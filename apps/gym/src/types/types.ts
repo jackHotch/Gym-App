@@ -52,8 +52,6 @@ export interface IWorkout {
   sets: ISet[]
 }
 
-export interface SidebarProps {}
-
 export interface HeaderMobileProps {}
 
 export interface HeaderDesktopProps {}
