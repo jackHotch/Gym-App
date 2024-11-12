@@ -1,11 +1,16 @@
 .container {
-  width: 190px;
-  height: 100vh;
+  width: 40px;
+  background-color: white;
+  overflow: hidden;
+  height: calc(100vh - 16px);
   border-right: 1px solid var(--light-gray);
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 8px
+  gap: 8px;
+  padding: 8px;
+  position: fixed;
+  inset: 0 unset 0 0;
+  z-index: 9999999;
 }
 
 .link {
@@ -16,6 +21,11 @@
   align-items: center;
   border-radius: 8px;
   gap: 8px;
+}
+
+.link_text {
+  display: flex;
+  gap: 16px;
 }
 
 @media (width < 720px) {

@@ -7,7 +7,7 @@ export const Logo = () => {
   return (
     <Link className={styles.container} href={navOptions[0].path}>
       <Image src='/images/dumbbell-blue.png' alt='logo' width={25} height={25} />
-      Gym App
+      <span>Gym App</span>
     </Link>
   )
 }

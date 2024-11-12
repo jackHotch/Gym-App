@@ -1,43 +1,40 @@
-import { Icon } from '@iconify/react'
+import { MdOutlineSpaceDashboard } from 'react-icons/md'
+import { CgProfile } from 'react-icons/cg'
+import { IoList } from 'react-icons/io5'
+import { PiNotePencil } from 'react-icons/pi'
+import { IoScaleOutline } from 'react-icons/io5'
+import { IoTrendingUp } from 'react-icons/io5'
 
 export const navOptions = [
   { name: 'Home', path: '/', icon: null },
   {
     name: 'Dashboard',
     path: '/dashboard',
-    icon: (
-      <Icon icon='si:dashboard-vert-line' width='24' height='24' color='var(--blue)' />
-    ),
+    icon: <MdOutlineSpaceDashboard size={24} />,
   },
   {
     name: 'Profile',
     path: '/profile',
-    icon: (
-      <Icon icon='iconamoon:profile-light' width='24' height='24' color='var(--blue)' />
-    ),
+    icon: <CgProfile size={24} />,
   },
   {
     name: 'Splits',
     path: '/splits',
-    icon: <Icon icon='vaadin-lines-list' width='24' height='24' color='var(--blue)' />,
+    icon: <IoList size={24} />,
   },
   {
     name: 'Record',
     path: '/record',
-    icon: (
-      <Icon icon='clarity:note-edit-line' width='24' height='24' color='var(--blue)' />
-    ),
+    icon: <PiNotePencil size={24} />,
   },
   {
     name: 'Weight',
     path: '/weight',
-    icon: <Icon icon='ion:scale-outline' width='24' height='24' color='var(--blue)' />,
+    icon: <IoScaleOutline size={24} />,
   },
   {
     name: 'Progress',
     path: '/progress',
-    icon: (
-      <Icon icon='ion:trending-up-outline' width='24' height='24' color='var(--blue)' />
-    ),
+    icon: <IoTrendingUp size={24} />,
   },
 ]
