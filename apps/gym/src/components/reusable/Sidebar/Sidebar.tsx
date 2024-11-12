@@ -10,9 +10,10 @@ import { motion } from 'framer-motion'
 export const Sidebar = ({}: SidebarProps) => {
   const MotionLink = motion(Link)
   return (
-    <div className={styles.container}>
+    <motion.div className={styles.container} whileHover={{ width: '190px' }}>
       {navOptions.map((option, key) => {
         if (option.name === 'Home') return <Logo key={key} />
+
         return (
           <MotionLink
             key={key}
@@ -25,11 +26,13 @@ export const Sidebar = ({}: SidebarProps) => {
               },
             }}
           >
-            {option.icon}
-            {option.name}
+            <div className={styles.link_text}>
+              {option.icon}
+              {option.name}
+            </div>
           </MotionLink>
         )
       })}
-    </div>
+    </motion.div>
   )
 }

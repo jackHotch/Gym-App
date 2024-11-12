@@ -1,0 +1,11 @@
+.outer {
+  width: 100vw
+}
+.inner {
+  width: calc(100vw - 57px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: absolute;
+  inset: 0 0 0 auto;
+}

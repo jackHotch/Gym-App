@@ -37,8 +37,14 @@ a {
     font-weight: 500;
 }
 
+@font-face {
+    font-family: "Kenyan-Coffee";
+    src: url("/fonts/kenyan-coffee.regular.ttf");
+    font-weight: 600;
+}
+
 * {
-    font-family: 'Noto-Sans';
+    font-family: 'Inter';
     padding: 0;
     margin: 0;
     line-height: 24px;

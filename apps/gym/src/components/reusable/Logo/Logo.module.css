@@ -1,8 +1,8 @@
 .container {
   display: flex;
   cursor: pointer;
-  width: 112px;
+  width: 120px;
   font-size: 18px;
-  gap: 8px;
+  gap: 16px;
   padding: 8px;
 }

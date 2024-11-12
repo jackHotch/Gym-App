@@ -11,6 +11,10 @@ export interface PageWrapperProps {
   children: ReactNode | ReactNode[]
 }
 
+export interface BodyWrapperProps {
+  children: ReactNode | ReactNode[]
+}
+
 export interface IWeightData {
   id: number
   weight: number
