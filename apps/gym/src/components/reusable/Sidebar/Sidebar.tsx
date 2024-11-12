@@ -1,17 +1,16 @@
 'use client'
 
 import styles from './Sidebar.module.css'
-import { SidebarProps } from '@/types'
-import { navOptions } from '@/constants'
+import { NavOptions } from '@/constants'
 import Link from 'next/link'
 import { Logo } from '../Logo/Logo'
 import { motion } from 'framer-motion'
 
-export const Sidebar = ({}: SidebarProps) => {
+export const Sidebar = () => {
   const MotionLink = motion(Link)
   return (
     <motion.div className={styles.container} whileHover={{ width: '190px' }}>
-      {navOptions.map((option, key) => {
+      {NavOptions.map((option, key) => {
         if (option.name === 'Home') return <Logo key={key} />
 
         return (

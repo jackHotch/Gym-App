@@ -1,40 +1,40 @@
-import { MdOutlineSpaceDashboard } from 'react-icons/md'
-import { CgProfile } from 'react-icons/cg'
-import { IoList } from 'react-icons/io5'
-import { PiNotePencil } from 'react-icons/pi'
-import { IoScaleOutline } from 'react-icons/io5'
-import { IoTrendingUp } from 'react-icons/io5'
+import Dashboard from '@mui/icons-material/SpaceDashboardOutlined'
+import Profile from '@mui/icons-material/AccountCircleOutlined'
+import List from '@mui/icons-material/FormatListBulletedOutlined'
+import Barbell from '@mui/icons-material/FitnessCenterOutlined'
+import Scale from '@mui/icons-material/MonitorWeightOutlined'
+import TrendingUp from '@mui/icons-material/MovingOutlined'
 
-export const navOptions = [
+export const NavOptions = [
   { name: 'Home', path: '/', icon: null },
   {
     name: 'Dashboard',
     path: '/dashboard',
-    icon: <MdOutlineSpaceDashboard size={24} />,
+    icon: <Dashboard />,
   },
   {
     name: 'Profile',
     path: '/profile',
-    icon: <CgProfile size={24} />,
+    icon: <Profile />,
   },
   {
     name: 'Splits',
     path: '/splits',
-    icon: <IoList size={24} />,
+    icon: <List />,
   },
   {
     name: 'Record',
     path: '/record',
-    icon: <PiNotePencil size={24} />,
+    icon: <Barbell />,
   },
   {
     name: 'Weight',
     path: '/weight',
-    icon: <IoScaleOutline size={24} />,
+    icon: <Scale />,
   },
   {
     name: 'Progress',
     path: '/progress',
-    icon: <IoTrendingUp size={24} />,
+    icon: <TrendingUp />,
   },
 ]
