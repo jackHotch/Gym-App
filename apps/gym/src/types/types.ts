@@ -1,5 +1,5 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react'
-import { ISet } from '../app/record/record'
+import { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react'
+import { ISet } from '../app/(user)/record/record'
 
 export type FormEvent = React.FormEvent<HTMLFormElement>
 export type ButtonEvent = React.MouseEvent<HTMLButtonElement>
@@ -55,3 +55,8 @@ export interface IWorkout {
 export interface HeaderMobileProps {}
 
 export interface HeaderDesktopProps {}
+
+export interface NavLinkProps {
+  path: string
+  children: ReactNode
+}
