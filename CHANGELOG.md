@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 11/15/2024
+
+- Created new sidebar navigation
+
 ## 11/05/2024
 
 - Added Error component to GymUI

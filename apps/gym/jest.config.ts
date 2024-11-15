@@ -10,6 +10,7 @@ const config: Config = {
     '\\.css$': 'identity-obj-proxy',
     '^@/(.*)$': '<rootDir>/src/$1',
   },
+  modulePaths: ['<rootDir>'],
 }
 
 export default config

@@ -2,7 +2,7 @@ import './globals.css'
 import ReactQueryProvider from '@/providers/ReactQueryProvider'
 
 export const metadata = {
-  title: 'Gym App',
+  title: 'Jacked',
 }
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {

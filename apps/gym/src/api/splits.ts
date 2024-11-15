@@ -1,6 +1,6 @@
 'use server'
 
-import { ICurrentSplit } from '@/app/record/record'
+import { ICurrentSplit } from '@/app/(user)/record/record'
 import axios from 'axios'
 
 const URL = process.env.URL

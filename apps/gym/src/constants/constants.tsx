@@ -18,11 +18,6 @@ export const NavOptions = [
     icon: <Profile />,
   },
   {
-    name: 'Splits',
-    path: '/splits',
-    icon: <List />,
-  },
-  {
     name: 'Record',
     path: '/record',
     icon: <Barbell />,
@@ -31,6 +26,11 @@ export const NavOptions = [
     name: 'Weight',
     path: '/weight',
     icon: <Scale />,
+  },
+  {
+    name: 'Splits',
+    path: '/splits',
+    icon: <List />,
   },
   {
     name: 'Progress',

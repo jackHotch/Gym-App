@@ -40,7 +40,6 @@ a {
 @font-face {
     font-family: "Kenyan-Coffee";
     src: url("/fonts/kenyan-coffee.regular.ttf");
-    font-weight: 600;
 }
 
 * {
