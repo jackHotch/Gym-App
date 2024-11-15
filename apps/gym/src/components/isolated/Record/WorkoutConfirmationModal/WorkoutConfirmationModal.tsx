@@ -1,6 +1,6 @@
 'use client'
 
-import { WorkoutConfirmationModalProps } from '@/app/record/record'
+import { WorkoutConfirmationModalProps } from '@/app/(user)/record/record'
 import styles from './WorkoutConfirmationModal.module.css'
 import { Button } from '@gymapp/gymui/Button'
 import { Modal } from '@gymapp/gymui/Modal'
