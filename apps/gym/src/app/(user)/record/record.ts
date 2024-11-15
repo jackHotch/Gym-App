@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
-import { ButtonEvent, IWorkout, TextInputChangeEvent } from '../../types/types'
+import { ButtonEvent, IWorkout, TextInputChangeEvent } from '@/types'
 
 export interface ICurrentSplit {
   name: string
