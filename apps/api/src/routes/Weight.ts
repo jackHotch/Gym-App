@@ -1,7 +1,13 @@
 import express, { Request, Response } from 'express'
 const router = express.Router()
 
-import { createEntry, getAllWeight, getWeight, deleteEntry } from '../database/Weight'
+import {
+  createEntry,
+  getAllWeight,
+  getWeight,
+  deleteEntry,
+  getCurrentWeight,
+} from '../database/Weight'
 
 router.get('/', async (req: Request, res: Response) => {
   const rows = await getAllWeight()
@@ -12,7 +18,12 @@ router.post('/', async (req: Request, res: Response) => {
   const weight = req.body.weight
   const date = req.body.date
   await createEntry(weight, date)
-  res.status(201).send('New Weight Entry Created')
+  res.sendStatus(201).send('New Weight Entry Created')
+})
+
+router.get('/current', async (req: Request, res: Response) => {
+  const row = await getCurrentWeight()
+  res.json(row)
 })
 
 router.get('/:id', async (req: Request, res: Response) => {
@@ -24,7 +35,7 @@ router.get('/:id', async (req: Request, res: Response) => {
 router.delete('/:id', async (req: Request, res: Response) => {
   const id = req.params.id
   await deleteEntry(id)
-  res.status(204).send('Entry Deleted')
+  res.sendStatus(204).send('Entry Deleted')
 })
 
 export default router

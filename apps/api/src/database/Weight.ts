@@ -31,3 +31,10 @@ export async function createEntry(weight: number, date: string) {
 export async function deleteEntry(id: string) {
   await pool.query(`DELETE FROM weight WHERE id = $1`, [id])
 }
+
+export async function getCurrentWeight() {
+  const { rows } = await pool.query(
+    `SELECT "weight" FROM weight ORDER BY id DESC LIMIT 1`
+  )
+  return rows[0]['weight']
+}
