@@ -2,7 +2,7 @@
 
 import styles from './Record.module.css'
 import Link from 'next/link'
-import { useCurrentSplit } from '@/hooks'
+import { useCurrentSplit } from '@/hooks/api/useCurrentSplit'
 import { motion } from 'framer-motion'
 import { Loading } from '@gymapp/gymui/Loading'
 
