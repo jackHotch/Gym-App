@@ -1,7 +1,7 @@
 import styles from './WeightChart.module.css'
 import { DateRangePicker } from '@/components/reusable/DateRangePicker'
 import { Chart } from '@/components/reusable'
-import { useWeight } from '@/hooks'
+import { useWeight } from '@/hooks/api/useWeight'
 import { getChartData } from '@/utils/utils'
 import dayjs, { Dayjs } from 'dayjs'
 import { useEffect, useState } from 'react'

@@ -1,11 +1,15 @@
+'use client'
+
+import { useCurrentWeight } from '@/hooks/api/useCurrentWeight'
 import styles from './HeaderDesktop.module.css'
 import { HeaderDesktopProps } from '@/types'
 
 export const HeaderDesktop = ({}: HeaderDesktopProps) => {
-  // Show info like weight gained this month, best lift this week, next workout
+  const { data } = useCurrentWeight()
+
   return (
     <div className={styles.container}>
-      <span>Stats</span>
+      <span>Current Weight {data}</span>
     </div>
   )
 }

@@ -2,7 +2,7 @@
 
 import styles from './WeightList.module.css'
 import { WeightListEntry } from './WeightListEntry/WeightListEntry'
-import { useWeight } from '@/hooks'
+import { useWeight } from '@/hooks/api/useWeight'
 import { Loading } from '@gymapp/gymui/Loading'
 import { convertDate } from '@/utils/utils'
 
