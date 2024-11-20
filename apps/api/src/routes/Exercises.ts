@@ -11,7 +11,7 @@ router.get('/', async (req: Request, res: Response) => {
 router.post('/create', async (req: Request, res: Response) => {
   const name = req.body.name
   await createExercise(name)
-  res.sendStatus(201).send('Exercise Created')
+  res.sendStatus(201)
 })
 
 export default router

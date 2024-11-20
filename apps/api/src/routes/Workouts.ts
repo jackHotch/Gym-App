@@ -6,7 +6,7 @@ import { createWorkout, getLastWorkoutNumber } from '../database/Workouts'
 router.post('/create', async (req: Request, res: Response) => {
   const workout = req.body
   await createWorkout(workout)
-  res.sendStatus(201).send('Workout Created')
+  res.sendStatus(201)
 })
 
 router.get('/number', async (req: Request, res: Response) => {
