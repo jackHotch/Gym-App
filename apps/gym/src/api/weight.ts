@@ -23,5 +23,5 @@ export const deleteWeight = async (id: number) => {
 
 export const getCurrentWeight = async () => {
   const { data } = await axios.get(`${URL}/current`)
-  return data as string
+  return data as IWeightEntry
 }
