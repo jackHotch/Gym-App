@@ -10,10 +10,12 @@
 .body {
   display: flex;
   flex-flow: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-grow: 1;
   max-height: calc(100vh - 104px);
   padding: 20px 0;
+  width: 95%;
+  margin: auto;
 }
 
 .add_btn_div {

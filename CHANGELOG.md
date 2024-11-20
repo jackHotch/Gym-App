@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 11/20/2024
+
+- Finished header for desktop
+
 ## 11/15/2024
 
 - Created new sidebar navigation

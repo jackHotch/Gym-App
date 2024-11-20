@@ -36,5 +36,5 @@ export async function getCurrentWeight() {
   const { rows } = await pool.query(
     `SELECT "weight" FROM weight ORDER BY id DESC LIMIT 1`
   )
-  return rows[0]['weight']
+  return rows[0]
 }
