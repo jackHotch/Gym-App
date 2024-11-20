@@ -1,7 +1,7 @@
 import styles from './Dashboard.module.css'
 
 const Dashboard = () => {
-  return <div className={styles.container}>Dashboard</div>
+  return <h1 className={styles.heading}>Dashboard - To Be Finished...</h1>
 }
 
 export default Dashboard
