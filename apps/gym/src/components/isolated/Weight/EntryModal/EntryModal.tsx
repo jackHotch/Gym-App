@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './EntryModal.module.css'
-import { EntryModalProps } from '@/app/(user)/weight/Weight'
+import { EntryModalProps } from '@/types'
 import { useOutsideClick } from '@/hooks'
 import { useRef } from 'react'
 import { Modal } from '@gymapp/gymui/Modal'

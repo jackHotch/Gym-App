@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import styles from './AddWeightModal.module.css'
-import { AddWeightModalProps } from '@/app/(user)/weight/Weight'
+import { AddWeightModalProps } from '@/types'
 import { FormEvent, TextInputChangeEvent } from '@/types'
 import dayjs from 'dayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers'

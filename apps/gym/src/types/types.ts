@@ -1,4 +1,4 @@
-import { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react'
+import { Dispatch, ReactNode, SetStateAction } from 'react'
 import { ISet } from '../app/(user)/record/record'
 
 export type FormEvent = React.FormEvent<HTMLFormElement>
@@ -60,3 +60,13 @@ export interface NavLinkProps {
   path: string
   children: ReactNode
 }
+
+export interface EntryModalProps {
+  closeModal: () => void
+  deleteEntry: () => void
+}
+
+export interface AddWeightModalProps {
+  closeModal: () => void
+}
+
