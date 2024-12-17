@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CreateNewExerciseModalProps } from '@/app/(user)/record/record'
+import { CreateNewExerciseModalProps } from '@/types'
 import styles from './CreateNewExerciseModal.module.css'
 import { FormEvent, TextInputChangeEvent } from '@/types'
 import { useCreateExercise } from '@/hooks'

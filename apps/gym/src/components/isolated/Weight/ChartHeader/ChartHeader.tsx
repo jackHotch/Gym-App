@@ -1,5 +1,6 @@
-import { useToggle } from '@/hooks'
 import styles from './CharHeader.module.css'
+import { ChartHeaderProps } from '@/types'
+import { useToggle } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import { AnimatePresence } from 'framer-motion'
 import { AddWeightModal } from '../AddWeightModal'
@@ -8,11 +9,6 @@ import DownArrow from '@mui/icons-material/KeyboardDoubleArrowDown'
 import TrendingDownArrow from '@mui/icons-material/TrendingDown'
 import TrendingUpArrow from '@mui/icons-material/TrendingUp'
 import { TailSpin } from 'react-loader-spinner'
-
-interface ChartHeaderProps {
-  startingWeight: number
-  endingWeight?: number
-}
 
 export const ChartHeader = ({ startingWeight, endingWeight }: ChartHeaderProps) => {
   const [isAWMOpen, , openAWM, closeAWM] = useToggle()

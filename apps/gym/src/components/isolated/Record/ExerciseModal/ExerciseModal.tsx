@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './ExerciseModal.module.css'
-import { ExerciseModalProps } from '@/app/(user)/record/record'
+import { ExerciseModalProps } from '@/types'
 import { useRef } from 'react'
 import { useOutsideClick } from '@/hooks'
 import { Modal } from '@gymapp/gymui/Modal'
