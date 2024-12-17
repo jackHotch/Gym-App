@@ -1,19 +1,12 @@
 'use client'
 
+import { RangeSelectorProps } from '@/types'
 import { Dropdown } from '@/components/reusable'
 import { useToggle } from '@/hooks'
 import { useEffect, useRef, useState } from 'react'
 import { useOutsideClick } from '@/hooks'
-import dayjs, { Dayjs } from 'dayjs'
+import dayjs from 'dayjs'
 import { AnimatePresence, useAnimate } from 'framer-motion'
-import { IWeightData } from '@/types'
-
-interface RangeSelectorProps {
-  filter: (startDate?: Dayjs, endDate?: Dayjs) => void
-  openDatePickers: () => void
-  closeDatePickers: () => void
-  data: IWeightData[]
-}
 
 export const RangeSelector = ({
   filter,

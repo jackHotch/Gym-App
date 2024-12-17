@@ -1,6 +1,6 @@
 'use client'
 
-import { SetProps } from '@/app/(user)/record/record'
+import { SetProps } from '@/types'
 import styles from './Set.module.css'
 import { motion } from 'framer-motion'
 import { Form } from '@gymapp/gymui/Form'

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { AddExerciseModalProps } from '@/app/(user)/record/record'
+import { AddExerciseModalProps } from '@/types'
 import { IWorkout } from '@/types'
 import styles from './AddExerciseModal.module.css'
 import { Searchbar } from '@/components/reusable/Searchbar/Searchbar'
