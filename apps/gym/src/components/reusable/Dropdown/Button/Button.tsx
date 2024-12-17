@@ -1,5 +1,5 @@
 import styles from './Button.module.css'
-import { DropdownProps } from '../Dropdown'
+import { DropdownProps } from '@/types'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { forwardRef, Ref } from 'react'
 

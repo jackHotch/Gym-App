@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 12/17/2024
+
+- Refactored all types into one file
+
 ## 11/20/2024
 
 - Finished header for desktop

@@ -1,6 +1,7 @@
 'use client'
 
 import styles from './DatePicker.module.css'
+import { DatePickerProps } from '@/types'
 import { Calendar } from '@gymapp/gymui/Calendar'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import { LocalizationProvider } from '@mui/x-date-pickers'
@@ -9,15 +10,6 @@ import { CSSProperties, useEffect, useRef } from 'react'
 import { useToggle } from '@/hooks'
 import { Dayjs } from 'dayjs'
 import { AnimatePresence } from 'framer-motion'
-
-interface DatePickerProps {
-  sx?: CSSProperties
-  sxCalendar?: CSSProperties
-  value: any
-  onChange?: (a: Dayjs, b?: boolean) => void
-  openCalendar?: boolean
-  start?: boolean
-}
 
 export const DatePicker = ({
   value,
