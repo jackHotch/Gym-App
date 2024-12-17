@@ -1,5 +1,6 @@
 import { Dayjs } from 'dayjs'
-import { Dispatch, ReactNode, SetStateAction } from 'react'
+import { HTMLMotionProps } from 'framer-motion'
+import { CSSProperties, Dispatch, HTMLAttributes, ReactNode, SetStateAction } from 'react'
 
 export type FormEvent = React.FormEvent<HTMLFormElement>
 export type ButtonEvent = React.MouseEvent<HTMLButtonElement>
@@ -132,5 +133,42 @@ export interface RangeSelectorProps {
 
 export interface WeightListEntryProps {
   value: IWeightData
+  id: number
+}
+
+export interface ExerciseProps {
+  index: number
+  workout: IWorkout[]
+  setWorkout: Dispatch<SetStateAction<IWorkout[]>>
+}
+
+export interface DatePickerProps {
+  sx?: CSSProperties
+  sxCalendar?: CSSProperties
+  value: any
+  onChange?: (a: Dayjs, b?: boolean) => void
+  openCalendar?: boolean
+  start?: boolean
+}
+
+export interface DateRangePickerProps {
+  filter: (startDate?: Dayjs, endDate?: Dayjs) => void
+  data: IWeightData[]
+}
+
+export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
+  sx?: CSSProperties
+  children: ReactNode | ReactNode[]
+}
+
+export interface DropdownContentProps extends HTMLMotionProps<'div'> {
+  sx?: CSSProperties
+  children: ReactNode | ReactNode[]
+}
+
+export interface DropdownItemProps {
+  sx?: CSSProperties
+  children: string
+  handleClick: (a: number) => void
   id: number
 }

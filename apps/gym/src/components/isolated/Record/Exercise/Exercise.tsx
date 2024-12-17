@@ -1,18 +1,11 @@
 import styles from './Exercise.module.css'
-import { Dispatch, SetStateAction } from 'react'
+import { ExerciseProps, TextAreaChangeEvent, TextInputChangeEvent } from '@/types'
 import { AnimatePresence, motion } from 'framer-motion'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
-import { IWorkout, TextAreaChangeEvent, TextInputChangeEvent } from '@/types'
 import { Button } from '@gymapp/gymui/Button'
 import { useToggle } from '@/hooks'
 import { ExerciseModal } from '../ExerciseModal'
 import { Set } from '../Set'
-
-interface ExerciseProps {
-  index: number
-  workout: IWorkout[]
-  setWorkout: Dispatch<SetStateAction<IWorkout[]>>
-}
 
 export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
   const [showExerciseModal, toggleExerciseModal, _, closeExerciseModal] = useToggle()

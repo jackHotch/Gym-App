@@ -1,19 +1,14 @@
 'use client'
 
 import styles from './DateRangePicker.module.css'
+import { DateRangePickerProps } from '@/types'
 import dayjs, { Dayjs } from 'dayjs'
 import { DatePicker } from '../DatePicker'
 import { RangeSelector } from '@/components/isolated/Weight'
 import { useEffect, useState } from 'react'
 import { useToggle } from '@/hooks'
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
-import { IWeightData } from '@/types'
 import { Error } from '@gymapp/gymui/Error'
-
-interface DateRangePickerProps {
-  filter: (startDate?: Dayjs, endDate?: Dayjs) => void
-  data: IWeightData[]
-}
 
 export const DateRangePicker = ({ filter, data }: DateRangePickerProps) => {
   const [startDate, setStartDate] = useState(dayjs())

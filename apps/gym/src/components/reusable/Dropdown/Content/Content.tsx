@@ -1,13 +1,9 @@
 import styles from './Content.module.css'
-import { CSSProperties, ForwardedRef, forwardRef, ReactNode } from 'react'
-import { HTMLMotionProps, motion } from 'framer-motion'
+import { DropdownContentProps } from '@/types'
+import { ForwardedRef, forwardRef } from 'react'
+import { motion } from 'framer-motion'
 
 type reactRef = ForwardedRef<HTMLDivElement>
-
-export interface ContentProps extends HTMLMotionProps<'div'> {
-  sx?: CSSProperties
-  children: ReactNode | ReactNode[]
-}
 
 const motionVariants = {
   hidden: {
@@ -25,7 +21,7 @@ const motionVariants = {
 }
 
 export const Content = forwardRef(
-  ({ sx, children, ...props }: ContentProps, ref: reactRef) => {
+  ({ sx, children, ...props }: DropdownContentProps, ref: reactRef) => {
     return (
       <motion.div
         {...props}

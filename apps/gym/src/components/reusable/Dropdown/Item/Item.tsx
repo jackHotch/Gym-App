@@ -1,15 +1,8 @@
 import styles from './Item.module.css'
 import { motion } from 'framer-motion'
-import { CSSProperties } from 'react'
+import { DropdownItemProps } from '@/types'
 
-export interface ItemProps {
-  sx?: CSSProperties
-  children: string
-  handleClick: (a: number) => void
-  id: number
-}
-
-export const Item = ({ id, handleClick, sx, children }: ItemProps) => {
+export const Item = ({ id, handleClick, sx, children }: DropdownItemProps) => {
   return (
     <motion.div
       className={styles.container}
