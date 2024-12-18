@@ -18,14 +18,17 @@ export const Set = ({
 
   return (
     <motion.div
+      layout
       className={styles.set}
       key={exerciseNumber}
       initial={{
-        y: '-100%',
+        // y: '-100%',
+        scale: 0.8,
         opacity: 0,
       }}
       animate={{
-        y: 0,
+        // y: 0,
+        scale: 1,
         opacity: 1,
         transition: {
           type: 'spring',
@@ -34,11 +37,8 @@ export const Set = ({
         },
       }}
       exit={{
-        x: '100%',
+        scale: 0.8,
         opacity: 0,
-        transition: {
-          duration: 0.35,
-        },
       }}
     >
       <label>Set {setNumber + 1}</label>

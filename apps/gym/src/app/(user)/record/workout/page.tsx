@@ -9,7 +9,7 @@ import {
 } from '@/components/isolated/Record'
 import { IWorkout } from '@/types'
 import { ButtonEvent } from '@/types'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useToggle, useWorkoutNumber, useCreateWorkout } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import ClipLoader from 'react-spinners/ClipLoader'
@@ -32,7 +32,7 @@ const Workout = () => {
   return (
     <div className={styles.background}>
       <form>
-        <div className={styles.container}>
+        <motion.div className={styles.container} layout animate={{ height: 'auto' }}>
           <h1 className={styles.title}>
             Workout #{workoutNumber ? workoutNumber : <ClipLoader size={20} />}
           </h1>
@@ -68,7 +68,7 @@ const Workout = () => {
           >
             Finish Workout
           </Button.Primary>
-        </div>
+        </motion.div>
       </form>
 
       <AnimatePresence>

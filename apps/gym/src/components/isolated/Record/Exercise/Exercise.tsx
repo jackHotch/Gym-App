@@ -55,12 +55,14 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
     <motion.div
       className={styles.single_exercise}
       key={index}
+      layout
       initial={{
         y: '-100%',
         opacity: 0,
       }}
       animate={{
         y: 0,
+        height: 'auto',
         opacity: 1,
         transition: {
           type: 'spring',
@@ -108,7 +110,7 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
         <label>RPE</label>
       </div>
 
-      <AnimatePresence>
+      <AnimatePresence mode='popLayout'>
         {workout[index].sets.map((value2, key2) => {
           return (
             <Set
