@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from '@gymapp/gymui/Button'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 
@@ -26,7 +27,7 @@ const Progress = () => {
         <AnimatePresence mode='popLayout'>
           {items.map((id) => {
             return (
-              <motion.li
+              <Button.Primary
                 layout
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -39,7 +40,7 @@ const Progress = () => {
                   removeItem(newItems, id)
                   setItems(newItems)
                 }}
-              ></motion.li>
+              ></Button.Primary>
             )
           })}
         </AnimatePresence>

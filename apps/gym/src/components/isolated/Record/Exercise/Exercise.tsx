@@ -1,5 +1,10 @@
 import styles from './Exercise.module.css'
-import { ExerciseProps, TextAreaChangeEvent, TextInputChangeEvent } from '@/types'
+import {
+  ExerciseProps,
+  IWorkout,
+  TextAreaChangeEvent,
+  TextInputChangeEvent,
+} from '@/types'
 import { AnimatePresence, motion } from 'framer-motion'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { Button } from '@gymapp/gymui/Button'
@@ -43,11 +48,8 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
   }
 
   const removeSet = (exerciseId: number, setId: number) => {
-    let temp = [...workout]
-    const newSetList = temp[exerciseId].sets.filter((value, id) => {
-      if (id !== setId) return value
-    })
-    temp[exerciseId].sets = newSetList
+    const temp = [...workout]
+    temp[exerciseId].sets.splice(setId, 1)
     setWorkout(temp)
   }
 
@@ -110,20 +112,22 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
         <label>RPE</label>
       </div>
 
-      <AnimatePresence mode='popLayout'>
-        {workout[index].sets.map((value2, key2) => {
-          return (
-            <Set
-              key={key2}
-              value={value2}
-              exerciseNumber={index}
-              setNumber={key2}
-              handleChange={handleChange}
-              removeSet={removeSet}
-            />
-          )
-        })}
-      </AnimatePresence>
+      <div>
+        <AnimatePresence mode='popLayout'>
+          {workout[index].sets.map((value2, key2) => {
+            return (
+              <Set
+                key={key2}
+                value={value2}
+                exerciseNumber={index}
+                setNumber={key2}
+                handleChange={handleChange}
+                removeSet={removeSet}
+              />
+            )
+          })}
+        </AnimatePresence>
+      </div>
 
       <AnimatePresence>
         {showNotes && (
