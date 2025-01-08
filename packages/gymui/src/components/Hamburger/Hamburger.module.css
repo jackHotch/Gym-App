@@ -1,0 +1,15 @@
+.container {
+  position: relative;
+  height: 45px;
+  width: 45px;
+  border: none;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.lines {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: var(--blue);
+}
