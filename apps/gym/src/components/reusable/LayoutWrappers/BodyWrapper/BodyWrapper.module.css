@@ -10,3 +10,10 @@
   position: absolute;
   inset: 0 0 0 auto;
 }
+
+@media (width < 480px) {
+  .inner {
+    width: 100vw;
+    height: 100vh;
+  }
+}
