@@ -172,3 +172,5 @@ export interface DropdownItemProps {
   handleClick: (a: number) => void
   id: number
 }
+
+export interface DropdownMobileProps {}
