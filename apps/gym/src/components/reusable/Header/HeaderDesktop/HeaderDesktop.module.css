@@ -14,7 +14,7 @@
   color: var(--dark-gray);
 }
 
-@media (width < 720px) {
+@media (width < 480px) {
   .container {
     display: none;
   }

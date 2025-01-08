@@ -2,3 +2,9 @@
   height: calc(100vh - 46px);
   overflow: auto;
 }
+
+@media (width < 480px) {
+  .container {
+    height: calc(100vh - 46px);
+  }
+}
