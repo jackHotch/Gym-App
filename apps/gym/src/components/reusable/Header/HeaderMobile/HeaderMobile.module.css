@@ -1,6 +1,9 @@
 .container {
   display: flex;
   height: 46px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
 }
 
 @media (width > 480px) {
