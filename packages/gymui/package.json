@@ -1,6 +1,6 @@
 {
   "name": "@gymapp/gymui",
-  "version": "7.0.1",
+  "version": "9.0.1",
   "private": true,
   "exports": {
     "./Button": "./src/components/Button/Button.tsx",
@@ -10,7 +10,8 @@
     "./Skeleton": "./src/components/Skeleton/Skeleton.tsx",
     "./Loading": "./src/components/Loading/Loading.tsx",
     "./Calendar": "./src/components/Calendar/Calendar.tsx",
-    "./Error": "./src/components/Error/Error.tsx"
+    "./Error": "./src/components/Error/Error.tsx",
+    "./Hamburger": "./src/components/Hamburger/Hamburger.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
