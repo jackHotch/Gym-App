@@ -5,7 +5,7 @@ import Barbell from '@mui/icons-material/FitnessCenterOutlined'
 import Scale from '@mui/icons-material/MonitorWeightOutlined'
 import TrendingUp from '@mui/icons-material/MovingOutlined'
 
-export const NavOptions = [
+export const DESKTOP_NAV_OPTIONS = [
   { name: 'Home', path: '/', icon: null },
   {
     name: 'Dashboard',
@@ -36,5 +36,39 @@ export const NavOptions = [
     name: 'Progress',
     path: '/progress',
     icon: <TrendingUp />,
+  },
+]
+
+export const MOBILE_NAV_OPTIONS = [
+  { name: 'Home', path: '/', icon: null },
+  {
+    name: 'Dashboard',
+    path: '/dashboard',
+    icon: <Dashboard sx={{ fontSize: 60 }} />,
+  },
+  {
+    name: 'Profile',
+    path: '/profile',
+    icon: <Profile sx={{ fontSize: 60 }} />,
+  },
+  {
+    name: 'Record',
+    path: '/record',
+    icon: <Barbell sx={{ fontSize: 60 }} />,
+  },
+  {
+    name: 'Weight',
+    path: '/weight',
+    icon: <Scale sx={{ fontSize: 60 }} />,
+  },
+  {
+    name: 'Splits',
+    path: '/splits',
+    icon: <List sx={{ fontSize: 60 }} />,
+  },
+  {
+    name: 'Progress',
+    path: '/progress',
+    icon: <TrendingUp sx={{ fontSize: 60 }} />,
   },
 ]

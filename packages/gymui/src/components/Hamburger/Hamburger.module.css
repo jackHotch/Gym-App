@@ -1,15 +1,17 @@
 .container {
   position: relative;
-  height: 45px;
-  width: 45px;
+  height: 60px;
+  width: 60px;
   border: none;
-  background-color: white;
   border-radius: 8px;
+  background-color: transparent;
+  display: flex;
+  z-index: 100;
 }
 
 .lines {
   position: absolute;
-  height: 2px;
-  width: 20px;
+  height: 3px;
+  width: 30px;
   background-color: var(--blue);
 }

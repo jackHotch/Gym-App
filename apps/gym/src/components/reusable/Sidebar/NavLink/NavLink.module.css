@@ -1,19 +1,15 @@
 .container {
-  position: relative;
-  z-index: 1;
-}
-
-.link {
   padding: 8px;
-  width: calc(100% - 16px);
   height: min-content;
   display: flex;
   align-items: center;
   border-radius: 8px;
-  gap: 8px;
 }
 
 .link_text {
-  width: 100%;
   position: relative;
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
 }

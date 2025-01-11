@@ -2,9 +2,10 @@
 
 import styles from './HeaderMobile.module.css'
 import { HeaderMobileProps } from '@/types'
-import { Logo } from '../../Logo/Logo'
 import { Hamburger } from '@gymapp/gymui/Hamburger'
 import { useToggle } from '@/hooks'
+import { DropdownMobile } from './DropdownMobile/DropdownMobile'
+import { DesktopLogo } from '../../Logo/DesktopLogo'
 
 export const HeaderMobile = ({}: HeaderMobileProps) => {
   const [active, toggleMenu] = useToggle()
@@ -15,8 +16,11 @@ export const HeaderMobile = ({}: HeaderMobileProps) => {
 
   return (
     <div className={styles.container}>
-      <Logo />
-      <Hamburger active={active} onClick={toggleDropdown} />
+      <DesktopLogo />
+      <div>
+        <Hamburger active={active} onClick={toggleDropdown} />
+        {active && <DropdownMobile />}
+      </div>
     </div>
   )
 }
