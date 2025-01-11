@@ -59,6 +59,7 @@ export interface HeaderDesktopProps {}
 
 export interface NavLinkProps {
   path: string
+  closeMenu?: () => void
   containerSx?: CSSProperties
   textSx?: CSSProperties
   children: ReactNode
@@ -175,4 +176,6 @@ export interface DropdownItemProps {
   id: number
 }
 
-export interface DropdownMobileProps {}
+export interface DropdownMobileProps {
+  closeMenu: () => void
+}

@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 1/11/2025
+
+- Created header and dropdown menu for mobile
+
 ## 12/17/2024
 
 - Refactored all types into one file

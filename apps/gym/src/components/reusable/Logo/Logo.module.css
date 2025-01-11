@@ -1,11 +1,24 @@
-.container {
+.desktop_container, .mobile_container {
   display: flex;
   cursor: pointer;
-  width: 120px;
   font-size: 18px;
   gap: 16px;
   padding: 8px;
   align-items: center;
+}
+
+.desktop_container {
+  width: 120px;
+}
+
+.mobile_container {
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  width: fit-content;
+  padding: 16px;
+  position: relative;
+  top: -8px;
+  left: -8px;
 }
 
 .desktop_brand {

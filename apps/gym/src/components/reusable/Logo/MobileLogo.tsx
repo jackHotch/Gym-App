@@ -4,9 +4,13 @@ import Link from 'next/link'
 
 export const MobileLogo = () => {
   return (
-    <Link key={1} className={styles.container} href={DESKTOP_NAV_OPTIONS[0].path}>
+    <Link
+      key={1}
+      className={styles.mobile_container}
+      href={DESKTOP_NAV_OPTIONS[0].path}
+      style={{ backgroundColor: 'white' }}
+    >
       <img src='/images/dumbbell-blue.png' alt='logo' width={60} height={60} />
-      <span className={styles.mobile_brand}>JACKED</span>
     </Link>
   )
 }
