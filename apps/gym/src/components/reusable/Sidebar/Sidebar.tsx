@@ -1,8 +1,8 @@
 'use client'
 
 import styles from './Sidebar.module.css'
-import { NavOptions } from '@/constants'
-import { Logo } from '../Logo/Logo'
+import { DESKTOP_NAV_OPTIONS } from '@/constants'
+import { DesktopLogo } from '../Logo/DesktopLogo'
 import { motion } from 'framer-motion'
 import { NavLink } from './NavLink/NavLink'
 import { NavBackground } from './NavBackground/NavBackground'
@@ -12,10 +12,10 @@ export const Sidebar = () => {
   const [focused, setFocused] = useState(null)
   return (
     <motion.div className={styles.container} whileHover={{ width: '190px' }}>
-      <Logo />
+      <DesktopLogo />
 
       <div className={styles.nav_container} onMouseLeave={() => setFocused(null)}>
-        {NavOptions.map((option, key) => {
+        {DESKTOP_NAV_OPTIONS.map((option, key) => {
           if (option.name === 'Home') return
 
           return (

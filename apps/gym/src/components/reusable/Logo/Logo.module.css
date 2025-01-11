@@ -5,9 +5,15 @@
   font-size: 18px;
   gap: 16px;
   padding: 8px;
+  align-items: center;
 }
 
-.container span {
+.desktop_brand {
   font-family: "Kenyan-Coffee";
   font-size: 28px;
+}
+
+.mobile_brand {
+  font-family: "Kenyan-Coffee";
+  font-size: 48px;
 }
