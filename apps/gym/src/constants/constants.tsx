@@ -44,31 +44,31 @@ export const MOBILE_NAV_OPTIONS = [
   {
     name: 'Dashboard',
     path: '/dashboard',
-    icon: <Dashboard sx={{ fontSize: 60 }} />,
+    icon: <Dashboard sx={{ fontSize: 60, color: 'white' }} />,
   },
   {
     name: 'Profile',
     path: '/profile',
-    icon: <Profile sx={{ fontSize: 60 }} />,
+    icon: <Profile sx={{ fontSize: 60, color: 'white' }} />,
   },
   {
     name: 'Record',
     path: '/record',
-    icon: <Barbell sx={{ fontSize: 60 }} />,
+    icon: <Barbell sx={{ fontSize: 60, color: 'white' }} />,
   },
   {
     name: 'Weight',
     path: '/weight',
-    icon: <Scale sx={{ fontSize: 60 }} />,
+    icon: <Scale sx={{ fontSize: 60, color: 'white' }} />,
   },
   {
     name: 'Splits',
     path: '/splits',
-    icon: <List sx={{ fontSize: 60 }} />,
+    icon: <List sx={{ fontSize: 60, color: 'white' }} />,
   },
   {
     name: 'Progress',
     path: '/progress',
-    icon: <TrendingUp sx={{ fontSize: 60 }} />,
+    icon: <TrendingUp sx={{ fontSize: 60, color: 'white' }} />,
   },
 ]

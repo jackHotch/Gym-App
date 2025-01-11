@@ -6,7 +6,8 @@
   border-radius: 8px;
   background-color: transparent;
   display: flex;
-  z-index: 100;
+  z-index: 1000000000;
+  cursor: pointer;
 }
 
 .lines {

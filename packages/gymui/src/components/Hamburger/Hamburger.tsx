@@ -19,9 +19,11 @@ export const Hamburger = ({ active, sx, children, ...props }: HamburgerProps) =>
         variants={{
           open: {
             top: [0, 15, 15],
+            right: [0, 8, 8],
           },
           closed: {
             top: [15, 15, 0],
+            right: [8, 0, 0],
           },
         }}
       >
@@ -38,11 +40,13 @@ export const Hamburger = ({ active, sx, children, ...props }: HamburgerProps) =>
               top: ['38%', '50%', '50%'],
               rotate: ['0deg', '0deg', '45deg'],
               scale: [1, 1.25, 1.5],
+              backgroundColor: ['var(--blue)', 'white', 'white'],
             },
             closed: {
               top: ['50%', '50%', '38%'],
               rotate: ['45deg', '0deg', '0deg'],
               scale: [1.5, 1.25, 1],
+              backgroundColor: ['white', 'var(--blue)', 'var(--blue)'],
             },
           }}
         ></motion.span>
@@ -58,10 +62,12 @@ export const Hamburger = ({ active, sx, children, ...props }: HamburgerProps) =>
             open: {
               rotate: ['0deg', '0deg', '-45deg'],
               scale: [1, 1.25, 1.5],
+              backgroundColor: ['var(--blue)', 'white', 'white'],
             },
             closed: {
               rotate: ['-45deg', '0deg', '0deg'],
               scale: [1.5, 1.25, 1],
+              backgroundColor: ['white', 'var(--blue)', 'var(--blue)'],
             },
           }}
         ></motion.span>
@@ -78,11 +84,13 @@ export const Hamburger = ({ active, sx, children, ...props }: HamburgerProps) =>
               bottom: ['38%', '50%', '50%'],
               rotate: ['0deg', '0deg', '45deg'],
               scale: [1, 1.25, 1.5],
+              backgroundColor: ['var(--blue)', 'white', 'white'],
             },
             closed: {
               bottom: ['50%', '50%', '38%'],
               rotate: ['45deg', '0deg', '0deg'],
               scale: [1.5, 1.25, 1],
+              backgroundColor: ['white', 'var(--blue)', 'var(--blue)'],
             },
           }}
         ></motion.span>

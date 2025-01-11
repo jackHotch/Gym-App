@@ -1,4 +1,5 @@
 .container {
+  cursor: pointer;
   padding: 8px;
   height: min-content;
   display: flex;

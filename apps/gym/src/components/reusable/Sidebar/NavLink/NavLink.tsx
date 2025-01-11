@@ -1,13 +1,26 @@
 import styles from './NavLink.module.css'
 import { NavLinkProps } from '@/types'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
-export const NavLink = ({ path, containerSx, textSx, children }: NavLinkProps) => {
+export const NavLink = ({
+  path,
+  closeMenu,
+  containerSx,
+  textSx,
+  children,
+}: NavLinkProps) => {
+  const router = useRouter()
+
+  const handleClick = () => {
+    if (closeMenu) closeMenu()
+    router.push(path)
+  }
+
   return (
-    <Link href={path} className={styles.container} style={containerSx}>
+    <div onClick={handleClick} className={styles.container} style={containerSx}>
       <div style={textSx} className={styles.link_text}>
         {children}
       </div>
-    </Link>
+    </div>
   )
 }

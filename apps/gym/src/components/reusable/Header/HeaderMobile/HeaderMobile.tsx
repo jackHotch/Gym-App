@@ -6,9 +6,10 @@ import { Hamburger } from '@gymapp/gymui/Hamburger'
 import { useToggle } from '@/hooks'
 import { DropdownMobile } from './DropdownMobile/DropdownMobile'
 import { DesktopLogo } from '../../Logo/DesktopLogo'
+import { AnimatePresence } from 'framer-motion'
 
 export const HeaderMobile = ({}: HeaderMobileProps) => {
-  const [active, toggleMenu] = useToggle()
+  const [active, toggleMenu, , closeMenu] = useToggle()
 
   const toggleDropdown = () => {
     toggleMenu()
@@ -19,7 +20,9 @@ export const HeaderMobile = ({}: HeaderMobileProps) => {
       <DesktopLogo />
       <div>
         <Hamburger active={active} onClick={toggleDropdown} />
-        {active && <DropdownMobile />}
+        <AnimatePresence>
+          {active && <DropdownMobile closeMenu={closeMenu} />}
+        </AnimatePresence>
       </div>
     </div>
   )
