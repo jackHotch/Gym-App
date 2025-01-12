@@ -1,7 +1,7 @@
 import styles from './Content.module.css'
 import { DropdownContentProps } from '@/types'
 import { ForwardedRef, forwardRef } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 type reactRef = ForwardedRef<HTMLDivElement>
 

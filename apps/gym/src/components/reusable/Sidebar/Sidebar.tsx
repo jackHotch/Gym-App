@@ -3,7 +3,7 @@
 import styles from './Sidebar.module.css'
 import { DESKTOP_NAV_OPTIONS } from '@/constants'
 import { DesktopLogo } from '../Logo/DesktopLogo'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { NavLink } from './NavLink/NavLink'
 import { NavBackground } from './NavBackground/NavBackground'
 import { useState } from 'react'

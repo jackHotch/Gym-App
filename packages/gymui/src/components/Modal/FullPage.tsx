@@ -1,6 +1,6 @@
 import { ModalProps } from './Modal'
 import styles from './FullPage.module.css'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 const modalVariants = {
   hidden: {

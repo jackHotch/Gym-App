@@ -1,6 +1,6 @@
 import { CSSProperties, ReactNode } from 'react'
 import styles from './Hamburger.module.css'
-import { HTMLMotionProps, motion } from 'framer-motion'
+import { HTMLMotionProps, motion } from 'motion/react'
 
 interface HamburgerProps extends HTMLMotionProps<'button'> {
   sx?: CSSProperties

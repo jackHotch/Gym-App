@@ -7,7 +7,7 @@ import { DatePicker } from '../DatePicker'
 import { RangeSelector } from '@/components/isolated/Weight'
 import { useEffect, useState } from 'react'
 import { useToggle } from '@/hooks'
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
+import { motion, AnimatePresence, LayoutGroup } from 'motion/react'
 import { Error } from '@gymapp/gymui/Error'
 
 export const DateRangePicker = ({ filter, data }: DateRangePickerProps) => {

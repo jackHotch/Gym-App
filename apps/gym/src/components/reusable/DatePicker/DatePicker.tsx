@@ -9,7 +9,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { CSSProperties, useEffect, useRef } from 'react'
 import { useToggle } from '@/hooks'
 import { Dayjs } from 'dayjs'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 
 export const DatePicker = ({
   value,

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Modal } from './Modal'
 import { ComponentProps } from 'react'
 import { fn } from '@storybook/test'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 
 type StoryProps = ComponentProps<typeof Modal>
 

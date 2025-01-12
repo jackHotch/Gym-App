@@ -1,5 +1,5 @@
 import styles from './Item.module.css'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { DropdownItemProps } from '@/types'
 
 export const Item = ({ id, handleClick, sx, children }: DropdownItemProps) => {

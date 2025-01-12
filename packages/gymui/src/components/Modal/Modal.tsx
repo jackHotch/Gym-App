@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode } from 'react'
-import { HTMLMotionProps } from 'framer-motion'
+import { HTMLMotionProps } from 'motion/react'
 import { FullPage } from './FullPage'
 import { Popover } from './Popover'
 import { Item } from './Item'

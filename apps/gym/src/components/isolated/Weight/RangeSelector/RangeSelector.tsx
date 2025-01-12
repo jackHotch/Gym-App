@@ -6,7 +6,7 @@ import { useToggle } from '@/hooks'
 import { useEffect, useRef, useState } from 'react'
 import { useOutsideClick } from '@/hooks'
 import dayjs from 'dayjs'
-import { AnimatePresence, useAnimate } from 'framer-motion'
+import { AnimatePresence, useAnimate } from 'motion/react'
 
 export const RangeSelector = ({
   filter,

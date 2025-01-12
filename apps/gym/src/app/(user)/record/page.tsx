@@ -3,7 +3,7 @@
 import styles from './Record.module.css'
 import Link from 'next/link'
 import { useCurrentSplit } from '@/hooks/api/useCurrentSplit'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Loading } from '@gymapp/gymui/Loading'
 
 const Record = () => {

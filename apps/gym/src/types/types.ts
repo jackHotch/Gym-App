@@ -1,5 +1,5 @@
 import { Dayjs } from 'dayjs'
-import { HTMLMotionProps } from 'framer-motion'
+import { HTMLMotionProps } from 'motion/react'
 import { CSSProperties, Dispatch, HTMLAttributes, ReactNode, SetStateAction } from 'react'
 
 export type FormEvent = React.FormEvent<HTMLFormElement>
