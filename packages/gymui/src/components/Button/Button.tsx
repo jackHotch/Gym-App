@@ -1,5 +1,5 @@
 import { CSSProperties, ReactElement, ReactNode } from 'react'
-import { HTMLMotionProps } from 'framer-motion'
+import { HTMLMotionProps } from 'motion/react'
 import { Primary } from './Primary'
 import { Secondary } from './Secondary'
 import { Danger } from './Danger'

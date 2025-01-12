@@ -1,6 +1,6 @@
 import styles from './Popover.module.css'
 import { CSSProperties, ForwardedRef, ReactElement, forwardRef } from 'react'
-import { HTMLMotionProps, motion } from 'framer-motion'
+import { HTMLMotionProps, motion } from 'motion/react'
 
 export interface PopoverProps extends HTMLMotionProps<'div'> {
   children: ReactElement | ReactElement[]

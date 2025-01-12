@@ -1,8 +1,8 @@
 import styles from './Calendar.module.css'
-import { HTMLMotionProps } from 'framer-motion'
+import { HTMLMotionProps } from 'motion/react'
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
 import { CSSProperties } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 interface CalendarProps extends HTMLMotionProps<'div'> {
   sx?: CSSProperties

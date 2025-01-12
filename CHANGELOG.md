@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 1/12/2025
+
+- Refactored project to use motion instead of framer motion
+
 ## 1/11/2025
 
 - Created header and dropdown menu for mobile

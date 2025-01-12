@@ -1,6 +1,6 @@
 import { ButtonProps, SCALEHOVER, SCALETAP, DURATION } from './Button'
 import styles from './Button.module.css'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 export const Danger = ({
   children = 'Danger',

@@ -4,7 +4,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { EntryModal } from '../../EntryModal'
 import { useToggle } from '@/hooks'
 import { useDeleteWeight } from '@/hooks'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 
 export const WeightListEntry = ({ value, id }: WeightListEntryProps) => {
   const [isVisible, toggle, _, close] = useToggle()

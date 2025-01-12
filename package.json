@@ -34,6 +34,6 @@
   ],
   "packageManager": "npm@10.2.3",
   "dependencies": {
-    "framer-motion": "^11.3.28"
+    "motion": "^11.17.0"
   }
 }

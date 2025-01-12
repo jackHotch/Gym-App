@@ -9,7 +9,7 @@ import {
 } from '@/components/isolated/Record'
 import { IWorkout } from '@/types'
 import { ButtonEvent } from '@/types'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 import { useToggle, useWorkoutNumber, useCreateWorkout } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import ClipLoader from 'react-spinners/ClipLoader'

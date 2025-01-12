@@ -2,7 +2,7 @@
 
 import { SetProps } from '@/types'
 import styles from './Set.module.css'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Form } from '@gymapp/gymui/Form'
 
 export const Set = ({

@@ -6,7 +6,7 @@ import { Hamburger } from '@gymapp/gymui/Hamburger'
 import { useToggle } from '@/hooks'
 import { DropdownMobile } from './DropdownMobile/DropdownMobile'
 import { DesktopLogo } from '../../Logo/DesktopLogo'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 
 export const HeaderMobile = ({}: HeaderMobileProps) => {
   const [active, toggleMenu, , closeMenu] = useToggle()

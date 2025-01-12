@@ -2,7 +2,7 @@ import styles from './DropdownMobile.module.css'
 import { DropdownMobileProps } from '@/types'
 import { MOBILE_NAV_OPTIONS } from '@/constants'
 import { NavLink } from '@/components/reusable/Sidebar/NavLink/NavLink'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { MobileLogo } from '@/components/reusable/Logo/MobileLogo'
 
 export const DropdownMobile = ({ closeMenu }: DropdownMobileProps) => {

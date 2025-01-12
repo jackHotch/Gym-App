@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 import CloseIconMUI from '@mui/icons-material/Close'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 interface CloseIconProps {
   sx?: CSSProperties

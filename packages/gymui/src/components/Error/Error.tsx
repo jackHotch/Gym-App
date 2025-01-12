@@ -1,7 +1,7 @@
-import { HTMLMotionProps } from 'framer-motion'
+import { HTMLMotionProps } from 'motion/react'
 import styles from './Error.module.css'
 import { CSSProperties } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 export interface ErrorProps extends HTMLMotionProps<'p'> {
   sx?: CSSProperties

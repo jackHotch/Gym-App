@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 import styles from './Skeleton.module.css'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 export interface BlockProps {
   sx?: CSSProperties

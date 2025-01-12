@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Error } from './Error'
 import { ComponentProps } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 
 type StoryProps = ComponentProps<typeof Error>
 

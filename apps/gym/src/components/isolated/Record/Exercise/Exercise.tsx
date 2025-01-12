@@ -1,6 +1,6 @@
 import styles from './Exercise.module.css'
 import { ExerciseProps, TextAreaChangeEvent, TextInputChangeEvent } from '@/types'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { Button } from '@gymapp/gymui/Button'
 import { useToggle } from '@/hooks'
