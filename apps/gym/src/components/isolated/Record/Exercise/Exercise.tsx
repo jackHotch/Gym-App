@@ -101,27 +101,31 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
 
       <hr />
 
-      <div className={styles.set_labels}>
-        <label id={styles.set_label}></label>
-        <label>Weight</label>
-        <label>Reps</label>
-        <label>RPE</label>
-      </div>
+      <div className={styles.set_section}>
+        <div className={styles.set_labels}>
+          <label id={styles.set_label}></label>
+          <label>lbs</label>
+          <label>Reps</label>
+          <label>RPE</label>
+        </div>
 
-      <AnimatePresence>
-        {workout[index].sets.map((value2, key2) => {
-          return (
-            <Set
-              key={key2}
-              value={value2}
-              exerciseNumber={index}
-              setNumber={key2}
-              handleChange={handleChange}
-              removeSet={removeSet}
-            />
-          )
-        })}
-      </AnimatePresence>
+        <div className={styles.set_list}>
+          <AnimatePresence>
+            {workout[index].sets.map((value2, key2) => {
+              return (
+                <Set
+                  key={key2}
+                  value={value2}
+                  exerciseNumber={index}
+                  setNumber={key2}
+                  handleChange={handleChange}
+                  removeSet={removeSet}
+                />
+              )
+            })}
+          </AnimatePresence>
+        </div>
+      </div>
 
       <AnimatePresence>
         {showNotes && (
@@ -155,18 +159,19 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
         )}
       </AnimatePresence>
 
-      <Button.Primary
+      <Button.Secondary
         type='button'
         sx={{
           display: 'block',
           margin: '10px auto',
-          width: '175px',
-          padding: '4px 24px',
+          width: '100%',
+          padding: '0',
+          fontSize: '16px',
         }}
         onClick={() => addSet(index)}
       >
         Add Set
-      </Button.Primary>
+      </Button.Secondary>
     </motion.div>
   )
 }

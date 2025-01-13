@@ -15,14 +15,9 @@
     font-size: 1.2em;
 }
 
-.textbox {
-    display: flex;
-    justify-content: center;
-    flex: 70%;
-}
-
-.textbox input {
-    height: fit-content;
+.searchbar {
+    width: max-content;
+    margin: auto;
 }
 
 .footer_btns {
@@ -60,4 +55,10 @@
     margin-left: 10px;
     font-weight: bold;
     color: crimson;
+}
+
+@media (width < 480px) {
+    .searchbar {
+        width: 100%;
+    }
 }

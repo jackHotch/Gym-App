@@ -6,5 +6,6 @@
 @media (width < 480px) {
   .container {
     height: calc(100vh - 46px);
+    padding: 16px;
   }
 }

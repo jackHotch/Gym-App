@@ -5,12 +5,14 @@
     padding: 2px;
     font-family: inherit;
     align-items: center;
+    width: max-content;
+    height: max-content;
 }
 
 .search_inputs input {
     border: none;
     width: 350px;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .search_inputs input:focus {
@@ -50,5 +52,22 @@
 
 .data .data_item:nth-last-child(-n + 1) {
     border: none;
+}
+
+@media (width < 480px) {
+  .search_inputs input {
+    width: unset;
+    flex-grow: 1;
+  }
+
+  .search_inputs {
+    width: calc(100% - 32px);
+    margin: auto;
+  }
+
+  .data {
+    width: calc(100% - 38px);
+    margin: auto;
+  }
 }
 
