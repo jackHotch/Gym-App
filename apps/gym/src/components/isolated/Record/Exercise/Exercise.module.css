@@ -5,7 +5,7 @@
 
 .exercise_name {
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 18px;
   font-weight: 550;
   color: var(--blue);
   padding: 5px;
@@ -36,15 +36,27 @@
   cursor: pointer;
 }
 
-.set_labels label {
-  display: inline-block;
-  width: 59px;
-  margin: 0 15px;
-  font-size: 1.1rem;
+.set_section {
+  width: max-content;
+  margin: auto;
+  font-size: 16px;
 }
 
-#set_label {
-  margin: 0;
+.set_labels {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  /* font-size: 1.1rem; */
+}
+
+.set_labels label {
+  width: 57px;
+}
+
+.set_list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .notes {

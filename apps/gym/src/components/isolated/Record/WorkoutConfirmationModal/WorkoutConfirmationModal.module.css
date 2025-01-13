@@ -1,27 +1,13 @@
 .buttons {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+    gap: 30px;
 }
 
-/* .buttons button {
-    height: 40px;
-    width: 70%;
-    padding: 5px;
-    margin: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    background-color: rgb(211, 211, 211);
-    font-family: inherit;
-    cursor: pointer;
+@media (width < 480px) {
+    .buttons {
+        gap: 8px;
+    }
 }
-
-.buttons button:nth-child(-n + 1):hover {
-    background-color: rgb(189, 189, 189);
-}
-
-.buttons button:last-child {
-    background-color: crimson;
-    color: white;
-} */

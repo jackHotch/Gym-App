@@ -30,7 +30,7 @@ const Workout = () => {
   }
 
   return (
-    <div className={styles.background}>
+    <>
       <form>
         <div className={styles.container}>
           <h1 className={styles.title}>
@@ -86,7 +86,7 @@ const Workout = () => {
           />
         )}
       </AnimatePresence>
-    </div>
+    </>
   )
 }
 

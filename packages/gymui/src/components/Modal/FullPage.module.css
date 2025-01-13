@@ -1,5 +1,5 @@
 .background {
-  width: 100vw;
+  width: calc(100vw - 32px);
   height: 100vh;
   background-color: rgba(211, 211, 211, .8);
   display: flex;
@@ -8,6 +8,7 @@
   position: fixed;
   inset: 0;
   z-index: 100000;
+  padding: 16px;
 }
 
 .container {
@@ -17,4 +18,5 @@
   flex-direction: column;
   border-radius: 16px;
   z-index: 100001;
+  
 }

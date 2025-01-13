@@ -44,6 +44,7 @@ export const Set = ({
       <label>Set {setNumber + 1}</label>
 
       <Form.Text.Filled
+        inputMode='numeric'
         autoComplete='off'
         placeholder='lbs'
         value={value.weight}
@@ -51,6 +52,7 @@ export const Set = ({
       />
 
       <Form.Text.Filled
+        inputMode='numeric'
         autoComplete='off'
         placeholder='Reps'
         value={value.reps}
@@ -58,6 +60,7 @@ export const Set = ({
       />
 
       <Form.Text.Filled
+        inputMode='numeric'
         autoComplete='off'
         placeholder='RPE'
         value={value.rpe}
