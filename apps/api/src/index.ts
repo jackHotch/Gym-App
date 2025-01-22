@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import { getAllSplits } from './database/Splits'
 const app = express()
 const port = 8080
 
@@ -10,8 +11,9 @@ app.get('/', (req, res) => {
   res.json({ message: 'gymapp/api' })
 })
 
-app.get('/cronjob', (req, res) => {
-  res.json({ message: 'This is for the cronjob' })
+app.get('/cronjob', async (req, res) => {
+  const rows = await getAllSplits()
+  res.json(rows)
 })
 
 import exerciseRouter from './routes/Exercises'
