@@ -179,3 +179,7 @@ export interface DropdownItemProps {
 export interface DropdownMobileProps {
   closeMenu: () => void
 }
+
+export interface WeightChartMobileProps {}
+
+export interface WeightChartDesktopProps {}
