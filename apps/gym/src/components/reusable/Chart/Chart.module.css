@@ -1,0 +1,5 @@
+.chart_container {
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+  padding: 20px;
+}

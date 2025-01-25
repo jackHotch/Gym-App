@@ -1,11 +1,11 @@
 .container {
   height: calc(100vh - 46px);
   overflow: auto;
+  padding: 16px;
 }
 
 @media (width < 480px) {
   .container {
     height: calc(100vh - 46px);
-    padding: 16px;
   }
 }
