@@ -1,5 +1,11 @@
 .chart_container {
   box-shadow: var(--box-shadow);
   border-radius: 20px;
-  padding: 20px;
+  padding: 24px;
+}
+
+@media (width < 480px) {
+  .chart_container {
+    padding: 16px;
+  }
 }
