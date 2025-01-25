@@ -17,7 +17,7 @@ export const WeightChartMobile = ({
         endingWeight={weightData[weightData.length - 1]}
       />
       <DateRangePicker filter={filter} data={data} />
-      <Chart labels={labels} data={weightData} isLoading={isLoading} height='250px' />
+      <Chart labels={labels} data={weightData} isLoading={isLoading} height='200px' />
     </div>
   )
 }
