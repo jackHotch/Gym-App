@@ -26,6 +26,7 @@ export interface ChartProps {
   labels: string[]
   data: any[]
   isLoading: boolean
+  height?: string
 }
 
 export interface SearchbarProps {
@@ -182,4 +183,10 @@ export interface DropdownMobileProps {
 
 export interface WeightChartMobileProps {}
 
-export interface WeightChartDesktopProps {}
+export interface WeightChartDesktopProps {
+  filter: () => void
+  weightData: number[]
+  labels: string[]
+  isLoading: boolean
+  data: IWeightData[]
+}

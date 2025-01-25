@@ -18,6 +18,7 @@ export const DateRangePicker = ({ filter, data }: DateRangePickerProps) => {
 
   useEffect(() => {
     closeDatePickers()
+    closeError()
   }, [data])
 
   const handleChange = (date: Dayjs, start?: boolean) => {

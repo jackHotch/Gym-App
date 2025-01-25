@@ -1,10 +1,8 @@
 .container {
   display: flex;
   flex-flow: column;
-  height: calc(100vh - 64px);
-  min-height: 100%;
+  height: calc(100vh - 87px);  /* 87 is the height of the navbar + the padding*/
   max-height: 100vh;
-  position: relative;
 }
 
 .body {
@@ -12,10 +10,7 @@
   flex-flow: row wrap;
   justify-content: space-between;
   flex-grow: 1;
-  max-height: calc(100vh - 104px);
-  padding: 20px 0;
-  width: 95%;
-  margin: auto;
+  height: 100%;
   gap: 30px;
 }
 

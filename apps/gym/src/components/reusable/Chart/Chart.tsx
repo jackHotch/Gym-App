@@ -31,7 +31,7 @@ ChartJS.register(
 
 ChartJS.defaults.maintainAspectRatio = false
 
-export const Chart = ({ labels, data, isLoading }: ChartProps) => {
+export const Chart = ({ labels, data, isLoading, height }: ChartProps) => {
   const [blue, setBlue] = useState('')
   const [transparentBlue, setTransparentBlue] = useState('')
 
@@ -57,6 +57,11 @@ export const Chart = ({ labels, data, isLoading }: ChartProps) => {
           size: 15,
           family: 'Inter',
         },
+      },
+    },
+    elements: {
+      point: {
+        radius: 0,
       },
     },
     scales: {
@@ -105,5 +110,9 @@ export const Chart = ({ labels, data, isLoading }: ChartProps) => {
     )
   }
 
-  return <Line options={options} data={chartData} />
+  return (
+    <div className={styles.chart_container} style={{ height: height ? height : '100%' }}>
+      <Line options={options} data={chartData} />
+    </div>
+  )
 }
