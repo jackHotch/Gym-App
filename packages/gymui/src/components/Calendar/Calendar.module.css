@@ -3,6 +3,7 @@
   border: 1px solid black;
   border-radius: 10px;
   width: max-content;
-  position: relative;
+  position: absolute;
+  translate: -50%;
   z-index: 1;
 }

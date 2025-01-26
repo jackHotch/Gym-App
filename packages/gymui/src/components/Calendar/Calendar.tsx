@@ -13,12 +13,10 @@ interface CalendarProps extends HTMLMotionProps<'div'> {
 const motionVariants = {
   hidden: {
     scale: 0,
-    x: '40%',
     y: '-50%',
   },
   visible: {
     scale: 1,
-    x: 0,
     y: 0,
     transition: {
       type: 'spring',
@@ -28,7 +26,6 @@ const motionVariants = {
   },
   exit: {
     scale: 0,
-    x: '40%',
     y: '-50%',
     transition: {
       duration: 0.2,

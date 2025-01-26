@@ -5,8 +5,8 @@ import { Dropdown } from '@/components/reusable'
 import { useToggle } from '@/hooks'
 import { useEffect, useRef, useState } from 'react'
 import { useOutsideClick } from '@/hooks'
-import dayjs from 'dayjs'
 import { AnimatePresence, useAnimate } from 'motion/react'
+import { RangeSelectorOptions } from '@/constants'
 
 export const RangeSelector = ({
   filter,
@@ -14,17 +14,6 @@ export const RangeSelector = ({
   closeDatePickers,
   data,
 }: RangeSelectorProps) => {
-  const options = [
-    { name: '1 Week', startDate: dayjs().subtract(1, 'w'), endDate: dayjs() },
-    { name: '1 Month', startDate: dayjs().subtract(1, 'M'), endDate: dayjs() },
-    { name: '2 Months', startDate: dayjs().subtract(2, 'M'), endDate: dayjs() },
-    { name: '3 Months', startDate: dayjs().subtract(3, 'M'), endDate: dayjs() },
-    { name: '6 Months', startDate: dayjs().subtract(6, 'M'), endDate: dayjs() },
-    { name: '1 Year', startDate: dayjs().subtract(1, 'y'), endDate: dayjs() },
-    { name: 'Since Starting Date' },
-    { name: 'Custom' },
-  ]
-
   const [selectedValue, setSelectedValue] = useState('Since Starting Date')
   const [open, toggle, , close] = useToggle()
   const contentRef = useRef()
@@ -41,20 +30,18 @@ export const RangeSelector = ({
   }
 
   const handleClick = (id: number) => {
-    setSelectedValue(options[id].name)
+    setSelectedValue(RangeSelectorOptions[id].name)
     animate(scope.current, { rotate: 0 })
     closeDatePickers()
 
-    if (options[id].name === 'Custom') {
+    if (RangeSelectorOptions[id].name === 'Custom') {
       handleCustomClick()
-      return
-    } else if (options[id].name === 'Since Starting Date') {
+    } else if (RangeSelectorOptions[id].name === 'Since Starting Date') {
       handleStartingClick()
-      return
+    } else {
+      filter(RangeSelectorOptions[id].startDate, RangeSelectorOptions[id].endDate)
+      close()
     }
-
-    filter(options[id].startDate, options[id].endDate)
-    close()
   }
 
   const handleCustomClick = () => {
@@ -81,7 +68,7 @@ export const RangeSelector = ({
       <AnimatePresence>
         {open && (
           <Dropdown.Content ref={contentRef}>
-            {options.map((option, key) => {
+            {RangeSelectorOptions.map((option, key) => {
               return (
                 <Dropdown.Item key={key} id={key} handleClick={handleClick}>
                   {option.name}
