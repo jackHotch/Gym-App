@@ -6,7 +6,7 @@ import { Calendar } from '@gymapp/gymui/Calendar'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { CSSProperties, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useToggle } from '@/hooks'
 import { Dayjs } from 'dayjs'
 import { AnimatePresence } from 'motion/react'
@@ -62,7 +62,12 @@ export const DatePicker = ({
               <Calendar
                 value={value}
                 onChange={(event) => handleChange(event)}
-                sx={{ position: 'absolute', bottom: '-340px', right: '0', ...sxCalendar }}
+                sx={{
+                  // position: 'absolute',
+                  // right: '0',
+                  // left: '0',
+                  ...sxCalendar,
+                }}
               />
             </div>
           )}

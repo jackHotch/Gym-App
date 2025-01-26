@@ -7,7 +7,7 @@ import styles from './AddExerciseModal.module.css'
 import { Searchbar } from '@/components/reusable/Searchbar/Searchbar'
 import { CreateNewExerciseModal } from '../CreateNewExerciseModal'
 import { AnimatePresence } from 'motion/react'
-import { useToggle, useExercises, useWindowDimensions } from '@/hooks'
+import { useToggle, useExercises } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import { Modal } from '@gymapp/gymui/Modal'
 import { CloseIcon } from '@gymapp/gymui/CloseIcon'
@@ -21,8 +21,6 @@ export const AddExerciseModal = ({
   const [showCreateExerciseModal, _, openCreateExerciseModal, closeCreateExerciseModal] =
     useToggle()
   const { data: exercises } = useExercises()
-  const screen = useWindowDimensions()
-  const modalWidth = screen.width < 480 ? '100%' : '500px'
 
   const removeExercise = (i: number) => {
     const temp = [...newExercises]
@@ -38,7 +36,7 @@ export const AddExerciseModal = ({
   }
 
   return (
-    <Modal.FullPage width={modalWidth} height='600px' onOutsideClick={closeModal}>
+    <Modal.FullPage width='500px' height='600px' onOutsideClick={closeModal}>
       <div className={styles.header}>
         <Button.Text onClick={openCreateExerciseModal} sx={{ fontSize: '16px' }}>
           Create New Exercise

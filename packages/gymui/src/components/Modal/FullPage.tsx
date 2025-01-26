@@ -34,7 +34,7 @@ export const FullPage = ({
     <div data-testid='background' className={styles.background} onClick={onOutsideClick}>
       <motion.div
         {...props}
-        style={{ ...sx, width: width, height: height }}
+        style={{ ...sx, maxWidth: width, height: height }}
         className={styles.container}
         onClick={(e) => e.stopPropagation()}
         variants={modalVariants}
