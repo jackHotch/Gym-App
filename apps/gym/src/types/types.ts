@@ -133,6 +133,8 @@ export interface RangeSelectorProps {
   openDatePickers: () => void
   closeDatePickers: () => void
   data: IWeightData[]
+  maxWidth?: string
+  width?: string
 }
 
 export interface WeightListEntryProps {
@@ -162,6 +164,8 @@ export interface DateRangePickerProps {
 
 export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   sx?: CSSProperties
+  width?: string
+  maxWidth?: string
   children: ReactNode | ReactNode[]
 }
 

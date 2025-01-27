@@ -41,6 +41,7 @@ export const FullPage = ({
         initial='hidden'
         animate='visible'
         exit='exit'
+        layout
       >
         {children}
       </motion.div>

@@ -1,6 +1,8 @@
 .primary, .secondary, .danger, .disabled, .text {
   color: white;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   cursor: pointer;
 }

@@ -3,8 +3,8 @@
   flex-direction: column;
   border: 1px solid black;
   background-color: white;
-  width: 226px;
-  border-radius: 4px;
+  width: 100%;
+  border-radius: 8px;
   margin-top: 4px;
   position: absolute;
   bottom: calc(0 - 100%);

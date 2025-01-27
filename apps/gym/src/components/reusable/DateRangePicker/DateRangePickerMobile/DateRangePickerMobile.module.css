@@ -1,3 +1,7 @@
+.container {
+  width: 50%;
+}
+
 .datepickers {
   display: flex;
   flex-direction: column;

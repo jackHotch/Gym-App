@@ -3,6 +3,7 @@ import { WeightChartDesktopProps } from '@/types'
 import { ChartHeader } from './ChartHeader/ChartHeader'
 import { Chart, DateRangePicker } from '@/components/reusable'
 import { Button } from '@gymapp/gymui/Button'
+import AddIcon from '@mui/icons-material/Add'
 
 export const WeightChartMobile = ({
   filter,
@@ -20,7 +21,9 @@ export const WeightChartMobile = ({
 
       <div className={styles.button_container}>
         <DateRangePicker filter={filter} data={data} />
-        <Button.Primary>Add +</Button.Primary>
+        <Button.Primary sx={{ width: '50%' }}>
+          Add <AddIcon />
+        </Button.Primary>
       </div>
       <Chart labels={labels} data={weightData} isLoading={isLoading} height='200px' />
     </div>
