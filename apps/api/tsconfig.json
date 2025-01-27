@@ -2,7 +2,6 @@
   "extends": "@gymapp/typescript-config/base.json",
   "compilerOptions": {
     "target": "es2022",
-    "rootDir": "./src",
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
