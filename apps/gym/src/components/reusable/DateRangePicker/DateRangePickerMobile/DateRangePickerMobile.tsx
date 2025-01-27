@@ -28,29 +28,13 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
   }
 
   const handleSubmit = () => {
-    if (startDate.isSame(endDate) || startDate.isAfter(endDate)) showError()
-    else {
+    if (startDate.isSame(endDate) || startDate.isAfter(endDate)) {
+      showError()
+    } else {
+      closeError()
       filter(startDate, endDate)
       closeDatePickers()
     }
-
-    // if (start) {
-    //   if (date.isSame(endDate) || date.isAfter(endDate)) {
-    //     showError()
-    //     return
-    //   }
-    //   closeError()
-    //   filter(date, endDate)
-    //   setStartDate(date)
-    // } else {
-    //   if (startDate.isSame(date) || startDate.isAfter(date)) {
-    //     showError()
-    //     return
-    //   }
-    //   closeError()
-    //   filter(startDate, date)
-    //   setEndDate(date)
-    // }
   }
 
   return (
@@ -60,6 +44,7 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
         openDatePickers={openDatePickers}
         closeDatePickers={closeDatePickers}
         data={data}
+        maxWidth='100%'
       />
 
       <AnimatePresence>
@@ -75,11 +60,11 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
               <p className={styles.to}>To</p>
               <DatePicker value={endDate} onChange={handleChange} />
             </div>
+            <AnimatePresence>{error && <Error>Invalid Range</Error>}</AnimatePresence>
             <Button.Primary onClick={handleSubmit}> Set Range</Button.Primary>
           </Modal.FullPage>
         )}
       </AnimatePresence>
-      <AnimatePresence>{error && <Error>Invalid Range</Error>}</AnimatePresence>
     </div>
   )
 }

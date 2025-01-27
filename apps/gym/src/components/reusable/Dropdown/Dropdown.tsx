@@ -6,9 +6,14 @@ import { Button } from './Button/Button'
 import { Content } from './Content/Content'
 import { Item } from './Item/Item'
 
-export const Dropdown = ({ sx, children }: DropdownProps) => {
+export const Dropdown = ({
+  sx,
+  width = '213px',
+  maxWidth = '',
+  children,
+}: DropdownProps) => {
   return (
-    <div className={styles.container} style={sx}>
+    <div className={styles.container} style={{ ...sx, maxWidth: maxWidth, width: width }}>
       {children}
     </div>
   )

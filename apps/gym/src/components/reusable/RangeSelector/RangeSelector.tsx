@@ -13,6 +13,8 @@ export const RangeSelector = ({
   openDatePickers,
   closeDatePickers,
   data,
+  maxWidth = '',
+  width = '213px',
 }: RangeSelectorProps) => {
   const [selectedValue, setSelectedValue] = useState('Since Starting Date')
   const [open, toggle, , close] = useToggle()
@@ -61,7 +63,7 @@ export const RangeSelector = ({
   }
 
   return (
-    <Dropdown>
+    <Dropdown maxWidth={maxWidth} width={width}>
       <Dropdown.Button ref={scope} onClick={handleButtonClick}>
         {selectedValue}
       </Dropdown.Button>
