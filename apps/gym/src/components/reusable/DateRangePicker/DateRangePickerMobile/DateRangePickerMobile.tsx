@@ -45,6 +45,7 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
         closeDatePickers={closeDatePickers}
         data={data}
         maxWidth='100%'
+        width='100%'
       />
 
       <AnimatePresence>

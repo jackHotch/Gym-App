@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: 16px;
 }
 
 .button_container {
   display: flex;
+  gap: 8px;
 }
 
 @media (width > 480px) {
