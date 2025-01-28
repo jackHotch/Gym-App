@@ -9,6 +9,7 @@ import DownArrow from '@mui/icons-material/KeyboardDoubleArrowDown'
 import TrendingDownArrow from '@mui/icons-material/TrendingDown'
 import TrendingUpArrow from '@mui/icons-material/TrendingUp'
 import { TailSpin } from 'react-loader-spinner'
+import AddIcon from '@mui/icons-material/Add'
 
 export const ChartHeader = ({ startingWeight, endingWeight }: ChartHeaderProps) => {
   const [isAWMOpen, , openAWM, closeAWM] = useToggle()
@@ -16,12 +17,9 @@ export const ChartHeader = ({ startingWeight, endingWeight }: ChartHeaderProps) 
   return (
     <div>
       <div className={styles.container}>
-        <Button.Primary
-          onClick={openAWM}
-          sx={{ position: 'absolute', left: 0, display: 'flex', alignItems: 'center' }}
-        >
+        <Button.Primary onClick={openAWM} sx={{ position: 'absolute', left: 0 }}>
           Add
-          <span className={styles.plus}>+</span>
+          <AddIcon />
         </Button.Primary>
 
         <div className={styles.stats}>

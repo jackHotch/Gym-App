@@ -194,3 +194,18 @@ export interface WeightChartDesktopProps {
   isLoading: boolean
   data: IWeightData[]
 }
+
+export interface StartingCardProps {
+  weight: number
+  gainedWeight: boolean
+}
+
+export interface EndingCardProps {
+  weight: number
+  gainedWeight: boolean
+}
+
+export interface DifferenceCardProps {
+  difference: string
+  gainedWeight: boolean
+}
