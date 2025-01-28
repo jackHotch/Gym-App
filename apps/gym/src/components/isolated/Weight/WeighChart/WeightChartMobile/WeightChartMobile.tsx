@@ -4,6 +4,9 @@ import { ChartHeader } from './ChartHeader/ChartHeader'
 import { Chart, DateRangePicker } from '@/components/reusable'
 import { Button } from '@gymapp/gymui/Button'
 import AddIcon from '@mui/icons-material/Add'
+import { useToggle } from '@/hooks'
+import { AnimatePresence } from 'motion/react'
+import { AddWeightModal } from '../../AddWeightModal'
 
 export const WeightChartMobile = ({
   filter,
@@ -12,6 +15,8 @@ export const WeightChartMobile = ({
   isLoading,
   data,
 }: WeightChartDesktopProps) => {
+  const [isAWMOpen, , openAWM, closeAWM] = useToggle()
+
   return (
     <div className={styles.container}>
       <ChartHeader
@@ -21,11 +26,15 @@ export const WeightChartMobile = ({
 
       <div className={styles.button_container}>
         <DateRangePicker filter={filter} data={data} />
-        <Button.Primary sx={{ width: '50%' }}>
+        <Button.Primary onClick={openAWM} sx={{ width: '50%' }}>
           Add <AddIcon />
         </Button.Primary>
       </div>
       <Chart labels={labels} data={weightData} isLoading={isLoading} height='200px' />
+
+      <AnimatePresence>
+        {isAWMOpen && <AddWeightModal closeModal={closeAWM} />}
+      </AnimatePresence>
     </div>
   )
 }
