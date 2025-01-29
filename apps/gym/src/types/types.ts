@@ -140,6 +140,7 @@ export interface RangeSelectorProps {
 export interface WeightListEntryProps {
   value: IWeightData
   id: number
+  difference: string
 }
 
 export interface ExerciseProps {
