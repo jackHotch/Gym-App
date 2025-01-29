@@ -1,26 +1,38 @@
 .entry {
-  margin: 15px 0;
-  width: calc(100% - 10px);
+  /* margin: 15px 0; */
+  width: 100%;
   border-bottom: 1px solid black;
-  padding: 5px;
-  font-size: 1.1rem;
-  max-width: 100%;
-  border-radius: 5px 5px 0 0;
+  /* padding: 2px; */
+  font-size: 16px;
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 8px 0;
 }
 
-.entry:first-child {
+/* .entry:first-child {
   padding-top: 10px;
+} */
+
+.id_weight {
+  display: flex;
+  gap: 8px;
+}
+
+.date_dots {
+  display: flex;
+  gap: 32px;
 }
 
 .id {
-  display: inline-block;
-  margin-right: 12px;
-  width: 43px;
-  color: var(--dark-gray)
+  /* display: inline-block; */
+  /* margin-right: 12px; */
+  /* width: 43px; */
+  color: var(--dark-gray);
+  /* font-size: 15px; */
 }
 
-.weight {
+/* .weight {
   display: inline-block;
   margin-right: 60px;
   width: 75px;
@@ -30,12 +42,12 @@
   display: inline-block;
   width: 100px;
   margin-right: 20px;
-}
+} */
 
-#three_dots {
+/* #three_dots {
   cursor: pointer;
   height: min-content;
-}
+} */
 
 .entry_modal {
   position: relative;

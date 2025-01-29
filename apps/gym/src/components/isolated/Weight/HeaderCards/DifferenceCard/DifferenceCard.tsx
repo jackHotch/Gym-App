@@ -9,9 +9,7 @@ export const DifferenceCard = ({ difference, gainedWeight }: DifferenceCardProps
     <div
       className={styles.container}
       style={{
-        boxShadow: gainedWeight
-          ? 'var(--green) 0px 2px 8px 0px'
-          : 'var(--red) 0px 2px 8px 0px;',
+        color: gainedWeight ? 'var(--green) ' : 'var(--red)',
       }}
     >
       <span className={styles.data}>
@@ -21,7 +19,11 @@ export const DifferenceCard = ({ difference, gainedWeight }: DifferenceCardProps
           <TailSpin color='var(--blue)' width='50' height='20' />
         )}
         <span className={styles.arrow}>
-          {gainedWeight ? <UpArrow color='success' /> : <DownArrow color='warning' />}
+          {gainedWeight ? (
+            <UpArrow htmlColor='var(--green)' />
+          ) : (
+            <DownArrow color='warning' />
+          )}
         </span>
       </span>
       <span className={styles.label}>Diff</span>

@@ -19,34 +19,44 @@ export const WeightList = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.list}>
-        <div className={styles.list_sub_headings}>
-          <span id={styles.number_head}>#</span>
-          <span id={styles.weight_head}>lbs</span>
-          <span id={styles.date_head}>Date</span>
-        </div>
-        <div className={styles.list_entries}>
-          {isLoading ? (
-            <Loading.Text
-              fontSize='26px'
-              pulseSize={10}
-              sx={{
-                justifyContent: 'center',
-                fontWeight: '500',
-                position: 'absolute',
-                inset: '0',
-              }}
-            >
-              Gathering Data
-            </Loading.Text>
-          ) : (
-            reversedWeight?.map((value, key) => {
-              return (
-                <WeightListEntry key={key} value={value} id={reversedArray[key] + 1} />
-              )
-            })
-          )}
-        </div>
+      <div className={styles.list_headings}>
+        <span id={styles.number_head}>#</span>
+        <span id={styles.weight_head}>lbs</span>
+        <span id={styles.date_head}>Date</span>
+      </div>
+      <div className={styles.list_entries}>
+        {isLoading ? (
+          <Loading.Text
+            fontSize='26px'
+            pulseSize={10}
+            sx={{
+              justifyContent: 'center',
+              fontWeight: '500',
+              position: 'absolute',
+              inset: '0',
+            }}
+          >
+            Gathering Data
+          </Loading.Text>
+        ) : (
+          reversedWeight?.map((value, key) => {
+            const difference =
+              key == reversedArray[0]
+                ? ''
+                : (
+                    data[reversedArray[key]]?.weight -
+                    data[reversedArray[key + 1]]?.weight
+                  ).toFixed(1)
+            return (
+              <WeightListEntry
+                key={key}
+                value={value}
+                id={reversedArray[key] + 1}
+                difference={difference}
+              />
+            )
+          })
+        )}
       </div>
     </div>
   )

@@ -8,17 +8,21 @@ export const EndingCard = ({ weight, gainedWeight }: EndingCardProps) => {
   return (
     <div
       className={styles.container}
-      style={{
-        boxShadow: gainedWeight
-          ? 'var(--green) 0px 2px 8px 0px'
-          : 'var(--red) 0px 2px 8px 0px;',
-      }}
+      style={
+        {
+          // color: gainedWeight ? 'var(--green) ' : 'var(--red)',
+        }
+      }
     >
       <span className={styles.data}>
         {weight ? weight : <TailSpin color='var(--blue)' width='50' height='20' />}
-        <span className={styles.arrow}>
-          {gainedWeight ? <UpArrow color='success' /> : <DownArrow color='warning' />}
-        </span>
+        {/* <span className={styles.arrow}>
+          {gainedWeight ? (
+            <UpArrow htmlColor='var(--green)' />
+          ) : (
+            <DownArrow color='warning' />
+          )}
+        </span> */}
       </span>
       <span className={styles.label}>End</span>
     </div>

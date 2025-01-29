@@ -6,11 +6,9 @@ export const StartingCard = ({ weight, gainedWeight }: StartingCardProps) => {
   return (
     <div
       className={styles.container}
-      style={{
-        boxShadow: gainedWeight
-          ? 'var(--green) 0px 2px 8px 0px'
-          : 'var(--red) 0px 2px 8px 0px;',
-      }}
+      // style={{
+      //   border: gainedWeight ? '1px solid var(--green) ' : '1px solid var(--red)',
+      // }}
     >
       {weight ? weight : <TailSpin color='var(--blue)' width='50' height='20' />}
       <span className={styles.label}>Start</span>

@@ -6,7 +6,7 @@ import { useToggle } from '@/hooks'
 import { useDeleteWeight } from '@/hooks'
 import { AnimatePresence } from 'motion/react'
 
-export const WeightListEntry = ({ value, id }: WeightListEntryProps) => {
+export const WeightListEntry = ({ value, id, difference }: WeightListEntryProps) => {
   const [isVisible, toggle, _, close] = useToggle()
   const { mutate: deleteWeight } = useDeleteWeight()
 
@@ -16,16 +16,23 @@ export const WeightListEntry = ({ value, id }: WeightListEntryProps) => {
   }
 
   return (
-    <div className={styles.entry}>
-      <span className={styles.id}>#{id}</span>
-      <span className={styles.weight}>{value.weight} lbs</span>
-      <span className={styles.date}>{value.date}</span>
-      <MoreVertIcon id={styles.three_dots} onClick={toggle} />
+    <>
+      <div className={styles.entry}>
+        <div className={styles.id_weight}>
+          <span className={styles.id}>#{id}</span>
+          <span className={styles.weight}>{value.weight}</span>
+        </div>
+        <div className={styles.date_dots}>
+          <span>{difference}</span>
+          <span className={styles.date}>{value.date}</span>
+          <MoreVertIcon id={styles.three_dots} onClick={toggle} />
+        </div>
+      </div>
       <div className={styles.entry_modal}>
         <AnimatePresence>
           {isVisible && <EntryModal closeModal={close} deleteEntry={deleteEntry} />}
         </AnimatePresence>
       </div>
-    </div>
+    </>
   )
 }
