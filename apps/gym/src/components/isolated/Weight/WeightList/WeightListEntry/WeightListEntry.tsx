@@ -20,12 +20,18 @@ export const WeightListEntry = ({ value, id, difference }: WeightListEntryProps)
       <div className={styles.entry}>
         <div className={styles.id_weight}>
           <span className={styles.id}>#{id}</span>
-          <span className={styles.weight}>{value.weight}</span>
+          <span>{value.weight} lbs</span>
         </div>
         <div className={styles.date_dots}>
-          <span>{difference}</span>
+          <span
+            style={{
+              color: difference > 0 ? 'var(--green) ' : 'var(--red)',
+            }}
+          >
+            {difference}
+          </span>
           <span className={styles.date}>{value.date}</span>
-          <MoreVertIcon id={styles.three_dots} onClick={toggle} />
+          <MoreVertIcon className={styles.three_dots} onClick={toggle} />
         </div>
       </div>
       <div className={styles.entry_modal}>

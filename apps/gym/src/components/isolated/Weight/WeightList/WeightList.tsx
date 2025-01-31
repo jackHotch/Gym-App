@@ -19,11 +19,7 @@ export const WeightList = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.list_headings}>
-        <span id={styles.number_head}>#</span>
-        <span id={styles.weight_head}>lbs</span>
-        <span id={styles.date_head}>Date</span>
-      </div>
+      <span className={styles.heading}>Entries</span>
       <div className={styles.list_entries}>
         {isLoading ? (
           <Loading.Text
@@ -52,7 +48,7 @@ export const WeightList = () => {
                 key={key}
                 value={value}
                 id={reversedArray[key] + 1}
-                difference={difference}
+                difference={Number(difference)}
               />
             )
           })
