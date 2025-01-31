@@ -1,9 +1,10 @@
 .container {
   width: max-content;
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: max-content;
 }
 
 .date_input {
