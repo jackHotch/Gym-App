@@ -63,9 +63,6 @@ export const DatePicker = ({
                 value={value}
                 onChange={(event) => handleChange(event)}
                 sx={{
-                  // position: 'absolute',
-                  // right: '0',
-                  // left: '0',
                   ...sxCalendar,
                 }}
               />

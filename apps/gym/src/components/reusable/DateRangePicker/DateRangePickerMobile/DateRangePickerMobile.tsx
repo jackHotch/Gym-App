@@ -57,9 +57,24 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
           >
             <p className={styles.header}>Enter a Date Range</p>
             <div className={styles.datepickers}>
-              <DatePicker value={startDate} onChange={handleChange} start={true} />
+              <DatePicker
+                value={startDate}
+                onChange={handleChange}
+                start={true}
+                sxCalendar={{
+                  position: 'absolute',
+                  top: '-30px',
+                }}
+              />
               <p className={styles.to}>To</p>
-              <DatePicker value={endDate} onChange={handleChange} />
+              <DatePicker
+                value={endDate}
+                onChange={handleChange}
+                sxCalendar={{
+                  position: 'absolute',
+                  top: '-30px',
+                }}
+              />
             </div>
             <AnimatePresence>{error && <Error>Invalid Range</Error>}</AnimatePresence>
             <Button.Primary onClick={handleSubmit}> Set Range</Button.Primary>
