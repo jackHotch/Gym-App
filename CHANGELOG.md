@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 1/31/2025
+
+- Refactored the project to be responsive
+
 ## 1/21/2025
 
 - Fixed cronjob api
