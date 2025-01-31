@@ -71,6 +71,9 @@ export const Chart = ({ labels, data, isLoading, height }: ChartProps) => {
             return labels.length > 30 ? (i % 2 === 0 ? labels[i] : undefined) : labels[i]
           },
         },
+        grid: {
+          display: false,
+        },
       },
     },
   }
