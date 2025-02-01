@@ -1,18 +1,8 @@
 .header {
-    border: none;
+    width: 100%;
     display: flex;
-    align-items: center;
-    height: 31px;
-    flex-flow: column wrap;
-    align-content: space-between;
-    margin: 10px 15px;
-}
-
-.header > button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: 1.2em;
+    justify-content: space-between;
+    margin-bottom: 16px;
 }
 
 .searchbar {
