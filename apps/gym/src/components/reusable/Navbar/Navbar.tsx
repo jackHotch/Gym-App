@@ -16,8 +16,24 @@ export const Navbar = () => {
     <div className={styles.container}>
       <DesktopLogo />
       <div className={styles.button_container}>
-        <Button.Secondary onClick={() => router.push('/login')}>Log In</Button.Secondary>
-        <Button.Primary onClick={() => router.push('/signup')}>Sign Up</Button.Primary>
+        {pathname == '/' && (
+          <>
+            <Button.Secondary onClick={() => router.push('/login')}>
+              Log In
+            </Button.Secondary>
+            <Button.Primary onClick={() => router.push('/signup')}>
+              Sign Up
+            </Button.Primary>
+          </>
+        )}
+
+        {pathname == '/login' && (
+          <Button.Primary onClick={() => router.push('/signup')}>Sign Up</Button.Primary>
+        )}
+
+        {pathname == '/signup' && (
+          <Button.Primary onClick={() => router.push('/login')}>Log In</Button.Primary>
+        )}
       </div>
     </div>
   )
