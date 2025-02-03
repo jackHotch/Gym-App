@@ -9,7 +9,13 @@
   height: calc(100vh - 16px);
   overflow: hidden;
   padding: 8px;
-  gap: 8px;
+  gap: 4px;
   border-top-right-radius: 60px;
   z-index: 1000000;
+}
+
+.option {
+  font-size: 3rem;
+  /* font-weight: 500; */
+  color: white;
 }

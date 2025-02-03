@@ -50,7 +50,7 @@ export const DropdownMobile = ({ closeMenu }: DropdownMobileProps) => {
             containerSx={{ width: '100%' }}
           >
             {option.icon}
-            <span style={{ fontSize: 48, color: 'white' }}>{option.name}</span>
+            <h1 className={styles.option}>{option.name}</h1>
           </NavLink>
         )
       })}
