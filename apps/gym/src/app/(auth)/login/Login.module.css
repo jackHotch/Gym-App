@@ -19,14 +19,21 @@
   gap: 8px;
 }
 
-/* .google {
+.google_button {
+  cursor: pointer;
+  background-color: white;
   border: 1px solid black;
   text-align: center;
   border-radius: 10px;
-  padding: 12px;
-} */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+}
 
-@media (width < 480px) {
+@media (width < 600px) {
   .container {
     width: calc(100% - 96px);
     padding: 32px;

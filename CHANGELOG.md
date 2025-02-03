@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 2/2/2025
+
+- Created the UI for the Authentication Pages
+
 ## 1/31/2025
 
 - Refactored the project to be responsive

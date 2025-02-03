@@ -1,15 +1,25 @@
-.outline, .filled {
+.outline, .filled, .password {
   padding: 12px; 
   border-radius: 8px;
   font-size: 16px;
 }
 
-.outline:focus, .filled:focus {
+.outline:focus, .filled:focus, .password:focus {
   outline: none;
 }
 
-.outline {
+.outline, .password {
   border: 1px solid black;
+}
+
+.password {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+}
+
+.password::placeholder {
+  font-family: Inter;
+  font-size: 16px;
 }
 
 .filled {
