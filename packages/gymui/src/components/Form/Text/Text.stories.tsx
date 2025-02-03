@@ -32,3 +32,10 @@ export const Filled: Story = {
     return <Form.Text.Filled {...args} />
   },
 }
+
+export const Password: Story = {
+  args: {},
+  render: (args: any) => {
+    return <Form.Text.Password {...args} />
+  },
+}

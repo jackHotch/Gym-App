@@ -11,20 +11,20 @@ const Login = () => {
 
       <div className={styles.input_container}>
         <Form.Text.Outline placeholder='Email Address' />
-        <Form.Text.Outline placeholder='Password' />
+        <Form.Text.Password placeholder='Password' />
       </div>
 
       <div className={styles.button_container}>
         <Button.Primary type='submit' size='medium' sx={{ padding: '12px' }}>
           Log In
         </Button.Primary>
-        <Button.Secondary
-          size='medium'
-          sx={{ padding: '12px' }}
+        <button
+          className={styles.google_button}
           onClick={() => alert('Not Implemented Yet')}
         >
+          <img src='/images/google.png' width={20} />
           Sign In With Google
-        </Button.Secondary>
+        </button>
       </div>
     </Form>
   )
