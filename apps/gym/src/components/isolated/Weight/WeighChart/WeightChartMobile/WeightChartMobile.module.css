@@ -7,10 +7,11 @@
 
 .button_container {
   display: flex;
+  align-items: space-around;
   gap: 8px;
 }
 
-@media (width > 480px) {
+@media (width > 1000px) {
   .container {
     display: none;
   }
