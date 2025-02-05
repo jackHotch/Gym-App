@@ -4,6 +4,12 @@
   padding: 24px;
 }
 
+/* @media (width < 900px) {
+  .container {
+    height: 300px;
+  }
+} */
+
 @media (width < 480px) {
   .chart_container {
     padding: 16px;

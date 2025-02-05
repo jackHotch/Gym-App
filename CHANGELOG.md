@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 2/5/2025
+
+- Fixed Issue with the weight page not being responsive
+
 ## 2/2/2025
 
 - Created the UI for the Authentication Pages
