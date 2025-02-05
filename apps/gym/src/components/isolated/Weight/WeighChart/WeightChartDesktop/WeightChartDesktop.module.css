@@ -1,11 +1,17 @@
 .container {
   display: flex;
   flex-direction: column;
-  min-width: 350px;
+  /* width: clamp(350px, 70vw, 70vw); */
   width: 70vw;
 }
 
-@media (width < 1000px) {
+@media (width < 1625px) {
+  .container {
+    width: 60vw;
+  }
+}
+
+@media (width < 1050px) {
   .container {
     display: none;
   }

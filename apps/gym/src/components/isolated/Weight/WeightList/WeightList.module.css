@@ -27,13 +27,13 @@
   overflow: scroll;
 }
 
-@media (width < 1625px) {
+@media (width < 1250px) {
   .container {
-    width: calc(70vw - 32px);
+    width: calc(60vw - 32px);
   }
 }
 
-@media (width < 1000px) {
+@media (width < 1050px) {
   .container {
     width: 100%;
   }
