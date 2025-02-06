@@ -2,13 +2,8 @@
   box-shadow: var(--box-shadow);
   border-radius: 12px;
   padding: 24px;
+  position: relative;
 }
-
-/* @media (width < 900px) {
-  .container {
-    height: 300px;
-  }
-} */
 
 @media (width < 480px) {
   .chart_container {
