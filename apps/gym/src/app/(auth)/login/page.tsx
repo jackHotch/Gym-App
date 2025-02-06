@@ -15,7 +15,12 @@ const Login = () => {
       </div>
 
       <div className={styles.button_container}>
-        <Button.Primary type='submit' size='medium' sx={{ padding: '12px' }}>
+        <Button.Primary
+          type='submit'
+          size='medium'
+          sx={{ padding: '12px' }}
+          onClick={() => alert('Not Implemented Yet')}
+        >
           Log In
         </Button.Primary>
         <button
