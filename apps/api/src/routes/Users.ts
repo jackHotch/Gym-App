@@ -24,8 +24,10 @@ router.post('/signup', async (req: Request, res: Response) => {
 })
 
 router.get('/user', async (req, res) => {
-  const rows = await findUser('jhotchkiss')
-  res.json(rows)
+  const email = req.body.email
+  const rows = await findUser(email)
+  if (rows.length === 0) res.status(404).json({ message: 'User not found' })
+  res.status(200).json(rows)
 })
 
 export default router
