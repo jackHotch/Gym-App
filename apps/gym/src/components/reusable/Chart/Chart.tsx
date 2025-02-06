@@ -98,18 +98,22 @@ export const Chart = ({ labels, data, isLoading, height }: ChartProps) => {
 
   if (isLoading) {
     return (
-      <Loading.Text
-        fontSize='26px'
-        pulseSize={10}
-        sx={{
-          justifyContent: 'center',
-          fontWeight: '500',
-          position: 'absolute',
-          inset: '0',
-        }}
+      <div
+        className={styles.chart_container}
+        style={{ height: height ? height : '100%' }}
       >
-        Creating Graph
-      </Loading.Text>
+        <Loading.Text
+          fontSize='26px'
+          pulseSize={10}
+          sx={{
+            justifyContent: 'center',
+            position: 'absolute',
+            inset: '0',
+          }}
+        >
+          Creating Graph
+        </Loading.Text>
+      </div>
     )
   }
 

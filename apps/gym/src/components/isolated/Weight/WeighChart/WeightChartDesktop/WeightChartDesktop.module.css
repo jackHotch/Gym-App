@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* width: clamp(350px, 70vw, 70vw); */
   width: 70vw;
 }
 
