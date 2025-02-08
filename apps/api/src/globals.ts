@@ -11,6 +11,7 @@ export interface ISet {
 }
 
 export interface IUser {
+  id?: number
   email: string
   password: string
   firstName: string
