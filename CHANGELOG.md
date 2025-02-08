@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 2/7/2025
+
+- Added authentication endpoints in api
+
 ## 2/5/2025
 
 - Fixed Issue with the weight page not being responsive
