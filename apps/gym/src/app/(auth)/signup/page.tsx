@@ -27,14 +27,13 @@ const SignUp = () => {
   }
 
   const handleSignUp = () => {
-    const res = validateSignUpForm(formData)
-    if (res.valid) return signUp(formData)
-    console.log(res.message)
-    setError(res.message)
+    const error = validateSignUpForm(formData)
+    if (!error) return signUp(formData)
+    setError(error)
   }
 
   return (
-    <Form className={styles.container}>
+    <div className={styles.container}>
       <h1>Create Account</h1>
 
       <div className={styles.input_container}>
@@ -64,12 +63,7 @@ const SignUp = () => {
       </div>
 
       <div className={styles.button_container}>
-        <Button.Primary
-          type='submit'
-          size='medium'
-          sx={{ padding: '12px' }}
-          onClick={handleSignUp}
-        >
+        <Button.Primary size='medium' sx={{ padding: '12px' }} onClick={handleSignUp}>
           Create Account
         </Button.Primary>
         <button
@@ -80,7 +74,7 @@ const SignUp = () => {
           Sign Up With Google
         </button>
       </div>
-    </Form>
+    </div>
   )
 }
 
