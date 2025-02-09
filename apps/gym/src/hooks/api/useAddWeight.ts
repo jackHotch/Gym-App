@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { addWeight } from '@/api'
+import { addWeight } from '@/api/weight'
 import { IWeightEntry } from '@/types'
 
 export const useAddWeight = () => {

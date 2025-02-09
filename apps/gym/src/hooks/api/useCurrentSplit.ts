@@ -1,4 +1,4 @@
-import { getCurrentSplit } from '@/api'
+import { getCurrentSplit } from '@/api/splits'
 import { useQuery } from '@tanstack/react-query'
 
 export const useCurrentSplit = () => {

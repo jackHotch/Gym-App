@@ -19,6 +19,10 @@
   gap: 8px;
 }
 
+.input_container > input {
+  padding: 12px;
+}
+
 .google_button {
   cursor: pointer;
   background-color: white;
