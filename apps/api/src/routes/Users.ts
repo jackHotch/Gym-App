@@ -22,24 +22,19 @@ router.post('/signup', async (req: Request, res: Response) => {
   }
 })
 
-router.get('/login', async (req: Request, res: Response) => {
+router.post('/login', async (req: Request, res: Response) => {
   const user = req.body
   if (!user.email || !user.password)
     return res.status(400).json({ message: 'No Email or Password' })
 
   try {
     const existingUser = await findUserByEmail(user.email)
-    console.log('find user returns')
     if (!existingUser) return res.status(404).json({ message: 'Email not found' })
-    console.log('user found')
 
     const validPassword = await bcrypt.compare(user.password, existingUser.password)
-    console.log('password compared')
-    console.log(validPassword)
     if (validPassword) return res.status(200).json({ id: existingUser.id })
     else return res.status(401).json({ message: 'Incorrect Password' })
   } catch (err) {
-    console.log('error')
     return res.status(500).json({ message: 'Server Error', error: err.message })
   }
 })

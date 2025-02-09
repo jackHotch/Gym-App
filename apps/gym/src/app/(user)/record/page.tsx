@@ -8,7 +8,7 @@ import { Loading } from '@gymapp/gymui/Loading'
 
 const Record = () => {
   const { data: currentSplit } = useCurrentSplit()
-  const MotionLink = motion(Link)
+  const MotionLink = motion.create(Link)
 
   return (
     <>
