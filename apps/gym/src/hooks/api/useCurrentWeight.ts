@@ -1,4 +1,4 @@
-import { getCurrentWeight } from '@/api'
+import { getCurrentWeight } from '@/api/weight'
 import { useQuery } from '@tanstack/react-query'
 
 export const useCurrentWeight = () => {

@@ -17,3 +17,15 @@ export interface IUser {
   firstName: string
   lastName: string
 }
+
+export interface signUpFormData {
+  firstName: string
+  lastName: string
+  email: string
+  password: string
+}
+
+export interface loginFormData {
+  email: string
+  password: string
+}

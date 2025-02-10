@@ -63,7 +63,7 @@ export const DateRangePickerDesktop = ({ filter, data }: DateRangePickerProps) =
             )}
           </AnimatePresence>
         </motion.div>
-        <AnimatePresence>{error && <Error>Invalid Range</Error>}</AnimatePresence>
+        <Error isVisible={error}>Invalid Range</Error>
       </motion.div>
     </LayoutGroup>
   )

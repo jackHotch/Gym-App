@@ -6,7 +6,8 @@ import { motion } from 'motion/react'
 export interface ErrorProps extends HTMLMotionProps<'p'> {
   sx?: CSSProperties
   children: string
-  visible?: boolean
+  isVisible?: boolean
+  fontSize?: string
 }
 
 const motionVariants = {
@@ -14,17 +15,25 @@ const motionVariants = {
     x: [0, 5, 0],
     transition: {
       duration: 0.2,
-      repeat: 4,
+      repeat: 3,
     },
   },
 }
 
-export const Error = ({ sx, children, ...props }: ErrorProps) => {
+export const Error = ({
+  isVisible,
+  fontSize = '16px',
+  sx,
+  children,
+  ...props
+}: ErrorProps) => {
+  if (!isVisible) return null
+
   return (
     <motion.p
       {...props}
       className={styles.container}
-      style={sx}
+      style={{ ...sx, fontSize: fontSize }}
       variants={motionVariants}
       animate='visible'
       whileTap='visible'

@@ -5,6 +5,8 @@
   height: 45px;
   margin: auto;
   padding: 16px;
+  position: relative;
+  z-index: 1000000000;
 }
 
 .button_container {
