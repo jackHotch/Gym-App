@@ -11,11 +11,11 @@ export interface ErrorProps extends HTMLMotionProps<'p'> {
 }
 
 const motionVariants = {
-  isVisible: {
+  visible: {
     x: [0, 5, 0],
     transition: {
       duration: 0.2,
-      repeat: 4,
+      repeat: 3,
     },
   },
 }

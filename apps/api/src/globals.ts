@@ -24,3 +24,8 @@ export interface signUpFormData {
   email: string
   password: string
 }
+
+export interface loginFormData {
+  email: string
+  password: string
+}
