@@ -3,11 +3,18 @@ import bcrypt from 'bcrypt'
 const router = express.Router()
 
 import { findUserById, findUserByEmail, createUser, deleteUser } from '../database/Users'
+import { signUpFormData } from '../globals'
+
+const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{5,24}$/
 
 router.post('/signup', async (req: Request, res: Response) => {
   const user = req.body
   if (!user.email || !user.password)
     return res.status(400).json({ message: 'No Email or Password' })
+
+  const validationError = validateSignUpForm(user)
+  if (validationError) return res.status(401).json({ message: validationError })
 
   try {
     const existingUser = await findUserByEmail(user.email)
@@ -47,5 +54,13 @@ router.delete('/:id', async (req: Request, res: Response) => {
   await deleteUser(userId)
   return res.status(200).json({ message: 'User deleted' })
 })
+
+const validateSignUpForm = (formData: signUpFormData) => {
+  if (!formData.firstName) return 'First Name is Required'
+  if (!formData.lastName) return 'Last Name is Required'
+  if (!emailRegex.test(formData.email)) return 'Invalid Email Format'
+  if (!passwordRegex.test(formData.password)) return 'Invalid Password'
+  return null
+}
 
 export default router
