@@ -15,6 +15,11 @@ export const signUpAction = async (formData: signUpFormData) => {
   return null
 }
 
-export const loginAction = (formData: loginFormData) => {
+export const loginAction = async (formData: loginFormData) => {
+  try {
+    await axios.post(`${URL}/login`, formData)
+  } catch (error) {
+    return error.response.data.message
+  }
   return null
 }
