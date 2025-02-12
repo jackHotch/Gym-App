@@ -5,7 +5,9 @@ describe('Error', () => {
   it('Error should render successfully', () => {
     const messageClick = jest.fn()
     const { baseElement, getByText } = render(
-      <Error onClick={messageClick}>Error Message</Error>
+      <Error onClick={messageClick} isVisible={true}>
+        Error Message
+      </Error>
     )
     fireEvent.click(getByText('Error Message'))
 
