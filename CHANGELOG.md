@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 2/11/2025
+
+- Added api call on front end for authentiction
+
 ## 2/7/2025
 
 - Added authentication endpoints in api

@@ -39,14 +39,19 @@ const Login = () => {
     if (formError) {
       setError(formError)
       return
+    } else {
+      setError('')
+      if (process.env.NODE_ENV != 'development') alert('Not Implemented Yet')
     }
 
-    login(formData, {
-      onSuccess: (errorMessage) => {
-        if (errorMessage) setError(errorMessage)
-        else router.push('/dashboard')
-      },
-    })
+    if (process.env.NODE_ENV == 'development') {
+      login(formData, {
+        onSuccess: (errorMessage) => {
+          if (errorMessage) setError(errorMessage)
+          else router.push('/dashboard')
+        },
+      })
+    }
   }
   return (
     <div className={styles.container}>

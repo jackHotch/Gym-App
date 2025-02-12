@@ -43,14 +43,19 @@ const SignUp = () => {
     if (formError) {
       setError(formError)
       return
+    } else {
+      setError('')
+      if (process.env.NODE_ENV != 'development') alert('Not Implemented Yet')
     }
 
-    signUp(formData, {
-      onSuccess: (errorMessage) => {
-        if (errorMessage) setError(errorMessage)
-        else router.push('/dashboard')
-      },
-    })
+    if (process.env.NODE_ENV == 'development') {
+      signUp(formData, {
+        onSuccess: (errorMessage) => {
+          if (errorMessage) setError(errorMessage)
+          else router.push('/dashboard')
+        },
+      })
+    }
   }
 
   return (
