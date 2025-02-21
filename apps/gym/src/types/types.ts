@@ -16,6 +16,20 @@ export interface BodyWrapperProps {
   children: ReactNode | ReactNode[]
 }
 
+export interface FeatureFlagData {
+  toggle?: boolean
+  [key: string]: any
+}
+
+export interface FeatureFlag {
+  name: string
+  description: string
+  createdAt: string
+  updatedAt: string
+  type: 'toggle' | 'json'
+  data: FeatureFlagData
+}
+
 export interface IWeightData {
   id: number
   weight: number

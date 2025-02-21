@@ -9,11 +9,12 @@ import { Button } from '@gymapp/gymui/Button'
 import { Error } from '@gymapp/gymui/Error'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { useAuth } from '@/hooks/api'
+import { useAuth, useFeatureFlag } from '@/hooks/api'
 import { motion } from 'motion/react'
 
 const Login = () => {
   const { loginMutation } = useAuth()
+  const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
   const { mutate: login } = loginMutation()
   const router = useRouter()
   const [error, setError] = useState('')
@@ -41,10 +42,10 @@ const Login = () => {
       return
     } else {
       setError('')
-      if (process.env.NODE_ENV != 'development') alert('Not Implemented Yet')
+      if (authEnabled == false) alert('Not Implemented Yet')
     }
 
-    if (process.env.NODE_ENV == 'development') {
+    if (authEnabled) {
       login(formData, {
         onSuccess: (errorMessage) => {
           if (errorMessage) setError(errorMessage)
