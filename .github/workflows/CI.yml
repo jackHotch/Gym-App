@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - resume
   pull_request:
 
 jobs:
