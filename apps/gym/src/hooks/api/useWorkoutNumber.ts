@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getWorkoutNumber } from '@/api/workout'
+import { getWorkoutNumber } from '@/actions/workout'
 
 export const useWorkoutNumber = () => {
   return useQuery({

@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { createExercise } from '@/api/exercise'
+import { createExercise } from '@/actions/exercise'
 
 export const useCreateExercise = () => {
   const queryClient = useQueryClient()

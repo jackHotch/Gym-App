@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getExercises } from '@/api/exercise'
+import { getExercises } from '@/actions/exercise'
 
 export const useExercises = () => {
   return useQuery({

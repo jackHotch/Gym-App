@@ -9,13 +9,12 @@ import { Button } from '@gymapp/gymui/Button'
 import { Error } from '@gymapp/gymui/Error'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { useAuth, useFeatureFlag } from '@/hooks/api'
+// import { useFeatureFlag } from '@/hooks/api'
 import { motion } from 'motion/react'
+import { login } from '@/actions/auth'
 
 const Login = () => {
-  const { loginMutation } = useAuth()
-  const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
-  const { mutate: login } = loginMutation()
+  // const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
   const router = useRouter()
   const [error, setError] = useState('')
   const [formData, setFormData] = useState({
@@ -35,27 +34,28 @@ const Login = () => {
     return null
   }
 
-  const handleLogin = () => {
-    const formError = validateLoginForm(formData)
-    if (formError) {
-      setError(formError)
-      return
-    } else {
-      setError('')
-      if (authEnabled == false) alert('Not Implemented Yet')
-    }
+  // const handleLogin = () => {
+  //   const formError = validateLoginForm(formData)
+  //   if (formError) {
+  //     setError(formError)
+  //     return
+  //   } else {
+  //     setError('')
+  //     if (authEnabled == false) alert('Not Implemented Yet')
+  //   }
 
-    if (authEnabled) {
-      login(formData, {
-        onSuccess: (errorMessage) => {
-          if (errorMessage) setError(errorMessage)
-          else router.push('/dashboard')
-        },
-      })
-    }
-  }
+  //   if (authEnabled) {
+  //     login(formData, {
+  //       onSuccess: (errorMessage) => {
+  //         if (errorMessage) setError(errorMessage)
+  //         else router.push('/dashboard')
+  //       },
+  //     })
+  //   }
+  // }
+
   return (
-    <div className={styles.container}>
+    <form className={styles.container}>
       <motion.div layout className={styles.card}>
         <h1>Log In</h1>
 
@@ -78,7 +78,7 @@ const Login = () => {
             type='submit'
             size='medium'
             sx={{ padding: '12px' }}
-            onClick={handleLogin}
+            formAction={login}
           >
             Log In
           </Button.Primary>
@@ -91,7 +91,7 @@ const Login = () => {
           </button>
         </div>
       </motion.div>
-    </div>
+    </form>
   )
 }
 
