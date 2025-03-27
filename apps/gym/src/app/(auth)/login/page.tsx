@@ -17,15 +17,16 @@ const Login = () => {
   // const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
   const router = useRouter()
   const [error, setError] = useState('')
-  const [formData, setFormData] = useState({
+  const [formDat, setFormDat] = useState({
     email: '',
     password: '',
   })
 
-  const handleChange = (e: TextInputChangeEvent, type: string) => {
-    const temp = { ...formData }
-    temp[type] = e.target.value
-    setFormData(temp)
+  const handleChange = (e: TextInputChangeEvent) => {
+    setFormDat((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
   }
 
   const validateLoginForm = (formData: loginFormData) => {
@@ -54,6 +55,15 @@ const Login = () => {
   //   }
   // }
 
+  const handleLogin = async (event: React.FormEvent) => {
+    event.preventDefault() // Prevent default form submission
+    const formData = new FormData()
+    formData.append('email', formDat.email)
+    formData.append('password', formDat.password)
+
+    await login(formData) // Call login action
+  }
+
   return (
     <form className={styles.container}>
       <motion.div layout className={styles.card}>
@@ -62,13 +72,15 @@ const Login = () => {
         <div className={styles.input_container}>
           <Form.Text.Outline
             placeholder='Email Address'
-            value={formData.email}
-            onChange={(e) => handleChange(e, 'email')}
+            name='email'
+            value={formDat.email}
+            onChange={handleChange}
           />
           <Form.Text.Password
             placeholder='Password'
-            value={formData.password}
-            onChange={(e) => handleChange(e, 'password')}
+            name='password'
+            value={formDat.password}
+            onChange={handleChange}
           />
           <Error isVisible={error ? true : false}>{error}</Error>
         </div>
@@ -78,7 +90,7 @@ const Login = () => {
             type='submit'
             size='medium'
             sx={{ padding: '12px' }}
-            formAction={login}
+            onClick={handleLogin}
           >
             Log In
           </Button.Primary>
