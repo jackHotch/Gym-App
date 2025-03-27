@@ -8,27 +8,29 @@ import Image from 'next/image'
 import { Error } from '@gymapp/gymui/Error'
 import { motion } from 'motion/react'
 import { signUpFormData, TextInputChangeEvent } from '@/types'
-import { useAuth, useFeatureFlag } from '@/hooks/api'
+// import { useAuth, useFeatureFlag } from '@/hooks/api'
 import { useRouter } from 'next/navigation'
 import { emailRegex, passwordRegex } from '@/constants'
+import { signup } from '@/actions/auth'
 
 const SignUp = () => {
-  const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
-  const { signUpMutation } = useAuth()
-  const { mutate: signUp } = signUpMutation()
+  // const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
+  // const { signUpMutation } = useAuth()
+  // const { mutate: signUp } = signUpMutation()
   const router = useRouter()
   const [error, setError] = useState('')
-  const [formData, setFormData] = useState({
+  const [signUpData, setSignUpData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     password: '',
   })
 
-  const handleChange = (e: TextInputChangeEvent, type: string) => {
-    const temp = { ...formData }
-    temp[type] = e.target.value
-    setFormData(temp)
+  const handleChange = (e: TextInputChangeEvent) => {
+    setSignUpData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
   }
 
   const validateSignUpForm = (formData: signUpFormData) => {
@@ -39,59 +41,79 @@ const SignUp = () => {
     return null
   }
 
-  const handleSignUp = async () => {
-    const formError = validateSignUpForm(formData)
-    if (formError) {
-      setError(formError)
-      return
-    } else {
-      setError('')
-      if (authEnabled == false) alert('Not Implemented Yet')
-    }
+  const handleSignUp = async (event: React.FormEvent) => {
+    event.preventDefault()
+    const formData = new FormData()
+    formData.append('firstName', signUpData.firstName)
+    formData.append('lastName', signUpData.lastName)
+    formData.append('email', signUpData.email)
+    formData.append('password', signUpData.password)
 
-    if (authEnabled) {
-      signUp(formData, {
-        onSuccess: (errorMessage) => {
-          if (errorMessage) setError(errorMessage)
-          else router.push('/dashboard')
-        },
-      })
-    }
+    await signup(formData)
   }
 
+  // const handleSignUp = async () => {
+  //   const formError = validateSignUpForm(formData)
+  //   if (formError) {
+  //     setError(formError)
+  //     return
+  //   } else {
+  //     setError('')
+  //     if (authEnabled == false) alert('Not Implemented Yet')
+  //   }
+
+  //   if (authEnabled) {
+  //     signUp(formData, {
+  //       onSuccess: (errorMessage) => {
+  //         if (errorMessage) setError(errorMessage)
+  //         else router.push('/dashboard')
+  //       },
+  //     })
+  //   }
+  // }
+
   return (
-    <div className={styles.container}>
+    <form className={styles.container}>
       <motion.div layout className={styles.card}>
         <h1>Create Account</h1>
 
         <div className={styles.input_container}>
           <Form.Text.Outline
             placeholder='First Name'
-            value={formData.firstName}
-            onChange={(e) => handleChange(e, 'firstName')}
+            name='firstName'
+            value={signUpData.firstName}
+            onChange={handleChange}
           />
           <Form.Text.Outline
             placeholder='Last Name'
-            value={formData.lastName}
-            onChange={(e) => handleChange(e, 'lastName')}
+            name='lastName'
+            value={signUpData.lastName}
+            onChange={handleChange}
           />
           <Form.Text.Outline
             placeholder='Email Address'
+            name='email'
             type='email'
-            value={formData.email}
-            onChange={(e) => handleChange(e, 'email')}
+            value={signUpData.email}
+            onChange={handleChange}
           />
           <Form.Text.Password
             placeholder='Password'
+            name='password'
             type='password'
-            value={formData.password}
-            onChange={(e) => handleChange(e, 'password')}
+            value={signUpData.password}
+            onChange={handleChange}
           />
           <Error isVisible={error ? true : false}>{error}</Error>
         </div>
 
         <div className={styles.button_container}>
-          <Button.Primary size='medium' sx={{ padding: '12px' }} onClick={handleSignUp}>
+          <Button.Primary
+            type='submit'
+            size='medium'
+            sx={{ padding: '12px' }}
+            onClick={handleSignUp}
+          >
             Create Account
           </Button.Primary>
           <button
@@ -103,7 +125,7 @@ const SignUp = () => {
           </button>
         </div>
       </motion.div>
-    </div>
+    </form>
   )
 }
 
