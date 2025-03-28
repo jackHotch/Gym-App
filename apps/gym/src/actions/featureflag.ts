@@ -16,6 +16,5 @@ export const getFeatureFlags = async (flagName: string) => {
   const env = process.env.NODE_ENV
 
   const flag = flags?.find((flag) => flag.name == flagName)
-  console.log('Flag: ' + flag)
   return flag.type == 'toggle' ? flag.data[env].toggle : flag.data[env]
 }

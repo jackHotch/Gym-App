@@ -28,28 +28,20 @@ export async function login(formData: FormData) {
 export async function signup(formData: FormData) {
   const supabase = await createClient()
 
-  // const email = (formData.get('email') as string).trim()
-  // const password = (formData.get('password') as string).trim()
-
-  // console.log('Supabase Signup Payload:', { email, password })
-
   // type-casting here for convenience
   // in practice, you should validate your inputs
   const data = {
-    email: 'bob@gmail.com',
-    password: 'bobbobert',
+    email: formData.get('email') as string,
+    password: formData.get('password') as string,
     options: {
       data: {
-        firstName: formData.get('firstName') as string,
-        lastName: formData.get('lastName') as string,
+        first_name: formData.get('firstName') as string,
+        last_name: formData.get('lastName') as string,
       },
     },
   }
 
-  console.log(data)
-
   const { data: da, error } = await supabase.auth.signUp(data)
-  console.log('Supabase: ', { da, error })
 
   if (error) {
     console.log('error with sign up')
