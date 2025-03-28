@@ -7,9 +7,17 @@ import { motion } from 'motion/react'
 import { NavLink } from '../NavLink/NavLink'
 import { NavBackground } from './NavBackground/NavBackground'
 import { useState } from 'react'
+import LogoutIcon from '@mui/icons-material/Logout'
+import { signout } from '@/actions/auth'
 
 export const Sidebar = () => {
   const [focused, setFocused] = useState(null)
+
+  const handleLogout = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await signout()
+  }
+
   return (
     <motion.div className={styles.container} whileHover={{ width: '190px' }}>
       <DesktopLogo />
@@ -30,6 +38,11 @@ export const Sidebar = () => {
             </div>
           )
         })}
+      </div>
+
+      <div className={styles.logout} onClick={handleLogout}>
+        <LogoutIcon />
+        Logout
       </div>
     </motion.div>
   )

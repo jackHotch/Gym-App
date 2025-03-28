@@ -20,10 +20,25 @@
 }
 
 .text {
-  mix-blend-mode: difference;
-  color: white;
   display: flex;
   gap: 16px;
+}
+
+.logout {
+  cursor: pointer;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  bottom: 16px;
+  padding: 8px;
+  width: calc(100% - 32px);
+  border-radius: 8px;
+}
+
+.logout:hover {
+  background-color: var(--light-gray);
 }
 
 @media (width < 480px) {
