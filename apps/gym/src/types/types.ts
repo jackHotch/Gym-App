@@ -74,6 +74,7 @@ export interface HeaderDesktopProps {}
 
 export interface NavLinkProps {
   path: string
+  closeMenu?: () => void
   containerSx?: CSSProperties
   textSx?: CSSProperties
   children: ReactNode
