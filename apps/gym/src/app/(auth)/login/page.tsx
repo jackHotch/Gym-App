@@ -17,13 +17,13 @@ const Login = () => {
   // const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
   const router = useRouter()
   const [error, setError] = useState('')
-  const [formDat, setFormDat] = useState({
+  const [loginData, setLoginData] = useState({
     email: '',
     password: '',
   })
 
   const handleChange = (e: TextInputChangeEvent) => {
-    setFormDat((prev) => ({
+    setLoginData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }))
@@ -35,31 +35,11 @@ const Login = () => {
     return null
   }
 
-  // const handleLogin = () => {
-  //   const formError = validateLoginForm(formData)
-  //   if (formError) {
-  //     setError(formError)
-  //     return
-  //   } else {
-  //     setError('')
-  //     if (authEnabled == false) alert('Not Implemented Yet')
-  //   }
-
-  //   if (authEnabled) {
-  //     login(formData, {
-  //       onSuccess: (errorMessage) => {
-  //         if (errorMessage) setError(errorMessage)
-  //         else router.push('/dashboard')
-  //       },
-  //     })
-  //   }
-  // }
-
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault() // Prevent default form submission
     const formData = new FormData()
-    formData.append('email', formDat.email)
-    formData.append('password', formDat.password)
+    formData.append('email', loginData.email)
+    formData.append('password', loginData.password)
 
     await login(formData) // Call login action
   }
@@ -73,13 +53,13 @@ const Login = () => {
           <Form.Text.Outline
             placeholder='Email Address'
             name='email'
-            value={formDat.email}
+            value={loginData.email}
             onChange={handleChange}
           />
           <Form.Text.Password
             placeholder='Password'
             name='password'
-            value={formDat.password}
+            value={loginData.password}
             onChange={handleChange}
           />
           <Error isVisible={error ? true : false}>{error}</Error>

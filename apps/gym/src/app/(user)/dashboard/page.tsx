@@ -8,6 +8,7 @@ const Dashboard = async () => {
   return (
     <div className={styles.container}>
       Dashboard<p>{data.user.email}</p>
+      <p>First Name: {data.user.user_metadata.firstName}</p>
     </div>
   )
 }
