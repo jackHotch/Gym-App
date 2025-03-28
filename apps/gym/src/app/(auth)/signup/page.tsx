@@ -8,13 +8,13 @@ import Image from 'next/image'
 import { Error } from '@gymapp/gymui/Error'
 import { motion } from 'motion/react'
 import { signUpFormData, TextInputChangeEvent } from '@/types'
-// import { useFeatureFlag } from '@/hooks/api'
+import { useFeatureFlag } from '@/hooks/api'
 import { useRouter } from 'next/navigation'
 import { emailRegex, passwordRegex } from '@/constants'
 import { signup } from '@/actions/auth'
 
 const SignUp = () => {
-  // const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
+  const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
   const router = useRouter()
   const [error, setError] = useState('')
   const [signUpData, setSignUpData] = useState({
@@ -47,7 +47,7 @@ const SignUp = () => {
     formData.append('email', signUpData.email)
     formData.append('password', signUpData.password)
 
-    await signup(formData)
+    if (authEnabled) await signup(formData)
   }
 
   return (

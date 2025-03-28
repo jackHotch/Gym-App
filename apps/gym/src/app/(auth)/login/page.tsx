@@ -9,12 +9,12 @@ import { Button } from '@gymapp/gymui/Button'
 import { Error } from '@gymapp/gymui/Error'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-// import { useFeatureFlag } from '@/hooks/api'
+import { useFeatureFlag } from '@/hooks/api'
 import { motion } from 'motion/react'
 import { login } from '@/actions/auth'
 
 const Login = () => {
-  // const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
+  const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
   const router = useRouter()
   const [error, setError] = useState('')
   const [loginData, setLoginData] = useState({
@@ -36,12 +36,12 @@ const Login = () => {
   }
 
   const handleLogin = async (event: React.FormEvent) => {
-    event.preventDefault() // Prevent default form submission
+    event.preventDefault()
     const formData = new FormData()
     formData.append('email', loginData.email)
     formData.append('password', loginData.password)
 
-    await login(formData) // Call login action
+    if (authEnabled) await login(formData)
   }
 
   return (
