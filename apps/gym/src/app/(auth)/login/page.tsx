@@ -8,14 +8,12 @@ import { Form } from '@gymapp/gymui/Form'
 import { Button } from '@gymapp/gymui/Button'
 import { Error } from '@gymapp/gymui/Error'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import { useFeatureFlag } from '@/hooks/api'
 import { motion } from 'motion/react'
 import { login } from '@/actions/auth'
 
 const Login = () => {
   const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
-  const router = useRouter()
   const [error, setError] = useState('')
   const [loginData, setLoginData] = useState({
     email: '',
