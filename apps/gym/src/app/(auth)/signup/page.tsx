@@ -8,15 +8,13 @@ import Image from 'next/image'
 import { Error } from '@gymapp/gymui/Error'
 import { motion } from 'motion/react'
 import { signUpFormData, TextInputChangeEvent } from '@/types'
-// import { useAuth, useFeatureFlag } from '@/hooks/api'
+// import { useFeatureFlag } from '@/hooks/api'
 import { useRouter } from 'next/navigation'
 import { emailRegex, passwordRegex } from '@/constants'
 import { signup } from '@/actions/auth'
 
 const SignUp = () => {
   // const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
-  // const { signUpMutation } = useAuth()
-  // const { mutate: signUp } = signUpMutation()
   const router = useRouter()
   const [error, setError] = useState('')
   const [signUpData, setSignUpData] = useState({
@@ -51,26 +49,6 @@ const SignUp = () => {
 
     await signup(formData)
   }
-
-  // const handleSignUp = async () => {
-  //   const formError = validateSignUpForm(formData)
-  //   if (formError) {
-  //     setError(formError)
-  //     return
-  //   } else {
-  //     setError('')
-  //     if (authEnabled == false) alert('Not Implemented Yet')
-  //   }
-
-  //   if (authEnabled) {
-  //     signUp(formData, {
-  //       onSuccess: (errorMessage) => {
-  //         if (errorMessage) setError(errorMessage)
-  //         else router.push('/dashboard')
-  //       },
-  //     })
-  //   }
-  // }
 
   return (
     <form className={styles.container}>
