@@ -5,7 +5,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 let rows = []
-let rowsHeaders = 'user_id,exercise_id,set_order,weight,reps,notes,rpe'
+let rowsHeaders = 'exercise_id,set_order,weight,reps,notes,rpe'
 const exerciseNames = [
   'Squat (Barbell)',
   'Bulgarian Split Squat',
@@ -146,12 +146,9 @@ const exerciseNames = [
 fs.createReadStream('strong.csv')
   .pipe(parse({ delimiter: ',', from_line: 2 }))
   .on('data', function (row) {
-    const userId = '96e8aa8a-aec7-4513-91de-b4eef601799d' // jhotchkiss2021@gmail.com
-
     // get all columns for workout_sets
     let newRow = []
 
-    newRow.push(userId)
     newRow.push(exerciseNames.indexOf(row[3]) + 1)
     newRow.push(parseInt(row[4]))
     newRow.push(roundToHalf(parseFloat(row[5])))
