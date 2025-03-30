@@ -10,7 +10,7 @@ import { motion } from 'motion/react'
 import { signUpFormData, TextInputChangeEvent } from '@/types'
 import { useFeatureFlag } from '@/hooks/api'
 import { emailRegex, passwordRegex } from '@/constants'
-import { signup } from '@/actions/auth'
+import { signup, signInWithGoogle } from '@/actions/auth'
 
 const SignUp = () => {
   const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
@@ -46,6 +46,11 @@ const SignUp = () => {
     formData.append('password', signUpData.password)
 
     if (authEnabled) await signup(formData)
+  }
+
+  const handleGoogleSignUp = async (e) => {
+    e.preventDefault()
+    if (authEnabled) await signInWithGoogle()
   }
 
   return (
@@ -92,10 +97,7 @@ const SignUp = () => {
           >
             Create Account
           </Button.Primary>
-          <button
-            className={styles.google_button}
-            onClick={() => alert('Not Implemented Yet')}
-          >
+          <button className={styles.google_button} onClick={handleGoogleSignUp}>
             <Image src='/images/google.png' alt='Google Icon' width={20} height={20} />
             Sign Up With Google
           </button>
