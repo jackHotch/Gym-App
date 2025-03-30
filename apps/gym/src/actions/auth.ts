@@ -60,3 +60,15 @@ export const signout = async () => {
 
   redirect('/login')
 }
+
+export const signInWithGoogle = async () => {
+  const supabase = await createClient()
+
+  const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' })
+
+  if (error) {
+    console.log(error)
+  }
+
+  redirect('/dashboard')
+}
