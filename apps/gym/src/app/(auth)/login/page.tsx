@@ -10,7 +10,7 @@ import { Error } from '@gymapp/gymui/Error'
 import Image from 'next/image'
 import { useFeatureFlag } from '@/hooks/api'
 import { motion } from 'motion/react'
-import { login } from '@/actions/auth'
+import { login, signInWithGoogle } from '@/actions/auth'
 
 const Login = () => {
   const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
@@ -40,6 +40,14 @@ const Login = () => {
     formData.append('password', loginData.password)
 
     if (authEnabled) await login(formData)
+    else alert('Not Implemented Yet!')
+  }
+
+  const handleGoogleSignUp = async (e) => {
+    e.preventDefault()
+    // if (authEnabled) await signInWithGoogle()
+    // else alert('Not Implemented Yet!')
+    alert('Not Implemented Yet!')
   }
 
   return (
@@ -72,10 +80,7 @@ const Login = () => {
           >
             Log In
           </Button.Primary>
-          <button
-            className={styles.google_button}
-            onClick={() => alert('Not Implemented Yet')}
-          >
+          <button className={styles.google_button} onClick={handleGoogleSignUp}>
             <Image src='/images/google.png' alt='Google Icon' width={20} height={20} />
             Sign In With Google
           </button>

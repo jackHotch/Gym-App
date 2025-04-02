@@ -46,11 +46,14 @@ const SignUp = () => {
     formData.append('password', signUpData.password)
 
     if (authEnabled) await signup(formData)
+    else alert('Not Implemented Yet!')
   }
 
   const handleGoogleSignUp = async (e) => {
     e.preventDefault()
-    if (authEnabled) await signInWithGoogle()
+    // if (authEnabled) await signInWithGoogle()
+    // else alert('Not Implemented Yet!')
+    alert('Not Implemented Yet!')
   }
 
   return (
