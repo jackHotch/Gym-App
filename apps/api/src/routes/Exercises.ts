@@ -8,7 +8,7 @@ router.get('/', async (req: Request, res: Response) => {
   res.json(rows)
 })
 
-router.post('/create', async (req: Request, res: Response) => {
+router.post('/', async (req: Request, res: Response) => {
   const name = req.body.name
   await createExercise(name)
   res.sendStatus(201)

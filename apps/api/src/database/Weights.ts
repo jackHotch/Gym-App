@@ -17,7 +17,7 @@ export async function getAllWeight() {
 
 export async function getWeight(id: string) {
   const { rows } = await pool.query(`SELECT * FROM weight WHERE id = $1`, [id])
-  return rows[0]
+  return rows
 }
 
 export async function createEntry(weight: number, date: string) {
