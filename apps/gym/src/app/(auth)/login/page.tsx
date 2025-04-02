@@ -47,8 +47,10 @@ const Login = () => {
       formData.append('email', loginData.email)
       formData.append('password', loginData.password)
 
-      if (authEnabled) await login(formData)
-      else alert('Not Implemented Yet!')
+      if (authEnabled) {
+        const errorMessage = await login(formData)
+        if (errorMessage) setLoginError(errorMessage)
+      } else alert('Not Implemented Yet!')
     } else {
       setLoginError(error.issues[0].message)
     }
