@@ -2,8 +2,7 @@
 
 import styles from './Login.module.css'
 import { useState } from 'react'
-import { loginFormData, TextInputChangeEvent } from '@/types'
-import { emailRegex, passwordRegex } from '@/constants'
+import { TextInputChangeEvent } from '@/types'
 import { Form } from '@gymapp/gymui/Form'
 import { Button } from '@gymapp/gymui/Button'
 import { Error } from '@gymapp/gymui/Error'
@@ -11,13 +10,25 @@ import Image from 'next/image'
 import { useFeatureFlag } from '@/hooks/api'
 import { motion } from 'motion/react'
 import { login, signInWithGoogle } from '@/actions/auth'
+import { z } from 'zod'
 
 const Login = () => {
   const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
-  const [error, setError] = useState('')
+  const [loginError, setLoginError] = useState('')
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
+  })
+
+  const loginSchema = z.object({
+    email: z
+      .string({ required_error: 'Email is required' })
+      .trim()
+      .email({ message: 'Invalid email address' }),
+    password: z
+      .string({ required_error: 'Password is required' })
+      .trim()
+      .min(6, { message: 'Password must be at least 6 charaters long' }),
   })
 
   const handleChange = (e: TextInputChangeEvent) => {
@@ -27,20 +38,20 @@ const Login = () => {
     }))
   }
 
-  const validateLoginForm = (formData: loginFormData) => {
-    if (!emailRegex.test(formData.email)) return 'Invalid Email Format'
-    if (!passwordRegex.test(formData.password)) return 'Invalid Password'
-    return null
-  }
-
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault()
-    const formData = new FormData()
-    formData.append('email', loginData.email)
-    formData.append('password', loginData.password)
+    const { success, error } = loginSchema.safeParse(loginData)
 
-    if (authEnabled) await login(formData)
-    else alert('Not Implemented Yet!')
+    if (success) {
+      const formData = new FormData()
+      formData.append('email', loginData.email)
+      formData.append('password', loginData.password)
+
+      if (authEnabled) await login(formData)
+      else alert('Not Implemented Yet!')
+    } else {
+      setLoginError(error.issues[0].message)
+    }
   }
 
   const handleGoogleSignUp = async (e) => {
@@ -68,7 +79,7 @@ const Login = () => {
             value={loginData.password}
             onChange={handleChange}
           />
-          <Error isVisible={error ? true : false}>{error}</Error>
+          <Error isVisible={loginError ? true : false}>{loginError}</Error>
         </div>
 
         <div className={styles.button_container}>
@@ -80,7 +91,11 @@ const Login = () => {
           >
             Log In
           </Button.Primary>
-          <button className={styles.google_button} onClick={handleGoogleSignUp}>
+          <button
+            className={styles.google_button}
+            type='submit'
+            onClick={handleGoogleSignUp}
+          >
             <Image src='/images/google.png' alt='Google Icon' width={20} height={20} />
             Sign In With Google
           </button>
