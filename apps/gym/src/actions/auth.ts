@@ -18,7 +18,8 @@ export const login = async (formData: FormData) => {
   const { error } = await supabase.auth.signInWithPassword(data)
 
   if (error) {
-    console.log('error with login')
+    console.log('Error with login: ' + error)
+    return error.message
   }
 
   revalidatePath('/', 'layout')
@@ -44,7 +45,8 @@ export const signup = async (formData: FormData) => {
   const { error } = await supabase.auth.signUp(data)
 
   if (error) {
-    console.log('error with sign up')
+    console.log('Error with sign up' + error)
+    return error.message
   }
 
   revalidatePath('/', 'layout')
@@ -55,7 +57,8 @@ export const signout = async () => {
   const supabase = await createClient()
   const { error } = await supabase.auth.signOut()
   if (error) {
-    console.log(error)
+    console.log('Error with sign out' + error)
+    return error.message
   }
 
   redirect('/login')
@@ -67,7 +70,8 @@ export const signInWithGoogle = async () => {
   const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' })
 
   if (error) {
-    console.log(error)
+    console.log('Error with google sign in' + error)
+    return error.message
   }
 
   redirect('/dashboard')

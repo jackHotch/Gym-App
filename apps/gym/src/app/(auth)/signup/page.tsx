@@ -59,8 +59,10 @@ const SignUp = () => {
       formData.append('email', signUpData.email)
       formData.append('password', signUpData.password)
 
-      if (authEnabled) await signup(formData)
-      else alert('Not Implemented Yet!')
+      if (authEnabled) {
+        const errorMessage = await signup(formData)
+        if (errorMessage) setSignUpError(errorMessage)
+      } else alert('Not Implemented Yet!')
     } else {
       setSignUpError(error.issues[0].message)
     }
