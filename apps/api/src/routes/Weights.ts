@@ -7,7 +7,7 @@ import {
   getWeight,
   deleteEntry,
   getCurrentWeight,
-} from '../database/Weight'
+} from '../database/Weights'
 
 router.get('/', async (req: Request, res: Response) => {
   const rows = await getAllWeight()
