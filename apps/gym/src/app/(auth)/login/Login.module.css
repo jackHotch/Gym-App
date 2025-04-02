@@ -43,7 +43,10 @@
 
 @media (width < 600px) {
   .container {
-    width: calc(100% - 96px);
+    width: calc(100% - 64px);
     padding: 32px;
+  }
+  .card {
+    padding: 64px 32px;
   }
 }
