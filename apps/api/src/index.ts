@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { getAllSplits } from './database/Splits'
+import { cronjob } from './database/Splits'
 const app = express()
 const PORT = 8080
 const VERSION = process.env.VERSION
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/cronjob', async (req, res) => {
-  const rows = await getAllSplits()
+  const rows = await cronjob()
   res.json(rows)
 })
 

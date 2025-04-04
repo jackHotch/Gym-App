@@ -4,12 +4,14 @@ const router = express.Router()
 import { getCurrentSplit, getAllSplits } from '../database/Splits'
 
 router.get('/', async (req: Request, res: Response) => {
-  const rows = await getAllSplits()
+  const userId = req.body.userId
+  const rows = await getAllSplits(userId)
   res.status(200).json(rows)
 })
 
 router.get('/current', async (req: Request, res: Response) => {
-  const rows = await getCurrentSplit()
+  const userId = req.body.userId
+  const rows = await getCurrentSplit(userId)
   res.json(rows[0])
 })
 
