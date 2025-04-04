@@ -4,13 +4,14 @@ const router = express.Router()
 import { getAllExercises, createExercise } from '../database/Exercises'
 
 router.get('/', async (req: Request, res: Response) => {
-  const rows = await getAllExercises()
+  const userId = req.body.userId
+  const rows = await getAllExercises(userId)
   res.json(rows)
 })
 
 router.post('/', async (req: Request, res: Response) => {
-  const name = req.body.name
-  await createExercise(name)
+  const { userId, name } = req.body
+  await createExercise(userId, name)
   res.sendStatus(201)
 })
 

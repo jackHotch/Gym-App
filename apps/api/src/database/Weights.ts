@@ -1,36 +1,51 @@
-import pg from 'pg'
-const { Pool } = pg
+import { pool } from '../db'
 import dotenv from 'dotenv'
-
 dotenv.config()
 
-const pool = new Pool({
-  connectionString: process.env.SUPABASE_DB_URL,
-})
-
-pool.connect()
-
-export async function getAllWeight() {
-  const { rows } = await pool.query(`SELECT * FROM weight`)
+export async function getAllWeight(userId: string) {
+  const client = await pool.connect()
+  const { rows } = await client.query(`SELECT * FROM weights WHERE user_id = $1`, [
+    userId,
+  ])
+  client.release()
   return rows
 }
 
-export async function getWeight(id: string) {
-  const { rows } = await pool.query(`SELECT * FROM weight WHERE id = $1`, [id])
-  return rows
-}
-
-export async function createEntry(weight: number, date: string) {
-  await pool.query(`INSERT INTO weight (weight, date) VALUES ($1, $2)`, [weight, date])
-}
-
-export async function deleteEntry(id: string) {
-  await pool.query(`DELETE FROM weight WHERE id = $1`, [id])
-}
-
-export async function getCurrentWeight() {
-  const { rows } = await pool.query(
-    `SELECT "weight" FROM weight ORDER BY id DESC LIMIT 1`
+export async function getWeight(userId: string, id: string) {
+  const client = await pool.connect()
+  const { rows } = await client.query(
+    `SELECT * FROM weights WHERE user_id = $1 AND weight_id = $2`,
+    [userId, id]
   )
-  return rows[0]
+  client.release()
+  return rows
+}
+
+export async function createEntry(userId: string, weight: number, date: string) {
+  const client = await pool.connect()
+  await client.query(`INSERT INTO weights (user_id, weight, date) VALUES ($1, $2, $3)`, [
+    userId,
+    weight,
+    date,
+  ])
+  client.release()
+}
+
+export async function deleteEntry(userId: string, id: string) {
+  const client = await pool.connect()
+  await client.query(`DELETE FROM weights WHERE user_id = $1 AND weight_id = $2`, [
+    userId,
+    id,
+  ])
+  client.release()
+}
+
+export async function getCurrentWeight(userId: string) {
+  const client = await pool.connect()
+  const { rows } = await client.query(
+    `SELECT weight, date FROM weights WHERE user_id = $1 ORDER BY weight_id DESC LIMIT 1`,
+    [userId]
+  )
+  client.release()
+  return rows
 }
