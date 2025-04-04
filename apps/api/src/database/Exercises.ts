@@ -1,19 +1,22 @@
-import pg from 'pg'
-const { Pool } = pg
+import { pool } from '../db'
 import dotenv from 'dotenv'
 dotenv.config()
 
-const pool = new Pool({
-  connectionString: process.env.SUPABASE_DB_URL,
-})
-
-pool.connect()
-
-export async function getAllExercises() {
-  const { rows } = await pool.query(`SELECT * FROM exercises`)
+export async function getAllExercises(userId: string) {
+  const client = await pool.connect()
+  const { rows } = await pool.query(
+    `SELECT * FROM exercises WHERE is_default = 1 OR user_id = $1`,
+    [userId]
+  )
+  client.release()
   return rows
 }
 
-export async function createExercise(name: string) {
-  await pool.query(`INSERT INTO exercises (name) VALUES ($1)`, [name])
+export async function createExercise(userId: string, name: string) {
+  const client = await pool.connect()
+  await pool.query(`INSERT INTO exercises (name, user_id) VALUES ($1, $2)`, [
+    name,
+    userId,
+  ])
+  client.release()
 }
