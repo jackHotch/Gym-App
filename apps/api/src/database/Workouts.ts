@@ -7,7 +7,7 @@ dotenv.config()
 export async function getCurrentWorkoutNumber(userId: string) {
   const client = await pool.connect()
   const { rows } = await client.query(
-    'SELECT COUNT(*) FROM workouts WHERE user_id = $1',
+    'SELECT COUNT(*)::int FROM workouts WHERE user_id = $1',
     [userId]
   )
   client.release()
@@ -47,8 +47,8 @@ export const insertWorkout = async (userId: string, workout: IExercises[]) => {
 
     for (const exercise of workout) {
       const { rows } = await client.query(
-        `SELECT exercise_id FROM exercises WHERE name = $1`,
-        [exercise.name]
+        `SELECT exercise_id FROM exercises WHERE name = $1 AND userId = $2`,
+        [exercise.name, userId]
       )
 
       const exerciseId = rows[0].exercise_id
