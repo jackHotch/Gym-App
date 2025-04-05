@@ -11,7 +11,7 @@ router.get('/count', async (req: Request, res: Response) => {
 
 router.post('/', async (req: Request, res: Response) => {
   const userId = req.query.userId as string
-  const workout = req.body.workoutId
+  const workout = req.body.workout
   await insertWorkout(userId, workout)
   res.sendStatus(201)
 })

@@ -1,16 +1,30 @@
 'use server'
 
-import { IWorkout } from '@/types'
+import { IWorkout, IWorkoutCount } from '@/types'
+import { getSupabaseUserId } from '@/utils/supabase/getSupabaseUserId'
 import axios from 'axios'
 
-const URL = process.env.URL + '/api/workout'
+const URL = process.env.URL + '/workouts'
 
 export const getWorkoutNumber = async () => {
-  const { data } = await axios.get(`${URL}/number`)
-  return data as number
+  const userId = await getSupabaseUserId()
+  const { data } = await axios.get(`${URL}/count`, {
+    params: {
+      userId: userId,
+    },
+  })
+  return data as IWorkoutCount
 }
 
 export const createWorkout = async (workout: IWorkout[]) => {
-  const { data } = await axios.post(`${URL}/create`, workout)
-  return data as string
+  const userId = await getSupabaseUserId()
+  await axios.post(
+    URL,
+    { workout },
+    {
+      params: {
+        userId: userId,
+      },
+    }
+  )
 }

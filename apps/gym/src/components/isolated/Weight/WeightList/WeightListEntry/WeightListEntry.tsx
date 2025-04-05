@@ -11,7 +11,7 @@ export const WeightListEntry = ({ value, id, difference }: WeightListEntryProps)
   const { mutate: deleteWeight } = useDeleteWeight()
 
   const deleteEntry = () => {
-    deleteWeight(value.id)
+    deleteWeight(value.weight_id)
     close()
   }
 

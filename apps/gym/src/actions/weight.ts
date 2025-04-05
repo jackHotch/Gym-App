@@ -7,18 +7,34 @@ import { getSupabaseUserId } from '@/utils/supabase/getSupabaseUserId'
 const URL = process.env.URL + '/weights'
 
 export const getWeight = async () => {
-  const { data } = await axios.get(URL)
+  const userId = await getSupabaseUserId()
+  const { data } = await axios.get(URL, {
+    params: {
+      userId: userId,
+    },
+  })
   return data as IWeightData[]
 }
 
 export const addWeight = async (entry: IWeightEntry) => {
-  const { data } = await axios.post(URL, entry)
+  const userId = await getSupabaseUserId()
+  const { data } = await axios.post(URL, entry, {
+    params: {
+      userId: userId,
+    },
+  })
   return data as string
 }
 
 export const deleteWeight = async (id: number) => {
-  const { data } = await axios.delete(`${URL}/${id}`)
-  return data as string
+  const userId = await getSupabaseUserId()
+  console.log(userId)
+  console.log(id)
+  await axios.delete(`${URL}/${id}`, {
+    params: {
+      userId: userId,
+    },
+  })
 }
 
 export const getCurrentWeight = async () => {

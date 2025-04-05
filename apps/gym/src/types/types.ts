@@ -31,7 +31,7 @@ export interface FeatureFlag {
 }
 
 export interface IWeightData {
-  id: number
+  weight_id: number
   weight: number
   date: string
 }
@@ -66,6 +66,10 @@ export interface IWorkout {
   name: string
   notes: string
   sets: ISet[]
+}
+
+export interface IWorkoutCount {
+  count: number
 }
 
 export interface HeaderMobileProps {}

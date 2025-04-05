@@ -40,16 +40,17 @@ export const insertWorkout = async (userId: string, workout: IExercises[]) => {
       [userId]
     )
 
-    if (rows.length === 0) {
-    }
-
     const workoutId = rows[0].workout_id
 
     for (const exercise of workout) {
       const { rows } = await client.query(
-        `SELECT exercise_id FROM exercises WHERE name = $1 AND userId = $2`,
+        `SELECT exercise_id FROM exercises WHERE name = $1 AND (user_id = $2 OR user_id IS NULL)`,
         [exercise.name, userId]
       )
+
+      if (rows.length === 0) {
+        throw new Error(`Exercise "${exercise.name}" not found.`)
+      }
 
       const exerciseId = rows[0].exercise_id
 
