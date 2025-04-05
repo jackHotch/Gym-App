@@ -1,10 +1,10 @@
 'use server'
 
-import { IWeightData } from '@/types'
-import { IWeightEntry } from '@/types'
+import { IWeightData, IWeightEntry } from '@/types'
 import axios from 'axios'
+import { getSupabaseUserId } from '@/utils/supabase/getSupabaseUserId'
 
-const URL = process.env.URL + '/api/weight'
+const URL = process.env.URL + '/weights'
 
 export const getWeight = async () => {
   const { data } = await axios.get(URL)
@@ -22,6 +22,11 @@ export const deleteWeight = async (id: number) => {
 }
 
 export const getCurrentWeight = async () => {
-  const { data } = await axios.get(`${URL}/current`)
+  const userId = await getSupabaseUserId()
+  const { data } = await axios.get(`${URL}/current`, {
+    params: {
+      userId: userId,
+    },
+  })
   return data as IWeightEntry
 }
