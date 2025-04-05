@@ -21,7 +21,7 @@ const Workout = () => {
   const [showConfirmationModal, _, openConfirmationModal, closeConfirmationModal] =
     useToggle()
   const { data, isLoading } = useWorkoutNumber()
-  const workoutNumber = isLoading ? null : data ? data + 1 : 0
+  const workoutNumber = isLoading ? null : data.count
   const { mutate: createWorkout } = useCreateWorkout()
 
   const handleSubmit = (e: ButtonEvent) => {

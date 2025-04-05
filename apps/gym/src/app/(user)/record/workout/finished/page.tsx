@@ -6,12 +6,12 @@ import { Button } from '@gymapp/gymui/Button'
 import { useRouter } from 'next/navigation'
 
 const Finished = () => {
-  const { data: workoutNumber } = useWorkoutNumber()
+  const { data: workout } = useWorkoutNumber()
   const router = useRouter()
 
   return (
     <div className={styles.created}>
-      <p>Workout #{workoutNumber} Recorded!</p>
+      <p>Workout #{workout.count} Recorded!</p>
       <Button.Primary
         size='medium'
         sx={{ marginTop: '30px' }}

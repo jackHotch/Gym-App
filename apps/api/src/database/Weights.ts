@@ -4,9 +4,10 @@ dotenv.config()
 
 export async function getAllWeight(userId: string) {
   const client = await pool.connect()
-  const { rows } = await client.query(`SELECT * FROM weights WHERE user_id = $1`, [
-    userId,
-  ])
+  const { rows } = await client.query(
+    `SELECT weight_id, weight, date FROM weights WHERE user_id = $1 ORDER BY date`,
+    [userId]
+  )
   client.release()
   return rows
 }
