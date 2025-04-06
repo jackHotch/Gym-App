@@ -1,5 +1,11 @@
+import { ButtonProps } from './Button'
 import { Button } from './Button'
+import { TailSpin } from 'react-loader-spinner'
 
-export const Loading = () => {
-  return <Button.Disabled>hi</Button.Disabled>
+export const Loading = ({ size = 'small', sx, ...props }: ButtonProps) => {
+  return (
+    <Button.Disabled sx={sx} {...props} size={size}>
+      <TailSpin color='white' width='16px' height='16px' /> &nbsp; Please Wait
+    </Button.Disabled>
+  )
 }
