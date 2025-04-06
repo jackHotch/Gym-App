@@ -22,7 +22,8 @@
 }
 
 .disabled {
-  background-color: lightgray;
+  background-color: var(--offblue);
+  cursor: not-allowed;
 }
 
 .text {
