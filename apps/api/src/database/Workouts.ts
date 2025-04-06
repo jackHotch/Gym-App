@@ -19,11 +19,10 @@ export const getWorkout = async (userId: string, workoutId: string) => {
   const { rows } = await client.query(
     `
     SELECT w.date, e.name, ws.set_order, ws.weight, ws.reps, ws.rpe, ws.notes
-    FROM workouts AS w, workout_sets AS ws, exercises AS e
-    WHERE w.user_id = $1 
-    AND w.workout_id = ws.workout_id
-    AND w.workout_id = $2
-    AND ws.exercise_id = e.exercise_id;
+    FROM workouts w
+    INNER JOIN workout_sets ws ON w.workout_id = ws.workout_id
+    INNER JOIN exercises e ON ws.exercise_id = e.exercise_id
+    WHERE w.user_id = $1 AND w.workout_id = $2;
     `,
     [userId, workoutId]
   )
