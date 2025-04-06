@@ -73,3 +73,10 @@ export const Text: Story = {
     return <Button.Text {...args} />
   },
 }
+
+export const Loading: Story = {
+  args: {},
+  render: (args) => {
+    return <Button.Loading {...args} />
+  },
+}

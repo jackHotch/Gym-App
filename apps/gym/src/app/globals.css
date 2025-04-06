@@ -2,6 +2,7 @@
     --blue: #3a8fea;
     --light-blue: #68a9ef;
     --dark-blue: #1775da;
+    --offblue: #AFCDF4;
     --transparent-blue: #3a8fea59;
     --red: #dd3e32;
     --bright-red: rgb(255, 0, 0);
@@ -9,7 +10,6 @@
     --light-gray: #d3d3d3;
     --dark-gray: #959595;
     --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
-
 }
 
 a {

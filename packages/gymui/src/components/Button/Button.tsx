@@ -5,6 +5,7 @@ import { Secondary } from './Secondary'
 import { Danger } from './Danger'
 import { Disabled } from './Disabled'
 import { Text } from './Text'
+import { Loading } from './Loading'
 
 type size = 'small' | 'medium' | 'large'
 
@@ -25,3 +26,4 @@ Button.Secondary = Secondary
 Button.Danger = Danger
 Button.Disabled = Disabled
 Button.Text = Text
+Button.Loading = Loading
