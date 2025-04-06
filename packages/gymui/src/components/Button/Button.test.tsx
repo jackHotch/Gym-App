@@ -56,4 +56,13 @@ describe('Button', () => {
     expect(baseElement).toBeTruthy()
     expect(buttonClick).toHaveBeenCalled()
   })
+
+  it('Button.Loading should render successfully', () => {
+    const buttonClick = jest.fn()
+    const { baseElement, getByText } = render(<Button.Loading onClick={buttonClick} />)
+    fireEvent.click(getByText('Please Wait'))
+
+    expect(baseElement).toBeTruthy()
+    expect(buttonClick).not.toHaveBeenCalled()
+  })
 })
