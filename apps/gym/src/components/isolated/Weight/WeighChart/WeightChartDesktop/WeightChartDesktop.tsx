@@ -15,6 +15,7 @@ export const WeightChartDesktop = ({
       <ChartHeader
         startingWeight={weightData[0]}
         endingWeight={weightData[weightData.length - 1]}
+        isEmpty={data?.length == 0}
       />
       <DateRangePicker filter={filter} data={data} />
       <Chart labels={labels} data={weightData} isLoading={isLoading} />

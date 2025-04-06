@@ -111,8 +111,19 @@ export const Chart = ({ labels, data, isLoading, height }: ChartProps) => {
             inset: '0',
           }}
         >
-          Creating Graph
+          Gathering Data
         </Loading.Text>
+      </div>
+    )
+  }
+
+  if (data.length == 0) {
+    return (
+      <div
+        className={styles.chart_container}
+        style={{ height: height ? height : '100%' }}
+      >
+        <span className={styles.no_data}>No Data</span>
       </div>
     )
   }

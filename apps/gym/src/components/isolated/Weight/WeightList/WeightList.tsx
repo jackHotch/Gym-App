@@ -34,6 +34,8 @@ export const WeightList = () => {
           >
             Gathering Data
           </Loading.Text>
+        ) : data.length == 0 ? (
+          <span className={styles.no_data}>No Data</span>
         ) : (
           reversedWeight?.map((value, key) => {
             const difference =

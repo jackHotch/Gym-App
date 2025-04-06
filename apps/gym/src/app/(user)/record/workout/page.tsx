@@ -21,7 +21,7 @@ const Workout = () => {
   const [showConfirmationModal, _, openConfirmationModal, closeConfirmationModal] =
     useToggle()
   const { data, isLoading } = useWorkoutNumber()
-  const workoutNumber = isLoading ? null : data.count
+  const workoutNumber = !isLoading && data?.count != null ? data.count + 1 : null
   const { mutate: createWorkout } = useCreateWorkout()
 
   const handleSubmit = (e: ButtonEvent) => {
@@ -34,7 +34,13 @@ const Workout = () => {
       <form>
         <div className={styles.container}>
           <h1 className={styles.title}>
-            Workout #{workoutNumber ? workoutNumber : <ClipLoader size={20} />}
+            {isLoading ? (
+              <ClipLoader size={20} />
+            ) : data?.count === 0 ? (
+              'First Workout!'
+            ) : (
+              `Workout #${workoutNumber}`
+            )}
           </h1>
           <div className={styles.exercises}>
             <AnimatePresence>

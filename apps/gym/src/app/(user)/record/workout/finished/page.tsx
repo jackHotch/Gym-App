@@ -11,7 +11,7 @@ const Finished = () => {
 
   return (
     <div className={styles.created}>
-      <p>Workout #{workout.count} Recorded!</p>
+      <p>Workout #{workout.count + 1} Recorded!</p>
       <Button.Primary
         size='medium'
         sx={{ marginTop: '30px' }}
