@@ -7,15 +7,14 @@ import { motion } from 'motion/react'
 import { Loading } from '@gymapp/gymui/Loading'
 
 const Record = () => {
-  const { data: currentSplit } = useCurrentSplit()
+  const { data: currentSplit, isLoading } = useCurrentSplit()
+  const isEmpty = !isLoading && !currentSplit
   const MotionLink = motion.create(Link)
 
   return (
     <>
       <div className={styles.split_name_container}>
-        {currentSplit ? (
-          <h1 className={styles.split_name}>{currentSplit?.name}</h1>
-        ) : (
+        {isLoading ? (
           <Loading.Text
             fontSize='3rem'
             pulseSize={12}
@@ -23,6 +22,10 @@ const Record = () => {
           >
             Getting your Current Split
           </Loading.Text>
+        ) : isEmpty ? (
+          <h1 className={styles.split_name}>No Split Created</h1>
+        ) : (
+          <h1 className={styles.split_name}>{currentSplit?.name}</h1>
         )}
       </div>
 

@@ -144,6 +144,7 @@ export interface WorkoutConfirmationModalProps {
 export interface ChartHeaderProps {
   startingWeight: number
   endingWeight?: number
+  isEmpty: boolean
 }
 
 export interface RangeSelectorProps {

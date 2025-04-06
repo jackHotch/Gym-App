@@ -11,7 +11,11 @@ import TrendingUpArrow from '@mui/icons-material/TrendingUp'
 import { TailSpin } from 'react-loader-spinner'
 import AddIcon from '@mui/icons-material/Add'
 
-export const ChartHeader = ({ startingWeight, endingWeight }: ChartHeaderProps) => {
+export const ChartHeader = ({
+  startingWeight,
+  endingWeight,
+  isEmpty,
+}: ChartHeaderProps) => {
   const [isAWMOpen, , openAWM, closeAWM] = useToggle()
 
   return (
@@ -26,6 +30,8 @@ export const ChartHeader = ({ startingWeight, endingWeight }: ChartHeaderProps) 
           <span className={styles.data}>
             {startingWeight ? (
               startingWeight
+            ) : isEmpty ? (
+              '-'
             ) : (
               <TailSpin color='var(--blue)' width='50' height='20' />
             )}
@@ -36,17 +42,21 @@ export const ChartHeader = ({ startingWeight, endingWeight }: ChartHeaderProps) 
         <div className={styles.stats}>
           <span className={styles.data}>
             {endingWeight ? (
-              endingWeight
+              <>
+                {endingWeight}
+                <span className={styles.arrow}>
+                  {endingWeight > startingWeight ? (
+                    <UpArrow color='success' />
+                  ) : (
+                    <DownArrow color='warning' />
+                  )}
+                </span>
+              </>
+            ) : isEmpty ? (
+              '-'
             ) : (
               <TailSpin color='var(--blue)' width='50' height='20' />
             )}
-            <span className={styles.arrow}>
-              {endingWeight > startingWeight ? (
-                <UpArrow color='success' />
-              ) : (
-                <DownArrow color='warning' />
-              )}
-            </span>
           </span>
 
           <span className={styles.label}>End</span>
@@ -55,17 +65,21 @@ export const ChartHeader = ({ startingWeight, endingWeight }: ChartHeaderProps) 
         <div className={styles.stats}>
           <span className={styles.data}>
             {startingWeight && endingWeight ? (
-              (endingWeight - startingWeight).toFixed(1)
+              <>
+                {(endingWeight - startingWeight).toFixed(1)}
+                <span className={styles.arrow}>
+                  {endingWeight > startingWeight ? (
+                    <TrendingUpArrow color='success' />
+                  ) : (
+                    <TrendingDownArrow color='warning' />
+                  )}
+                </span>
+              </>
+            ) : isEmpty ? (
+              '-'
             ) : (
               <TailSpin color='var(--blue)' width='50' height='20' />
             )}
-            <span className={styles.arrow}>
-              {endingWeight > startingWeight ? (
-                <TrendingUpArrow color='success' />
-              ) : (
-                <TrendingDownArrow color='warning' />
-              )}
-            </span>
           </span>
 
           <span className={styles.label}>Diff</span>
