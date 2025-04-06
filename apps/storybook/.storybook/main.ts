@@ -16,6 +16,7 @@ const config: StorybookConfig = {
     '../../../packages/gymui/src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     '../../../apps/gym/src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
+
   addons: [
     getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath('@storybook/addon-links'),
@@ -23,8 +24,18 @@ const config: StorybookConfig = {
     getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('@storybook/react-vite'),
+    '@chromatic-com/storybook'
   ],
+
   framework: getAbsolutePath('@storybook/nextjs'),
   staticDirs: ['../../gym/public'],
+
+  docs: {
+    autodocs: true
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 }
 export default config

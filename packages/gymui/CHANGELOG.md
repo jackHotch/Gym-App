@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 4/6/2025 - 10.0.1
+
+- Finished the Button.Loading component
+
 ## 1/8/2025 - v9.0.1
 
 - Finished the Hamburger Component
