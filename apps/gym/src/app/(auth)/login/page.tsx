@@ -14,6 +14,7 @@ import { z } from 'zod'
 
 const Login = () => {
   const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
+  const [isLoading, setIsLoading] = useState(false)
   const [loginError, setLoginError] = useState('')
   const [loginData, setLoginData] = useState({
     email: '',
@@ -40,6 +41,7 @@ const Login = () => {
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault()
+    setIsLoading(true)
     const { success, error } = loginSchema.safeParse(loginData)
 
     if (success) {
@@ -53,6 +55,7 @@ const Login = () => {
       } else alert('Not Implemented Yet!')
     } else {
       setLoginError(error.issues[0].message)
+      setIsLoading(false)
     }
   }
 
@@ -85,14 +88,18 @@ const Login = () => {
         </div>
 
         <div className={styles.button_container}>
-          <Button.Primary
-            type='submit'
-            size='medium'
-            sx={{ padding: '12px' }}
-            onClick={handleLogin}
-          >
-            Log In
-          </Button.Primary>
+          {isLoading ? (
+            <Button.Loading sx={{ padding: '12px' }} />
+          ) : (
+            <Button.Primary
+              type='submit'
+              size='medium'
+              sx={{ padding: '12px' }}
+              onClick={handleLogin}
+            >
+              Log In
+            </Button.Primary>
+          )}
           <button
             className={styles.google_button}
             type='submit'

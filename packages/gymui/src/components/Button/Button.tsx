@@ -15,7 +15,7 @@ export interface ButtonProps extends HTMLMotionProps<'button'> {
   sx?: CSSProperties
 }
 
-export const SCALEHOVER = 1.05
+export const SCALEHOVER = 1.02
 export const SCALETAP = 0.95
 export const DURATION = 0.15
 
