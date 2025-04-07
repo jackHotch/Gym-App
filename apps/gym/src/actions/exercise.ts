@@ -2,7 +2,7 @@
 
 import axios from 'axios'
 import { IExercises } from '@/types'
-import { getSupabaseUserId } from '@/utils/supabase/getSupabaseUserId'
+import { getSupabaseUserId } from '@/utils/supabase/utils'
 
 const URL = process.env.URL + '/exercises'
 

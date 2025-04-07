@@ -2,7 +2,7 @@
 
 import { IWeightData, IWeightEntry } from '@/types'
 import axios from 'axios'
-import { getSupabaseUserId } from '@/utils/supabase/getSupabaseUserId'
+import { getSupabaseUserId } from '@/utils/supabase/utils'
 
 const URL = process.env.URL + '/weights'
 

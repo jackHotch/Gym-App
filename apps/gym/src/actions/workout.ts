@@ -1,7 +1,7 @@
 'use server'
 
 import { IWorkout, IWorkoutCount } from '@/types'
-import { getSupabaseUserId } from '@/utils/supabase/getSupabaseUserId'
+import { getSupabaseUserId } from '@/utils/supabase/utils'
 import axios from 'axios'
 
 const URL = process.env.URL + '/workouts'
