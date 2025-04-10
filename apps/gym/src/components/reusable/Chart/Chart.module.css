@@ -5,6 +5,15 @@
   position: relative;
 }
 
+.no_data {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+}
+
 @media (width < 480px) {
   .chart_container {
     padding: 16px;

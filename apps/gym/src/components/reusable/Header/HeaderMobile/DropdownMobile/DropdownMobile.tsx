@@ -4,8 +4,15 @@ import { MOBILE_NAV_OPTIONS } from '@/constants'
 import { NavLink } from '@/components/reusable/NavLink/NavLink'
 import { motion } from 'motion/react'
 import { MobileLogo } from '@/components/reusable/Logo/MobileLogo'
+import LogoutIcon from '@mui/icons-material/Logout'
+import { signout } from '@/actions/auth'
 
 export const DropdownMobile = ({ closeMenu }: DropdownMobileProps) => {
+  const handleLogout = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await signout()
+  }
+
   return (
     <motion.div
       className={styles.container}
@@ -54,6 +61,11 @@ export const DropdownMobile = ({ closeMenu }: DropdownMobileProps) => {
           </NavLink>
         )
       })}
+
+      <div className={styles.logout} onClick={handleLogout}>
+        <LogoutIcon sx={{ fontSize: 60, color: 'white' }} />
+        <span className={styles.option}>Logout</span>
+      </div>
     </motion.div>
   )
 }

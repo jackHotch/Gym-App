@@ -31,7 +31,7 @@ export interface FeatureFlag {
 }
 
 export interface IWeightData {
-  id: number
+  weight_id: number
   weight: number
   date: string
 }
@@ -66,6 +66,10 @@ export interface IWorkout {
   name: string
   notes: string
   sets: ISet[]
+}
+
+export interface IWorkoutCount {
+  count: number
 }
 
 export interface HeaderMobileProps {}
@@ -140,6 +144,7 @@ export interface WorkoutConfirmationModalProps {
 export interface ChartHeaderProps {
   startingWeight: number
   endingWeight?: number
+  isEmpty: boolean
 }
 
 export interface RangeSelectorProps {
@@ -223,16 +228,4 @@ export interface EndingCardProps {
 export interface DifferenceCardProps {
   difference: string
   gainedWeight: boolean
-}
-
-export interface signUpFormData {
-  firstName: string
-  lastName: string
-  email: string
-  password: string
-}
-
-export interface loginFormData {
-  email: string
-  password: string
 }

@@ -2,96 +2,115 @@
 
 import styles from './Login.module.css'
 import { useState } from 'react'
-import { loginFormData, TextInputChangeEvent } from '@/types'
-import { emailRegex, passwordRegex } from '@/constants'
+import { TextInputChangeEvent } from '@/types'
 import { Form } from '@gymapp/gymui/Form'
 import { Button } from '@gymapp/gymui/Button'
 import { Error } from '@gymapp/gymui/Error'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import { useAuth, useFeatureFlag } from '@/hooks/api'
+import { useFeatureFlag } from '@/hooks/api'
 import { motion } from 'motion/react'
+import { login, signInWithGoogle } from '@/actions/auth'
+import { z } from 'zod'
 
 const Login = () => {
-  const { loginMutation } = useAuth()
   const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
-  const { mutate: login } = loginMutation()
-  const router = useRouter()
-  const [error, setError] = useState('')
-  const [formData, setFormData] = useState({
+  const [isLoading, setIsLoading] = useState(false)
+  const [loginError, setLoginError] = useState('')
+  const [loginData, setLoginData] = useState({
     email: '',
     password: '',
   })
 
-  const handleChange = (e: TextInputChangeEvent, type: string) => {
-    const temp = { ...formData }
-    temp[type] = e.target.value
-    setFormData(temp)
+  const loginSchema = z.object({
+    email: z
+      .string({ required_error: 'Email is required' })
+      .trim()
+      .email({ message: 'Invalid email address' }),
+    password: z
+      .string({ required_error: 'Password is required' })
+      .trim()
+      .min(6, { message: 'Password must be at least 6 charaters long' }),
+  })
+
+  const handleChange = (e: TextInputChangeEvent) => {
+    setLoginData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
   }
 
-  const validateLoginForm = (formData: loginFormData) => {
-    if (!emailRegex.test(formData.email)) return 'Invalid Email Format'
-    if (!passwordRegex.test(formData.password)) return 'Invalid Password'
-    return null
-  }
+  const handleLogin = async (event: React.FormEvent) => {
+    event.preventDefault()
+    setIsLoading(true)
+    const { success, error } = loginSchema.safeParse(loginData)
 
-  const handleLogin = () => {
-    const formError = validateLoginForm(formData)
-    if (formError) {
-      setError(formError)
-      return
+    if (success) {
+      const formData = new FormData()
+      formData.append('email', loginData.email)
+      formData.append('password', loginData.password)
+
+      if (authEnabled) {
+        const errorMessage = await login(formData)
+        if (errorMessage) setLoginError(errorMessage)
+      } else alert('Not Implemented Yet!')
     } else {
-      setError('')
-      if (authEnabled == false) alert('Not Implemented Yet')
-    }
-
-    if (authEnabled) {
-      login(formData, {
-        onSuccess: (errorMessage) => {
-          if (errorMessage) setError(errorMessage)
-          else router.push('/dashboard')
-        },
-      })
+      setLoginError(error.issues[0].message)
+      setIsLoading(false)
     }
   }
+
+  const handleGoogleSignUp = async (e) => {
+    e.preventDefault()
+    // if (authEnabled) await signInWithGoogle()
+    // else alert('Not Implemented Yet!')
+    alert('Not Implemented Yet!')
+  }
+
   return (
-    <div className={styles.container}>
+    <form className={styles.container}>
       <motion.div layout className={styles.card}>
         <h1>Log In</h1>
 
         <div className={styles.input_container}>
           <Form.Text.Outline
             placeholder='Email Address'
-            value={formData.email}
-            onChange={(e) => handleChange(e, 'email')}
+            name='email'
+            value={loginData.email}
+            onChange={handleChange}
           />
           <Form.Text.Password
             placeholder='Password'
-            value={formData.password}
-            onChange={(e) => handleChange(e, 'password')}
+            name='password'
+            value={loginData.password}
+            onChange={handleChange}
           />
-          <Error isVisible={error ? true : false}>{error}</Error>
+          <Error isVisible={loginError ? true : false}>{loginError}</Error>
         </div>
 
         <div className={styles.button_container}>
-          <Button.Primary
-            type='submit'
-            size='medium'
-            sx={{ padding: '12px' }}
-            onClick={handleLogin}
-          >
-            Log In
-          </Button.Primary>
+          {isLoading ? (
+            <Button.Loading sx={{ padding: '12px' }} />
+          ) : (
+            <Button.Primary
+              type='submit'
+              size='medium'
+              sx={{ padding: '12px' }}
+              onClick={handleLogin}
+            >
+              Log In
+            </Button.Primary>
+          )}
           <button
             className={styles.google_button}
-            onClick={() => alert('Not Implemented Yet')}
+            type='submit'
+            onClick={handleGoogleSignUp}
           >
             <Image src='/images/google.png' alt='Google Icon' width={20} height={20} />
             Sign In With Google
           </button>
         </div>
       </motion.div>
-    </div>
+    </form>
   )
 }
 

@@ -5,8 +5,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 let dates = new Set()
-let datesHeaders = 'user_id,date,workout_number'
-const userId = '96e8aa8a-aec7-4513-91de-b4eef601799d' // jhotchkiss2021@gmail.com
+let datesHeaders = 'date'
 
 fs.createReadStream('strong.csv')
   .pipe(parse({ delimiter: ',', from_line: 2 }))
@@ -27,10 +26,8 @@ function createCsvFile(fileName, headers, rows) {
   const filePath = path.join(__dirname, fileName)
 
   let csvContent
-  let workoutNumber = 1
   for (const date of rows) {
-    csvContent += `${userId},${date},${workoutNumber}\n`
-    workoutNumber++
+    csvContent += `${date}\n`
   }
 
   csvData = `${headers}\n${csvContent}`

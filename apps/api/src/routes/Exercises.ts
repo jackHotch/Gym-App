@@ -1,16 +1,18 @@
 import express, { Request, Response } from 'express'
 const router = express.Router()
 
-import { getAllExercises, createExercise } from '../database/Exercises'
+import { getExercises, insertExercise } from '../database/Exercises'
 
 router.get('/', async (req: Request, res: Response) => {
-  const rows = await getAllExercises()
+  const userId = req.query.userId as string
+  const rows = await getExercises(userId)
   res.json(rows)
 })
 
-router.post('/create', async (req: Request, res: Response) => {
+router.post('/', async (req: Request, res: Response) => {
+  const userId = req.query.userId as string
   const name = req.body.name
-  await createExercise(name)
+  await insertExercise(userId, name)
   res.sendStatus(201)
 })
 

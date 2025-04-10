@@ -8,7 +8,13 @@ import { usePathname, useRouter } from 'next/navigation'
 export const Navbar = () => {
   const pathname = usePathname()
   const router = useRouter()
-  const authNavbarPathnames = ['/', '/login', '/signup']
+  const authNavbarPathnames = [
+    '/',
+    '/login',
+    '/signup',
+    '/forgot-password',
+    '/reset-password',
+  ]
 
   if (!authNavbarPathnames.includes(pathname)) return null
 
@@ -31,7 +37,9 @@ export const Navbar = () => {
           <Button.Primary onClick={() => router.push('/signup')}>Sign Up</Button.Primary>
         )}
 
-        {pathname == '/signup' && (
+        {(pathname == '/signup' ||
+          pathname == '/forgot-password' ||
+          pathname == '/reset-password') && (
           <Button.Primary onClick={() => router.push('/login')}>Log In</Button.Primary>
         )}
       </div>
