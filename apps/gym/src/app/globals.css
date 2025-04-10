@@ -10,6 +10,7 @@
     --green: rgb(9, 180, 9);
     --light-gray: #d3d3d3;
     --dark-gray: #959595;
+    --text-gray: #a8a8a8;
     --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
