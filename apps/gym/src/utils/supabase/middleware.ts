@@ -41,7 +41,7 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   if (!user) {
-    const allowedPaths = ['/', '/login', '/signup', '/reset-password']
+    const allowedPaths = ['/', '/login', '/signup', '/forgot-password', '/reset-password']
     if (!allowedPaths.includes(request.nextUrl.pathname)) {
       const url = request.nextUrl.clone()
       url.pathname = '/login'
