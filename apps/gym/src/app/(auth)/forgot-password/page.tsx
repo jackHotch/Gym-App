@@ -44,7 +44,7 @@ const ForgotPassword = () => {
           {success && <span>Check your email for further instructions</span>}
         </div>
         <Button.Primary type='submit' onClick={handleSubmit}>
-          Submit
+          Send Email
         </Button.Primary>
       </motion.form>
     </div>
