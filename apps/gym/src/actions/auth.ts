@@ -45,7 +45,7 @@ export const signup = async (formData: FormData) => {
   const { error } = await supabase.auth.signUp(data)
 
   if (error) {
-    console.log('Error with sign up' + error)
+    console.log('Error with sign up: ' + error)
     return error.message
   }
 
@@ -57,7 +57,7 @@ export const signout = async () => {
   const supabase = await createClient()
   const { error } = await supabase.auth.signOut()
   if (error) {
-    console.log('Error with sign out' + error)
+    console.log('Error with sign out: ' + error)
     return error.message
   }
 
@@ -70,7 +70,7 @@ export const signInWithGoogle = async () => {
   const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' })
 
   if (error) {
-    console.log('Error with google sign in' + error)
+    console.log('Error with google sign in: ' + error)
     return error.message
   }
 
@@ -85,7 +85,31 @@ export const sendPasswordResetEmail = async (email: string) => {
   })
 
   if (error) {
-    console.log('Error with password reset' + error)
+    console.log('Error with password reset email: ' + error)
+    return error.message
+  }
+}
+
+export const updatePassword = async (password: string) => {
+  const supabase = await createClient()
+
+  const { error } = await supabase.auth.updateUser({
+    password: password,
+  })
+
+  if (error) {
+    console.log('Error with password reset: ' + error)
+    return error.message
+  }
+}
+
+export const createSessionFromCode = async (code: string) => {
+  const supabase = await createClient()
+
+  const { error } = await supabase.auth.exchangeCodeForSession(code)
+
+  if (error) {
+    console.log('Error with creating session: ' + error)
     return error.message
   }
 }
