@@ -8,14 +8,13 @@ import { useFeatureFlag } from '@/hooks/api'
 import { updatePassword } from '@/actions/auth'
 import { Error } from '@gymapp/gymui/Error'
 import { motion } from 'motion/react'
-import z from 'zod'
-import { useSearchParams } from 'next/navigation'
+// import { useSearchParams } from 'next/navigation'
 import { createClient } from '@/utils/supabase/client'
 import { passwordSchema } from '@/constants'
 
 const ResetPassword = () => {
-  const searchParams = useSearchParams()
-  const supabaseSessionCode = searchParams.get('code')
+  // const searchParams = useSearchParams()
+  // const supabaseSessionCode = searchParams.get('code')
   const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
   const [newPassword, setNewPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -47,10 +46,10 @@ const ResetPassword = () => {
     }
   }
 
-  useEffect(() => {
-    const createSession = async () => await createSessionFromCode(supabaseSessionCode)
-    createSession()
-  }, [])
+  // useEffect(() => {
+  //   const createSession = async () => await createSessionFromCode(supabaseSessionCode)
+  //   createSession()
+  // }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
