@@ -5,6 +5,7 @@ import Barbell from '@mui/icons-material/FitnessCenterOutlined'
 import Scale from '@mui/icons-material/MonitorWeightOutlined'
 import TrendingUp from '@mui/icons-material/MovingOutlined'
 import dayjs from 'dayjs'
+import { z } from 'zod'
 
 export const DESKTOP_NAV_OPTIONS = [
   { name: 'Home', path: '/', icon: null },
@@ -84,3 +85,35 @@ export const RangeSelectorOptions = [
   { name: 'Since Starting Date' },
   { name: 'Custom' },
 ]
+
+export const emailSchema = z
+  .string({ required_error: 'Email is required' })
+  .trim()
+  .email({ message: 'Invalid email address' })
+
+export const passwordSchema = z
+  .string({ required_error: 'Password is required' })
+  .trim()
+  .min(6, { message: 'Password must be at least 6 charaters long' })
+
+export const firstNameSchema = z
+  .string({ required_error: 'First Name is required' })
+  .trim()
+  .min(1, { message: 'First Name cannot be empty' })
+
+export const lastNameSchema = z
+  .string({ required_error: 'Last Name is required' })
+  .trim()
+  .min(1, { message: 'Last Name cannot be empty' })
+
+export const loginSchema = z.object({
+  email: emailSchema,
+  password: passwordSchema,
+})
+
+export const signUpSchema = z.object({
+  firstName: firstNameSchema,
+  lastName: lastNameSchema,
+  email: emailSchema,
+  password: passwordSchema,
+})

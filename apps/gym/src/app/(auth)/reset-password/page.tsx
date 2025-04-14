@@ -11,6 +11,7 @@ import { motion } from 'motion/react'
 import z from 'zod'
 import { useSearchParams } from 'next/navigation'
 import { createClient } from '@/utils/supabase/client'
+import { passwordSchema } from '@/constants'
 
 const ResetPassword = () => {
   const searchParams = useSearchParams()
@@ -45,11 +46,6 @@ const ResetPassword = () => {
       return 'An unexpected error occurred.'
     }
   }
-
-  const passwordSchema = z
-    .string({ required_error: 'Password is required' })
-    .trim()
-    .min(6, { message: 'Password must be at least 6 charaters long' })
 
   useEffect(() => {
     const createSession = async () => await createSessionFromCode(supabaseSessionCode)
