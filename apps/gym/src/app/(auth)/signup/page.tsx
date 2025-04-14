@@ -10,7 +10,7 @@ import { motion } from 'motion/react'
 import { TextInputChangeEvent } from '@/types'
 import { useFeatureFlag } from '@/hooks/api'
 import { signup, signInWithGoogle } from '@/actions/auth'
-import { z } from 'zod'
+import { signUpSchema } from '@/constants'
 
 const SignUp = () => {
   const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
@@ -21,25 +21,6 @@ const SignUp = () => {
     lastName: '',
     email: '',
     password: '',
-  })
-
-  const signUpSchema = z.object({
-    firstName: z
-      .string({ required_error: 'First Name is required' })
-      .trim()
-      .min(1, { message: 'First Name cannot be empty' }),
-    lastName: z
-      .string({ required_error: 'Last Name is required' })
-      .trim()
-      .min(1, { message: 'Last Name cannot be empty' }),
-    email: z
-      .string({ required_error: 'Email is required' })
-      .trim()
-      .email({ message: 'Invalid email address' }),
-    password: z
-      .string({ required_error: 'Password is required' })
-      .trim()
-      .min(6, { message: 'Password must be at least 6 charaters long' }),
   })
 
   const handleChange = (e: TextInputChangeEvent) => {
