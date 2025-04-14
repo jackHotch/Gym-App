@@ -4,27 +4,36 @@ import { TailSpin } from 'react-loader-spinner'
 import UpArrow from '@mui/icons-material/KeyboardDoubleArrowUp'
 import DownArrow from '@mui/icons-material/KeyboardDoubleArrowDown'
 
-export const DifferenceCard = ({ difference, gainedWeight }: DifferenceCardProps) => {
+export const DifferenceCard = ({
+  difference,
+  gainedWeight,
+  isEmpty,
+}: DifferenceCardProps) => {
   return (
-    <div
-      className={styles.container}
-      style={{
-        color: gainedWeight ? 'var(--green) ' : 'var(--red)',
-      }}
-    >
+    <div className={styles.container}>
       <span className={styles.data}>
-        {difference ? (
-          difference
+        {isEmpty ? (
+          '-'
+        ) : difference ? (
+          <span
+            style={{
+              color: gainedWeight ? 'var(--green) ' : 'var(--red)',
+            }}
+          >
+            {difference}
+          </span>
         ) : (
           <TailSpin color='var(--blue)' width='50' height='20' />
         )}
-        <span className={styles.arrow}>
-          {gainedWeight ? (
-            <UpArrow htmlColor='var(--green)' />
-          ) : (
-            <DownArrow color='warning' />
-          )}
-        </span>
+        {!isEmpty && (
+          <span className={styles.arrow}>
+            {gainedWeight ? (
+              <UpArrow htmlColor='var(--green)' />
+            ) : (
+              <DownArrow htmlColor='var(--red)' />
+            )}
+          </span>
+        )}
       </span>
       <span className={styles.label}>Diff</span>
     </div>

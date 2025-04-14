@@ -217,15 +217,16 @@ export interface WeightChartDesktopProps {
 
 export interface StartingCardProps {
   weight: number
-  gainedWeight: boolean
+  isEmpty: boolean
 }
 
 export interface EndingCardProps {
   weight: number
-  gainedWeight: boolean
+  isEmpty: boolean
 }
 
 export interface DifferenceCardProps {
   difference: string
   gainedWeight: boolean
+  isEmpty: boolean
 }

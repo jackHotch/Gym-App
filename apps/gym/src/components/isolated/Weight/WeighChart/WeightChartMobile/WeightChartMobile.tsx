@@ -22,6 +22,7 @@ export const WeightChartMobile = ({
       <ChartHeader
         startingWeight={weightData[0]}
         endingWeight={weightData[weightData.length - 1]}
+        isEmpty={data?.length == 0}
       />
 
       <div className={styles.button_container}>
