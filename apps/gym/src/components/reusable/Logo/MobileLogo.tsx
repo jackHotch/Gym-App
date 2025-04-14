@@ -1,13 +1,19 @@
+'use client'
+
 import styles from './Logo.module.css'
-import { DESKTOP_NAV_OPTIONS } from '@/constants'
+import { MOBILE_NAV_OPTIONS, unauthorizedUrls } from '@/constants'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export const MobileLogo = () => {
+  const pathname = usePathname()
+  const href = unauthorizedUrls.includes(pathname) ? '/' : MOBILE_NAV_OPTIONS[0].path
+
   return (
     <Link
       key={1}
       className={styles.mobile_container}
-      href={DESKTOP_NAV_OPTIONS[0].path}
+      href={href}
       style={{ backgroundColor: 'white' }}
     >
       <img src='/images/dumbbell-blue.png' alt='logo' width={60} height={60} />

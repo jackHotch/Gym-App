@@ -8,7 +8,7 @@ import dayjs from 'dayjs'
 import { z } from 'zod'
 
 export const DESKTOP_NAV_OPTIONS = [
-  { name: 'Home', path: '/', icon: null },
+  { name: 'Home', path: '/dashboard', icon: null },
   {
     name: 'Dashboard',
     path: '/dashboard',
@@ -42,7 +42,7 @@ export const DESKTOP_NAV_OPTIONS = [
 ]
 
 export const MOBILE_NAV_OPTIONS = [
-  { name: 'Home', path: '/', icon: null },
+  { name: 'Home', path: '/dashboard', icon: null },
   {
     name: 'Dashboard',
     path: '/dashboard',
@@ -84,6 +84,14 @@ export const RangeSelectorOptions = [
   { name: '1 Year', startDate: dayjs().subtract(1, 'y'), endDate: dayjs() },
   { name: 'Since Starting Date' },
   { name: 'Custom' },
+]
+
+export const unauthorizedUrls = [
+  '/',
+  '/login',
+  '/signup',
+  'forgot-password',
+  'reset-password',
 ]
 
 export const emailSchema = z
