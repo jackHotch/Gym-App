@@ -6,8 +6,6 @@ import { AnimatePresence } from 'motion/react'
 import { AddWeightModal } from '@/components/isolated/Weight/AddWeightModal'
 import UpArrow from '@mui/icons-material/KeyboardDoubleArrowUp'
 import DownArrow from '@mui/icons-material/KeyboardDoubleArrowDown'
-import TrendingDownArrow from '@mui/icons-material/TrendingDown'
-import TrendingUpArrow from '@mui/icons-material/TrendingUp'
 import { TailSpin } from 'react-loader-spinner'
 import AddIcon from '@mui/icons-material/Add'
 
@@ -42,16 +40,7 @@ export const ChartHeader = ({
         <div className={styles.stats}>
           <span className={styles.data}>
             {endingWeight ? (
-              <>
-                {endingWeight}
-                <span className={styles.arrow}>
-                  {endingWeight > startingWeight ? (
-                    <UpArrow color='success' />
-                  ) : (
-                    <DownArrow color='warning' />
-                  )}
-                </span>
-              </>
+              endingWeight
             ) : isEmpty ? (
               '-'
             ) : (
@@ -69,9 +58,9 @@ export const ChartHeader = ({
                 {(endingWeight - startingWeight).toFixed(1)}
                 <span className={styles.arrow}>
                   {endingWeight > startingWeight ? (
-                    <TrendingUpArrow color='success' />
+                    <UpArrow color='success' />
                   ) : (
-                    <TrendingDownArrow color='warning' />
+                    <DownArrow color='warning' />
                   )}
                 </span>
               </>

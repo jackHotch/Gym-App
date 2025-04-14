@@ -44,7 +44,10 @@ const SignUp = () => {
 
       if (authEnabled) {
         const errorMessage = await signup(formData)
-        if (errorMessage) setSignUpError(errorMessage)
+        if (errorMessage) {
+          setSignUpError(errorMessage)
+          setIsLoading(false)
+        }
       } else alert('Not Implemented Yet!')
     } else {
       setSignUpError(error.issues[0].message)
