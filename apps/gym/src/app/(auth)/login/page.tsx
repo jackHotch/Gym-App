@@ -40,7 +40,10 @@ const Login = () => {
 
       if (authEnabled) {
         const errorMessage = await login(formData)
-        if (errorMessage) setLoginError(errorMessage)
+        if (errorMessage) {
+          setLoginError(errorMessage)
+          setIsLoading(false)
+        }
       } else alert('Not Implemented Yet!')
     } else {
       setLoginError(error.issues[0].message)
