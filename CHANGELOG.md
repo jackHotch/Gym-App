@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 4/13/2025
+
+- Added Authentication
+
 ## 2/20/2025
 
 - Added feature flag hook and functionality
