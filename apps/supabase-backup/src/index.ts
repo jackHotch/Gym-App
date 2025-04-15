@@ -102,3 +102,16 @@ app.get('/backup', async (_req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Backup service running on port ${PORT}`)
 })
+
+if (require.main === module) {
+  // If running directly (e.g., via `node dist/index.js`), do the backup
+  runBackup()
+    .then(() => {
+      console.log('✅ Backup complete.')
+      process.exit(0)
+    })
+    .catch((err) => {
+      console.error('❌ Backup failed:', err)
+      process.exit(1)
+    })
+}
