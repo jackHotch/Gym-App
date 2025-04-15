@@ -1,4 +1,3 @@
-import { unauthorizedUrls } from '@/constants'
 import { createServerClient } from '@supabase/ssr'
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -41,6 +40,7 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   const pathname = request.nextUrl.pathname
+  const unauthorizedUrls = ['/', '/login', '/signup', 'forgot-password', 'reset-password']
   if (!user) {
     if (!unauthorizedUrls.includes(pathname)) {
       const url = request.nextUrl.clone()
