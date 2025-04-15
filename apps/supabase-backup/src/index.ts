@@ -22,7 +22,7 @@ const runBackup = async () => {
 
   // 1. Dump database
   console.log('🔄 Dumping database...')
-  execSync(`pg_dump ${SUPABASE_DB_URL} -F c -f ${filepath}`)
+  execSync(`pg_dump --format=plain ${SUPABASE_DB_URL} -F c -f ${filepath}`)
 
   // 2. Upload to Dropbox
   console.log('☁️ Uploading to Dropbox...')
