@@ -1,5 +1,6 @@
+import { unauthorizedUrls } from '@/constants'
 import { createServerClient } from '@supabase/ssr'
-import { NextResponse, type NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -37,14 +38,19 @@ export async function updateSession(request: NextRequest) {
 
   const {
     data: { user },
-    error,
   } = await supabase.auth.getUser()
 
+  const pathname = request.nextUrl.pathname
   if (!user) {
-    const allowedPaths = ['/', '/login', '/signup', '/forgot-password', '/reset-password']
-    if (!allowedPaths.includes(request.nextUrl.pathname)) {
+    if (!unauthorizedUrls.includes(pathname)) {
       const url = request.nextUrl.clone()
       url.pathname = '/login'
+      return NextResponse.redirect(url)
+    }
+  } else {
+    if (pathname == '/login' || pathname == '/signup') {
+      const url = request.nextUrl.clone()
+      url.pathname = '/dashboard'
       return NextResponse.redirect(url)
     }
   }
