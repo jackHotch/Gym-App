@@ -1,0 +1,14 @@
+{
+  "extends": "@gymapp/typescript-config/base.json",
+  "compilerOptions": {
+    "target": "es2022",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+  },
+  "include": ["src/**/*.ts"],
+}
