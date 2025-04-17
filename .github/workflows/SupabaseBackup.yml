@@ -1,8 +1,6 @@
 name: Supabase Backup
 
 on:
-  schedule:
-    - cron: '0 2 * * *' # Every day at 2am UTC
   workflow_dispatch:
 
 jobs:
