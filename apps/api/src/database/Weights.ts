@@ -44,7 +44,7 @@ export async function deleteEntry(userId: string, id: string) {
 export async function getCurrentWeight(userId: string) {
   const client = await pool.connect()
   const { rows } = await client.query(
-    `SELECT weight, date FROM weights WHERE user_id = $1 ORDER BY weight_id DESC LIMIT 1`,
+    `SELECT weight, date FROM weights WHERE user_id = $1 ORDER BY date DESC LIMIT 1`,
     [userId]
   )
   client.release()
