@@ -1,4 +1,4 @@
-import { CSSProperties, ReactElement, ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 import { HTMLMotionProps } from 'motion/react'
 import { Primary } from './Primary'
 import { Secondary } from './Secondary'
@@ -16,8 +16,8 @@ export interface ButtonProps extends HTMLMotionProps<'button'> {
 }
 
 export const SCALEHOVER = 1.02
-export const PRIMARY_COLOR_HOVER = 'var(--dark-primary)'
-export const DANGER_COLOR_HOVER = 'var(--bright-danger)'
+export const PRIMARY_COLOR_HOVER = 'var(--primary-dark)'
+export const DANGER_COLOR_HOVER = 'var(--danger-dark)'
 export const SCALETAP = 0.95
 export const DURATION = 0.15
 

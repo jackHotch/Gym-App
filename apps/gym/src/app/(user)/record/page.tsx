@@ -3,7 +3,6 @@
 import styles from './Record.module.css'
 import Link from 'next/link'
 import { useCurrentSplit } from '@/hooks/api/useCurrentSplit'
-import { motion } from 'motion/react'
 import { Loading } from '@gymapp/gymui/Loading'
 import { Button } from '@gymapp/gymui/Button'
 
@@ -27,7 +26,7 @@ const Record = () => {
         <h1 className={styles.split_name}>{currentSplit?.name}</h1>
       )}
       <Link href='/record/workout' className={styles.button}>
-        <Button.Primary size='medium'>Start Workout</Button.Primary>
+        <Button.Primary size='large'>Start Workout</Button.Primary>
       </Link>
     </div>
   )

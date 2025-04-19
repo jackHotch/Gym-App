@@ -22,13 +22,17 @@
 }
 
 .disabled {
-  background-color: var(--off-primary);
+  background-color: var(--primary-muted);
   cursor: not-allowed;
 }
 
 .text {
   background-color: white;
   color: var(--primary);
+}
+
+.text:hover {
+  text-decoration: underline;
 }
 
 .underline {
