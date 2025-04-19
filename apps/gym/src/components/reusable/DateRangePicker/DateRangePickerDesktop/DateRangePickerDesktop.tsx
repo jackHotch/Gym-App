@@ -13,13 +13,18 @@ import { Error } from '@gymapp/gymui/Error'
 export const DateRangePickerDesktop = ({ filter, data }: DateRangePickerProps) => {
   const [startDate, setStartDate] = useState(dayjs())
   const [endDate, setEndDate] = useState(dayjs())
-  const [isCustom, , openDatePickers, closeDatePickers] = useToggle()
+  const [isCustom, , openDatePickers, close] = useToggle()
   const [error, , showError, closeError] = useToggle()
 
   useEffect(() => {
     closeDatePickers()
     closeError()
   }, [data])
+
+  const closeDatePickers = () => {
+    close()
+    closeError()
+  }
 
   const handleChange = (date: Dayjs, start?: boolean) => {
     if (start) {
