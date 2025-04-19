@@ -13,9 +13,8 @@ export const Secondary = ({
     style={sx}
     className={`${styles.secondary} ${styles[size]}`}
     whileHover={{
-      scale: SCALEHOVER,
       backgroundColor: 'var(--primary)',
-      color: 'white',
+      color: '#ffffff',
     }}
     transition={{ duration: DURATION }}
     whileTap={{ scale: SCALETAP }}

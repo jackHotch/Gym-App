@@ -1,4 +1,4 @@
-import { ButtonProps, SCALEHOVER, SCALETAP, DURATION } from './Button'
+import { ButtonProps, PRIMARY_COLOR_HOVER, SCALETAP, DURATION } from './Button'
 import styles from './Button.module.css'
 import { motion } from 'motion/react'
 
@@ -13,7 +13,7 @@ export const Primary = ({
     style={sx}
     className={`${styles.primary} ${styles[size]}`}
     whileHover={{
-      scale: SCALEHOVER,
+      backgroundColor: PRIMARY_COLOR_HOVER,
     }}
     transition={{ duration: DURATION }}
     whileTap={{ scale: SCALETAP }}

@@ -33,7 +33,7 @@ export const Primary: Story = {
   args: {
     children: 'Primary',
   },
-  render: (args) => {
+  render: (args: any) => {
     return <Button.Primary {...args} />
   },
 }
@@ -42,7 +42,7 @@ export const Secondary: Story = {
   args: {
     children: 'Secondary',
   },
-  render: (args) => {
+  render: (args: any) => {
     return <Button.Secondary {...args} />
   },
 }
@@ -51,7 +51,7 @@ export const Danger: Story = {
   args: {
     children: 'Danger',
   },
-  render: (args) => {
+  render: (args: any) => {
     return <Button.Danger {...args} />
   },
 }
@@ -60,23 +60,23 @@ export const Disabled: Story = {
   args: {
     children: 'Disabled',
   },
-  render: (args) => {
+  render: (args: any) => {
     return <Button.Disabled {...args} />
   },
 }
 
 export const Text: Story = {
   args: {
-    children: 'Text',
+    children: 'This is a button',
   },
-  render: (args) => {
+  render: (args: any) => {
     return <Button.Text {...args} />
   },
 }
 
 export const Loading: Story = {
   args: {},
-  render: (args) => {
+  render: (args: any) => {
     return <Button.Loading {...args} />
   },
 }
