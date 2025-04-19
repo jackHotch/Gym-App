@@ -15,7 +15,7 @@ export const EntryModal = ({ closeModal, deleteEntry }: EntryModalProps) => {
       ref={entryModalRef}
       sx={{ position: 'absolute', top: '-20px', right: '10px', zIndex: '10' }}
     >
-      <Modal.Item onClick={deleteEntry} sx={{ color: 'var(--red)' }}>
+      <Modal.Item onClick={deleteEntry} sx={{ color: 'var(--danger)' }}>
         Delete Entry
       </Modal.Item>
     </Modal.Popover>

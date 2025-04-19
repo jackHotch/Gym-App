@@ -14,7 +14,7 @@ export const Secondary = ({
     className={`${styles.secondary} ${styles[size]}`}
     whileHover={{
       scale: SCALEHOVER,
-      backgroundColor: 'var(--blue)',
+      backgroundColor: 'var(--primary)',
       color: 'white',
     }}
     transition={{ duration: DURATION }}

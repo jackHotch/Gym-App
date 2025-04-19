@@ -16,7 +16,7 @@
   display: block;
   width: max-content;
   margin: 20px auto;
-  background-color: var(--blue);
+  background-color: var(--primary);
   color: white;
   padding: 12px 32px;
   border-radius: 10px;

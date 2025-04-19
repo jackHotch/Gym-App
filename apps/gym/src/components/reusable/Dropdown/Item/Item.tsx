@@ -10,7 +10,7 @@ export const Item = ({ id, handleClick, sx, children }: DropdownItemProps) => {
       onClick={() => handleClick(id)}
       whileHover={{
         backgroundColor: 'var(--light-gray)',
-        color: 'var(--blue)',
+        color: 'var(--primary)',
         transition: {
           duration: 1,
         },

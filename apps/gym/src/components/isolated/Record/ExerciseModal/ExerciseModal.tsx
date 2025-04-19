@@ -40,7 +40,7 @@ export const ExerciseModal = ({
       <Modal.Item onClick={changeNote}>
         {showNote ? 'Remove Note' : 'Add Note'}
       </Modal.Item>
-      <Modal.Item onClick={removeExercise} sx={{ color: 'var(--red)' }}>
+      <Modal.Item onClick={removeExercise} sx={{ color: 'var(--danger)' }}>
         Remove Exercise
       </Modal.Item>
     </Modal.Popover>

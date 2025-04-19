@@ -8,27 +8,27 @@
 }
 
 .primary {
-  background-color: var(--blue);
+  background-color: var(--primary);
 }
 
 .secondary {
   background-color: white;
   color: black;
-  border: 2px solid var(--blue);
+  border: 2px solid var(--primary);
 }
 
 .danger {
-  background-color: var(--red);
+  background-color: var(--danger);
 }
 
 .disabled {
-  background-color: var(--offblue);
+  background-color: var(--off-primary);
   cursor: not-allowed;
 }
 
 .text {
   background-color: white;
-  color: var(--blue);
+  color: var(--primary);
 }
 
 .small {

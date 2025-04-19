@@ -42,7 +42,7 @@
 }
 
 .error {
-  color: var(--red)
+  color: var(--danger)
 }
 
 @media (width < 600px) {

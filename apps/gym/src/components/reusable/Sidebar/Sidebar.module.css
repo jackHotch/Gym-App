@@ -26,7 +26,7 @@
 
 .logout {
   cursor: pointer;
-  color: var(--red);
+  color: var(--danger);
   display: flex;
   align-items: center;
   gap: 16px;
