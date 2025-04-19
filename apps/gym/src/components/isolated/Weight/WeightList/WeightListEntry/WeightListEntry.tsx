@@ -25,7 +25,7 @@ export const WeightListEntry = ({ value, id, difference }: WeightListEntryProps)
         <div className={styles.date_dots}>
           <span
             style={{
-              color: difference > 0 ? 'var(--green) ' : 'var(--red)',
+              color: difference > 0 ? 'var(--success) ' : 'var(--danger)',
             }}
           >
             {difference}

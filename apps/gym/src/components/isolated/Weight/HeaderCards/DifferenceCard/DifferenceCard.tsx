@@ -17,20 +17,20 @@ export const DifferenceCard = ({
         ) : difference ? (
           <span
             style={{
-              color: gainedWeight ? 'var(--green) ' : 'var(--red)',
+              color: gainedWeight ? 'var(--success) ' : 'var(--danger)',
             }}
           >
             {difference}
           </span>
         ) : (
-          <TailSpin color='var(--blue)' width='50' height='20' />
+          <TailSpin color='var(--primary)' width='50' height='20' />
         )}
         {!isEmpty && (
           <span className={styles.arrow}>
             {gainedWeight ? (
-              <UpArrow htmlColor='var(--green)' />
+              <UpArrow htmlColor='var(--success)' />
             ) : (
-              <DownArrow htmlColor='var(--red)' />
+              <DownArrow htmlColor='var(--danger)' />
             )}
           </span>
         )}

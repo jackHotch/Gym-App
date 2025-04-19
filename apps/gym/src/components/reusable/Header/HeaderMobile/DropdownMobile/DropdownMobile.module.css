@@ -4,7 +4,7 @@
   position: absolute;
   top: 15px;
   right: 8px;
-  background-color: var(--blue);
+  background-color: var(--primary);
   width: calc(100vw - 16px);
   height: calc(100vh - 16px);
   overflow: hidden;

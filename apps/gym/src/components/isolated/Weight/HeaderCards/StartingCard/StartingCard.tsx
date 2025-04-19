@@ -10,7 +10,7 @@ export const StartingCard = ({ weight, isEmpty }: StartingCardProps) => {
       ) : isEmpty ? (
         '-'
       ) : (
-        <TailSpin color='var(--blue)' width='50' height='20' />
+        <TailSpin color='var(--primary)' width='50' height='20' />
       )}
       <span className={styles.label}>Start</span>
     </div>

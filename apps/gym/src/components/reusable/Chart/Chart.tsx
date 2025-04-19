@@ -79,8 +79,8 @@ export const Chart = ({ labels, data, isLoading, height }: ChartProps) => {
   }
 
   useEffect(() => {
-    setBlue(cssvar('--blue'))
-    setTransparentBlue(cssvar('--transparent-blue'))
+    setBlue(cssvar('--primary'))
+    setTransparentBlue(cssvar('--transparent-primary'))
   })
 
   const chartData = {
