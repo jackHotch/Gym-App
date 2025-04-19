@@ -4,7 +4,7 @@ import { IWorkout, IWorkoutCount } from '@/types'
 import { getSupabaseUserId } from '@/utils/supabase/utils'
 import axios from 'axios'
 
-const URL = process.env.URL + '/workouts'
+const URL = process.env.URL + '/' + process.env.API_VERSION + '/workouts'
 
 export const getWorkoutNumber = async () => {
   const userId = await getSupabaseUserId()

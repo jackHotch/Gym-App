@@ -4,7 +4,7 @@ import { IWeightData, IWeightEntry } from '@/types'
 import axios from 'axios'
 import { getSupabaseUserId } from '@/utils/supabase/utils'
 
-const URL = process.env.URL + '/weights'
+const URL = process.env.URL + '/' + process.env.API_VERSION + '/weights'
 
 export const getWeight = async () => {
   const userId = await getSupabaseUserId()
