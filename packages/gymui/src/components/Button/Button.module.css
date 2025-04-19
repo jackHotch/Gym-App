@@ -31,20 +31,25 @@
   color: var(--primary);
 }
 
+.underline {
+  background-color: var(--primary);
+  height: 1px;
+}
+
 .small {
-  padding: 8px 24px;
+  padding: 8px 16px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .medium {
-  padding: 12px 32px;
+  padding: 10px 20px;
   border-radius: 10px;
   font-size: 16px;
 }
 
 .large {
-  padding: 24px 64px;
+  padding: 12px 24px;
   border-radius: 12px;
-  font-size: 24px;
+  font-size: 18px;
 }
