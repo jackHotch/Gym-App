@@ -6,7 +6,11 @@ const PORT = 8080
 const VERSION = process.env.VERSION
 
 app.use(express.json())
-app.use(cors())
+app.use(
+  cors({
+    origin: ['https://jackhotchkiss-gym-app.vercel.app'],
+  })
+)
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
