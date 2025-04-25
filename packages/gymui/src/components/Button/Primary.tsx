@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 
 export const Primary = ({
   children = 'Primary',
-  size = 'small',
+  size = 'medium',
   sx,
   ...props
 }: ButtonProps) => (

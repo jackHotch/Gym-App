@@ -26,7 +26,7 @@ const Record = () => {
         <h1 className={styles.split_name}>{currentSplit?.name}</h1>
       )}
       <Link href='/record/workout' className={styles.button}>
-        <Button.Primary size='large'>Start Workout</Button.Primary>
+        <Button.Primary size='xlarge'>Start Workout</Button.Primary>
       </Link>
     </div>
   )

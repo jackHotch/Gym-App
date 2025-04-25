@@ -7,7 +7,7 @@ import { Disabled } from './Disabled'
 import { Text } from './Text'
 import { Loading } from './Loading'
 
-type size = 'small' | 'medium' | 'large'
+type size = 'small' | 'medium' | 'large' | 'xlarge'
 
 export interface ButtonProps extends HTMLMotionProps<'button'> {
   children?: ReactNode

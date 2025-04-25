@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 
 export const Danger = ({
   children = 'Danger',
-  size = 'small',
+  size = 'medium',
   sx,
   ...props
 }: ButtonProps) => (

@@ -85,8 +85,7 @@ const Login = () => {
           ) : (
             <Button.Primary
               type='submit'
-              size='medium'
-              sx={{ padding: '12px' }}
+              sx={{ padding: '12px', fontSize: '16px' }}
               onClick={handleLogin}
             >
               Log In

@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 
 export const Secondary = ({
   children = 'Secondary',
-  size = 'small',
+  size = 'medium',
   sx,
   ...props
 }: ButtonProps) => (

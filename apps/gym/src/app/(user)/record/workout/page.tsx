@@ -60,7 +60,6 @@ const Workout = () => {
           <Button.Secondary
             type='button'
             onClick={openAddExerciseModal}
-            size='small'
             sx={{ margin: '16px auto 8px auto' }}
           >
             Add Exercise
@@ -69,7 +68,6 @@ const Workout = () => {
           <Button.Primary
             type='button'
             onClick={openConfirmationModal}
-            size='small'
             sx={{ margin: '8px auto 16px auto' }}
           >
             Finish Workout

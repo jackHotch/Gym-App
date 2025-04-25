@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 
 export const Disabled = ({
   children = 'Disabled',
-  size = 'small',
+  size = 'medium',
   sx,
   ...props
 }: ButtonProps) => (
