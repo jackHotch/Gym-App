@@ -1,32 +1,50 @@
-# Gym App
+# Jacked
 
-Created by Jack Hotchkiss
+## 👀 Demo
 
-Started: April 12th, 2024  
-Ended: _In Progress_
+> **Warning** This app is a work in progress https://jackhotchkiss-gym-app.vercel.app/
 
 ![Screenshot](/assets/screenshot.png)
 
-## About the Project
+## 📚 About
 
-### Description
+### ℹ️ Description
 
-This project is a web app to help users track their progress on their fitness journey. It will have features such as...
+This project is a web app that allows users to log and visualize their workout data. It will have features such as...
 
 - Workout Tracking
 - Weight Tracking
 - Exercise Tracking
 - Split Creator
+- Photo Comparison
 
-### Tech Stack
+### 🛠️ Tech Stack
 
-- <a href="https://nextjs.org/"><img src="assets/nextjslogo.svg"></a>
-- <a href="https://react.dev/"><img src="assets/reactlogo.svg"></a>
-- <a href="https://typescriptlang.org/"><img height="28px" src="assets/typescript.png"></a>
-- <a href="https://expressjs.com/"><img height="28px" src="assets/express.png"></a>
-- <a href="https://nodejs.org/en"><img height="28px" src="assets/node.png"></a>
+<div >
+	<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/typescript.png" alt="TypeScript" title="TypeScript"/>
+	<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/next_js.png" alt="Next.js" title="Next.js"/>
+	<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/react.png" alt="React" title="React"/>
+	<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/node_js.png" alt="Node.js" title="Node.js"/>
+	<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/express.png" alt="Express" title="Express"/>
+	<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png" alt="PostgreSQL" title="PostgreSQL"/>
+	<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/supabase.png" alt="Supabase" title="Supabase"/>
+	<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jest.png" alt="Jest" title="Jest"/>
 
-### Project Structure
+</div>
+
+### 🌟 Features
+
+- <img width="14" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/turborepo.png" alt="Turborepo" title="Turborepo"/> Monorepo using Turborepo
+- 📁 `/app` dir
+- <img width="16" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/react_query.png" alt="React Query" title="React Query"/> Data Fetching, Caching and Mutation with **React Query**
+- ⏱️ Loading UI
+- 🛠️ Server and Client Components
+- 📱Fuly Responsive Design
+- <img width="16" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/supabase.png" alt="Supabase" title="Supabase"/> Authentication using **Supabase Auth**
+- <img width="16" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/supabase.png" alt="Supabase" title="Supabase"/> Postgres Database using **Supabase Database**
+- 👨‍🎨 Styleguide using **Storybook**
+
+### 📁 Project Structure
 
 This repository is a monorepo using the turborepo build system.
 
@@ -35,6 +53,8 @@ gymapp
 |-- apps
 |   |-- gym
 |   |-- api
+|   |-- storybook
+|   |-- supabase-backup
 |-- packages
 |   |-- eslint-config
 |   |-- typescript-config
@@ -44,82 +64,42 @@ gymapp
 ...
 ```
 
-`/gym` - frontend of web app
+`/gym` - Frontend of application
 
-`/api` - backend of web app
+`/api` - Backend of application
 
-`/gymui` - custom component library
+`/gymui` - Custom component library
 
-## GymUI
+`/storybook` - Main storybook application
 
-This is a custom component library made specifically for this app.
+`/supabase-backup` - Script to backup database
+
+## 🏋️ GymUI
+
+This is a custom component library made specifically for this application
 
 ![Screenshot](/assets/gymui.png)
-
-### Storybook
 
 To run the component library in storybook
 
 ```sh
-npm run storybook
+turbo storybook
 ```
 
-## Getting Started
-
-_Follow the following steps to intall the app on your local machine_
-
-### Prerequisites
-
-- [NodeJS](https://nodejs.org/en/download/prebuilt-installer)
-- [PostgreSQL](https://www.postgresql.org/)
-
-### Installation
-
-1. Clone the repo
-
-```sh
-git clone https://github.com/jackHotch/Gym-App.git
-```
-
-## Usage
+## 🚀 Usage
 
 _Follow the following steps to run the application on your machine_
 
-### Before the First Time
-
-1. Go into each `/Databse/* Parser/index.js` file and change the update the connection to your local database
-
-```js
-const pool = new Pool({
-  host: YOUR_INFORMATION,
-  port: YOUR_INFORMATION,
-  database: YOUR_INFORMATION,
-  user: YOUR_INFORMATION,
-  password: YOUR_INFORMATION,
-})
-```
-
-2. Run each parsing file to populate the database
-
-```sh
-npm install
-node index.js
-```
-
-3. In the root of the project
-
-```sh
-npm install
-```
+> [!WARNING]
+> The following commands assume you have turbo globally installed on your machine
 
 ### Run the Application
 
-1. Start your PostgreSQL database
-2. Open your terminal
-3. In the root of the project run the following command to start all dev servers
+1. Open your terminal
+2. In the root of the project run the following command to start all dev servers
 
 ```sh
-npm run dev
+turbo dev
 ```
 
 5. Go to `http://localhost:3000` in your web browser
@@ -129,7 +109,7 @@ npm run dev
 ### Build the Project
 
 ```sh
-npm run build
+turbo build
 ```
 
 This command will build the entire project.
@@ -137,7 +117,7 @@ This command will build the entire project.
 ### Test the Project
 
 ```sh
-npm run test
+turbo test
 ```
 
 This command will run the tests for the entire project
