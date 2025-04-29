@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 4/28/2025
+
+- Added card component to GymUI
+
 ## 4/13/2025
 
 - Added Authentication
