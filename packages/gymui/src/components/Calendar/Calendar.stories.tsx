@@ -23,7 +23,7 @@ type Story = StoryObj<StoryProps>
 
 export const Primary: Story = {
   args: {},
-  render: (args) => {
+  render: (args: any) => {
     return (
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <Calendar {...args} />
