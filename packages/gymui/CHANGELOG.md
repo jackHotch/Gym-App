@@ -2,6 +2,10 @@
 
 _This is the changelog for GymUI_
 
+## 4/29/2025 - 11.0.1
+
+- Finished the card component
+
 ## 4/19/2025 - 10.0.2
 
 - Updated Button component, changed size and colors
