@@ -11,7 +11,8 @@
     "./Loading": "./src/components/Loading/Loading.tsx",
     "./Calendar": "./src/components/Calendar/Calendar.tsx",
     "./Error": "./src/components/Error/Error.tsx",
-    "./Hamburger": "./src/components/Hamburger/Hamburger.tsx"
+    "./Hamburger": "./src/components/Hamburger/Hamburger.tsx",
+    "./Card": "./src/components/Card/card.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
