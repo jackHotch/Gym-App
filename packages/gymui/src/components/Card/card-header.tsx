@@ -5,9 +5,9 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLHeadingElement> {
   sx?: React.CSSProperties
 }
 
-export const Header = ({ children, sx }: HeaderProps) => {
+export const Header = ({ children, sx, ...props }: HeaderProps) => {
   return (
-    <div style={sx} className={styles.header_container}>
+    <div style={sx} className={styles.header_container} {...props}>
       {children}
     </div>
   )

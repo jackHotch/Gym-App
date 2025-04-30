@@ -36,7 +36,7 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Modal.FullPage height='260px' onOutsideClick={closeModal} sx={{ padding: '20px' }}>
+      <Modal.Overlay height='260px' onOutsideClick={closeModal} sx={{ padding: '20px' }}>
         <Form onSubmit={handleSubmit}>
           <div className={styles.container}>
             <div className={styles.header}>
@@ -77,7 +77,7 @@ export const AddWeightModal = ({ closeModal }: AddWeightModalProps) => {
             </Button.Primary>
           </div>
         </Form>
-      </Modal.FullPage>
+      </Modal.Overlay>
     </LocalizationProvider>
   )
 }

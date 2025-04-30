@@ -14,7 +14,7 @@ export const WorkoutConfirmationModal = ({
   const buttonWidth = screen.width < 480 ? '100%' : '220px'
 
   return (
-    <Modal.FullPage
+    <Modal.Overlay
       width='470px'
       height='200px'
       onOutsideClick={closeModal}
@@ -33,6 +33,6 @@ export const WorkoutConfirmationModal = ({
           Finish Workout
         </Button.Primary>
       </div>
-    </Modal.FullPage>
+    </Modal.Overlay>
   )
 }

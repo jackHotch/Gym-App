@@ -5,9 +5,9 @@ export interface DescriptionProps extends React.HTMLAttributes<HTMLHeadingElemen
   sx?: React.CSSProperties
 }
 
-export const Description = ({ children, sx }: DescriptionProps) => {
+export const Description = ({ children, sx, ...props }: DescriptionProps) => {
   return (
-    <p style={sx} className={styles.description}>
+    <p style={sx} className={styles.description} {...props}>
       {children}
     </p>
   )

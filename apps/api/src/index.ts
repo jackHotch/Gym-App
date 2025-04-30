@@ -8,7 +8,7 @@ const VERSION = process.env.VERSION
 app.use(express.json())
 app.use(
   cors({
-    origin: ['https://jackhotchkiss-gym-app.vercel.app'],
+    origin: ['https://jackhotchkiss-jacked.vercel.app', 'https://jackhotchkiss-gym-app.vercel.app'],
   })
 )
 
