@@ -5,9 +5,9 @@ export interface FooterProps extends React.HTMLAttributes<HTMLHeadingElement> {
   sx?: React.CSSProperties
 }
 
-export const Footer = ({ children, sx }: FooterProps) => {
+export const Footer = ({ children, sx, ...props }: FooterProps) => {
   return (
-    <div style={sx} className={styles.footer}>
+    <div style={sx} className={styles.footer} {...props}>
       {children}
     </div>
   )

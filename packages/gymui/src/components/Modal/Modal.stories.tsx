@@ -43,10 +43,10 @@ export const FullPage: Story = {
         <h1>This is the Text Behind the Modal</h1>
         <AnimatePresence>
           {args.visible && (
-            <Modal.FullPage {...args}>
+            <Modal.Overlay {...args}>
               <h2>This is a Full Page Modal</h2>
               <p>This is Text</p>
-            </Modal.FullPage>
+            </Modal.Overlay>
           )}
         </AnimatePresence>
       </div>

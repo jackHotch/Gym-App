@@ -36,7 +36,7 @@ export const AddExerciseModal = ({
   }
 
   return (
-    <Modal.FullPage width='500px' height='600px' onOutsideClick={closeModal}>
+    <Modal.Overlay width='500px' height='600px' onOutsideClick={closeModal}>
       <div className={styles.header}>
         <Button.Text onClick={openCreateExerciseModal} sx={{ fontSize: '16px' }}>
           Create New Exercise
@@ -86,6 +86,6 @@ export const AddExerciseModal = ({
           <CreateNewExerciseModal closeModal={closeCreateExerciseModal} />
         )}
       </AnimatePresence>
-    </Modal.FullPage>
+    </Modal.Overlay>
   )
 }

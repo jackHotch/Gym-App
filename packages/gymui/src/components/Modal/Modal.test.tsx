@@ -2,12 +2,12 @@ import { fireEvent, render } from '@testing-library/react'
 import { Modal } from './Modal'
 
 describe('Modal', () => {
-  it('Modal.FullPage should render successfully', () => {
+  it('Modal.Overlay should render successfully', () => {
     const modalBackgroundClick = jest.fn()
     const { baseElement, getByTestId } = render(
-      <Modal.FullPage onOutsideClick={modalBackgroundClick}>
+      <Modal.Overlay onOutsideClick={modalBackgroundClick}>
         <p>FullPage Modal</p>
-      </Modal.FullPage>
+      </Modal.Overlay>
     )
     fireEvent.click(getByTestId('background'))
 

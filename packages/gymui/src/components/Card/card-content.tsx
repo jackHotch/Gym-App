@@ -5,9 +5,9 @@ export interface ContentProps extends React.HTMLAttributes<HTMLHeadingElement> {
   sx?: React.CSSProperties
 }
 
-export const Content = ({ children, sx }: ContentProps) => {
+export const Content = ({ children, sx, ...props }: ContentProps) => {
   return (
-    <div style={sx} className={styles.card_content}>
+    <div style={sx} className={styles.card_content} {...props}>
       {children}
     </div>
   )

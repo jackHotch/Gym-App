@@ -10,9 +10,9 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   sx?: React.CSSProperties
 }
 
-export const Card = ({ children, sx }: CardProps) => {
+export const Card = ({ children, sx, ...props }: CardProps) => {
   return (
-    <div style={sx} className={styles.card_container}>
+    <div style={sx} className={styles.card_container} {...props}>
       {children}
     </div>
   )

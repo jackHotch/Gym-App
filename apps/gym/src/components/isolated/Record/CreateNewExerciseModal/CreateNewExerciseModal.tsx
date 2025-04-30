@@ -25,7 +25,7 @@ export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalPro
   }
 
   return (
-    <Modal.FullPage
+    <Modal.Overlay
       width='280px'
       height='280px'
       onOutsideClick={closeModal}
@@ -49,6 +49,6 @@ export const CreateNewExerciseModal = ({ closeModal }: CreateNewExerciseModalPro
           </div>
         </div>
       </form>
-    </Modal.FullPage>
+    </Modal.Overlay>
   )
 }

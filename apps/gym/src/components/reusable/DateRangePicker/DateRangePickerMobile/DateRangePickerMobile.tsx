@@ -50,7 +50,7 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
 
       <AnimatePresence>
         {isCustom && (
-          <Modal.FullPage
+          <Modal.Overlay
             height='max-content'
             onOutsideClick={closeDatePickers}
             sx={{ gap: '24px' }}
@@ -78,7 +78,7 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
             </div>
             <AnimatePresence>{error && <Error>Invalid Range</Error>}</AnimatePresence>
             <Button.Primary onClick={handleSubmit}> Set Range</Button.Primary>
-          </Modal.FullPage>
+          </Modal.Overlay>
         )}
       </AnimatePresence>
     </div>
