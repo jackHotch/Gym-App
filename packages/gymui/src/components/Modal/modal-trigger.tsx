@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './overlay.module.css'
-import { useOverlayContext } from './overlay-context'
+import styles from './modal.module.css'
+import { useModalContext } from './modal-context'
 
 export interface TriggerProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactElement
@@ -8,7 +8,7 @@ export interface TriggerProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Trigger = ({ children, sx, ...props }: TriggerProps) => {
-  const { onOpenChange } = useOverlayContext()
+  const { onOpenChange } = useModalContext()
   return React.cloneElement(children, {
     onClick: () => onOpenChange(true),
   })

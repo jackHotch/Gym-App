@@ -1,4 +1,4 @@
-import styles from './overlay.module.css'
+import styles from './modal.module.css'
 
 export interface DescriptionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode | React.ReactNode[]
