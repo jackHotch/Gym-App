@@ -3,6 +3,10 @@ import { HTMLMotionProps, motion } from 'motion/react'
 import { OverlayContext } from './overlay-context'
 import { Trigger } from './overlay-trigger'
 import { Content } from './overlay-content'
+import { Header } from './overlay-header'
+import { Title } from './overlay-title'
+import { Description } from './overlay-description'
+import { Footer } from './overlay-footer'
 
 const modalVariants = {
   hidden: {
@@ -34,7 +38,7 @@ export interface OverlayProps extends HTMLMotionProps<'div'> {
 export const Overlay = ({ open, onOpenChange, children, sx, ...props }: OverlayProps) => {
   return (
     <OverlayContext.Provider value={{ open, onOpenChange }}>
-      <motion.div data-testid='background' className={styles.background} {...props}>
+      <motion.div data-testid='background' {...props}>
         {children}
       </motion.div>
     </OverlayContext.Provider>
@@ -43,3 +47,7 @@ export const Overlay = ({ open, onOpenChange, children, sx, ...props }: OverlayP
 
 Overlay.Trigger = Trigger
 Overlay.Content = Content
+Overlay.Header = Header
+Overlay.Title = Title
+Overlay.Description = Description
+Overlay.Footer = Footer
