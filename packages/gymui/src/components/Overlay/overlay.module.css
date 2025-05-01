@@ -1,4 +1,4 @@
-/* .background {
+.background {
   width: calc(100vw - 32px);
   height: 100vh;
   background-color: rgba(211, 211, 211, .8);
@@ -11,14 +11,44 @@
   padding: 16px;
 }
 
-.container {
+.content_container {
   background-color: white;
   box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: column;
   border-radius: 16px;
-  width: 100%;
+  width: max-content;
   align-items: center;
-  padding: 16px;
+  padding: 24px;
   position: relative;
-} */
+  gap: 24px;
+  min-width: 350px;
+}
+
+.header_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.header_text_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.description {
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  gap: 8px;
+}

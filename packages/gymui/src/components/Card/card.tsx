@@ -6,7 +6,7 @@ import { Content } from './card-content'
 import { Footer } from './card-footer'
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode[]
+  children: React.ReactNode | React.ReactNode[]
   sx?: React.CSSProperties
 }
 

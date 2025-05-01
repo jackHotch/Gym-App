@@ -1,10 +1,11 @@
 import styles from './Popover.module.css'
-import { CSSProperties, ForwardedRef, ReactElement, forwardRef } from 'react'
+import { ForwardedRef, forwardRef } from 'react'
 import { HTMLMotionProps, motion } from 'motion/react'
+import { Item } from './Item'
 
 export interface PopoverProps extends HTMLMotionProps<'div'> {
-  children: ReactElement | ReactElement[]
-  sx?: CSSProperties
+  children: React.ReactNode | React.ReactNode[]
+  sx?: React.CSSProperties
   ref: any
 }
 
@@ -28,7 +29,7 @@ const modalVariants = {
   },
 }
 
-export const Popover = forwardRef(({ sx, children }: PopoverProps, ref: reactRef) => {
+const Popover = forwardRef(({ sx, children }: PopoverProps, ref: reactRef) => {
   return (
     <motion.div
       ref={ref}
@@ -43,3 +44,15 @@ export const Popover = forwardRef(({ sx, children }: PopoverProps, ref: reactRef
     </motion.div>
   )
 })
+
+type PopoverComponent = typeof Popover & {
+  Item: typeof Item
+}
+
+// Merge the subcomponent using Object.assign (preserves type)
+const PopoverWithCompound: PopoverComponent = Object.assign(Popover, {
+  Item,
+})
+
+// Export the compound version
+export { PopoverWithCompound as Popover }
