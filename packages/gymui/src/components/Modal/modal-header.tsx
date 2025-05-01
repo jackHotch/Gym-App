@@ -1,6 +1,6 @@
-import styles from './overlay.module.css'
+import styles from './modal.module.css'
 import { CloseIcon } from '../CloseIcon/CloseIcon'
-import { useOverlayContext } from './overlay-context'
+import { useModalContext } from './modal-context'
 
 export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode | React.ReactNode[]
@@ -8,7 +8,7 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Header({ children, sx, ...props }: HeaderProps) {
-  const { onOpenChange } = useOverlayContext()
+  const { onOpenChange } = useModalContext()
 
   return (
     <div style={sx} className={styles.header_container} {...props}>

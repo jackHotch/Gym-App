@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Overlay } from './overlay'
+import { Modal } from './modal'
 import { ComponentProps } from 'react'
 import { useState } from 'react'
 import { Button } from '../Button/Button'
 import { Form } from '../Form/Form'
 
-type StoryProps = ComponentProps<typeof Overlay>
+type StoryProps = ComponentProps<typeof Modal>
 
 const meta: Meta<StoryProps> = {
-  component: Overlay,
+  component: Modal,
   tags: ['autodocs'],
 }
 
@@ -22,15 +22,15 @@ export const Primary: Story = {
     const [open, setOpen] = useState(false)
 
     return (
-      <Overlay open={open} onOpenChange={setOpen}>
-        <Overlay.Trigger>
-          <Button.Primary>Open Overlay</Button.Primary>
-        </Overlay.Trigger>
-        <Overlay.Content>
-          <Overlay.Header>
-            <Overlay.Title>This is the title</Overlay.Title>
-            <Overlay.Description>This is the description of the card</Overlay.Description>
-          </Overlay.Header>
+      <Modal open={open} onOpenChange={setOpen}>
+        <Modal.Trigger>
+          <Button.Primary>Open Modal</Button.Primary>
+        </Modal.Trigger>
+        <Modal.Content>
+          <Modal.Header>
+            <Modal.Title>This is the title</Modal.Title>
+            <Modal.Description>This is the description of the card</Modal.Description>
+          </Modal.Header>
           <div style={{ width: '100%' }}>
             <label style={{ display: 'block' }}>Label #1 </label>
             <Form.Text.Outline sx={{ width: 'calc(100% - 16px)' }} />
@@ -38,12 +38,12 @@ export const Primary: Story = {
             <label style={{ display: 'block', marginTop: '16px' }}>Label #2 </label>
             <Form.Text.Outline sx={{ width: 'calc(100% - 16px)' }} />
           </div>
-          <Overlay.Footer>
+          <Modal.Footer>
             <Button.Danger onClick={() => setOpen(false)}>Close</Button.Danger>
             <Button.Primary onClick={() => setOpen(false)}>Submit</Button.Primary>
-          </Overlay.Footer>
-        </Overlay.Content>
-      </Overlay>
+          </Modal.Footer>
+        </Modal.Content>
+      </Modal>
     )
   },
 }

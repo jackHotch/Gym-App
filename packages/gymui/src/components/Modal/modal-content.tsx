@@ -1,5 +1,5 @@
-import { useOverlayContext } from './overlay-context'
-import styles from './overlay.module.css'
+import styles from './modal.module.css'
+import { useModalContext } from './modal-context'
 
 export interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
@@ -7,7 +7,7 @@ export interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Content({ children, sx, ...props }: ContentProps) {
-  const { open, onOpenChange } = useOverlayContext()
+  const { open, onOpenChange } = useModalContext()
 
   if (!open) return null
 
