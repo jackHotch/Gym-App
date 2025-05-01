@@ -31,25 +31,16 @@ export default meta
 
 type Story = StoryObj<StoryProps>
 
-export const FullPage: Story = {
-  args: {
-    width: '400px',
-    height: '400px',
-    onOutsideClick: fn(),
-  },
+export const Overlay: Story = {
+  args: {},
   render: (args: any) => {
     return (
-      <div style={{ textAlign: 'center' }}>
-        <h1>This is the Text Behind the Modal</h1>
-        <AnimatePresence>
-          {args.visible && (
-            <Modal.Overlay {...args}>
-              <h2>This is a Full Page Modal</h2>
-              <p>This is Text</p>
-            </Modal.Overlay>
-          )}
-        </AnimatePresence>
-      </div>
+      <Overlay {...args}>
+        <Overlay.Trigger>
+          <button>show modal</button>
+        </Overlay.Trigger>
+        <Overlay.Content>this is the modal</Overlay.Content>
+      </Overlay>
     )
   },
 }
