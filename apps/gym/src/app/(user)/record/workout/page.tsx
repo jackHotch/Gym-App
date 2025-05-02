@@ -11,15 +11,12 @@ import { IWorkout } from '@/types'
 import { ButtonEvent } from '@/types'
 import { AnimatePresence } from 'motion/react'
 import { useToggle, useWorkoutNumber, useCreateWorkout } from '@/hooks'
-import { Button } from '@gymapp/gymui/Button'
 import ClipLoader from 'react-spinners/ClipLoader'
 
 const Workout = () => {
   const [workout, setWorkout] = useState<IWorkout[]>([])
-  const [showAddExerciseModal, __, openAddExerciseModal, closeAddExerciseModal] =
-    useToggle()
-  const [showConfirmationModal, _, openConfirmationModal, closeConfirmationModal] =
-    useToggle()
+  const [showAddExerciseModal, setShowAddExerciseModal] = useState(false)
+  const [showConfirmationModal, setShowConfirmationModal] = useToggle()
   const { data, isLoading } = useWorkoutNumber()
   const workoutNumber = !isLoading && data?.count != null ? data.count + 1 : null
   const { mutate: createWorkout } = useCreateWorkout()
@@ -30,67 +27,48 @@ const Workout = () => {
   }
 
   return (
-    <>
-      <form>
-        <div className={styles.container}>
-          <h1 className={styles.title}>
-            {isLoading ? (
-              <ClipLoader size={20} />
-            ) : data?.count === 0 ? (
-              'First Workout!'
-            ) : (
-              `Workout #${workoutNumber}`
-            )}
-          </h1>
-          <div className={styles.exercises}>
-            <AnimatePresence>
-              {workout.map((_, key) => {
-                return (
-                  <Exercise
-                    workout={workout}
-                    setWorkout={setWorkout}
-                    index={key}
-                    key={key}
-                  />
-                )
-              })}
-            </AnimatePresence>
-          </div>
-
-          <Button.Secondary
-            type='button'
-            onClick={openAddExerciseModal}
-            sx={{ margin: '16px auto 8px auto' }}
-          >
-            Add Exercise
-          </Button.Secondary>
-
-          <Button.Primary
-            type='button'
-            onClick={openConfirmationModal}
-            sx={{ margin: '8px auto 16px auto' }}
-          >
-            Finish Workout
-          </Button.Primary>
+    <form>
+      <div className={styles.container}>
+        <h1 className={styles.title}>
+          {isLoading ? (
+            <ClipLoader size={20} />
+          ) : data?.count === 0 ? (
+            'First Workout!'
+          ) : (
+            `Workout #${workoutNumber}`
+          )}
+        </h1>
+        <div className={styles.exercises}>
+          <AnimatePresence>
+            {workout.map((_, key) => {
+              return (
+                <Exercise
+                  workout={workout}
+                  setWorkout={setWorkout}
+                  index={key}
+                  key={key}
+                />
+              )
+            })}
+          </AnimatePresence>
         </div>
-      </form>
 
-      <AnimatePresence>
-        {showAddExerciseModal && (
+        <div className={styles.button_container}>
           <AddExerciseModal
-            closeModal={closeAddExerciseModal}
+            open={showAddExerciseModal}
+            setOpen={setShowAddExerciseModal}
             workout={workout}
             setWorkout={setWorkout}
           />
-        )}
-        {showConfirmationModal && (
+
           <WorkoutConfirmationModal
-            closeModal={closeConfirmationModal}
+            open={showConfirmationModal}
+            setOpen={setShowConfirmationModal}
             handleSubmit={handleSubmit}
           />
-        )}
-      </AnimatePresence>
-    </>
+        </div>
+      </div>
+    </form>
   )
 }
 

@@ -104,13 +104,15 @@ export interface ISet {
 }
 
 export interface AddExerciseModalProps {
-  closeModal: () => void
+  open: boolean
+  setOpen: (a: boolean) => void
   workout: IWorkout[]
   setWorkout: Dispatch<SetStateAction<IWorkout[]>>
 }
 
 export interface CreateNewExerciseModalProps {
-  closeModal: () => void
+  open: boolean
+  setOpen: (a: boolean) => void
 }
 
 type ThandleChange = (a: TextInputChangeEvent, b: number, c: number, d: string) => void
@@ -137,7 +139,8 @@ export interface ExerciseModalProps {
 }
 
 export interface WorkoutConfirmationModalProps {
-  closeModal: () => void
+  open: boolean
+  setOpen: (a: boolean) => void
   handleSubmit: (e: ButtonEvent) => void
 }
 

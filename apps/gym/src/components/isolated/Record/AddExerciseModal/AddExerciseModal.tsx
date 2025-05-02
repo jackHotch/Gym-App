@@ -6,20 +6,18 @@ import { IWorkout } from '@/types'
 import styles from './AddExerciseModal.module.css'
 import { Searchbar } from '@/components/reusable/Searchbar/Searchbar'
 import { CreateNewExerciseModal } from '../CreateNewExerciseModal'
-import { AnimatePresence } from 'motion/react'
-import { useToggle, useExercises } from '@/hooks'
+import { useExercises } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import { Modal } from '@gymapp/gymui/Modal'
-import { CloseIcon } from '@gymapp/gymui/CloseIcon'
 
 export const AddExerciseModal = ({
-  closeModal,
+  open,
+  setOpen,
   workout,
   setWorkout,
 }: AddExerciseModalProps) => {
   const [newExercises, setNewExercises] = useState<IWorkout[]>([])
-  const [showCreateExerciseModal, _, openCreateExerciseModal, closeCreateExerciseModal] =
-    useToggle()
+  const [showCreateExerciseModal, setShowCreateExerciseModal] = useState(false)
   const { data: exercises } = useExercises()
 
   const removeExercise = (i: number) => {
@@ -32,60 +30,57 @@ export const AddExerciseModal = ({
     let temp = [...workout]
     temp = temp.concat(newExercises)
     setWorkout(temp)
-    closeModal()
+    setNewExercises([])
+    setOpen(false)
   }
 
   return (
-    <Modal.Overlay width='500px' height='600px' onOutsideClick={closeModal}>
-      <div className={styles.header}>
-        <Button.Text onClick={openCreateExerciseModal} sx={{ fontSize: '16px' }}>
-          Create New Exercise
-        </Button.Text>
+    <Modal open={open} onOpenChange={setOpen}>
+      <Modal.Trigger>
+        <Button.Secondary type='button'>Add Exercise</Button.Secondary>
+      </Modal.Trigger>
+      <Modal.Content sx={{ width: '500px', height: '600px' }}>
+        <Modal.Header>
+          <Modal.Title>
+            <CreateNewExerciseModal
+              open={showCreateExerciseModal}
+              setOpen={setShowCreateExerciseModal}
+            />
+          </Modal.Title>
+        </Modal.Header>
+        <div className={styles.searchbar}>
+          <Searchbar
+            placeholder='Add Exercise'
+            data={exercises}
+            newExercise={newExercises}
+            setNewExercise={setNewExercises}
+          />
+        </div>
+        <div className={styles.future_exercise_list}>
+          {newExercises.map((value, key) => {
+            return (
+              <div key={key} className={styles.future_exercise}>
+                {value.name}
+                <span
+                  className={styles.exercises_clear_btn}
+                  onClick={() => removeExercise(key)}
+                >
+                  X
+                </span>
+              </div>
+            )
+          })}
+        </div>
+        <Modal.Footer>
+          <Button.Danger type='button' onClick={() => setOpen(false)}>
+            Cancel
+          </Button.Danger>
 
-        <CloseIcon onClick={closeModal} />
-      </div>
-      <div className={styles.searchbar}>
-        <Searchbar
-          placeholder='Add Exercise'
-          data={exercises}
-          newExercise={newExercises}
-          setNewExercise={setNewExercises}
-        />
-      </div>
-      <div className={styles.future_exercise_list}>
-        {newExercises.map((value, key) => {
-          return (
-            <div key={key} className={styles.future_exercise}>
-              {value.name}
-              <span
-                className={styles.exercises_clear_btn}
-                onClick={() => removeExercise(key)}
-              >
-                X
-              </span>
-            </div>
-          )
-        })}
-      </div>
-
-      <div className={styles.footer_btns}>
-        <Button.Danger onClick={closeModal} sx={{ margin: '10px 25px', width: '100px' }}>
-          Cancel
-        </Button.Danger>
-
-        <Button.Primary
-          onClick={addExercises}
-          sx={{ margin: '10px 25px', width: '100px' }}
-        >
-          Add
-        </Button.Primary>
-      </div>
-
-      <AnimatePresence>
-        {showCreateExerciseModal && (
-          <CreateNewExerciseModal closeModal={closeCreateExerciseModal} />
-        )}
-      </AnimatePresence>
-    </Modal.Overlay>
+          <Button.Primary type='button' onClick={addExercises}>
+            Add Exercises
+          </Button.Primary>
+        </Modal.Footer>
+      </Modal.Content>
+    </Modal>
   )
 }
