@@ -1,25 +1,7 @@
-.container {
-  width: 360px;
-  height: 260px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .title {
   text-align: center;
   font-size: 26px;
   font-weight: 500;
-}
-
-.close_btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.close_btn > * {
-  cursor: pointer;
 }
 
 .entry {

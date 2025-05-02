@@ -90,7 +90,8 @@ export interface EntryModalProps {
 }
 
 export interface AddWeightModalProps {
-  closeModal: () => void
+  open: boolean
+  setOpen: (a: boolean) => void
 }
 
 export interface ICurrentSplit {
