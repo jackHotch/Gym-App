@@ -13,7 +13,7 @@ const Finished = () => {
     <div className={styles.created}>
       <p>Workout #{workout?.count + 1} Recorded!</p>
       <Button.Primary
-        size='medium'
+        size='xlarge'
         sx={{ marginTop: '30px' }}
         onClick={() => router.push('/record')}
       >

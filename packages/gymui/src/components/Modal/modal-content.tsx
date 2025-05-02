@@ -28,13 +28,9 @@ export function Content({ children, sx, ...props }: ContentProps) {
   return (
     <AnimatePresence>
       {open && (
-        <div
-          style={sx}
-          className={styles.background}
-          onClick={() => onOpenChange(false)}
-          {...props}
-        >
+        <div className={styles.background} onClick={() => onOpenChange(false)} {...props}>
           <motion.div
+            style={sx}
             className={styles.content_container}
             onClick={(e) => e.stopPropagation()}
             variants={modalVariants}
