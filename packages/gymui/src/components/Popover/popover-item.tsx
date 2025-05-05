@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react'
-import styles from './Item.module.css'
+import styles from './popover.module.css'
 
 export interface ItemProps extends React.HTMLAttributes<HTMLDivElement> {
   sx?: CSSProperties
@@ -8,7 +8,7 @@ export interface ItemProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Item = ({ sx, children, ...props }: ItemProps) => {
   return (
-    <div style={sx} className={styles.container} {...props}>
+    <div style={sx} className={styles.item_container} {...props}>
       {children}
     </div>
   )
