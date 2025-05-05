@@ -8,30 +8,49 @@ export interface ContentProps extends HTMLMotionProps<'div'> {
   sx?: React.CSSProperties
 }
 
-export const Content = forwardRef<HTMLDivElement, ContentProps>(
-  ({ children, sx, ...props }, ref) => {
-    const { open, onOpenChange } = usePopoverContext()
-    const popoverRef = useRef<any>()
-    useOutsideClick(popoverRef, () => onOpenChange(false))
+const modalVariants = {
+  hidden: {
+    x: 15,
+    y: -15,
+    opacity: 0,
+    scale: 0.8,
+  },
+  visible: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    scale: 1,
+  },
+  exit: {
+    x: 15,
+    y: -15,
+    opacity: 0,
+    scale: 0.8,
+  },
+}
 
-    return (
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            ref={popoverRef}
-            style={sx}
-            className={styles.content_container}
-            // variants={modalVariants}
-            // initial='hidden'
-            // animate='visible'
-            // exit='exit'
-            // transition={{ duration: 0.2 }}
-            {...props}
-          >
-            {children}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    )
-  }
-)
+export const Content = ({ children, sx, ...props }: ContentProps) => {
+  const { open, onOpenChange } = usePopoverContext()
+  const popoverRef = useRef<any>()
+  useOutsideClick(popoverRef, () => onOpenChange(false))
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          ref={popoverRef}
+          style={sx}
+          className={styles.content_container}
+          variants={modalVariants}
+          initial='hidden'
+          animate='visible'
+          exit='exit'
+          transition={{ duration: 0.08 }}
+          {...props}
+        >
+          {children}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}

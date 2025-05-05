@@ -7,7 +7,7 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   sx?: React.CSSProperties
 }
 
-export function Header({ children, sx, ...props }: HeaderProps) {
+export const Header = ({ children, sx, ...props }: HeaderProps) => {
   const { onOpenChange } = useModalContext()
 
   return (

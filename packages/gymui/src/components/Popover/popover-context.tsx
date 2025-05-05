@@ -8,7 +8,7 @@ type PopoverContextType = {
 
 export const PopoverContext = createContext<PopoverContextType | null>(null)
 
-export function usePopoverContext() {
+export const usePopoverContext = () => {
   const ctx = useContext(PopoverContext)
   if (!ctx) throw new Error('Popover components must be used inside <Popover>')
   return ctx

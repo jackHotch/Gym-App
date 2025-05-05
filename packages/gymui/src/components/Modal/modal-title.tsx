@@ -5,7 +5,7 @@ export interface TitleProps extends React.HTMLAttributes<HTMLDivElement> {
   sx?: React.CSSProperties
 }
 
-export function Title({ children, sx, ...props }: TitleProps) {
+export const Title = ({ children, sx, ...props }: TitleProps) => {
   return (
     <div style={sx} className={styles.title} {...props}>
       {children}

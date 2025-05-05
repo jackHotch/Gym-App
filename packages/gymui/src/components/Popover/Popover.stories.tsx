@@ -32,11 +32,11 @@ export const Primary: Story = {
             <MoreVertIcon />
           </Popover.Trigger>
           <Popover.Content>
-            <Popover.Item onClick={args.onClick}>First line</Popover.Item>
-            <Popover.Item onClick={args.onClick}>Next line</Popover.Item>
-            <Popover.Item onClick={args.onClick}>One Option</Popover.Item>
-            <Popover.Item onClick={args.onClick} sx={{ color: 'crimson' }}>
-              Danger
+            <Popover.Item onClick={args.onClick}>Actions</Popover.Item>
+            <Popover.Item onClick={args.onClick}>Copy Payment ID</Popover.Item>
+            <Popover.Item onClick={args.onClick}>View Account</Popover.Item>
+            <Popover.Item onClick={args.onClick} variant='danger'>
+              Delete Account
             </Popover.Item>
           </Popover.Content>
         </Popover>

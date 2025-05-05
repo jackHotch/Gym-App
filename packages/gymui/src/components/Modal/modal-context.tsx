@@ -7,7 +7,7 @@ type ModalContextType = {
 
 export const ModalContext = createContext<ModalContextType | null>(null)
 
-export function useModalContext() {
+export const useModalContext = () => {
   const ctx = useContext(ModalContext)
   if (!ctx) throw new Error('Modal components must be used inside <Modal>')
   return ctx
