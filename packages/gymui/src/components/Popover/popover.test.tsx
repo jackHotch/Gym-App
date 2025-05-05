@@ -1,27 +1,53 @@
 import { fireEvent, render } from '@testing-library/react'
 import { Popover } from './popover'
 
-describe('Modal', () => {
-  it('Modal.Popover should render successfully', () => {
-    const { baseElement } = render(
-      <Modal.Popover>
-        <p>Popover Modal</p>
-      </Modal.Popover>
+describe('Popover', () => {
+  it('Popover Trigger should render successfully', () => {
+    const triggerClick = jest.fn()
+    const { baseElement, getByText, queryByText } = render(
+      <Popover open={false} onOpenChange={triggerClick}>
+        <Popover.Trigger>
+          <button>Popover Trigger</button>
+        </Popover.Trigger>
+        <Popover.Content>
+          <Popover.Item>Actions</Popover.Item>
+          <Popover.Item>Copy Payment ID</Popover.Item>
+          <Popover.Item>View Account</Popover.Item>
+          <Popover.Item variant='danger'>Delete Account</Popover.Item>
+        </Popover.Content>
+      </Popover>
     )
 
     expect(baseElement).toBeTruthy()
+    expect(getByText('Popover Trigger')).toBeTruthy()
+    expect(queryByText('Actions')).toBeFalsy()
+
+    fireEvent.click(getByText('Popover Trigger'))
+    expect(triggerClick).toHaveBeenCalled()
   })
 
-  it('Modal.Item should render successfully', () => {
+  it('Popover Content should render successfully', () => {
     const itemClick = jest.fn()
     const { baseElement, getByText } = render(
-      <Modal.Popover>
-        <Modal.Item onClick={itemClick}>Item</Modal.Item>
-      </Modal.Popover>
+      <Popover open={true} onOpenChange={jest.fn()}>
+        <Popover.Trigger>
+          <button>Popover Trigger</button>
+        </Popover.Trigger>
+        <Popover.Content>
+          <Popover.Item onClick={itemClick}>Actions</Popover.Item>
+          <Popover.Item onClick={itemClick}>Copy Payment ID</Popover.Item>
+          <Popover.Item onClick={itemClick}>View Account</Popover.Item>
+          <Popover.Item onClick={itemClick} variant='danger'>
+            Delete Account
+          </Popover.Item>
+        </Popover.Content>
+      </Popover>
     )
-    fireEvent.click(getByText('Item'))
 
     expect(baseElement).toBeTruthy()
+    expect(getByText('Actions')).toBeTruthy()
+
+    fireEvent.click(getByText('Actions'))
     expect(itemClick).toHaveBeenCalled()
   })
 })
