@@ -4,11 +4,12 @@ import { AnimatePresence, motion } from 'motion/react'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { Button } from '@gymapp/gymui/Button'
 import { useToggle } from '@/hooks'
-import { ExerciseModal } from '../ExerciseModal'
+import { ExercisePopover } from '../ExercisePopover'
 import { Set } from '../Set'
+import { useState } from 'react'
 
 export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
-  const [showExerciseModal, toggleExerciseModal, _, closeExerciseModal] = useToggle()
+  const [showExercisePopover, setShowExercisePopover] = useState(false)
   const [showNotes, toggleNotes] = useToggle()
 
   const changeNotes = (
@@ -78,25 +79,15 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
     >
       <div className={styles.exercise_header}>
         <span className={styles.exercise_name}>{workout[index].name}</span>
-        <MoreVertIcon
-          onClick={() => toggleExerciseModal()}
-          className={styles.three_dots}
+        <ExercisePopover
+          open={showExercisePopover}
+          setOpen={setShowExercisePopover}
+          ind={index}
+          showNote={showNotes}
+          toggleNote={toggleNotes}
+          workout={workout}
+          setWorkout={setWorkout}
         />
-      </div>
-      <div className={styles.hamburger_container}>
-        <AnimatePresence>
-          {showExerciseModal && (
-            <ExerciseModal
-              toggleExerciseModal={toggleExerciseModal}
-              ind={index}
-              showNote={showNotes}
-              toggleNote={toggleNotes}
-              workout={workout}
-              setWorkout={setWorkout}
-              closeExerciseModal={closeExerciseModal}
-            />
-          )}
-        </AnimatePresence>
       </div>
 
       <hr />

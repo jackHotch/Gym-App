@@ -129,14 +129,14 @@ export interface SetProps {
   removeSet: TremoveSet
 }
 
-export interface ExerciseModalProps {
-  toggleExerciseModal: () => void
+export interface ExercisePopoverProps {
+  open: boolean
+  setOpen: (a: boolean) => void
   ind: number
   showNote: boolean
   toggleNote: () => void
   workout: IWorkout[]
   setWorkout: Dispatch<SetStateAction<IWorkout[]>>
-  closeExerciseModal: () => void
 }
 
 export interface WorkoutConfirmationModalProps {

@@ -1,5 +1,5 @@
 export * from './AddExerciseModal'
-export * from './ExerciseModal'
+export * from './ExercisePopover'
 export * from './Set'
 export * from './WorkoutConfirmationModal'
 export * from './Exercise'
