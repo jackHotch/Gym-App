@@ -1,6 +1,7 @@
 .container {
   width: max-content;
   position: relative;
+  font-size: 14px;
 }
 
 .content_container {
@@ -18,9 +19,13 @@
 
 .item_container {
   cursor: pointer;
-  padding: 8px 16px;
+  padding: 6px 12px;
 }
 
 .item_container:hover {
   background-color: lightgray;
+}
+
+.danger {
+  color: var(--danger)
 }

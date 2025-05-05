@@ -22,7 +22,7 @@ const modalVariants = {
   },
 }
 
-export function Content({ children, sx, ...props }: ContentProps) {
+export const Content = ({ children, sx, ...props }: ContentProps) => {
   const { open, onOpenChange } = useModalContext()
 
   return (
