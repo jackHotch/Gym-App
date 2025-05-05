@@ -84,8 +84,9 @@ export interface NavLinkProps {
   children: ReactNode
 }
 
-export interface EntryModalProps {
-  closeModal: () => void
+export interface EntryPopoverProps {
+  open: boolean
+  setOpen: (a: boolean) => void
   deleteEntry: () => void
 }
 
