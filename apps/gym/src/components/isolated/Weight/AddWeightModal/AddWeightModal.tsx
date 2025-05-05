@@ -19,6 +19,7 @@ export const AddWeightModal = ({ open, setOpen }: AddWeightModalProps) => {
   const [date, setDate] = useState<any>(dayjs())
   const { mutate: addWeight } = useAddWeight()
   const screen = useWindowDimensions()
+  const isMobile = screen.width < 480
 
   const updateWeight = (e: TextInputChangeEvent) => {
     setWeight(e.target.value)
@@ -35,9 +36,13 @@ export const AddWeightModal = ({ open, setOpen }: AddWeightModalProps) => {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Modal open={open} onOpenChange={setOpen}>
+      <Modal
+        open={open}
+        onOpenChange={setOpen}
+        sx={{ width: isMobile ? '50%' : 'unset' }}
+      >
         <Modal.Trigger>
-          <Button.Primary sx={{ position: 'absolute', left: 0 }}>
+          <Button.Primary sx={{ width: isMobile ? '100%' : 'unset' }}>
             Add
             <AddIcon />
           </Button.Primary>
@@ -66,8 +71,8 @@ export const AddWeightModal = ({ open, setOpen }: AddWeightModalProps) => {
                 sx={{ margin: '10px 0 0 10px' }}
                 sxCalendar={{
                   position: 'absolute',
-                  top: screen.width < 480 ? '-125px' : 'unset',
-                  left: screen.width < 480 ? '185px' : 'unset',
+                  top: isMobile ? '-125px' : 'unset',
+                  left: isMobile ? '185px' : 'unset',
                 }}
               />
             </div>

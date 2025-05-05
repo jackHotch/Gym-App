@@ -1,18 +1,30 @@
 import { useState, useEffect } from 'react'
 
 export const useWindowDimensions = () => {
-  const [dimensions, setDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
   })
 
   useEffect(() => {
-    const handleResize = () => {
-      setDimensions({ width: window.innerWidth, height: window.innerHeight })
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setWindowDimensions({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        })
+      }
+
+      // Set initial dimensions
+      handleResize()
+
+      // Add event listener
+      window.addEventListener('resize', handleResize)
+
+      // Cleanup event listener on unmount
+      return () => window.removeEventListener('resize', handleResize)
     }
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  return dimensions
+  return windowDimensions
 }

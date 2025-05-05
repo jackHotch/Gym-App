@@ -15,11 +15,11 @@ import { Button } from '@gymapp/gymui/Button'
 export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) => {
   const [startDate, setStartDate] = useState(dayjs())
   const [endDate, setEndDate] = useState(dayjs())
-  const [isCustom, , openDatePickers, closeDatePickers] = useToggle()
+  const [showDatePickers, setShowDatePickers] = useState(false)
   const [error, , showError, closeError] = useToggle()
 
   useEffect(() => {
-    closeDatePickers()
+    setShowDatePickers(false)
     closeError()
   }, [data])
 
@@ -33,7 +33,7 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
     } else {
       closeError()
       filter(startDate, endDate)
-      closeDatePickers()
+      setShowDatePickers(false)
     }
   }
 
@@ -41,46 +41,42 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
     <div className={styles.container}>
       <RangeSelector
         filter={filter}
-        openDatePickers={openDatePickers}
-        closeDatePickers={closeDatePickers}
+        openDatePickers={() => setShowDatePickers(true)}
+        closeDatePickers={() => setShowDatePickers(false)}
         data={data}
         maxWidth='100%'
         width='100%'
       />
 
-      <AnimatePresence>
-        {isCustom && (
-          <Modal.Overlay
-            height='max-content'
-            onOutsideClick={closeDatePickers}
-            sx={{ gap: '24px' }}
-          >
-            <p className={styles.header}>Enter a Date Range</p>
-            <div className={styles.datepickers}>
-              <DatePicker
-                value={startDate}
-                onChange={handleChange}
-                start={true}
-                sxCalendar={{
-                  position: 'absolute',
-                  top: '-30px',
-                }}
-              />
-              <p className={styles.to}>To</p>
-              <DatePicker
-                value={endDate}
-                onChange={handleChange}
-                sxCalendar={{
-                  position: 'absolute',
-                  top: '-30px',
-                }}
-              />
-            </div>
-            <AnimatePresence>{error && <Error>Invalid Range</Error>}</AnimatePresence>
+      <Modal open={showDatePickers} onOpenChange={setShowDatePickers}>
+        <Modal.Content>
+          <Modal.Header>Enter a Date Range</Modal.Header>
+          <div className={styles.datepickers}>
+            <DatePicker
+              value={startDate}
+              onChange={handleChange}
+              start={true}
+              sxCalendar={{
+                position: 'absolute',
+                top: '-30px',
+              }}
+            />
+            <p className={styles.to}>To</p>
+            <DatePicker
+              value={endDate}
+              onChange={handleChange}
+              sxCalendar={{
+                position: 'absolute',
+                top: '-30px',
+              }}
+            />
+          </div>
+          <AnimatePresence>{error && <Error>Invalid Range</Error>}</AnimatePresence>
+          <Modal.Footer>
             <Button.Primary onClick={handleSubmit}> Set Range</Button.Primary>
-          </Modal.Overlay>
-        )}
-      </AnimatePresence>
+          </Modal.Footer>
+        </Modal.Content>
+      </Modal>
     </div>
   )
 }
