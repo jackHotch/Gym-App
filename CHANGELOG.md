@@ -2,6 +2,10 @@
 
 _This is the changelog for the entire project_
 
+## 5/5/2025
+
+- Refactored project to use new modal, popover, and card components
+
 ## 4/28/2025
 
 - Added card component to GymUI

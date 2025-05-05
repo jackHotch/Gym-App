@@ -14,7 +14,7 @@
   height: min-content;
   box-shadow: var(--box-shadow);
   border-radius: 24px;
-  padding: 64px;
+  padding: 32px;
 }
 
 .input_container, .button_container {

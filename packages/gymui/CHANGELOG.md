@@ -2,6 +2,11 @@
 
 _This is the changelog for GymUI_
 
+## 5/5/2025 - 12.0.1
+
+- Refactored modal component
+- Refactored popover component
+
 ## 4/29/2025 - 11.0.1
 
 - Finished the card component

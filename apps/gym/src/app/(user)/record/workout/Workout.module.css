@@ -1,18 +1,3 @@
-.container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  width: 40%;
-  min-width: 420px;
-  height: auto;
-  background-color: white;
-  border-radius: 35px;
-  margin: 24px auto;
-  box-shadow: var(--box-shadow);
-
-}
-
 .exercises {
   display: flex;
   justify-content: center;
