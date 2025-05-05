@@ -9,6 +9,6 @@ export const ModalContext = createContext<ModalContextType | null>(null)
 
 export function useModalContext() {
   const ctx = useContext(ModalContext)
-  if (!ctx) throw new Error('Dialog components must be used inside <Dialog>')
+  if (!ctx) throw new Error('Modal components must be used inside <Modal>')
   return ctx
 }

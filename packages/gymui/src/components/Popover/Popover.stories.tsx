@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Popover } from './popover'
-import { ComponentProps } from 'react'
+import { ComponentProps, useRef, useState } from 'react'
+import { Button } from '../Button/Button'
 import { fn } from '@storybook/test'
-import { AnimatePresence } from 'motion/react'
+import MoreVertIcon from '@mui/icons-material/MoreVert'
+import { useOutsideClick } from './popover-context'
 
 type StoryProps = ComponentProps<typeof Popover>
 
@@ -16,21 +18,29 @@ export default meta
 type Story = StoryObj<StoryProps>
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    onClick: fn(),
+  },
   render: (args: any) => {
+    const [open, setOpen] = useState(false)
+
     return (
-      <>
-        <AnimatePresence>
-          <Popover {...args}>
+      <div style={{ display: 'flex' }}>
+        <p>Click the dots to open the popover</p>
+        <Popover open={open} onOpenChange={setOpen} {...args}>
+          <Popover.Trigger>
+            <MoreVertIcon />
+          </Popover.Trigger>
+          <Popover.Content>
             <Popover.Item onClick={args.onClick}>First line</Popover.Item>
             <Popover.Item onClick={args.onClick}>Next line</Popover.Item>
             <Popover.Item onClick={args.onClick}>One Option</Popover.Item>
             <Popover.Item onClick={args.onClick} sx={{ color: 'crimson' }}>
               Danger
             </Popover.Item>
-          </Popover>
-        </AnimatePresence>
-      </>
+          </Popover.Content>
+        </Popover>
+      </div>
     )
   },
 }
