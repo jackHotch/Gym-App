@@ -18,7 +18,9 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Modal = ({ open, onOpenChange, children, sx, ...props }: ModalProps) => {
   return (
     <ModalContext.Provider value={{ open, onOpenChange }}>
-      <div {...props}>{children}</div>
+      <div style={sx} {...props}>
+        {children}
+      </div>
     </ModalContext.Provider>
   )
 }

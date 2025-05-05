@@ -4,8 +4,8 @@
   "private": true,
   "exports": {
     "./Button": "./src/components/Button/Button.tsx",
-    "./Modal": "./src/components/Modal/Modal.tsx",
-    "./Popover": "./src/components/Popover/Popover.tsx",
+    "./Modal": "./src/components/Modal/modal.tsx",
+    "./Popover": "./src/components/Popover/popover.tsx",
     "./CloseIcon": "./src/components/CloseIcon/CloseIcon.tsx",
     "./Form": "./src/components/Form/Form.tsx",
     "./Skeleton": "./src/components/Skeleton/Skeleton.tsx",
