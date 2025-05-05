@@ -12,6 +12,7 @@ import { ButtonEvent } from '@/types'
 import { AnimatePresence } from 'motion/react'
 import { useToggle, useWorkoutNumber, useCreateWorkout } from '@/hooks'
 import ClipLoader from 'react-spinners/ClipLoader'
+import { Card } from '@gymapp/gymui/Card'
 
 const Workout = () => {
   const [workout, setWorkout] = useState<IWorkout[]>([])
@@ -27,47 +28,49 @@ const Workout = () => {
   }
 
   return (
-    <form>
-      <div className={styles.container}>
-        <h1 className={styles.title}>
-          {isLoading ? (
-            <ClipLoader size={20} />
-          ) : data?.count === 0 ? (
-            'First Workout!'
-          ) : (
-            `Workout #${workoutNumber}`
-          )}
-        </h1>
-        <div className={styles.exercises}>
-          <AnimatePresence>
-            {workout.map((_, key) => {
-              return (
-                <Exercise
-                  workout={workout}
-                  setWorkout={setWorkout}
-                  index={key}
-                  key={key}
-                />
-              )
-            })}
-          </AnimatePresence>
-        </div>
+    <form style={{ display: 'flex', justifyContent: 'center' }}>
+      <Card sx={{ width: '550px' }}>
+        <Card.Content>
+          <h1 className={styles.title}>
+            {isLoading ? (
+              <ClipLoader size={20} />
+            ) : data?.count === 0 ? (
+              'First Workout!'
+            ) : (
+              `Workout #${workoutNumber}`
+            )}
+          </h1>
+          <div className={styles.exercises}>
+            <AnimatePresence>
+              {workout.map((_, key) => {
+                return (
+                  <Exercise
+                    workout={workout}
+                    setWorkout={setWorkout}
+                    index={key}
+                    key={key}
+                  />
+                )
+              })}
+            </AnimatePresence>
+          </div>
 
-        <div className={styles.button_container}>
-          <AddExerciseModal
-            open={showAddExerciseModal}
-            setOpen={setShowAddExerciseModal}
-            workout={workout}
-            setWorkout={setWorkout}
-          />
+          <div className={styles.button_container}>
+            <AddExerciseModal
+              open={showAddExerciseModal}
+              setOpen={setShowAddExerciseModal}
+              workout={workout}
+              setWorkout={setWorkout}
+            />
 
-          <WorkoutConfirmationModal
-            open={showConfirmationModal}
-            setOpen={setShowConfirmationModal}
-            handleSubmit={handleSubmit}
-          />
-        </div>
-      </div>
+            <WorkoutConfirmationModal
+              open={showConfirmationModal}
+              setOpen={setShowConfirmationModal}
+              handleSubmit={handleSubmit}
+            />
+          </div>
+        </Card.Content>
+      </Card>
     </form>
   )
 }

@@ -31,6 +31,9 @@
 
 .card_content {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .footer {
@@ -38,5 +41,11 @@
   display: flex;
   justify-content: right;
   gap: 8px;
+}
+
+@media (width < 480px) {
+  .card_container {
+    width: 100%;
+  }
 }
 
