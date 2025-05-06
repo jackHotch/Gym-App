@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react'
-import styles from './popover.module.css'
+import styles from './Popover.module.css'
 
 export interface ItemProps extends React.HTMLAttributes<HTMLDivElement> {
   sx?: CSSProperties
