@@ -16,30 +16,22 @@ export const DropdownMobile = ({ closeMenu }: DropdownMobileProps) => {
   return (
     <motion.div
       className={styles.container}
-      initial={{ scale: 0, originX: 1, originY: 0 }}
+      initial={{ x: '100vw' }}
       animate={{
-        x: 8,
-        y: -16,
-        scale: 1,
+        x: 0,
         transition: {
           type: 'spring',
-          damping: 14,
-          duration: 0.75,
+          damping: 16,
+          stiffness: 135,
         },
       }}
       exit={{
-        scale: 0,
-        x: -8,
-        y: 16,
-        opacity: 0,
+        x: '100vw',
         transition: {
           default: {
             type: 'spring',
-            damping: 14,
-            duration: 0.75,
-          },
-          opacity: {
-            duration: 0.5,
+            damping: 16,
+            stiffness: 135,
           },
         },
       }}
