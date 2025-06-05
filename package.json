@@ -35,6 +35,10 @@
   ],
   "packageManager": "npm@10.2.3",
   "dependencies": {
-    "motion": "^11.17.0"
+    "@tailwindcss/cli": "^4.1.8",
+    "@tailwindcss/postcss": "^4.1.8",
+    "motion": "^11.17.0",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8"
   }
 }
