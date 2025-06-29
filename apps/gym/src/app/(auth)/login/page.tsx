@@ -10,7 +10,6 @@ import { useFeatureFlag } from '@/hooks/api'
 import { motion } from 'motion/react'
 import { login, signInWithGoogle } from '@/actions/auth'
 import { loginSchema } from '@/constants'
-import { Credentials } from '@/components/isolated/Login/Credentials/Credentials'
 
 const Login = () => {
   const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
@@ -103,7 +102,6 @@ const Login = () => {
             </button>
           </div>
         </motion.div>
-        <Credentials />
       </form>
     </>
   )

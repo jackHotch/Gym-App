@@ -16,8 +16,10 @@ export const NavLink = ({
   }
 
   return (
-    <div onClick={handleClick} style={containerSx} className=''>
-      <div style={textSx}>{children}</div>
+    <div onClick={handleClick} style={containerSx}>
+      <div style={textSx} className='flex items-center gap-4'>
+        {children}
+      </div>
     </div>
   )
 }
