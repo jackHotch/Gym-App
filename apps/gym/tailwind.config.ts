@@ -18,10 +18,10 @@ module.exports = {
     extend: {
       colors: {
         primary: 'var(--color-primary)',
-        'primary-light': 'var(--color-primary-light)',
-        'primary-dark': 'var(--color-primary-dark)',
-        'primary-darkest': 'var(--color-primary-darkest)',
-        'primary-muted': 'var(--color-primary-muted)',
+        'primary-400': 'var(--color-primary-400)',
+        'primary-600': 'var(--color-primary-600)',
+        'primary-700': 'var(--color-primary-700)',
+        'primary-300': 'var(--color-primary-300)',
         danger: 'var(--color-danger)',
         'danger-light': 'var(--color-danger-light)',
         'danger-dark': 'var(--color-danger-dark)',

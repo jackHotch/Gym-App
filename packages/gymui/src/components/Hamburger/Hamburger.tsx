@@ -40,13 +40,13 @@ export const Hamburger = ({ active, sx, children, ...props }: HamburgerProps) =>
               top: ['38%', '50%', '50%'],
               rotate: ['0deg', '0deg', '45deg'],
               scale: [1, 1.25, 1.5],
-              backgroundColor: ['var(--primary)', 'white', 'white'],
+              backgroundColor: ['var(--color-primary)', 'white', 'white'],
             },
             closed: {
               top: ['50%', '50%', '38%'],
               rotate: ['45deg', '0deg', '0deg'],
               scale: [1.5, 1.25, 1],
-              backgroundColor: ['white', 'var(--primary)', 'var(--primary)'],
+              backgroundColor: ['white', 'var(--color-primary)', 'var(--color-primary)'],
             },
           }}
         ></motion.span>
@@ -62,12 +62,12 @@ export const Hamburger = ({ active, sx, children, ...props }: HamburgerProps) =>
             open: {
               rotate: ['0deg', '0deg', '-45deg'],
               scale: [1, 1.25, 1.5],
-              backgroundColor: ['var(--primary)', 'white', 'white'],
+              backgroundColor: ['var(--color-primary)', 'white', 'white'],
             },
             closed: {
               rotate: ['-45deg', '0deg', '0deg'],
               scale: [1.5, 1.25, 1],
-              backgroundColor: ['white', 'var(--primary)', 'var(--primary)'],
+              backgroundColor: ['white', 'var(--color-primary)', 'var(--color-primary)'],
             },
           }}
         ></motion.span>
@@ -84,13 +84,13 @@ export const Hamburger = ({ active, sx, children, ...props }: HamburgerProps) =>
               bottom: ['38%', '50%', '50%'],
               rotate: ['0deg', '0deg', '45deg'],
               scale: [1, 1.25, 1.5],
-              backgroundColor: ['var(--primary)', 'white', 'white'],
+              backgroundColor: ['var(--color-primary)', 'white', 'white'],
             },
             closed: {
               bottom: ['50%', '50%', '38%'],
               rotate: ['45deg', '0deg', '0deg'],
               scale: [1.5, 1.25, 1],
-              backgroundColor: ['white', 'var(--primary)', 'var(--primary)'],
+              backgroundColor: ['white', 'var(--color-primary)', 'var(--color-primary)'],
             },
           }}
         ></motion.span>

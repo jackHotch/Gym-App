@@ -7,7 +7,7 @@
   display: inline-block;
   font-size: 18px;
   font-weight: 550;
-  color: var(--primary);
+  color: var(--color-primary);
   padding: 5px;
   border-radius: 4px;
 }
@@ -21,7 +21,7 @@
 
 .single_exercise hr {
   margin: 0px;
-  border-top: 2px solid var(--primary);
+  border-top: 2px solid var(--color-primary);
   margin-bottom: 10px;
   opacity: 35%;
 }
@@ -80,7 +80,7 @@
 }
 
 .notes textarea:is(:focus) {
-  border-color: var(--primary);
+  border-color: var(--color-primary);
 }
 
 .notes textarea::-webkit-scrollbar {

@@ -3,7 +3,7 @@
   flex-direction: column;
   position: absolute;
   inset: 0;
-  background-color: var(--primary);
+  background-color: var(--color-primary);
   width: calc(100vw - 16px);
   height: calc(100vh - 16px);
   overflow: hidden;

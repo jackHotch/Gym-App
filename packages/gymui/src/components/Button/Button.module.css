@@ -8,27 +8,27 @@
 }
 
 .primary {
-  background-color: var(--primary);
+  background-color: var(--color-primary);
 }
 
 .secondary {
   background-color: white;
   color: black;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--color-primary);
 }
 
 .danger {
-  background-color: var(--danger);
+  background-color: var(--color-danger);
 }
 
 .disabled {
-  background-color: var(--primary-muted);
+  background-color: var(var(--color-primary-300));
   cursor: not-allowed;
 }
 
 .text {
   background-color: white;
-  color: var(--primary);
+  color: var(--color-primary);
 }
 
 .text:hover {
@@ -36,7 +36,7 @@
 }
 
 .underline {
-  background-color: var(--primary);
+  background-color: var(--color-primary);
   height: 1px;
 }
 

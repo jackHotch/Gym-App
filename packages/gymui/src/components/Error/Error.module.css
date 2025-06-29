@@ -1,5 +1,5 @@
 .container {
-  color: var(--danger);
+  color: var(--color-danger);
   font-size: 20px;
   height: min-content;
   margin: auto 5px;

@@ -12,7 +12,7 @@
   gap: 32px;
   width: 450px;
   height: min-content;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--shadow-primary);
   border-radius: 24px;
   padding: 64px;
 }
@@ -42,7 +42,7 @@
 }
 
 .error {
-  color: var(--danger)
+  color: var(--color-danger)
 }
 
 @media (width < 600px) {

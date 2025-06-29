@@ -13,7 +13,7 @@ export const Secondary = ({
     style={sx}
     className={`${styles.secondary} ${styles[size]}`}
     whileHover={{
-      backgroundColor: 'var(--primary)',
+      backgroundColor: 'var(--color-primary)',
       color: '#ffffff',
     }}
     transition={{ duration: DURATION }}
