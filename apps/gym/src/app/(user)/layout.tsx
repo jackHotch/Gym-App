@@ -5,7 +5,7 @@ import { BodyWrapper } from '@/components/reusable/LayoutWrappers/BodyWrapper/Bo
 
 export default function UserLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ display: 'flex' }}>
+    <div className='flex'>
       <Sidebar />
       <BodyWrapper>
         <Header />
