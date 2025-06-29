@@ -1,4 +1,3 @@
-import styles from './NavLink.module.css'
 import { NavLinkProps } from '@/types'
 import { useRouter } from 'next/navigation'
 
@@ -17,8 +16,8 @@ export const NavLink = ({
   }
 
   return (
-    <div onClick={handleClick} className={styles.container} style={containerSx}>
-      <div style={textSx} className={styles.link_text}>
+    <div onClick={handleClick} style={containerSx}>
+      <div style={textSx} className='flex items-center gap-4'>
         {children}
       </div>
     </div>

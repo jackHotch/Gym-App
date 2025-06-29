@@ -1,4 +1,3 @@
-import styles from './DropdownMobile.module.css'
 import { DropdownMobileProps } from '@/types'
 import { MOBILE_NAV_OPTIONS } from '@/constants'
 import { NavLink } from '@/components/reusable/NavLink/NavLink'
@@ -15,7 +14,10 @@ export const DropdownMobile = ({ closeMenu }: DropdownMobileProps) => {
 
   return (
     <motion.div
-      className={styles.container}
+      className='
+        absolute inset-0 z-1000000 flex flex-col gap-6
+        overflow-hidden bg-primary p-2
+      '
       initial={{ x: '100vw' }}
       animate={{
         x: 0,
@@ -39,24 +41,30 @@ export const DropdownMobile = ({ closeMenu }: DropdownMobileProps) => {
       <MobileLogo />
 
       {MOBILE_NAV_OPTIONS.map((option, id) => {
-        if (option.name === 'Home') return
+        if (option.name === 'Home') return null
 
         return (
           <NavLink
-            closeMenu={closeMenu}
-            path={option.path}
             key={id}
+            path={option.path}
+            closeMenu={closeMenu}
             containerSx={{ width: '100%' }}
           >
             {option.icon}
-            <h1 className={styles.option}>{option.name}</h1>
+            <h1 className='text-white text-5xl'>{option.name}</h1>
           </NavLink>
         )
       })}
 
-      <div className={styles.logout} onClick={handleLogout}>
+      <div
+        className='
+          absolute bottom-4 ml-2 flex cursor-pointer items-center
+          gap-4
+        '
+        onClick={handleLogout}
+      >
         <LogoutIcon sx={{ fontSize: 60, color: 'white' }} />
-        <span className={styles.option}>Logout</span>
+        <span className='text-white text-[3rem]'>Logout</span>
       </div>
     </motion.div>
   )
