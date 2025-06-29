@@ -42,8 +42,10 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "css-modules-to-tailwind": "^0.3.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "jscodeshift": "^17.3.0",
     "typescript": "^5"
   }
 }

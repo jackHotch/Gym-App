@@ -17,7 +17,7 @@
   --color-light-gray: #d3d3d3;
   --color-dark-gray: #959595;
   --color-text-gray: #71717a;
-  
+
   --shadow-primary: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
@@ -54,11 +54,13 @@ a {
     src: url("/fonts/kenyan-coffee.regular.ttf");
 }
 
-* {
-    font-family: 'Inter';
-    padding: 0;
-    margin: 0;
-    line-height: 24px;
+@layer base {
+    * {
+        font-family: 'Inter';
+        padding: 0;
+        margin: 0;
+        line-height: 24px;
+    }
 }
 
 body {
