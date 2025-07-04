@@ -13,7 +13,7 @@
 
 .content_container {
   background-color: white;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--shadow-primary);
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -42,7 +42,7 @@
 }
 
 .description {
-  color: var(--text-gray);
+  color: var(--color-text-gray);
   font-size: 14px;
 }
 

@@ -1,7 +1,6 @@
 'use client'
 
 import { useCurrentWeight } from '@/hooks/api/useCurrentWeight'
-import styles from './HeaderDesktop.module.css'
 import { HeaderDesktopProps } from '@/types'
 import { useCurrentSplit } from '@/hooks/api/useCurrentSplit'
 import Link from 'next/link'
@@ -21,7 +20,13 @@ export const HeaderDesktop = ({}: HeaderDesktopProps) => {
   } = useCurrentSplit()
 
   return (
-    <div className={styles.container}>
+    <div
+      className='
+        hidden md:flex md:justify-end md:items-center
+        md:gap-10 md:mx-auto md:py-3 md:px-6
+        text-sm
+      '
+    >
       <div>
         {isWeightLoading ? (
           <ClipLoader size={10} />
@@ -34,7 +39,7 @@ export const HeaderDesktop = ({}: HeaderDesktopProps) => {
         ) : (
           <span>{currentWeight.weight} lbs</span>
         )}
-        <span className={styles.label}> | Weight </span>
+        <span className='ml-1 text-xs text-dark-gray'>| Weight</span>
       </div>
 
       <div>
@@ -47,13 +52,13 @@ export const HeaderDesktop = ({}: HeaderDesktopProps) => {
         ) : (
           <span>{currentSplit.name}</span>
         )}
-        <span className={styles.label}> | Current Split </span>
+        <span className='ml-1 text-xs text-dark-gray'>| Current Split</span>
       </div>
 
       {currentSplit && (
         <div>
           Chest and Triceps
-          <span className={styles.label}> | Next Workout </span>
+          <span className='ml-1 text-xs text-dark-gray'>| Next Workout</span>
         </div>
       )}
     </div>

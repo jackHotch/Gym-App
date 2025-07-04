@@ -16,8 +16,8 @@ export interface ButtonProps extends HTMLMotionProps<'button'> {
 }
 
 export const SCALEHOVER = 1.02
-export const PRIMARY_COLOR_HOVER = 'var(--primary-dark)'
-export const DANGER_COLOR_HOVER = 'var(--danger-dark)'
+export const PRIMARY_COLOR_HOVER = 'var(--color-primary-600)'
+export const DANGER_COLOR_HOVER = 'var(--color-danger-600)'
 export const SCALETAP = 0.95
 export const DURATION = 0.15
 

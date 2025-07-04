@@ -1,6 +1,5 @@
 'use client'
 
-import styles from './SignUp.module.css'
 import { Form } from '@gymapp/gymui/Form'
 import { Button } from '@gymapp/gymui/Button'
 import { useState } from 'react'
@@ -55,19 +54,20 @@ const SignUp = () => {
     }
   }
 
-  const handleGoogleSignUp = async (e) => {
+  const handleGoogleSignUp = async (e: React.FormEvent) => {
     e.preventDefault()
-    // if (authEnabled) await signInWithGoogle()
-    // else alert('Not Implemented Yet!')
     alert('Not Implemented Yet!')
   }
 
   return (
-    <form className={styles.container}>
-      <motion.div layout className={styles.card}>
-        <h1>Create Account</h1>
+    <form className='absolute inset-0 flex flex-col p-6 items-center justify-center gap-8'>
+      <motion.div
+        layout
+        className='flex w-full max-w-xl flex-col gap-8 rounded-xl md:p-8 bg-white md:shadow-[var(--shadow-primary)]'
+      >
+        <h1 className='text-4xl'>Create Account</h1>
 
-        <div className={styles.input_container}>
+        <div className='flex flex-col gap-2'>
           <Form.Text.Outline
             placeholder='First Name'
             name='firstName'
@@ -94,10 +94,12 @@ const SignUp = () => {
             value={signUpData.password}
             onChange={handleChange}
           />
-          <Error isVisible={signUpError ? true : false}>{signUpError}</Error>
+          <Error isVisible={!!signUpError} className='text-red-600'>
+            {signUpError}
+          </Error>
         </div>
 
-        <div className={styles.button_container}>
+        <div className='flex flex-col gap-2'>
           {isLoading ? (
             <Button.Loading sx={{ padding: '12px' }} />
           ) : (
@@ -110,9 +112,9 @@ const SignUp = () => {
             </Button.Primary>
           )}
           <button
-            className={styles.google_button}
             type='submit'
             onClick={handleGoogleSignUp}
+            className='flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-black bg-white px-4 py-3 text-center text-base'
           >
             <Image src='/images/google.png' alt='Google Icon' width={20} height={20} />
             Sign Up With Google
