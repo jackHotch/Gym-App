@@ -27,9 +27,9 @@ const Workout = () => {
 
   return (
     <form className='flex justify-center'>
-      <Card sx={{ width: '550px' }}>
+      <Card sx={{ width: '450px' }}>
         <Card.Content>
-          <h1 className='border-b border-black text-center'>
+          <h1 className='border-b border-black text-center text-3xl'>
             {isLoading ? (
               <ClipLoader size={20} />
             ) : data?.count === 0 ? (
@@ -39,7 +39,7 @@ const Workout = () => {
             )}
           </h1>
 
-          <div className='flex flex-col'>
+          <div className='flex flex-col gap-8'>
             <AnimatePresence>
               {workout.map((_, key) => (
                 <Exercise

@@ -1,4 +1,3 @@
-import styles from './Exercise.module.css'
 import { ExerciseProps, TextAreaChangeEvent, TextInputChangeEvent } from '@/types'
 import { AnimatePresence, motion } from 'motion/react'
 import { Button } from '@gymapp/gymui/Button'
@@ -18,7 +17,7 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
   ) => {
     if (e) {
       e.target.style.height = defaultHeight
-      e.target.style.height = `${e.target.scrollHeight - 16}px`
+      e.target.style.height = `${e.target.scrollHeight - 0}px`
     }
 
     const temp = [...workout]
@@ -44,40 +43,31 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
 
   const removeSet = (exerciseId: number, setId: number) => {
     let temp = [...workout]
-    const newSetList = temp[exerciseId].sets.filter((value, id) => {
-      if (id !== setId) return value
-    })
+    const newSetList = temp[exerciseId].sets.filter((_, id) => id !== setId)
     temp[exerciseId].sets = newSetList
     setWorkout(temp)
   }
 
   return (
     <motion.div
-      className={styles.single_exercise}
       key={index}
-      initial={{
-        y: '-100%',
-        opacity: 0,
-      }}
+      className='my-4'
+      initial={{ y: '-100%', opacity: 0 }}
       animate={{
         y: 0,
         opacity: 1,
-        transition: {
-          type: 'spring',
-          stiffness: 60,
-          damping: 12,
-        },
+        transition: { type: 'spring', stiffness: 60, damping: 12 },
       }}
       exit={{
         x: '100%',
         opacity: 0,
-        transition: {
-          duration: 0.6,
-        },
+        transition: { duration: 0.6 },
       }}
     >
-      <div className={styles.exercise_header}>
-        <span className={styles.exercise_name}>{workout[index].name}</span>
+      <div className='flex items-center justify-between p-0'>
+        <span className='inline-block text-lg font-semibold text-primary'>
+          {workout[index].name}
+        </span>
         <ExercisePopover
           open={showExercisePopover}
           setOpen={setShowExercisePopover}
@@ -89,74 +79,68 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
         />
       </div>
 
-      <hr />
+      <hr className='mb-2 border-t-2 border-primary opacity-35' />
 
-      <div className={styles.set_section}>
-        <div className={styles.set_labels}>
-          <label id={styles.set_label}></label>
-          <label>lbs</label>
-          <label>Reps</label>
-          <label>RPE</label>
+      {/* Set Section */}
+      <div className='flex flex-col gap-2 items-center'>
+        <div className='flex gap-3'>
+          <label className='w-[50px]'></label>
+          <label className='w-[60px]'>lbs</label>
+          <label className='w-[60px]'>Reps</label>
+          <label className='w-[60px]'>RPE</label>
+          <label className='w-[15px]'></label>
         </div>
 
-        <div className={styles.set_list}>
+        <div className='flex flex-col gap-1'>
           <AnimatePresence>
-            {workout[index].sets.map((value2, key2) => {
-              return (
-                <Set
-                  key={key2}
-                  value={value2}
-                  exerciseNumber={index}
-                  setNumber={key2}
-                  handleChange={handleChange}
-                  removeSet={removeSet}
-                />
-              )
-            })}
+            {workout[index].sets.map((value2, key2) => (
+              <Set
+                key={key2}
+                value={value2}
+                exerciseNumber={index}
+                setNumber={key2}
+                handleChange={handleChange}
+                removeSet={removeSet}
+              />
+            ))}
           </AnimatePresence>
         </div>
       </div>
 
+      {/* Notes Section */}
       <AnimatePresence>
         {showNotes && (
           <motion.div
-            className={styles.notes}
-            initial={{
-              y: '-100%',
-              opacity: 0,
-            }}
+            className='flex flex-col my-2.5'
+            initial={{ y: '-100%', opacity: 0 }}
             animate={{
               y: 0,
               opacity: 1,
-              transition: {
-                type: 'spring',
-                stiffness: 80,
-              },
+              transition: { type: 'spring', stiffness: 80 },
             }}
             exit={{
               y: '-100%',
               opacity: 0,
-              transition: {
-                duration: 0.15,
-              },
+              transition: { duration: 0.15 },
             }}
           >
             <textarea
               placeholder='Notes...'
-              onChange={(e: TextAreaChangeEvent) => changeNotes(e, '17px', index)}
-            ></textarea>
+              onChange={(e: TextAreaChangeEvent) => changeNotes(e, '20px', index)}
+              className='border-2 border-light-gray rounded-lg outline-none focus:border-primary resize-none p-1 overflow-y-hidden'
+            />
           </motion.div>
         )}
       </AnimatePresence>
 
+      {/* Add Set Button */}
       <Button.Secondary
         type='button'
         sx={{
           display: 'block',
-          margin: '10px auto',
+          marginTop: '10px',
           width: '100%',
           padding: '0',
-          fontSize: '16px',
         }}
         onClick={() => addSet(index)}
       >
