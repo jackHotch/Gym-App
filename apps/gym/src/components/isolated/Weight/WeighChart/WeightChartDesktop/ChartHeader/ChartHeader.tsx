@@ -27,7 +27,7 @@ export const ChartHeader = ({
             ) : isEmpty ? (
               '-'
             ) : (
-              <TailSpin color='var(--primary)' width='50' height='20' />
+              <TailSpin color='var(--color-primary)' width='50' height='20' />
             )}
           </span>
           <span className={styles.label}>Start</span>
@@ -40,7 +40,7 @@ export const ChartHeader = ({
             ) : isEmpty ? (
               '-'
             ) : (
-              <TailSpin color='var(--primary)' width='50' height='20' />
+              <TailSpin color='var(--color-primary)' width='50' height='20' />
             )}
           </span>
 
@@ -63,7 +63,7 @@ export const ChartHeader = ({
             ) : isEmpty ? (
               '-'
             ) : (
-              <TailSpin color='var(--primary)' width='50' height='20' />
+              <TailSpin color='var(--color-primary)' width='50' height='20' />
             )}
           </span>
 

@@ -1,14 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import styles from './Workout.module.css'
 import {
   AddExerciseModal,
   WorkoutConfirmationModal,
   Exercise,
 } from '@/components/isolated/Record'
-import { IWorkout } from '@/types'
-import { ButtonEvent } from '@/types'
+import { IWorkout, ButtonEvent } from '@/types'
 import { AnimatePresence } from 'motion/react'
 import { useToggle, useWorkoutNumber, useCreateWorkout } from '@/hooks'
 import ClipLoader from 'react-spinners/ClipLoader'
@@ -28,10 +26,10 @@ const Workout = () => {
   }
 
   return (
-    <form style={{ display: 'flex', justifyContent: 'center' }}>
-      <Card sx={{ width: '550px' }}>
+    <form className='flex justify-center'>
+      <Card sx={{ width: '450px' }}>
         <Card.Content>
-          <h1 className={styles.title}>
+          <h1 className='border-b border-black text-center text-3xl'>
             {isLoading ? (
               <ClipLoader size={20} />
             ) : data?.count === 0 ? (
@@ -40,22 +38,21 @@ const Workout = () => {
               `Workout #${workoutNumber}`
             )}
           </h1>
-          <div className={styles.exercises}>
+
+          <div className='flex flex-col gap-8'>
             <AnimatePresence>
-              {workout.map((_, key) => {
-                return (
-                  <Exercise
-                    workout={workout}
-                    setWorkout={setWorkout}
-                    index={key}
-                    key={key}
-                  />
-                )
-              })}
+              {workout.map((_, key) => (
+                <Exercise
+                  workout={workout}
+                  setWorkout={setWorkout}
+                  index={key}
+                  key={key}
+                />
+              ))}
             </AnimatePresence>
           </div>
 
-          <div className={styles.button_container}>
+          <div className='flex items-center justify-around'>
             <AddExerciseModal
               open={showAddExerciseModal}
               setOpen={setShowAddExerciseModal}

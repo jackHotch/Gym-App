@@ -9,7 +9,7 @@
   height: max-content;
   background-color: white;
   border-radius: 6px;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--shadow-primary);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -29,5 +29,5 @@
 }
 
 .danger {
-  color: var(--danger)
+  color: var(--color-danger)
 }
