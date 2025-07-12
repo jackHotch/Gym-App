@@ -35,7 +35,6 @@
   ],
   "packageManager": "npm@10.2.3",
   "dependencies": {
-    "motion": "^11.17.0",
-    "postcss": "^8.5.4"
+    "motion": "^11.17.0"
   }
 }

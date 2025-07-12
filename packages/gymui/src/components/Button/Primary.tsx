@@ -11,10 +11,10 @@ export const Primary = ({
   <motion.button
     {...props}
     style={sx}
-    className='text-red-500 bg-amber-200'
-    whileHover={{
-      backgroundColor: PRIMARY_COLOR_HOVER,
-    }}
+    className='bg-primary text-white cursor-pointer px-7 py-3 rounded-lg'
+    // whileHover={{
+    //   backgroundColor: PRIMARY_COLOR_HOVER,
+    // }}
     transition={{ duration: DURATION }}
     whileTap={{ scale: SCALETAP }}
   >

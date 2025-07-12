@@ -1,12 +1,16 @@
 import { theme } from '@gymapp/styles/theme'
+const path = require('path')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './app/**/*.{js,ts,jsx,tsx}',
+    path.join(__dirname, '../../**/*.{js,ts,jsx,tsx}'), // all packages + apps
+    path.join(__dirname, './**/*.{js,ts,jsx,tsx}'), // local files just in case
   ],
-  theme,
+  theme: {
+    extend: {
+      ...theme.extend,
+    },
+  },
   plugins: [],
 }

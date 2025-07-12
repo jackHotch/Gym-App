@@ -9,7 +9,8 @@
   "exports": {
     "./globals.css": "./src/globals.css",
     "./tailwind": "./tailwind.config.ts",
-    "./postcss": "./postcss.config.mjs"
+    "./postcss": "./postcss.config.mjs",
+    "./theme": "./src/theme.ts"
   },
   "keywords": [],
   "author": "",
