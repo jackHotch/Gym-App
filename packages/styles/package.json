@@ -1,0 +1,24 @@
+{
+  "name": "@gymapp/styles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss src/globals.css -o dist/styles.css",
+    "watch:css": "postcss src/globals.css -o dist/styles.css --watch"
+  },
+  "exports": {
+    "./globals.css": "./src/globals.css",
+    "./tailwind": "./tailwind.config.ts",
+    "./postcss": "./postcss.config.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/postcss": "^4.1.11",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}
