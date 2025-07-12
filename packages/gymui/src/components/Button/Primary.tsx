@@ -1,5 +1,5 @@
 import { ButtonProps, PRIMARY_COLOR_HOVER, SCALETAP, DURATION } from './Button'
-import styles from './Button.module.css'
+// import styles from './Button.module.css'
 import { motion } from 'motion/react'
 
 export const Primary = ({
@@ -11,7 +11,7 @@ export const Primary = ({
   <motion.button
     {...props}
     style={sx}
-    className={`${styles.primary} ${styles[size]}`}
+    className='text-red-500 bg-amber-200'
     whileHover={{
       backgroundColor: PRIMARY_COLOR_HOVER,
     }}
