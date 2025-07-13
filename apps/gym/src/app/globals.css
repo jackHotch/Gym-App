@@ -29,6 +29,8 @@
   }
 } */
 
+@import '@gymapp/styles/globals.css';
+
 
 a {
     color: black;

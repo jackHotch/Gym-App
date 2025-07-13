@@ -1,5 +1,4 @@
 import { ButtonProps, PRIMARY_COLOR_HOVER, SCALETAP, DURATION } from './Button'
-// import styles from './Button.module.css'
 import { motion } from 'motion/react'
 
 export const Primary = ({
