@@ -1,5 +1,4 @@
 import { ButtonProps, PRIMARY_COLOR_HOVER, SCALETAP, DURATION } from './Button'
-import styles from './Button.module.css'
 import { motion } from 'motion/react'
 
 export const Primary = ({
@@ -11,10 +10,10 @@ export const Primary = ({
   <motion.button
     {...props}
     style={sx}
-    className={`${styles.primary} ${styles[size]}`}
-    whileHover={{
-      backgroundColor: PRIMARY_COLOR_HOVER,
-    }}
+    className='bg-primary text-white cursor-pointer px-7 py-3 rounded-lg'
+    // whileHover={{
+    //   backgroundColor: PRIMARY_COLOR_HOVER,
+    // }}
     transition={{ duration: DURATION }}
     whileTap={{ scale: SCALETAP }}
   >

@@ -27,6 +27,7 @@
     "@emotion/styled": "^11.13.0",
     "@gymapp/eslint-config": "*",
     "@gymapp/jest-config": "*",
+    "@gymapp/styles": "*",
     "@gymapp/typescript-config": "*",
     "@mui/icons-material": "^6.0.2",
     "@mui/material": "^6.0.2",
@@ -51,7 +52,11 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/postcss": "^4.1.11",
+    "postcss": "^8.5.6",
     "react-loader-spinner": "^6.1.6",
-    "react-spinners": "^0.14.1"
+    "react-spinners": "^0.14.1",
+    "tailwindcss": "^4.1.11"
   }
 }

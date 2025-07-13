@@ -1,4 +1,5 @@
 import './globals.css'
+// import '@gymapp/styles/globals.css'
 import ReactQueryProvider from '@/providers/ReactQueryProvider'
 import { Navbar } from '@/components/reusable/Navbar/Navbar'
 
