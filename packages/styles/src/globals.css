@@ -28,3 +28,29 @@
     align-items: center;
   }
 }
+
+@font-face {
+    font-family: "Inter";
+    src: url("../../../assets/Inter-VariableFont_opsz\,wght.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Noto-Sans";
+    src: url("../../../assets/NotoSans-VariableFont_wdth\,wght.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Kenyan-Coffee";
+    src: url("../../../assets/kenyan-coffee.regular.ttf");
+}
+
+@layer base {
+    * {
+        font-family: 'Inter';
+        padding: 0;
+        margin: 0;
+        line-height: 24px;
+    }
+}

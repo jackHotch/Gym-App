@@ -47,7 +47,7 @@ a {
     src: url("../../public/fonts/Poppins-Regular.ttf");
 } */
 
-@font-face {
+/* @font-face {
     font-family: "Inter";
     src: url("/fonts/Inter-VariableFont_opsz\,wght.ttf");
     font-weight: 500;
@@ -71,7 +71,7 @@ a {
         margin: 0;
         line-height: 24px;
     }
-}
+} */
 
 body {
     height: 100vh;
