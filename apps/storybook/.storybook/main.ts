@@ -24,18 +24,18 @@ const config: StorybookConfig = {
     getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('@storybook/react-vite'),
-    '@chromatic-com/storybook'
+    '@chromatic-com/storybook',
   ],
 
   framework: getAbsolutePath('@storybook/nextjs'),
   staticDirs: ['../../gym/public'],
 
   docs: {
-    autodocs: true
+    autodocs: true,
   },
 
   typescript: {
-    reactDocgen: 'react-docgen-typescript'
-  }
+    reactDocgen: 'react-docgen-typescript',
+  },
 }
 export default config

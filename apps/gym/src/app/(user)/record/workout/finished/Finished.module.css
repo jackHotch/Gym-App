@@ -1,9 +1,0 @@
-.created {
-  width: calc(100vw - 32px);
-  height: calc(100% - 32px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-}

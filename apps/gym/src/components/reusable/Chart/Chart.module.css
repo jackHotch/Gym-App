@@ -1,5 +1,5 @@
 .chart_container {
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--shadow-primary);
   border-radius: 12px;
   padding: 24px;
   position: relative;
