@@ -1,11 +1,11 @@
 import { fireEvent, render } from '@testing-library/react'
-import { Button } from './Button'
+import { Button } from './button'
 
 describe('Button', () => {
-  it('Button.Primary should render successfully', () => {
+  it('Primary Button should render successfully', () => {
     const buttonClick = jest.fn()
     const { baseElement, getByText } = render(
-      <Button.Primary onClick={buttonClick}>Primary</Button.Primary>
+      <Button onClick={buttonClick}>Primary</Button>
     )
     fireEvent.click(getByText('Primary'))
 
@@ -13,10 +13,12 @@ describe('Button', () => {
     expect(buttonClick).toHaveBeenCalled()
   })
 
-  it('Button.Secondary should render successfully', () => {
+  it('Secondary Button should render successfully', () => {
     const buttonClick = jest.fn()
     const { baseElement, getByText } = render(
-      <Button.Secondary onClick={buttonClick}>Secondary</Button.Secondary>
+      <Button variant='secondary' onClick={buttonClick}>
+        Secondary
+      </Button>
     )
     fireEvent.click(getByText('Secondary'))
 
@@ -24,10 +26,12 @@ describe('Button', () => {
     expect(buttonClick).toHaveBeenCalled()
   })
 
-  it('Button.Danger should render successfully', () => {
+  it('Danger Button should render successfully', () => {
     const buttonClick = jest.fn()
     const { baseElement, getByText } = render(
-      <Button.Danger onClick={buttonClick}>Danger</Button.Danger>
+      <Button variant='danger' onClick={buttonClick}>
+        Danger
+      </Button>
     )
     fireEvent.click(getByText('Danger'))
 
@@ -35,10 +39,12 @@ describe('Button', () => {
     expect(buttonClick).toHaveBeenCalled()
   })
 
-  it('Button.Disabled should render successfully', () => {
+  it('Disabled Button should render successfully', () => {
     const buttonClick = jest.fn()
     const { baseElement, getByText } = render(
-      <Button.Disabled onClick={buttonClick}>Disabled</Button.Disabled>
+      <Button variant='disabled' onClick={buttonClick}>
+        Disabled
+      </Button>
     )
     fireEvent.click(getByText('Disabled'))
 
@@ -46,10 +52,12 @@ describe('Button', () => {
     expect(buttonClick).not.toHaveBeenCalled()
   })
 
-  it('Button.Text should render successfully', () => {
+  it('Text Button should render successfully', () => {
     const buttonClick = jest.fn()
     const { baseElement, getByText } = render(
-      <Button.Text onClick={buttonClick}>Text</Button.Text>
+      <Button variant='text' onClick={buttonClick}>
+        Text
+      </Button>
     )
     fireEvent.click(getByText('Text'))
 
@@ -57,9 +65,11 @@ describe('Button', () => {
     expect(buttonClick).toHaveBeenCalled()
   })
 
-  it('Button.Loading should render successfully', () => {
+  it('Loading Button should render successfully', () => {
     const buttonClick = jest.fn()
-    const { baseElement, getByText } = render(<Button.Loading onClick={buttonClick} />)
+    const { baseElement, getByText } = render(
+      <Button variant='loading' onClick={buttonClick} />
+    )
     fireEvent.click(getByText('Please Wait'))
 
     expect(baseElement).toBeTruthy()

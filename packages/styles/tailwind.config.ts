@@ -5,6 +5,8 @@ const config: Config = {
   content: [
     path.join(__dirname, '../../**/*.{js,ts,jsx,tsx}'), // all packages + apps
     path.join(__dirname, './**/*.{js,ts,jsx,tsx}'), // local files just in case
+    '../../apps/**/*.{js,ts,jsx,tsx}',
+    '../../packages/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {

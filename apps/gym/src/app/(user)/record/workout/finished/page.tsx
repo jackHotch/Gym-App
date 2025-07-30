@@ -11,9 +11,9 @@ const Finished = () => {
   return (
     <div className='flex-center'>
       <p className='text-3xl'>Workout #{workout?.count + 1} Recorded!</p>
-      <Button.Primary size='xlarge' onClick={() => router.push('/record')}>
+      <Button size='xl' onClick={() => router.push('/record')}>
         Done
-      </Button.Primary>
+      </Button>
     </div>
   )
 }

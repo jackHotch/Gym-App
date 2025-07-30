@@ -8,9 +8,7 @@ const Home = () => {
 
   return (
     <div>
-      <Button.Primary onClick={() => router.push('/dashboard')} size='medium'>
-        Dashboard
-      </Button.Primary>
+      <Button onClick={() => router.push('/dashboard')}>Dashboard</Button>
     </div>
   )
 }

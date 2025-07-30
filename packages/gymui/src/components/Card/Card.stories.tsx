@@ -33,8 +33,8 @@ export const Everything: Story = {
           <Form.Text.Outline sx={{ width: 'calc(100% - 16px)' }} />
         </Card.Content>
         <Card.Footer>
-          <Button.Danger>Cancel</Button.Danger>
-          <Button.Primary>Submit</Button.Primary>
+          <Button variant='danger'>Cancel</Button>
+          <Button>Submit</Button>
         </Card.Footer>
       </Card>
     )
@@ -82,7 +82,7 @@ export const WithoutHeader: Story = {
           </div>
         </Card.Content>
         <Card.Footer>
-          <Button.Primary>Update</Button.Primary>
+          <Button>Update</Button>
         </Card.Footer>
       </Card>
     )

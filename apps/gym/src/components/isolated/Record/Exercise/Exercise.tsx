@@ -134,7 +134,8 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
       </AnimatePresence>
 
       {/* Add Set Button */}
-      <Button.Secondary
+      <Button
+        variant='secondary'
         type='button'
         sx={{
           display: 'block',
@@ -145,7 +146,7 @@ export const Exercise = ({ workout, setWorkout, index }: ExerciseProps) => {
         onClick={() => addSet(index)}
       >
         Add Set
-      </Button.Secondary>
+      </Button>
     </motion.div>
   )
 }

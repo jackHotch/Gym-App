@@ -32,9 +32,9 @@ export const HeaderDesktop = ({}: HeaderDesktopProps) => {
           <ClipLoader size={10} />
         ) : isWeightEmpty ? (
           <Link href='/weight'>
-            <Button.Text sx={{ display: 'inline' }}>
+            <Button variant='text' sx={{ display: 'inline' }}>
               Start tracking your weight
-            </Button.Text>
+            </Button>
           </Link>
         ) : (
           <span>{currentWeight.weight} lbs</span>
@@ -47,7 +47,9 @@ export const HeaderDesktop = ({}: HeaderDesktopProps) => {
           <ClipLoader size={10} />
         ) : isSplitEmpty ? (
           <Link href='/splits'>
-            <Button.Text sx={{ display: 'inline' }}>Create your first Split</Button.Text>
+            <Button variant='text' sx={{ display: 'inline' }}>
+              Create your first Split
+            </Button>
           </Link>
         ) : (
           <span>{currentSplit.name}</span>

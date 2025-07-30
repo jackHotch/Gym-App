@@ -30,6 +30,7 @@
 } */
 
 @import '@gymapp/styles/globals.css';
+@import "tailwindcss";
 
 
 a {

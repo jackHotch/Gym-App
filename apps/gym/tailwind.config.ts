@@ -14,6 +14,8 @@ module.exports = {
   content: [
     path.join(__dirname, '../../**/*.{js,ts,jsx,tsx}'), // all packages + apps
     path.join(__dirname, './**/*.{js,ts,jsx,tsx}'), // local files just in case
+    '../../packages/**/*.{js,ts,jsx,tsx}',
+    '../**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {

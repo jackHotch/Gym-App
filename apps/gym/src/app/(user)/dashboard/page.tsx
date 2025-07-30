@@ -22,7 +22,7 @@ const Dashboard = () => {
         <div className='px-14 bg-red-500'>py-5</div>
         <div className='px-15 bg-red-500'>py-5</div>
       </div> */}
-      <Button.Primary>Hi</Button.Primary>
+      <Button>Hi</Button>
     </div>
   )
 }

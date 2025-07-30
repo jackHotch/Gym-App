@@ -23,23 +23,21 @@ export const Navbar = () => {
       <div className='flex gap-4'>
         {pathname === '/' && (
           <>
-            <Button.Secondary onClick={() => router.push('/login')}>
+            <Button variant="secondary" onClick={() => router.push('/login')}>
               Log In
-            </Button.Secondary>
-            <Button.Primary onClick={() => router.push('/signup')}>
-              Sign Up
-            </Button.Primary>
+            </Button>
+            <Button onClick={() => router.push('/signup')}>Sign Up</Button>
           </>
         )}
 
         {pathname === '/login' && (
-          <Button.Primary onClick={() => router.push('/signup')}>Sign Up</Button.Primary>
+          <Button onClick={() => router.push('/signup')}>Sign Up</Button>
         )}
 
         {(pathname === '/signup' ||
           pathname === '/forgot-password' ||
           pathname === '/reset-password') && (
-          <Button.Primary onClick={() => router.push('/login')}>Log In</Button.Primary>
+          <Button onClick={() => router.push('/login')}>Log In</Button>
         )}
       </div>
     </div>

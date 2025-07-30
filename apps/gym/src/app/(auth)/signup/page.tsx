@@ -101,15 +101,11 @@ const SignUp = () => {
 
         <div className='flex flex-col gap-2'>
           {isLoading ? (
-            <Button.Loading sx={{ padding: '12px' }} />
+            <Button variant='loading' className='p-3' />
           ) : (
-            <Button.Primary
-              type='submit'
-              sx={{ padding: '12px', fontSize: '16px' }}
-              onClick={handleSignUp}
-            >
+            <Button type='submit' className='p-3' onClick={handleSignUp}>
               Create Account
-            </Button.Primary>
+            </Button>
           )}
           <button
             type='submit'

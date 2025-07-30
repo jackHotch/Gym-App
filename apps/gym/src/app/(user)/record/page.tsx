@@ -29,7 +29,7 @@ const Record = () => {
         </h1>
       )}
       <Link href='/record/workout'>
-        <Button.Primary size='xlarge'>Start Workout</Button.Primary>
+        <Button size='xl'>Start Workout</Button>
       </Link>
     </div>
   )
