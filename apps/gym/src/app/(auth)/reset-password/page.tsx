@@ -100,16 +100,11 @@ const ResetPassword = () => {
           {success && <span>You have successfully changed your password</span>}
         </div>
         {isLoading ? (
-          <Button.Loading sx={{ padding: '12px' }} />
+          <Button variant='loading' className='p-3' />
         ) : (
-          <Button.Primary
-            type='submit'
-            size='medium'
-            sx={{ padding: '12px' }}
-            onClick={handleSubmit}
-          >
+          <Button type='submit' className='p-3' onClick={handleSubmit}>
             Change Password
-          </Button.Primary>
+          </Button>
         )}
       </motion.form>
     </div>

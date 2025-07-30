@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Button } from './Button'
+import { Button } from './button'
 import { ComponentProps } from 'react'
 import { fn } from '@storybook/test'
 
@@ -9,18 +9,23 @@ const meta: Meta<StoryProps> = {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+      },
+      options: ['default', 'secondary', 'danger', 'text', 'loading', 'disabled'],
+    },
     size: {
       control: {
         type: 'select',
       },
-      options: ['small', 'medium', 'large'],
+      options: ['sm', 'default', 'lg', 'xl'],
     },
   },
   args: {
-    size: 'small',
-    sx: {
-      margin: '16px',
-    },
+    size: 'default',
+    variant: 'default',
+    children: 'Button',
     onClick: fn(),
   },
 }
@@ -30,53 +35,53 @@ export default meta
 type Story = StoryObj<StoryProps>
 
 export const Primary: Story = {
-  args: {
-    children: 'Primary',
-  },
+  args: {},
   render: (args: any) => {
-    return <Button.Primary {...args} />
+    return <Button {...args} />
   },
 }
 
 export const Secondary: Story = {
   args: {
-    children: 'Secondary',
+    variant: 'secondary',
   },
   render: (args: any) => {
-    return <Button.Secondary {...args} />
+    return <Button {...args} />
   },
 }
 
 export const Danger: Story = {
   args: {
-    children: 'Danger',
+    variant: 'danger',
   },
   render: (args: any) => {
-    return <Button.Danger {...args} />
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    children: 'Disabled',
-  },
-  render: (args: any) => {
-    return <Button.Disabled {...args} />
+    return <Button {...args} />
   },
 }
 
 export const Text: Story = {
   args: {
-    children: 'This is a button',
+    variant: 'text',
   },
   render: (args: any) => {
-    return <Button.Text {...args} />
+    return <Button {...args} />
   },
 }
 
 export const Loading: Story = {
-  args: {},
+  args: {
+    variant: 'loading',
+  },
   render: (args: any) => {
-    return <Button.Loading {...args} />
+    return <Button {...args} />
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    variant: 'disabled',
+  },
+  render: (args: any) => {
+    return <Button {...args} />
   },
 }

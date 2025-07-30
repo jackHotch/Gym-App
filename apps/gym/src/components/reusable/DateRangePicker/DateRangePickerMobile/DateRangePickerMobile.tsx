@@ -73,7 +73,7 @@ export const DateRangePickerMobile = ({ filter, data }: DateRangePickerProps) =>
           </div>
           <AnimatePresence>{error && <Error>Invalid Range</Error>}</AnimatePresence>
           <Modal.Footer>
-            <Button.Primary onClick={handleSubmit}> Set Range</Button.Primary>
+            <Button onClick={handleSubmit}> Set Range</Button>
           </Modal.Footer>
         </Modal.Content>
       </Modal>

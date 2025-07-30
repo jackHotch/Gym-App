@@ -24,7 +24,7 @@ export const Primary: Story = {
     return (
       <Modal open={open} onOpenChange={setOpen}>
         <Modal.Trigger>
-          <Button.Primary>Open Modal</Button.Primary>
+          <Button>Open Modal</Button>
         </Modal.Trigger>
         <Modal.Content>
           <Modal.Header>
@@ -39,8 +39,10 @@ export const Primary: Story = {
             <Form.Text.Outline sx={{ width: 'calc(100% - 16px)' }} />
           </div>
           <Modal.Footer>
-            <Button.Danger onClick={() => setOpen(false)}>Close</Button.Danger>
-            <Button.Primary onClick={() => setOpen(false)}>Submit</Button.Primary>
+            <Button variant='danger' onClick={() => setOpen(false)}>
+              Close
+            </Button>
+            <Button onClick={() => setOpen(false)}>Submit</Button>
           </Modal.Footer>
         </Modal.Content>
       </Modal>

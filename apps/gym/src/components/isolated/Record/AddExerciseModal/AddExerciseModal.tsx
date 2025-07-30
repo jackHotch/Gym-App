@@ -37,7 +37,9 @@ export const AddExerciseModal = ({
   return (
     <Modal open={open} onOpenChange={setOpen}>
       <Modal.Trigger>
-        <Button.Secondary type='button'>Add Exercise</Button.Secondary>
+        <Button variant='secondary' type='button'>
+          Add Exercise
+        </Button>
       </Modal.Trigger>
       <Modal.Content sx={{ width: '500px', height: '600px' }}>
         <Modal.Header>
@@ -72,13 +74,13 @@ export const AddExerciseModal = ({
           })}
         </div>
         <Modal.Footer>
-          <Button.Danger type='button' onClick={() => setOpen(false)}>
+          <Button variant='danger' type='button' onClick={() => setOpen(false)}>
             Cancel
-          </Button.Danger>
+          </Button>
 
-          <Button.Primary type='button' onClick={addExercises}>
+          <Button type='button' onClick={addExercises}>
             Add Exercises
-          </Button.Primary>
+          </Button>
         </Modal.Footer>
       </Modal.Content>
     </Modal>

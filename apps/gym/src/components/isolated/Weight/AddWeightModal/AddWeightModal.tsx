@@ -42,10 +42,10 @@ export const AddWeightModal = ({ open, setOpen }: AddWeightModalProps) => {
         sx={{ width: isMobile ? '50%' : 'unset' }}
       >
         <Modal.Trigger>
-          <Button.Primary sx={{ width: isMobile ? '100%' : 'unset' }}>
+          <Button sx={{ width: isMobile ? '100%' : 'unset' }}>
             Add
             <AddIcon />
-          </Button.Primary>
+          </Button>
         </Modal.Trigger>
         <Modal.Content>
           <Modal.Header>
@@ -78,9 +78,9 @@ export const AddWeightModal = ({ open, setOpen }: AddWeightModalProps) => {
             </div>
           </div>
           <Modal.Footer>
-            <Button.Primary type='button' onClick={handleSubmit}>
+            <Button type='button' onClick={handleSubmit}>
               Add Entry
-            </Button.Primary>
+            </Button>
           </Modal.Footer>
         </Modal.Content>
       </Modal>

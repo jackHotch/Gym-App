@@ -43,9 +43,9 @@ const ForgotPassword = () => {
           <Error isVisible={error ? true : false}>{error}</Error>
           {success && <span>Check your email for further instructions</span>}
         </div>
-        <Button.Primary type='submit' onClick={handleSubmit}>
+        <Button type='submit' onClick={handleSubmit}>
           Send Email
-        </Button.Primary>
+        </Button>
       </motion.form>
     </div>
   )
