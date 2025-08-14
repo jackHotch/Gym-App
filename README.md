@@ -2,7 +2,10 @@
 
 ## 👀 Demo
 
-> **Warning** This app is a work in progress https://jackhotchkiss-gym-app.vercel.app/
+#### <a target="_blank" href="https://jackhotchkiss-jacked.vercel.app/">Try it out!</a>
+
+> [!NOTE]
+> This app is a work in progress
 
 ![Screenshot](/assets/screenshot.png)
 
