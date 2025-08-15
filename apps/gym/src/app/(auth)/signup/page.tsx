@@ -8,12 +8,10 @@ import Image from 'next/image'
 import { Error } from '@gymapp/gymui/Error'
 import { motion } from 'motion/react'
 import { TextInputChangeEvent } from '@/types'
-import { useFeatureFlag } from '@/hooks/api'
 import { signup, signInWithGoogle } from '@/actions/auth'
 import { signUpSchema } from '@/constants'
 
 const SignUp = () => {
-  const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
   const [isLoading, setIsLoading] = useState(false)
   const [signUpError, setSignUpError] = useState('')
   const [signUpData, setSignUpData] = useState({
@@ -42,13 +40,11 @@ const SignUp = () => {
       formData.append('email', signUpData.email)
       formData.append('password', signUpData.password)
 
-      if (authEnabled) {
-        const errorMessage = await signup(formData)
-        if (errorMessage) {
-          setSignUpError(errorMessage)
-          setIsLoading(false)
-        }
-      } else alert('Not Implemented Yet!')
+      const errorMessage = await signup(formData)
+      if (errorMessage) {
+        setSignUpError(errorMessage)
+        setIsLoading(false)
+      }
     } else {
       setSignUpError(error.issues[0].message)
       setIsLoading(false)

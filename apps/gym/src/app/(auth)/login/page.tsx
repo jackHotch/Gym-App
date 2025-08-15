@@ -7,13 +7,11 @@ import { Form } from '@gymapp/gymui/Form'
 import { Button } from '@gymapp/gymui/Button'
 import { Error } from '@gymapp/gymui/Error'
 import Image from 'next/image'
-import { useFeatureFlag } from '@/hooks/api'
 import { motion } from 'motion/react'
 import { login, signInWithGoogle } from '@/actions/auth'
 import { loginSchema } from '@/constants'
 
 const Login = () => {
-  const { data: authEnabled } = useFeatureFlag('Auth_Functionality')
   const [isLoading, setIsLoading] = useState(false)
   const [loginError, setLoginError] = useState('')
   const [loginData, setLoginData] = useState({
@@ -38,13 +36,11 @@ const Login = () => {
       formData.append('email', loginData.email)
       formData.append('password', loginData.password)
 
-      if (authEnabled) {
-        const errorMessage = await login(formData)
-        if (errorMessage) {
-          setLoginError(errorMessage)
-          setIsLoading(false)
-        }
-      } else alert('Not Implemented Yet!')
+      const errorMessage = await login(formData)
+      if (errorMessage) {
+        setLoginError(errorMessage)
+        setIsLoading(false)
+      }
     } else {
       setLoginError(error.issues[0].message)
       setIsLoading(false)
