@@ -1,10 +1,10 @@
 'use server'
 
 import axios from 'axios'
-import { IExercises } from '@/types'
 import { getSupabaseUserId } from '@/utils/supabase/utils'
 
-const URL = process.env.URL + '/' + process.env.API_VERSION + '/exercises'
+// const URL = process.env.URL + '/' + process.env.API_VERSION + '/exercises'
+const URL = process.env.URL + '/v3/exercises'
 
 export const getExercises = async () => {
   const userId = await getSupabaseUserId()
@@ -13,12 +13,12 @@ export const getExercises = async () => {
       userId: userId,
     },
   })
-  return data as IExercises[]
+  return data
 }
 
 export const createExercise = async (name: string) => {
   const userId = await getSupabaseUserId()
-  await axios.post(
+  const { data } = await axios.post(
     URL,
     { name },
     {
@@ -27,4 +27,5 @@ export const createExercise = async (name: string) => {
       },
     }
   )
+  return data
 }
