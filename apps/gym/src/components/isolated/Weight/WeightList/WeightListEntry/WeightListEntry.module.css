@@ -29,7 +29,7 @@
 }
 
 .id {
-  color: var(--dark-gray);
+  color: var(--color-dark-gray);
   width: 40px;
   font-size: 14px;
 }

@@ -13,11 +13,14 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@gymapp/gymui": "*",
+    "@gymapp/styles": "*",
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
     "@mui/x-date-pickers": "^7.6.2",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.3",
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/postcss": "^4.1.11",
     "@tanstack/react-query": "^5.51.11",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
@@ -28,6 +31,8 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-loader-spinner": "^6.1.6",
+    "react-spinners": "^0.17.0",
+    "tailwindcss": "^4.1.11",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -39,8 +44,11 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "css-modules-to-tailwind": "^0.3.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "jscodeshift": "^17.3.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

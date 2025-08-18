@@ -13,7 +13,7 @@ export const WorkoutConfirmationModal = ({
   return (
     <Modal open={open} onOpenChange={setOpen}>
       <Modal.Trigger>
-        <Button.Primary type='button'>Finish Workout</Button.Primary>
+        <Button type='button'>Finish Workout</Button>
       </Modal.Trigger>
       <Modal.Content sx={{ width: '500px' }}>
         <Modal.Header>
@@ -22,12 +22,10 @@ export const WorkoutConfirmationModal = ({
         </Modal.Header>
 
         <Modal.Footer>
-          <Button.Danger type='button' size='medium' onClick={() => setOpen(false)}>
+          <Button variant='danger' type='button' onClick={() => setOpen(false)}>
             Cancel
-          </Button.Danger>
-          <Button.Primary size='medium' onClick={(e) => handleSubmit(e)}>
-            Finish Workout
-          </Button.Primary>
+          </Button>
+          <Button onClick={(e) => handleSubmit(e)}>Finish Workout</Button>
         </Modal.Footer>
       </Modal.Content>
     </Modal>

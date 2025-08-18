@@ -1,10 +1,9 @@
-import styles from './Header.module.css'
-import { HeaderDesktop } from './HeaderDesktop/HeaderDesktop'
-import { HeaderMobile } from './HeaderMobile/HeaderMobile'
+import { HeaderDesktop } from './header-desktop'
+import { HeaderMobile } from './header-mobile'
 
 export const Header = ({}) => {
   return (
-    <div className={styles.container}>
+    <div className='border-light-gray border-b-1'>
       <HeaderDesktop />
       <HeaderMobile />
     </div>

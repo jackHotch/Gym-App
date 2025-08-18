@@ -1,0 +1,4 @@
+{
+  "tailwindCSS.experimental.configFile": "./packages/styles/src/globals.css",
+  "tailwindCSS.classFunctions": ["cva", "cx"]
+}

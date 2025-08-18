@@ -1,6 +1,5 @@
 'use client'
 
-import styles from './Record.module.css'
 import Link from 'next/link'
 import { useCurrentSplit } from '@/hooks/api/useCurrentSplit'
 import { Loading } from '@gymapp/gymui/Loading'
@@ -11,7 +10,7 @@ const Record = () => {
   const isEmpty = !isLoading && !currentSplit
 
   return (
-    <div className={styles.container}>
+    <div className='flex w-full flex-col items-center justify-center gap-16 my-12'>
       {isLoading ? (
         <Loading.Text
           fontSize='3rem'
@@ -21,12 +20,16 @@ const Record = () => {
           Getting your Current Split
         </Loading.Text>
       ) : isEmpty ? (
-        <h1 className={styles.split_name}>No Split Created</h1>
+        <h1 className='text-center font-semibold text-5xl md:text-7xl tracking-tight'>
+          No Split Created
+        </h1>
       ) : (
-        <h1 className={styles.split_name}>{currentSplit?.name}</h1>
+        <h1 className='text-center font-semibold text-5xl md:text-7xl tracking-tight'>
+          {currentSplit?.name}
+        </h1>
       )}
-      <Link href='/record/workout' className={styles.button}>
-        <Button.Primary size='xlarge'>Start Workout</Button.Primary>
+      <Link href='/record/workout'>
+        <Button size='xl'>Start Workout</Button>
       </Link>
     </div>
   )

@@ -1,6 +1,5 @@
 'use client'
 
-import styles from './Finished.module.css'
 import { useWorkoutNumber } from '@/hooks'
 import { Button } from '@gymapp/gymui/Button'
 import { useRouter } from 'next/navigation'
@@ -10,15 +9,11 @@ const Finished = () => {
   const router = useRouter()
 
   return (
-    <div className={styles.created}>
-      <p>Workout #{workout?.count + 1} Recorded!</p>
-      <Button.Primary
-        size='xlarge'
-        sx={{ marginTop: '30px' }}
-        onClick={() => router.push('/record')}
-      >
+    <div className='flex-center'>
+      <p className='text-3xl'>Workout #{workout?.count + 1} Recorded!</p>
+      <Button size='xl' onClick={() => router.push('/record')}>
         Done
-      </Button.Primary>
+      </Button>
     </div>
   )
 }

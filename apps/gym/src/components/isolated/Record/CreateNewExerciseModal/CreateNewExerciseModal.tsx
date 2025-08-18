@@ -28,9 +28,9 @@ export const CreateNewExerciseModal = ({
   return (
     <Modal open={open} onOpenChange={setOpen}>
       <Modal.Trigger>
-        <Button.Text type='button' sx={{ fontSize: '16px' }}>
+        <Button variant='text' type='button' sx={{ fontSize: '16px' }}>
           Create New Exercise
-        </Button.Text>
+        </Button>
       </Modal.Trigger>
       <Modal.Content sx={{ height: '280px', justifyContent: 'space-between' }}>
         <Modal.Header>
@@ -45,9 +45,9 @@ export const CreateNewExerciseModal = ({
           />
         </div>
         <Modal.Footer>
-          <Button.Primary type='button' onClick={handleSubmit}>
+          <Button type='button' onClick={handleSubmit}>
             Create
-          </Button.Primary>
+          </Button>
         </Modal.Footer>
       </Modal.Content>
     </Modal>
